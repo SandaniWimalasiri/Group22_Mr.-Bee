@@ -17,12 +17,7 @@
 
 * Project Client:
 **Mr. A. R. P. Gunawardana**
-    _Nature Bee Honey Company Sri Lanka
-    No 47, 
-    Darshanapura,
-    Kundasale,
-    Kandy, 
-    Sri Lanka._ 
+ (_Nature Bee Honey Company Sri Lanka, No 47, Darshanapura, Kundasale, Kandy, Sri Lanka._)
 
 # Goals and Objectives :chart_with_upwards_trend: :memo: :heavy_check_mark:
 
@@ -32,6 +27,16 @@ Our goal is to uplift the current record keeping and management methods of local
 * **Objectives**: 
 To develop a web-based application for the local beekeepers employed under our client to manage their constant record keeping of his/her bee honey production, assisting in sustaining and managing one’s own beehives and apiaries.
 To develop this web-based application for the purpose of giving our client an online marketing platform for beekeepers’ products, quality added bee honey and beehives related productions and beekeeping equipment, etc. to reach potential customers with their particular order requests for available products.
+
+# Project Deliverables 
+1.	Web based application
+1.	User manual for each role
+1.	A Software documentation
+    * Which is mainly consists of
+        *Feasibility Report
+        *Software Requirement Specification
+        *Technical Documentation
+
 
 
 
