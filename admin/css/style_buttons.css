@@ -1,0 +1,154 @@
+/*btn 1,2,3 navigation bar buttons*/
+.btn1 {
+    background-color: #054d14f5;
+    height: 50px;
+    width: 150px;
+    color: #000000;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+   
+  }
+
+.btn2 {
+    background-color: #054d14f5;
+    height: 50px;
+    width: 150px;
+    color: #000000;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:100%;
+  }
+
+.btn3 {
+    background-color: #054d14f5;
+    height: 50px;
+    width: 150px;
+    color: #000000;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:130%;
+  }
+/*btn4 button located in manager_product.php*/
+  .btn4 {
+    background-color: #bd3d1d;
+    top: 75%;
+    height: 50px;
+    width: 150px;
+    color: #000000;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:130%;
+  }
+
+  /*btn5 button located in manager_reports.php*/
+  .btn5 {
+    background-color: #bd3d1d;
+    top: 75%;
+    height: 50px;
+    width: 150px;
+    color: #000000;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:130%;
+  }
+
+  /*btn6 button located in manager_remove_dm.php*/
+  .btn6 {
+    background-color: #d4780ec0;
+    top: 75%;
+    height: 35px;
+    width: 100px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:130%;
+  }
+
+  /*this button is use to identify page*/
+  .btn0 {
+    background-color: #bb4747f5;
+    height: 50px;
+    width: 150px;
+    color: #000000;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:130%;
+  }
+
+  /*this button is for delete*/
+  .btn7 {
+    background-color: rgba(245, 222, 179, 0.918);
+    top: 75%;
+    height: 30px;
+    width: 100px;
+    color: rgb(158, 6, 6);
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+   
+  }
+
+  /*this button is for edit*/
+  .btn8 {
+    background-color: rgba(245, 222, 179, 0.918);
+    top: 75%;
+    height: 30px;
+    width: 100px;
+    color: rgb(57, 139, 2);
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+   
+  }
+  
+.btn1:hover  {
+    background-color: #9e0707;
+  }
+
+.btn2:hover  {
+    background-color: #9e0707;
+}
+
+.btn3:hover  {
+  background-color: #9e0707;
+}
+
+.btn4:hover  {
+  background-color: #bd3d1d;
+}
+
+.btn5:hover  {
+  background-color: #bd3d1d;
+}
+
+.btn6:hover  {
+  background-color: #bd3d1d;
+}
+
+ 
