@@ -47,7 +47,7 @@ The local beekeepers employed under our client Nature Bee Honey Company Sri Lank
 * Our client can reach a vast customer range and market their products via online through this application.
 * The company can create awareness to customers about new products, and the customers can easily know about products’ (raw bee-products, quality added bee products, beekeeping equipment, etc.) availability and details related.
 
-# Goals and Objectives :chart_with_upwards_trend: :memo: :heavy_check_mark:
+# Goals and Objectives :memo: :dart: :heavy_check_mark:
 
 * **Goals**:
 Our goal is to uplift the current record keeping and management methods of local beekeepers under our client and offer the sales products such as raw bee-products, quality added bee products, beekeeping equipment, etc. of the company meet a variety of customers and raise awareness of these products via online sales and marketing. 
@@ -56,7 +56,7 @@ Our goal is to uplift the current record keeping and management methods of local
 To develop a web-based application for the local beekeepers employed under our client to manage their constant record keeping of his/her bee honey production, assisting in sustaining and managing one’s own beehives and apiaries.
 To develop this web-based application for the purpose of giving our client an online marketing platform for beekeepers’ products, quality added bee honey and beehives related productions and beekeeping equipment, etc. to reach potential customers with their particular order requests for available products.
 
-# Project Deliverables :soon:
+# Project Deliverables :dart:
 1.	Web based application :computer:
 1.	User manual for each role :raising_hand_man: :raising_hand_woman:
 1.	A Software documentation :page_facing_up:
@@ -64,6 +64,11 @@ To develop this web-based application for the purpose of giving our client an on
 * Software Requirement Specification
 * Technical Documentation
 
+# System User Roles :raised_hands:
+1. Beekeeper
+1. Division manager
+1. Manager / Admin
+1. Customer
 
 
 
