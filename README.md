@@ -29,15 +29,12 @@ To develop a web-based application for the local beekeepers employed under our c
 To develop this web-based application for the purpose of giving our client an online marketing platform for beekeepers’ products, quality added bee honey and beehives related productions and beekeeping equipment, etc. to reach potential customers with their particular order requests for available products.
 
 # Project Deliverables 
-1.	Web based application
-1.	User manual for each role
-1.	A Software documentation
-    * Which is mainly consists of
-        *Feasibility Report
-        *Software Requirement Specification
-        *Technical Documentation
-
-
+1.	Web based application :computer:
+1.	User manual for each role :raising_hand_man: :raising_hand_woman:
+1.	A Software documentation :page_facing_up:
+* Feasibility Report
+* Software Requirement Specification
+* Technical Documentation
 
 
 
