@@ -2,10 +2,11 @@
 	<head>
 		<title>Login Page</title>
 		<link rel="stylesheet" type="text/CSS" href="../css/beekeeperlogin.css">
+		<link rel="stylesheet" type="text/CSS" href="../../home/homenav.css">
 
 	</head>
 	<body >
-		<?php include('homenavbar.php'); 
+		<?php include('../../home/homenavbar.php'); 
         
         
 ?>

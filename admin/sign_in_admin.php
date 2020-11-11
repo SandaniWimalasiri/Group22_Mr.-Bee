@@ -1,8 +1,10 @@
 
 <?php require_once("db/db.php"); ?>
+<?php include('../home/homenavbar.php'); ?>
 <?php
   session_start();
-
+      
+ 
   if(isset($_POST['submit'])){
     //save username and password into variables
     $userName =mysqli_real_escape_string($connection,$_POST['userName']);
@@ -41,6 +43,7 @@
   <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/style_sign_in.css">
+    <link rel="stylesheet" type="text/CSS" href="../home/homenav.css">
   </head>
   <body>
     <div class="loginBox">

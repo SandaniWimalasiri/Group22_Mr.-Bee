@@ -1,14 +1,14 @@
 
 
 body {
-    margin: 0 auto;
-	background-image:url("../images/3.jpg");
+  margin: 0 auto;
+	background-image:url("../beekeeper/images/3.jpg");
 	background-repeat:no-repeat;
 	background-size: cover;
 	background-position: center;
 	font-family: sans-serif;
 	opacity: 0.9;
-  }
+}
   
   .navbar { top: 0;
 
