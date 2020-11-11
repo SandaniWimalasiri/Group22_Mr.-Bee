@@ -5,7 +5,7 @@
 
 	</head>
 	<body >
-	<?php include('homenavbar.php');
+		<?php include('homenavbar.php'); 
         
         
 ?>

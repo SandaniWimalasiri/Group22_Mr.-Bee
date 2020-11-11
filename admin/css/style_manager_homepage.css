@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(../img/papers.co-si07-smoke-blue-dark-sea-gradation-blur-33-iphone6-wallpaper.jpg);*/
+   /* background: url(../img/papers.co-si07-smoke-blue-dark-sea-gradation-blur-33-iphone6-wallpaper.jpg);*/
     background-color: #023765;
     background-size: cover;
     background-position: center;
@@ -26,15 +26,15 @@ body{
     width: 1300px;
     height: 700px;
     position: absolute;
-    background:#b2ebf363 ;
-   /* background: #FDC564;*/
+   /* background:#b2ebf363 ;*/
+    background: #FDC564;
     
 	top:77%;
 	left:50%;
     display:block;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
-    padding:5px 30px;
+    padding: 20px 100px 20px 100px;
     color: #023765;
     border-radius: 2%;
     
@@ -53,6 +53,24 @@ body{
     padding:5px 30px;
     color: #023765;
     border-radius: 2%;
+}
+
+.content3{
+    width: 1300px;
+    height: 1000px;
+    position: absolute;
+   /* background:#b2ebf363 ;*/
+    background: #fdc56400;
+    
+	top:97%;
+	left:50%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 5px 45px ;
+    color: #000000;
+    border-radius: 2%;
+    
 }
 
 .navBar{
