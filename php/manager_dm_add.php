@@ -1,6 +1,6 @@
 <?php include('manager_alignments.php')?>
 
-
+<html>
     <head>
         
         <title>manager_Divisional</title>
@@ -66,29 +66,29 @@
                             </table>
                             <br/>
                         
-                            <button class="btn6" type="submit" name="add2"><b>Add</b></button>
+                            <button class="btn6" type="submit" name="add"><b>Add</b></button>
+                            <button class="btn6" type="reset" class="cancelbtn"><b>Cancel<b></button>
+                            <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><b>Back</b></button>
                            
                         </form>
 
-            <br>
-            <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><b>Back</b></button>
         </div>
         
     </body>
-
+</html>
     <?php
         
-        if(isset($_GET['add2'])){
+        if(isset($_GET['add'])){
            //echo "Done";                                                                                                 
            
            
            $sql="INSERT INTO div_manager (div_id, first_name, last_name, email, div_code, no_employee) VALUES('".$_GET['div_id']."','".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['div_code']."','".$_GET['no_employee']."')";
-           $result1=mysqli_query($connection,$sql);
+           $result=mysqli_query($connection,$sql);
            //$result=$connection->query($sql);
            //print_r($result);
-           if($result1){
+           if($result){
                //echo "Successful";
-               header( 'Location: manager_dm.php ');
+               header( 'Location: manager_dm_add.php ');
            }else{
                echo "failed";
            }

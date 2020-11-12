@@ -13,8 +13,10 @@ require_once("func.php"); ?>
 
     </head>
 <body>
+    <nav>   
         <!--start of header-->
-        <header>                        
+        <header>  
+                               
             <div class="webName">
                 Mr. Bee
             </div>
@@ -25,6 +27,7 @@ require_once("func.php"); ?>
                         echo $_SESSION['last_name']; ?>
                 <a href="log_out.php"> (Log Out) </a>
             </div>
+            
         </header>                       <!--end of header-->
 
         <!--start of logo class-->
@@ -32,7 +35,7 @@ require_once("func.php"); ?>
         <img src="../img/004.png" width="8%" height=width>
         </div>                          <!--end of logo class-->
 
-        
+    </nav>    
          <!--start of footer-->
          <footer>    
             <h3></h3>
