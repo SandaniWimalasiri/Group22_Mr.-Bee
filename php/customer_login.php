@@ -28,7 +28,7 @@
 </html>
 
 <?php 
-	require_once('connect.php');
+	require_once('../db_connection/connect.php');
 	session_start();
 	//$_SESSION['loggedin']=1;
 	if(isset($_POST['submit'])){

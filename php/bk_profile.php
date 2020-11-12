@@ -1,4 +1,4 @@
-<?php require_once('connect.php'); 
+<?php require_once('../db_connection/connect.php'); 
 session_start();
 
 
@@ -50,7 +50,7 @@ echo "failed";
     <div class="bhivecontainer">
     <p >My Profile</p>
     
-    <center><img src="  ../images/14.png" ></center>
+    <center><img src="  ../img/14.png" ></center>
 </br>
 </br>
 <?php

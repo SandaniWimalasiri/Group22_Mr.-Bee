@@ -1,4 +1,4 @@
-<?php require_once('connect.php'); ?>
+<?php require_once('../db_connection/connect.php'); ?>
 <?php
 if(isset($_GET['FeedingRecNo'])){
 $sql = "DELETE FROM feeding WHERE FeedingRecNo = ".$_GET['FeedingRecNo'];

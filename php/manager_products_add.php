@@ -4,9 +4,9 @@
     <head>
         
         <title>manager_products</title>
-        <link rel="stylesheet" type="text/css" href="css/style_manager_homepage.css">
-        <link rel="stylesheet" type="text/css" href="css/style_buttons.css">
-        <link rel="stylesheet" type="text/css" href="css/style_manager_remove_dm.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_manager_homepage.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_buttons.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_manager_remove_dm.css">
 
     </head>
     <body>
@@ -14,7 +14,7 @@
 
         <!--start of welcomeBox-->
         <div class="welcomeBox">       
-            <a href="manager_home.php"><img src="img/manager2.jpg" class="icon"></a>
+            <a href="manager_home.php"><img src="../img/manager2.jpg" class="icon"></a>
             <h1>Products Management</h1>
         </div>                           <!--end of welcomeBox-->
 

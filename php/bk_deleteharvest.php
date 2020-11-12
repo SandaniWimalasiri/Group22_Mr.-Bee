@@ -1,4 +1,4 @@
-<?php require_once('connect.php'); ?>
+<?php require_once('../db_connection/connect.php'); ?>
 <?php
 if(isset($_GET['HarvestRecNo'])){
 $sql = "DELETE FROM harvest WHERE HarvestRecNo = ".$_GET['HarvestRecNo'];

@@ -1,5 +1,5 @@
-<?php include('../home/homenavbar.php'); ?>
-<?php require_once("db/db.php"); ?>
+<?php include('homenavbar.php'); ?>
+<?php require_once("../db_connection/connect.php"); ?>
 
 <?php
   session_start();
@@ -28,7 +28,7 @@
       $_SESSION["first_name"]=$user['first_name'];
       $_SESSION["last_name"]=$user['last_name'];
       
-      if($type=="admin"){
+      if($type=="manager"){
         //redirect to admin page 
         header('Location: manager_home.php');
       }
@@ -42,12 +42,12 @@
 <html>
   <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/style_sign_in.css">
-    <link rel="stylesheet" type="text/CSS" href="../home/homenav.css">
+    <link rel="stylesheet" type="text/css" href="../css/style_sign_in.css">
+    <link rel="stylesheet" type="text/CSS" href="../css/homenav.css">
   </head>
   <body>
     <div class="loginBox">
-      <img src="img/login.png" class="icon">
+      <img src="../img/login.png" class="icon">
         <h1>Login Here</h1>
         <form name="loginForm" action="sign_in_admin.php"  method="post">
           <p>Username</p>

@@ -1,22 +1,22 @@
-<?php include_once('connect.php');
+<?php include_once('../db_connection/connect.php');
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/CSS" href="homenav.css">
+<link rel="stylesheet" type="text/CSS" href="../css/homenav.css">
 </head>
 <body>
 <div class="navbar">
 
-<a href="mrbee.php" >Home</a> 
+<a href="index_mrbee.php" >Home</a> 
 <a href="homeproducts.php" >Products</a>
 <a href="aboutus.php" >About Us</a>
   
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn" >Login</button>
   <div  id="myDropdown" class="dropdown-content">
-  <a href="../admin/sign_in_admin.php">Login as Manager</a>
+  <a href="sign_in_admin.php">Login as Manager</a>
   <a href="#">Login as Divisional Manager</a>
-  <a href="../beekeeper/php/beekeeperlogin.php">Login as Beekeeper</a>
+  <a href="beekeeperlogin.php">Login as Beekeeper</a>
 
   </div>
 </div>

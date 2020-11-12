@@ -2,17 +2,17 @@
 	<head>
 		<title>Login Page</title>
 		<link rel="stylesheet" type="text/CSS" href="../css/beekeeperlogin.css">
-		<link rel="stylesheet" type="text/CSS" href="../../home/homenav.css">
+		<link rel="stylesheet" type="text/CSS" href="../css/homenav.css">
 
 	</head>
 	<body >
-		<?php include('../../home/homenavbar.php'); 
+		<?php include('homenavbar.php'); 
         
         
 ?>
 		<div class="loginbox">
 			<div class="center">
-				<img src="../images/2.jpg" class="avatar">
+				<img src="../img/2.jpg" class="avatar">
 			</div>
 				<h2>Login Here</h2>
 				<form method="post" action="beekeeperlogin.php" >
@@ -29,7 +29,7 @@
 </html>
 
 <?php 
-	require_once('connect.php');
+	require_once('../db_connection/connect.php');
 	session_start();
 	//$_SESSION['loggedin']=1;
 	if(isset($_POST['submit'])){

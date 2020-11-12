@@ -1,4 +1,4 @@
-<?php require_once('connect.php'); 
+<?php require_once('../db_connection/connect.php'); 
 session_start();
 
 $beehiveno_error="";

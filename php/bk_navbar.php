@@ -1,4 +1,4 @@
-<?php include_once('connect.php');
+<?php include_once('../db_connection/connect.php');
 
 
 
@@ -12,14 +12,14 @@
 </head>
 <body>
 <div class="topnav">
-  <a><img class="logo" src="../images/2.jpg"></a>
+  <a><img class="logo" src="../img/2.jpg"></a>
   
 
   <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn"><?php echo $_SESSION['username']; ?></button>
   <div  id="myDropdown" class="dropdown-content">
   
-  <center><img src="  ../images/14.png" ></center>
+  <center><img src="  ../img/14.png" ></center>
   <?php
     
         

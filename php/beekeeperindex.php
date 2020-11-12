@@ -1,4 +1,4 @@
-<?php require_once('connect.php'); 
+<?php require_once('../db_connection/connect.php'); 
 session_start();
 if($_SESSION['loggedin']!=1){
     header('Location: beekeeperlogin.php');

@@ -1,4 +1,4 @@
-<?php require_once("db/db.php"); ?>
+<?php require_once("../db_connection/connect.php"); ?>
 <?php session_start(); 
 
         if(!$_SESSION['userName']){

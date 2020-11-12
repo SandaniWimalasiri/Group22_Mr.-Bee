@@ -1,6 +1,6 @@
 
 <?php
-		require_once('connect.php');
+		require_once('../db_connection/connect.php');
 		$error="";
 		if(isset($_POST['submit'])){
 			if($_POST['password']!=$_POST['repassword']){	

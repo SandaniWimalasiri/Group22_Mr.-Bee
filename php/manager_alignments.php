@@ -1,15 +1,15 @@
-<?php require_once("db/db.php");
+<?php require_once("../db_connection/connect.php");
 require_once("func.php"); ?>
 <?php session_start(); 
 
         if(!$_SESSION['userName']){
-            header('Location: sign_in.php');
+            header('Location: sign_in_admin.php');
         }
 ?>
 <head>
-        <link rel="stylesheet" type="text/css" href="css/style_manager_homepage.css">
-        <link rel="stylesheet" type="text/css" href="css/style_buttons.css">
-        <link rel="stylesheet" type="text/css" href="css/style_manager_remove_dm.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_manager_homepage.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_buttons.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_manager_remove_dm.css">
 
     </head>
 <body>
@@ -29,7 +29,7 @@ require_once("func.php"); ?>
 
         <!--start of logo class-->
         <div class="logo">
-        <img src="img/004.png" width="8%" height=width>
+        <img src="../img/004.png" width="8%" height=width>
         </div>                          <!--end of logo class-->
 
         

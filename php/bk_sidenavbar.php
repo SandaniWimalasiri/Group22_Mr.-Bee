@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/CSS" href="bk_catstyle.css">
+<link rel="stylesheet" type="text/CSS" href="../css/bk_catstyle.css">
 </head>
 <body>
 
