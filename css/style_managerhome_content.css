@@ -86,7 +86,7 @@
 	transform: scale(1.055);
 }
 .honeycomb-cell::after{
-	background:#dbb844;
+	background:#dbb84477;
 	opacity: 0.7;
 	transition: opacity 350ms;
 	-webkit-transition:opacity 350ms;

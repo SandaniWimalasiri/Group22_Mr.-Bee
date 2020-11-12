@@ -1,4 +1,5 @@
 <?php include('manager_alignments.php')?>
+<?php include('manager_navbar.php')?>
 
 
     <head>
@@ -13,11 +14,7 @@
 <body>
     
 
-         <!--start of welcomeBox-->
-         <div class="welcomeBox">       
-            <a href="manager_home.php"><img src="../img/manager2.jpg" class="icon"></a>
-            <h1>Products Management</h1>
-        </div>                           <!--end of welcomeBox-->
+        
 
         <div class="content2"> 
             <?php

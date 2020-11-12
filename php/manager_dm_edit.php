@@ -1,4 +1,5 @@
 <?php include('manager_alignments.php')?>
+<?php include('manager_navbar.php')?>
 
 
 <html>
@@ -14,11 +15,7 @@
 <body>
     
 
-        <!--start of welcomeBox-->
-        <div class="welcomeBox">       
-            <a href="manager_home.php"><img src="../img/manager2.jpg" class="icon"></a>
-            <h1>Divisional Managers' Details</h1>
-        </div>                           <!--end of welcomeBox-->
+        
 
 
     <div class="content2"> 
