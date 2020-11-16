@@ -19,7 +19,7 @@
                         <div class="dropdown-content">
                             <a href="manager_dm.php">View Details</a>
                             <a href="manager_dm_add.php">Add new Division Manager</a>
-                            <a href="">Removed DM List</a>
+                            <a href="manager_dm_removed.php">Removed DM List</a>
                         </div>
                     </div>
 
@@ -28,7 +28,7 @@
                         <div class="dropdown-content">
                             <a href="">BeeKeeping Records</a>
                             <a href="">Final Reports</a>
-                            <a href="">Removed Product List</a>
+                            <a href="manager_products_removed.php">Removed Product List</a>
                         </div>
                     </div>
 
