@@ -45,7 +45,10 @@
                         <button class="dropbtn">Infomation Forum</button>
                         <div class="dropdown-content">
                             <a href="manager_infohub.php">Add Article</a>
-                            <a href="manager_viewarticle.php">View Article</a>
+                            <form  action="manager_viewarticle.php" method="post" >
+                            <input type="submit" value="View Articles >>" name="enter" >
+                            <a href="manager_viewarticle.php" name="enter">View Articles</a>
+                            </form>
                             
                         </div>
                     </div>
