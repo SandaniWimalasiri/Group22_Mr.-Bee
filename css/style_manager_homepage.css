@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
    /* background: url(../img/papers.co-si07-smoke-blue-dark-sea-gradation-blur-33-iphone6-wallpaper.jpg);*/
-    background-color: #023765;
+    background-color:#26495c;
     background-size: cover;
     background-position: center;
     font-family: arial;
@@ -27,7 +27,7 @@ body{
     height: 700px;
     position: absolute;
    /* background:#b2ebf363 ;*/
-    background: #FDC564;
+    background: #f7be74;
     
 	top:77%;
 	left:50%;
@@ -89,21 +89,26 @@ body{
 
 
 header{
-    background-color: #b2ebf352;
+    background-color: #f4f7ff;
     overflow: auto;
     padding: 10px;
+    font-family: "calibri";
+    
 }
 
 header .webName{
     float: left;
-    font-size: 22px;
-    color: yellow;
+    font-size: 24px;
+    color: rgb(12, 12, 12);
+    font-weight: 600px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 header .user{
     float: right;
-    font-size: 18px;
-    color: white;
+    font-size: 16px;
+    color: rgb(15, 15, 15);
 }
 
 
@@ -128,7 +133,7 @@ header .user{
     font-size: 30px;
 }
 a{
-    color: yellow;
+    color: rgb(5, 7, 173);
   } 
 
 a:hover {color: red;}

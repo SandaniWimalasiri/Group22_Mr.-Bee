@@ -15,7 +15,7 @@
   <button onclick="myFunction()" class="dropbtn" >Login</button>
   <div  id="myDropdown" class="dropdown-content">
   <a href="sign_in_admin.php">Login as Manager</a>
-  <a href="#">Login as Divisional Manager</a>
+  <a href="sign_in_divman.php">Login as Divisional Manager</a>
   <a href="beekeeperlogin.php">Login as Beekeeper</a>
 
   </div>

@@ -18,7 +18,7 @@ require_once("func.php"); ?>
         <header>  
                                
             <div class="webName">
-                Mr. Bee
+                MR.<font color="#f4976c">BEE</font></a>
             </div>
             <div class="user">
                 You are logged in as 

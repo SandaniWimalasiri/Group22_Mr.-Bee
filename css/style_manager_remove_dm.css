@@ -31,17 +31,40 @@
 
 
   .div_man td, .div_man th {
-    border: 0px solid #7e5304;
+    /*border: 0px solid #7e5304;*/
     text-align: left;
     padding: 8px;
     color: rgb(8, 8, 8);
-    background-color: rgba(248, 229, 187, 0.918);
+    /*background-color: rgba(228, 228, 228, 0.918);*/
+    border: 0px solid #ddd;
+   
     
   }
 
   .div_man tr{
     border: 1px solid #7e7a74;
+    background-color: rgba(243, 227, 208, 0.918);
+
   }
+
+  .div_man tr:nth-child(even){background-color: #fadeb3;}
+
+  .div_man tr:hover {background-color: rgb(221, 221, 221);}
+
+ 
+
+  .div_man th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    color: rgb(6, 2, 32);
+    background-color: rgba(230, 184, 86, 0.788);
+   }
+  
+   .div_man td{
+    padding-top: 7px;
+    padding-bottom: 7px;
+   }
 
 /*design the input texts*/
 input[type=text]{
@@ -57,20 +80,11 @@ input[type=text]{
   background-color: rgba(245, 222, 179, 0.747);
 }
 
-.div_man td:hover {background-color: rgba(216, 137, 64, 0.747);}
 
-.div_man th {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  text-align: left;
-  color: rgb(6, 2, 32);
-  background-color: rgba(248, 229, 187, 0.918);
- }
 
- .div_man td{
-  padding-top: 7px;
-  padding-bottom: 7px;
- }
+
+
+
   /*.content {
       width: 80%;
   }*/
