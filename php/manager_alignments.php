@@ -41,4 +41,4 @@ require_once("func.php"); ?>
             <h3></h3>
         </footer>   <!--end of footer-->
 
-<body>
+</body>
