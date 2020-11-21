@@ -47,12 +47,12 @@
             
             //echo "Done";
             $date=date("Y/m/d");
-            $sql="INSERT INTO infohub (userID,date,authorname,articlename,content) VALUES('".$_SESSION['ID']."','".$date."','".$_POST['authorname']."','".$_POST['articlename']."','".$_POST['content']."')";
+            $sql="INSERT INTO infohub (date,authorname,articlename,content) VALUES('".$date."','".$_POST['authorname']."','".$_POST['articlename']."','".$_POST['content']."')";
             $result=$connection->query($sql);
             //print_r($result);
             if($result){
 
-                header( 'Location: manager_infohub.php ');
+                //header( 'Location: manager_infohub.php ');
             }else{
                 echo "failed";
             }
