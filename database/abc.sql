@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2020 at 09:18 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Generation Time: Nov 21, 2020 at 11:55 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -73,7 +72,8 @@ CREATE TABLE `beehive` (
 
 INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`) VALUES
 (1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 10),
-(2, 3, 3, '2020-11-03', '2020-11-09', '09:43:00.00', 'Active', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13);
+(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Active', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13),
+(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Inactive', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22);
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,9 @@ CREATE TABLE `beekeeper` (
 --
 
 INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`) VALUES
-(3, 'mas', 'mas', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 214748311, '1234', 0);
+(1, 'anupama', 'anupama sellahannadi', '3/2, Artigala, Godagama', 'a98@gmail.com', 112456723, '123', 0),
+(2, 'kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, '1289', 0),
+(3, 'madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, '1234', 0);
 
 -- --------------------------------------------------------
 
@@ -151,7 +153,9 @@ CREATE TABLE `feeding` (
 --
 
 INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '11 mg');
+(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '13 mg'),
+(2, 3, 2, '2020-11-21', '2020-11-03', '16:11:00.00', 'Suger syrup (1+1 ratio)', '11.5 mg'),
+(3, 3, 3, '2020-11-21', '2020-11-05', '16:12:00.00', 'Suger syrup (1+1 ratio)', '6.9 mg');
 
 -- --------------------------------------------------------
 
@@ -176,7 +180,7 @@ CREATE TABLE `harvest` (
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`) VALUES
 (1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '1.5 Kg'),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Bee Colonies', '2'),
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Raw Honey', '2 Kg'),
 (3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Raw Honey', '0.25 Kg');
 
 -- --------------------------------------------------------
@@ -200,8 +204,8 @@ CREATE TABLE `infohub` (
 
 INSERT INTO `infohub` (`articleNo`, `userID`, `date`, `authorname`, `articlename`, `content`) VALUES
 (1, 3, '2020-07-22', 'Madhavi Anupama', 'BEEKEEPING', 'Beekeeping (or apiculture) is the maintenance of bee colonies, commonly in man-made hives, by humans. Most such bees are honey bees in the genus Apis, but other honey-producing bees such as Melipona stingless bees are also kept.'),
-(2, 3, '2020-11-11', 'M. A. Sellahannadi', 'Honey bee colony\r\n', 'Honey bees are social insects that live in colonies. Honey bee colonies consist of a single queen, hundreds of male drones, and 20,000 to 80,000 female worker bees. Each honey bee colony also consists of developing eggs, larvae, and pupae.\r\n\r\nThe number of individuals within a honey bee colony depends largely upon seasonal changes. A colony could reach up to 80,000 individuals during the active season, when workers forage for food, store honey for winter, and build combs. However, this population will decrease dramatically during colder seasons.'),
-(3, 3, '2020-11-11', 'Madhavi Sellahannadi', 'Honey Bee', 'A honey bee (also spelled honeybee) is a eusocial flying insect within the genus Apis of the bee clade, all native to Eurasia but spread to four other continents by human beings. They are known for their construction of perennial colonial nests from wax, the large size of their colonies, and surplus production and storage of honey, distinguishing their hives as a prized foraging target of many animals, including honey badgers, bears, and human hunter-gatherers. Only eight surviving species of honey bee are recognized, with a total of 43 subspecies, though historically 7 to 11 species are recognized. Honey bees represent only a small fraction of the roughly 20,000 known species of bees.'),
+(2, 3, '2020-07-24', 'M. A. Sellahannadi', 'Honey bee colony\r\n', 'Honey bees are social insects that live in colonies. Honey bee colonies consist of a single queen, hundreds of male drones, and 20,000 to 80,000 female worker bees. Each honey bee colony also consists of developing eggs, larvae, and pupae.\r\n\r\nThe number of individuals within a honey bee colony depends largely upon seasonal changes. A colony could reach up to 80,000 individuals during the active season, when workers forage for food, store honey for winter, and build combs. However, this population will decrease dramatically during colder seasons.'),
+(3, 3, '2020-07-29', 'Madhavi Sellahannadi', 'Honey Bee', 'A honey bee (also spelled honeybee) is a eusocial flying insect within the genus Apis of the bee clade, all native to Eurasia but spread to four other continents by human beings. They are known for their construction of perennial colonial nests from wax, the large size of their colonies, and surplus production and storage of honey, distinguishing their hives as a prized foraging target of many animals, including honey badgers, bears, and human hunter-gatherers. Only eight surviving species of honey bee are recognized, with a total of 43 subspecies, though historically 7 to 11 species are recognized. Honey bees represent only a small fraction of the roughly 20,000 known species of bees.'),
 (4, 3, '2020-11-11', 'sandani vindya', 'what are bee stings good for', 'Bee venom has powerful anti-inflammatory properties and may benefit the health of your skin and immune system. It may also improve certain medical conditions like rheumatoid arthritis and chronic pain.');
 
 -- --------------------------------------------------------
@@ -295,7 +299,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `beehive`
 --
 ALTER TABLE `beehive`
-  MODIFY `BeehiveRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `BeehiveRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `beekeeper`
@@ -307,7 +311,7 @@ ALTER TABLE `beekeeper`
 -- AUTO_INCREMENT for table `feeding`
 --
 ALTER TABLE `feeding`
-  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `harvest`
@@ -319,7 +323,7 @@ ALTER TABLE `harvest`
 -- AUTO_INCREMENT for table `infohub`
 --
 ALTER TABLE `infohub`
-  MODIFY `articleNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `articleNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
