@@ -46,6 +46,10 @@ if(isset($_POST['update'])){
     <div class="bhivecontainer">
 
     <p >Update beehive records</p>
+
+    <br />
+    <br />
+
 <?php
 if(isset($_GET['BeehiveRecNo'])){
     

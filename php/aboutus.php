@@ -34,8 +34,7 @@ session_start();
 	<!--info box text-->	
 	<div class="i-b-text">
     </br>
-        <p>     Uplift the current record keeping and management methods of local beekeepers under Nature Bee Honey Company Sri Lanka and offer the sales products to meet a variety of customers and raise awareness of these products via online marketing.
-        </p>
+        <p>     Our sole purpose is to spread knowledge among the people as well as to launch new products to make our vision a reality.</p>
     </div>	
 	
 	</div>
@@ -44,16 +43,14 @@ session_start();
 	<!--info box image-->
 	<div class="i-b-img">
 	<!--type-->
-	<div class="i-type">Our Focus</div>
+	<div class="i-type">Our Vision</div>
 	<!--img-->
 	<img src="../img/bee-keeping.png">
 	</div>
 	<!--info box text-->	
 	<div class="i-b-text">
     </br>
-    <p>     To give an opportunity to local beekeepers to Manage their constant record keeping of his/her bee honey production
-        and Assisting in sustaining and managing one’s own beehives and apiaries.
-</br>To provide an online marketing platform for the sales products.
+    <p>    Our endeavor is to launch a number of new projects that will bring huge economic benefits to the Republic of Sri Lanka through beekeeping.
     </p>
             </div>	
 	
@@ -70,10 +67,11 @@ session_start();
 	<!--info box text-->	
 	<div class="i-b-text">
     </br>
-        <p>     se rvic esse rvic esser vices serv ices servic esse rvic esse rvi ces servi cesservi cesservi
-         ces ser vice sservi cesse rvice sser vices serv ices servi cesser vices servic esser vicesservic
-          esservi cesse rvice sser vice sse rv i ce sser vices ser vice s s er vicesse rvi cess erv i ce s 
-          s e rvice sservice sserv icess ervi cesservic esser vic es s erv ice ss erv ic es</p>
+        <p>     It is a fact that we all know that our lives have developed by absorbing the nutrients of this fertile earth. Therefore, 
+		this is a project that was started out of a great desire to preserve the uniqueness of this fertile land, understand the value of 
+		the land in which we live, and work for its future development. It is not for financial gain but for the future sustainability of the 
+		motherland in which we live.
+</p>
 	</div>	
 	
 	</div>

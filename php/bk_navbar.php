@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="topnav">
-  <a><img class="logo" src="../img/2.jpg"></a>
+  
   
 
   <div class="dropdown">
