@@ -70,6 +70,10 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
     <div class="bhivecontainer">
 
     <p >Update harvest records</p>
+
+    <br />
+    <br />
+
 <?php
 
 
