@@ -1,5 +1,5 @@
 <?php include('manager_alignments.php')?>
-<?php include('manager_navbar.php')?>
+
 
 
     <head>
@@ -12,11 +12,14 @@
     </head>
 
 <body>
-    
+        <div class="welcomeBox">       
+            <a href="manager_home.php"><img src="../img/manager2.jpg" class="icon"></a>
+            <h1>Products' Details</h1>
+        </div>
 
         
 
-        <div class="content2"> 
+        <div class="content"> 
             <?php
                 $product_code=$_POST['product_code'];
 
@@ -27,8 +30,10 @@
                     while($row = mysqli_fetch_array($query_run)){
                     ?>
                         <h1 >Update Products' Details</h1>
-                        <form class="f1" action="" method="post">
+                        <button class="btn6" type="submit" name="back" onclick="document.location='manager_products_view.php'"><<<b>Back</b></button>
 
+                        <form class="f1" action="manager_products_update.php" method="post">
+                        </br>
                         <input type="hidden" name="product_code" value="<?php echo $row['product_code']; ?>">
                             
                             <table class="div_man">
@@ -58,8 +63,7 @@
                             <button class="btn6" type="submit" name="update"><b>Update</b></button>
                         </form>
            
-                        <button class="btn6" type="submit" name="back" onclick="document.location='manager_products_view.php'"><b>Back</b></button>
-
+                    <?php }   ?> 
                         <?php
                                 if(isset($_POST['update']))
                                 {
@@ -85,7 +89,7 @@
                                 }
                         ?>
                         <?php
-                    }
+                    
                    
                 }
                 ?>
