@@ -15,7 +15,7 @@
 
         
 
-        <div class="content2">
+        <div class="content">
         <h1>Add a Product</h1>
         <form class="f1" action='manager_products_add.php' method="get">
                
@@ -71,9 +71,9 @@
            //print_r($result);
            if($result){
                //echo "Successful";
-               header( 'Location: manager_products_add.php ');
+                echo '<script> alert("Successfully Inserted"); </script>';
            }else{
-               echo "failed";
+                echo '<script> alert("Insertion Failed"); </script>';
            }
        }
                      
