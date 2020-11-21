@@ -1,6 +1,7 @@
 <?php include('manager_alignments.php')?>
 <?php include('manager_navbar.php')?>
 
+
 <html>
     <head>
         
@@ -73,9 +74,10 @@
            //print_r($result);
            if($result){
                //echo "Successful";
-               header( 'Location: manager_dm_add.php ');
+              // header( 'Location: manager_dm_add.php ');
+              echo '<script> alert("Successfully Inserted"); </script>';
            }else{
-               echo "failed";
+                echo '<script> alert("Insertion Failed"); </script>';
            }
        }
                      
