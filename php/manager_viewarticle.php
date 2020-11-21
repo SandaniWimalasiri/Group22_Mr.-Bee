@@ -21,7 +21,7 @@
             
             </br></br>
          <?php
-            if(isset($_POST['enter'])){
+           // if(isset($_POST['enter'])){
                 
                 $sql = "SELECT * FROM infohub";
                 mysqli_query($connection, $sql);
@@ -40,7 +40,7 @@
                             echo "</div>";
                             echo "<br>";
                             echo "<br>";
-                        }}?>
+                        }?>
             
 
 
