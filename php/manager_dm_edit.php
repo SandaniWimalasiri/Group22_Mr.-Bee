@@ -1,5 +1,5 @@
 <?php include('manager_alignments.php')?>
-<?php include('manager_navbar.php')?>
+
 
 
 <html>
@@ -13,12 +13,15 @@
     </head>
 
 <body>
-    
+        <div class="welcomeBox">       
+            <a href="manager_home.php"><img src="../img/manager2.jpg" class="icon"></a>
+            <h1>Divisional Manager Details</h1>
+        </div> 
 
         
 
 
-    <div class="content2"> 
+    <div class="content"> 
             <?php
                 $div_id=$_POST['div_id'];
 
@@ -26,11 +29,15 @@
                 $query_run = mysqli_query($connection, $query);
 
                 if($query_run){
-                    while($row = mysqli_fetch_array($query_run)){
+                    while($row = mysqli_fetch_assoc($query_run)){
                     ?>
 
                         <h1 >Update Divisional Manager's Details</h1>
+                        <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><<<b>Back</b></button> 
+                        </br>
+                            
                         <form class="f1" method="post" action="">
+                        </br>
                             <input type="hidden" name="div_id" value="<?php echo $row['div_id']; ?>">
                             
                             <table class="div_man">
@@ -59,11 +66,11 @@
                             <br/>
                         
                             <button class="btn6" type="submit" name="update"><b>Update</b></button>
-                           
+                            
                         </form>
-                        <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><b>Cancel</b></button> 
-                        
-                        
+                    <?php    
+                    }   
+                    ?>    
 
                         <?php
                                 if(isset($_POST['update']))
@@ -90,7 +97,7 @@
                                 }
                     ?>
                         <?php
-                    }
+                    
                    
                 }
                 ?>
