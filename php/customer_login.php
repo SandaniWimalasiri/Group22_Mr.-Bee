@@ -30,15 +30,14 @@
 <?php 
 	require_once('../db_connection/connect.php');
 	session_start();
-	//$_SESSION['loggedin']=1;
+	
 	if(isset($_POST['submit'])){
 		$uname=$_POST['name'];
 		$pwd=$_POST['password'];
 
 		$sql="SELECT * FROM beekeeper WHERE username='".$uname."' AND userPassword='".$pwd."'";
 		$result=mysqli_query($connection,$sql);
-		//echo "dd";
-		//print_r ($result);
+		
 		if($result->num_rows==1){
 			$beekeeper=$result->fetch_assoc();
 			$_SESSION['loggedin']=1;
