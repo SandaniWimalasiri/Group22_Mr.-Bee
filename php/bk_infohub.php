@@ -30,11 +30,11 @@ session_start();
 
             if($authorname_error =='' and  $articlename_error =='' and  $content_error==''){
       
-     //echo "Done";
+    
      $date=date("Y/m/d");
      $sql="INSERT INTO infohub (userID,date,authorname,articlename,content) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['authorname']."','".$_POST['articlename']."','".$_POST['content']."')";
      $result=$connection->query($sql);
-     //print_r($result);
+     
      if($result){
 
          header( 'Location: bk_infohub.php ');
