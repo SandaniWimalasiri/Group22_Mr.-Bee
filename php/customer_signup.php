@@ -5,12 +5,12 @@
 		if(isset($_POST['submit'])){
 			if($_POST['password']!=$_POST['repassword']){	
 				$error="Password does not match";
-				//echo "<script> alert('Password is not matching.') </script>";
+				/
 			}
 			$sql="INSERT INTO user (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['uname']."','".$_POST['username']."','".$_POST['useraddress']."','".$_POST['useremail']."','".$_POST['usertelephone']."','".$_POST['password']."')";
 			
 			$result=mysqli_query($connection,$sql);
-			//print_r($result);
+			
 			
 			if($result){
 			header('Location: login.php');
