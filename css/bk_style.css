@@ -4,7 +4,7 @@ body {
   }
   
 a {
-    /* border-bottom:1px solid #000; */
+    
     text-decoration:none;
 }
 
@@ -145,7 +145,6 @@ a:visited {
 }
 
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
