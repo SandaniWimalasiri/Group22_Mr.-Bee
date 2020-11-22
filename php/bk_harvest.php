@@ -41,7 +41,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
       $date=date("Y/m/d");
       $sql="INSERT INTO harvest (userID,date,beehiveno,hdate,htime,producttype,amount) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['hdate']."','".$_POST['htime']."','".$_POST['producttype']."','".$_POST['amount']."')";
       $result=$connection->query($sql);
-      //print_r($result);
+      
       if($result){
 
         header("Refresh: 0; url=bk_harvest.php");
