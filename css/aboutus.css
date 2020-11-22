@@ -107,21 +107,7 @@ h1{
 	font-size: 18px;
 	font-family: calibri;
 }
-/*
-.i-b-text{
-	margin:0px;
-	
-	font-size: 1.1rem;
-	
-	display:block;
-	display: -webkit-box;
-	max-width: 80%;
-	-webkit-line-clamp:4;
-	overflow: hidden;
-	text-overflow:ellipsis;
-	-webkit-box-orient:vertical;
-}
-*/
+
 .i-type{
 	font-family: calibri;
 	color: #ffffff;
