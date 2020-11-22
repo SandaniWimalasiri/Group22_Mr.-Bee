@@ -5,7 +5,7 @@ $sql = "DELETE FROM feeding WHERE FeedingRecNo = ".$_GET['FeedingRecNo'];
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 if($result){
-//echo "Sucessfull";
+
 }
 else{
 
