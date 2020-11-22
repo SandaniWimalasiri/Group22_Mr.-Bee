@@ -37,7 +37,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
           if($beehiveno_error =='' and  $hdate_error =='' and   $htime_error=='' and $producttype_error=='' and $amount_error==''){
       
-      //echo "Done";
+      
       $date=date("Y/m/d");
       $sql="INSERT INTO harvest (userID,date,beehiveno,hdate,htime,producttype,amount) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['hdate']."','".$_POST['htime']."','".$_POST['producttype']."','".$_POST['amount']."')";
       $result=$connection->query($sql);
