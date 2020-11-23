@@ -29,6 +29,16 @@
     width: 100%;
   }
 
+  .profile{
+    color: #023765;
+    margin-left: 1%;
+    margin-right: 5%;
+  }
+ .profile td, .profile th{
+    text-align: left;
+    padding: 8px;
+    font-size: 22px;
+ }
 
 
   .div_man td, .div_man th {

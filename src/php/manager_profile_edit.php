@@ -54,22 +54,22 @@ require_once("func.php"); ?>
 
     <div class="content"> 
             <?php
-                $div_id=$_POST['div_id'];
+                
 
-                $query = "SELECT * FROM div_manager WHERE div_id='$div_id' ";
+                $query = "SELECT * FROM admin";
                 $query_run = mysqli_query($connection, $query);
 
                 if($query_run){
                     while($row = mysqli_fetch_array($query_run)){
                     ?>
 
-                        <h1 >Update Divisional Manager's Details</h1>
-                        <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><<<b>Back</b></button> 
+                        <h1 >Edit Manager's Profile</h1>
+                        <button class="btn6" type="submit" name="back" onclick="document.location='manager_home.php'"><<<b>Back</b></button> 
                         </br>
                             
                         <form class="f1" method="post" action="">
                         </br>
-                            <input type="hidden" name="div_id" value="<?php echo $row['div_id']; ?>">
+                            
                             
                             <table class="div_man">
                             
@@ -82,21 +82,21 @@ require_once("func.php"); ?>
                                 <td><input type="text" name="last_name" placeholder="Enter Last Name" value="<?php echo $row['last_name'] ?>"></td>
                             </tr>
                             <tr>
-                                <th><label>Employeement Status</label></th>
-                                <td><input type="text" name="emp_status" placeholder="Enter Employee status" value="<?php echo $row['emp_status'] ?>"></td>
+                                <th><label>Email</label></th>
+                                <td><input type="text" name="email" placeholder="Email" value="<?php echo $row['email'] ?>"></td>
                             </tr>
                             <tr>
-                                <th><label>Divisional Code</label></th>
-                                <td><input type="text" name="div_code" placeholder="Enter division code" value="<?php echo $row['div_code'] ?>"></td>
+                                <th><label>Password</label></th>
+                                <td><input type="password" name="pwd" placeholder="Enter division code" value="<?php echo $row['pwd'] ?>"></td>
                             </tr>
                             <tr>
                                 <th><label>No. of Employees</label></th>
-                                <td><input type="text" name="no_employee" placeholder="Enter no. of employees" value="<?php echo $row['no_employee'] ?>"></td>
+                                <td><input type="text" name="tp" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>"></td>
                             </tr>
                             </table>
                             <br/>
                         
-                            <button class="btn6" type="submit" name="update"><b>Update</b></button>
+                            <button class="btn6" type="submit" name="update"><b>Submit</b></button>
                             
                         </form>
                     <?php    
@@ -108,18 +108,18 @@ require_once("func.php"); ?>
                                 {
                                     $first_name = $_POST['first_name'];
                                     $last_name = $_POST['last_name'];
-                                    $emp_status = $_POST['emp_status'];
-                                    $div_code = $_POST['div_code'];
-                                    $no_employee = $_POST['no_employee'];
+                                    $email = $_POST['email'];
+                                    $pwd = $_POST['pwd'];
+                                    $tp = $_POST['tp'];
 
 
-                                    $query = "UPDATE div_manager SET first_name='$first_name', last_name='$last_name', emp_status=' $emp_status', div_code='$div_code', no_employee='$no_employee'  WHERE div_id='$div_id'  ";
+                                    $query = "UPDATE admin SET first_name='$first_name', last_name='$last_name', email=' $email', pwd='$pwd', tp='$tp'  ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)
                                     {
                                         echo '<script> alert("Data Updated Successfully"); </script>';
-                                        header("location:manager_dm.php");
+                                        header("location:manager_home.php");
                                     }
                                     else
                                     {

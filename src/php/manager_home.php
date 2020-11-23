@@ -24,7 +24,6 @@
                        
                         <img class="honeycomb-cell_img" src="../../public/img/bee-keeping.png">
                         
-                        </a>
                     </li>
                     <li class="honeycomb-cell">
                        
@@ -42,6 +41,47 @@
                     </li>
                 </ul>
 
+            </div>
+
+
+            <div class="sub_content">
+                <h2><u>My Profile</u></h2>
+
+                <table class="profile">
+                   
+                    <?php 
+                    
+                    $sql = "SELECT * FROM admin;";
+                    
+                    $query=mysqli_query($connection,$sql);
+                    verify_query($query);
+
+                    while ($result =mysqli_fetch_assoc($query)) {
+                    ?>
+                    <tr>  
+                            <th>First name :</th>      
+                            <td><?php echo $result['first_name'] ?></td>
+                    </tr>
+                    <tr>
+                            <th>Last name :</th>
+                            <td><?php echo $result['last_name'] ?></td>
+                    </tr>
+                    <tr>
+                            <th>Email   :</th>
+                            <td><?php echo $result['email'] ?></td>
+                    </tr>
+                    <tr>
+                            <th>TP Number  :</th>
+                            <td><!--<?php echo $result['tp'] ?>-->0711234567</td>
+                    </tr>
+                  
+                    <?php
+                    }
+                    ?> 
+                </table>
+                </br>
+                </br>
+                <a href="manager_profile_edit.php">click here</a> to Edit the Profile
             </div>
         </div>               <!--end content-->
 
