@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 11:55 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Nov 23, 2020 at 05:53 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`first_name`, `last_name`, `email`, `pwd`, `emp_status`) VALUES
-('Shantha', 'Bandara', 'shantha@gmail.com', '123', 'manager');
+('Shantha', 'Bandara', '  shantha@gmail.com', '1234', 'manager');
 
 -- --------------------------------------------------------
 
@@ -125,9 +126,11 @@ CREATE TABLE `div_manager` (
 
 INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `pwd`, `emp_status`, `div_code`, `no_employee`, `is_deleted`) VALUES
 ('10', 'sample', 'sample123', 'sample', 'div_man@123', 'Divisional_Manager', '123', 10, 1),
+('56', 'Sandani3', 'Wimalasiri12', 'sandanihgjwimalasiri@gmail.com', 'div_man@123', '     Divisional_Manager', 's2', 12, 0),
+('57', 'Sandani', 'Wimsssalasiri', 'sssssandaniwimalasiri@gmail.com', 'div_man@123', 'Divisional_Manager', '16', 23, 0),
 ('D101', 'Lasith', 'Perera', 'lasithperera@gmail.com', 'div_man@123', '   Divisional_Manager', 'D/R/220', 1, 1),
 ('D102', 'Lasith123', 'Disanayaka', 'disanayaka@gmail.com', 'div_man@123', '  Divisional_Manager', 'D/R/420', 8, 1),
-('D103', 'prasanna', 'silva', 'prasanna@gmail.com', 'div_man@123', 'Divisional_Manager', 'D/Q/460', 2, 0),
+('D103', 'prasanna', 'silva', 'prasanna@gmail.com', 'div_man@123', ' Divisional_Manager', '12', 2, 0),
 ('D104', 'Prabath', 'Gunathilaka', 'prabath@gmail.com', 'div_man@123', ' Divisional_Manager', 'D/R/783', 9, 0),
 ('D105', 'Sunil', 'Perera', 'sunil@gmail.com', 'div_man@123', 'Divisional_Manager', 'D/R/249', 2, 0);
 
@@ -215,27 +218,25 @@ INSERT INTO `infohub` (`articleNo`, `userID`, `date`, `authorname`, `articlename
 --
 
 CREATE TABLE `products` (
-  `product_code` varchar(6) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `type_of_product` varchar(100) NOT NULL,
-  `price` int(255) NOT NULL DEFAULT 0,
-  `amount` int(200) NOT NULL,
-  `is_deleted` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `desc` text NOT NULL,
+  `price` decimal(7,2) NOT NULL,
+  `rrp` decimal(7,2) NOT NULL DEFAULT 0.00,
+  `quantity` int(11) NOT NULL,
+  `img` text NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_code`, `product_name`, `type_of_product`, `price`, `amount`, `is_deleted`) VALUES
-('123', 'sample ', 'sample ', 250, 20, 0),
-('a', 'a', ' a', 250, 20, 0),
-('abc', 'sample ', 'sample ', 250, 8, 1),
-('i', 'sample ', 'sample ', 250, 20, 0),
-('P/D/60', 'honey 1Lr', 'type A', 1200, 3, 0),
-('P/R/40', 'cinnomen honey', 'type B', 1200, 6, 0),
-('P/R302', 'Bee-honey', 'type A', 600, 8, 0),
-('sample', 'sample ', 'sample ', 250, 8, 1);
+INSERT INTO `products` (`id`, `name`, `desc`, `price`, `rrp`, `quantity`, `img`, `date_added`) VALUES
+(1, 'Organic Bee Honey with Mixed Nuts', '<p>Pure Organic Bee Honey with Mixed Nuts of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Almonds, Macadamia nuts and Hazelnuts.</li>\r\n<li>Exquisite Taste.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '500.00', '0.00', 30, 'p1.jpg', '2020-11-21 17:55:22'),
+(2, 'Organic Bee Honey with Sour Sup', '<p>Pure Organic Bee Honey with Sour Sup of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Sour Sup Taste.</li>\r\n<li>Exquisite Flavour.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health with Antioxidants.</li>\r\n</ul>', '450.00', '500.00', 25, 'p2.jpg', '2020-11-23 18:52:49'),
+(3, 'Organic Bee Honey with Comb', '<p>Pure Organic Bee Honey with Honeycomb Included.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Honeycomb Taste.</li>\r\n<li>Exquisite Flavor.</li>\r\n<li>Rich with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.99', '500.00', 23, 'p3_1.jpg', '2020-11-20 18:47:56'),
+(4, 'Organic Raw Bee Honey', '<p>Pure Organic Raw Bee Honey.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Natural Honey Taste.</li>\r\n<li>Rich with Antioxidants.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '400.00', '420.00', 35, 'p0_7.jpg', '2020-11-25 17:42:04');
 
 --
 -- Indexes for dumped tables
@@ -289,7 +290,7 @@ ALTER TABLE `infohub`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_code`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -324,6 +325,12 @@ ALTER TABLE `harvest`
 --
 ALTER TABLE `infohub`
   MODIFY `articleNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
