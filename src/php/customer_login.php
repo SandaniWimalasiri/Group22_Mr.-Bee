@@ -11,10 +11,10 @@
 ?>
 		<div class="loginbox">
 			<div class="center">
-				<img src="../../public/images/2.jpg" class="avatar">
+				<img src="../../public/img/login.png" class="avatar">
 			</div>
 				<h2>Login Here</h2>
-				<form method="post" action="beekeeperlogin.php" >
+				<form method="post" action="customer_index.php" >
 					<p>Username</p>
 					<input type="text" name="name" placeholder="Enter your Username">
 					<p>Password</p>
@@ -35,17 +35,17 @@
 		$uname=$_POST['name'];
 		$pwd=$_POST['password'];
 
-		$sql="SELECT * FROM beekeeper WHERE username='".$uname."' AND userPassword='".$pwd."'";
+		$sql="SELECT * FROM customer WHERE username='".$uname."' AND userPassword='".$pwd."'";
 		$result=mysqli_query($connection,$sql);
 		
 		if($result->num_rows==1){
 			$beekeeper=$result->fetch_assoc();
 			$_SESSION['loggedin']=1;
-			$_SESSION['username']=$beekeeper['userName'];
-			$_SESSION['userid']=$beekeeper['userID'];
+			$_SESSION['username']=$customer['username'];
+			$_SESSION['userid']=$customer['CID'];
 			
 			if($result){
-				$redirect =  "beekeeperindex.php";
+				$redirect =  "customer_index.php";
 			
                         }
 
