@@ -12,7 +12,7 @@
 ?>
 		<div class="loginbox">
 			<div class="center">
-				<img src="../../public/img/2.jpg" class="avatar">
+				<img src="../../public/img/login.png" class="avatar">
 			</div>
 				<h2>Login Here</h2>
 				<form method="post" action="beekeeperlogin.php" >
