@@ -5,15 +5,15 @@
 		if(isset($_POST['submit'])){
 			if($_POST['password']!=$_POST['repassword']){	
 				$error="Password does not match";
-				/
+				
 			}
-			$sql="INSERT INTO user (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['uname']."','".$_POST['username']."','".$_POST['useraddress']."','".$_POST['useremail']."','".$_POST['usertelephone']."','".$_POST['password']."')";
+			$sql="INSERT INTO customer (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['uname']."','".$_POST['username']."','".$_POST['useraddress']."','".$_POST['useremail']."','".$_POST['usertelephone']."','".$_POST['password']."')";
 			
 			$result=mysqli_query($connection,$sql);
 			
 			
 			if($result){
-			header('Location: login.php');
+			header('Location: customer_login.php');
 			}
 			else{
 			echo "failed";	
@@ -36,7 +36,7 @@
 <div class="main">
 		<div class="loginbox" >
 			<h1>Sign Up</h1>
-			<form method="POST" action="signup.php" >
+			<form method="POST" action="customer_signup.php" >
 				<p>User Name : </p>
 				<input type="text" name="uname" placeholder="Enter your User name" required/>
 				<p>Name : </p>
