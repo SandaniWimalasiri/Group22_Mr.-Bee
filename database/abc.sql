@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2020 at 04:36 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Generation Time: Nov 24, 2020 at 05:42 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -80,6 +79,29 @@ INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userE
 (1, 'anupama', 'anupama sellahannadi', '3/2, Artigala, Godagama', 'a98@gmail.com', 112456723, '123', 0),
 (2, 'kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, '1289', 0),
 (3, 'madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, '1234', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `CID` int(10) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `userAddress` varchar(200) NOT NULL,
+  `userEmail` varchar(100) NOT NULL,
+  `userTele` int(20) NOT NULL,
+  `userPassword` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`) VALUES
+(1, 'mas', 'mas', 'aa', 'm@gmail.com', 11, '123');
 
 -- --------------------------------------------------------
 
@@ -260,6 +282,12 @@ ALTER TABLE `beekeeper`
   ADD PRIMARY KEY (`userID`);
 
 --
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`CID`);
+
+--
 -- Indexes for table `div_manager`
 --
 ALTER TABLE `div_manager`
@@ -312,6 +340,12 @@ ALTER TABLE `beehive`
 --
 ALTER TABLE `beekeeper`
   MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feeding`
