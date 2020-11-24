@@ -84,9 +84,9 @@ if(isset($_POST['update'])){
     
  
           
-    $sql2= "UPDATE div_manager SET first_name ='".$_POST['first_name']."',last_name ='".$_POST['last_name']."',  div_code ='".$_POST['div_code']."', no_employee ='".$_POST['no_employee']."',div_id ='".$_POST['div_id']."'WHERE email='".$_SESSION['email']."'";
-    $result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT first_name,last_name,div_code,no_employee,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
+	$sql2= "UPDATE div_manager SET first_name ='".$_POST['first_name']."',last_name ='".$_POST['last_name']."',pwd ='".$_POST['pwd']."',tp ='".$_POST['tp']."',email ='".$_POST['email']."',  division ='".$_POST['division']."', no_employee ='".$_POST['no_employee']."' WHERE email='".$_SESSION['email']."'";
+	$result2 = mysqli_query($connection,$sql2);
+    $sql3 = "SELECT first_name,last_name,pwd,tp,email,division,no_employee,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
    if($result2){
@@ -111,7 +111,7 @@ echo "failed";
     
 <?php
 
-$sql1 = "SELECT first_name,last_name,div_code,no_employee,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
+$sql1 = "SELECT first_name,last_name,pwd,tp,email,division,no_employee,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
 mysqli_query($connection, $sql1);
 $result1 = mysqli_query($connection,$sql1);
 		while($row=mysqli_fetch_assoc($result1)){  
@@ -129,8 +129,23 @@ $result1 = mysqli_query($connection,$sql1);
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
+		echo '<div class="col1">';
+		echo 'Password </div><div class="col2" ><input type = "text" name="pwd" required value ="'.$row['pwd'].'" >';
+        echo "</div>";
+        echo "</div>";
+        echo '<div class="row" >';
+		echo '<div class="col1">';
+		echo 'TP No. </div><div class="col2" ><input type = "text" name="tp" required value ="'.$row['tp'].'" >';
+        echo "</div>";
+        echo "</div>";
+        echo '<div class="row" >';
+		echo '<div class="col1">';
+		echo 'Email </div><div class="col2" ><input type = "text" name="email" required value ="'.$row['email'].'" readonly>';
+        echo "</div>";
+        echo "</div>";
+        echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Div Code </div><div class="col2"><input type = "text" name="div_code" required value ="'.$row['div_code'].'" >';
+        echo 'Division </div><div class="col2"><input type = "text" name="division" required value ="'.$row['division'].'"  readonly>';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -140,7 +155,7 @@ $result1 = mysqli_query($connection,$sql1);
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Div ID</div><div class="col2"><input type = "text" name="div_id" required value ="'.$row['div_id'].'" >';
+        echo 'Div ID</div><div class="col2"><input type = "text" name="div_id" required value ="'.$row['div_id'].'" readonly>';
         echo "</div>";
         echo "</div>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Edit Profile" name="update" ></div></form>';

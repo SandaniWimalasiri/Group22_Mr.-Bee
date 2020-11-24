@@ -4,7 +4,7 @@
 
     <head>
         
-        <title>Manager_home</title>
+        <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
@@ -32,8 +32,8 @@
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Email</th>
-                        <th>Employeement Status</th>
-                        <th>Divisional Code</th>
+                        <th>TP No.</th>
+                        <th>Division</th>
                         <th>No. of Employees</th>
                         <th style="text-align:center;">Edit</th>
                         <th style="text-align:center;">Delete</th>
@@ -52,7 +52,8 @@
                             <td><?php echo $result['first_name'] ?></td>
                             <td><?php echo $result['last_name'] ?></td>
                             <td><?php echo $result['email'] ?></td>
-                            <td><?php echo $result['emp_status'] ?></td>
+                            <td><?php echo $result['tp'] ?></td>
+                            
                             <td><?php echo $result['division'] ?></td>
                             <td style="text-align:center;"><?php echo $result['no_employee'] ?></td>
 
@@ -96,14 +97,15 @@
                             <th>First name</th>
                             <th>Last name</th>
                             <th>Email</th>
-                            <th>Divisional code</th>
+                            <th>TP No.</th>
+                            <th>Division</th>
                             <th>No. of Employees</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>";
                         $code =mysqli_real_escape_string($connection,$_POST['code']);
         
-                        $sql = "SELECT * FROM div_manager WHERE (is_deleted=0) AND (div_id='{$_POST['code']}' OR first_name='{$_POST['code']}' OR last_name='{$_POST['code']}' OR emp_status='{$_POST['code']}' OR div_code='{$_POST['code']}');";
+                        $sql = "SELECT * FROM div_manager WHERE (is_deleted=0) AND (div_id='{$_POST['code']}' OR first_name='{$_POST['code']}' OR last_name='{$_POST['code']}' OR emp_status='{$_POST['code']}' OR division='{$_POST['code']}');";
                         $query = $connection->query($sql);
                         verify_query($query);
                         
@@ -114,7 +116,8 @@
                             <td><?php echo $result['first_name'] ?></td>
                             <td><?php echo $result['last_name'] ?></td>
                             <td><?php echo $result['email'] ?></td>
-                            <td><?php echo $result['div_code'] ?></td>
+                            <td><?php echo $result['tp'] ?></td>
+                            <td><?php echo $result['division'] ?></td>
                             <td style="text-align:center;"><?php echo $result['no_employee'] ?></td>
 
                             <form action="manager_dm_edit.php" method="post">

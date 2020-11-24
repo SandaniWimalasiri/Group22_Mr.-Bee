@@ -1,3 +1,4 @@
+
 <?php require_once("../../config/connect.php");
 require_once("func.php"); ?>
 <?php session_start(); 
@@ -12,7 +13,7 @@ require_once("func.php"); ?>
 <html>
     <head>
         
-        <title>Manager_home</title>
+        <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
@@ -49,7 +50,7 @@ require_once("func.php"); ?>
             <h1>Divisional Manager Details</h1>
         </div> 
 
-        
+      
 
 
     <div class="content"> 
@@ -72,7 +73,10 @@ require_once("func.php"); ?>
                             <input type="hidden" name="div_id" value="<?php echo $row['div_id']; ?>">
                             
                             <table class="div_man">
-                            
+                            <tr>
+                                <th><label>ID</label></th>
+                                <td><input type="text" name="div_id" placeholder="Enter Last Name" value="<?php echo $row['div_id'] ?>" readonly></td>
+                            </tr>
                             <tr>
                                 <th><label>First name</label></th>
                                 <td><input type="text" name="first_name" placeholder="Enter First Name" value="<?php echo $row['first_name'] ?>"></td>
@@ -82,12 +86,31 @@ require_once("func.php"); ?>
                                 <td><input type="text" name="last_name" placeholder="Enter Last Name" value="<?php echo $row['last_name'] ?>"></td>
                             </tr>
                             <tr>
-                                <th><label>Employeement Status</label></th>
-                                <td><input type="text" name="emp_status" placeholder="Enter Employee status" value="<?php echo $row['emp_status'] ?>"></td>
+                                <th><label>Email</label></th>
+                                <td><input type="text" name="email" placeholder="Enter Last Name" value="<?php echo $row['email'] ?>" readonly></td>
                             </tr>
                             <tr>
-                                <th><label>Divisional Code</label></th>
-                                <td><input type="text" name="div_code" placeholder="Enter division code" value="<?php echo $row['div_code'] ?>"></td>
+                                <th><label>TP No.</label></th>
+                                <td><input type="text" name="tp" placeholder="Enter Last Name" value="<?php echo $row['tp'] ?>" readonly></td>
+                            </tr>
+                            <tr>
+                                <th><label>Division</label></th>
+                                <td>
+                                        <select name="division" id="division" value="<?php echo $row['division'] ?>">
+                                            <option value="Ampara">Ampara</option>
+                                            <option value="Anuradhapura">Anuradhapura</option>
+                                            <option value="Badulla">Badulla</option>
+                                            <option value="Batticaloa">Batticaloa</option>
+                                            <option value="Colombo">Colombo</option>
+                                            <option value="Galle">Galle</option>
+                                            <option value="Gampaha">Gampaha</option>
+                                            <option value="Hambantota">Hambantota</option>
+                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                            <option value="Kandy">Kandy</option>
+                                            <option value="Matale">Matale</option>
+                                            <option value="Matara">Matara</option>
+                                        </select>
+                                </td>
                             </tr>
                             <tr>
                                 <th><label>No. of Employees</label></th>
@@ -108,18 +131,20 @@ require_once("func.php"); ?>
                                 {
                                     $first_name = $_POST['first_name'];
                                     $last_name = $_POST['last_name'];
-                                    $emp_status = $_POST['emp_status'];
-                                    $div_code = $_POST['div_code'];
+                                    
+                                    $division = $_POST['division'];
                                     $no_employee = $_POST['no_employee'];
 
 
-                                    $query = "UPDATE div_manager SET first_name='$first_name', last_name='$last_name', emp_status=' $emp_status', div_code='$div_code', no_employee='$no_employee'  WHERE div_id='$div_id'  ";
+                                    $query = "UPDATE div_manager SET first_name='$first_name', last_name='$last_name', division='$division', no_employee='$no_employee'  WHERE div_id='$div_id'  ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)
                                     {
                                         echo '<script> alert("Data Updated Successfully"); </script>';
-                                        header("location:manager_dm.php");
+                                        //header("location:manager_dm.php");
+                                       
+
                                     }
                                     else
                                     {

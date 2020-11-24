@@ -4,7 +4,7 @@
 
     <head>
         
-        <title>Manager_home</title>
+    <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
@@ -23,7 +23,7 @@
          <?php
            // if(isset($_POST['enter'])){
                 
-                $sql = "SELECT * FROM infohub";
+                $sql = "SELECT * FROM infohub ORDER BY date DESC";
                 mysqli_query($connection, $sql);
                 $result = mysqli_query($connection,$sql);
                         while($row=mysqli_fetch_assoc($result)){  

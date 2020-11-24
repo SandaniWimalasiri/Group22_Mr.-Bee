@@ -5,7 +5,7 @@
 <php >
     <head>
         
-        <title>Manager_home</title>
+    <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_managerhome_content.css">
@@ -16,7 +16,7 @@
        
         
          <!--start content-->
-        <div class="content"> 
+        <div class="content0"> 
 
             <div class="hcmenue">
                 <ul class ="honeycomb">
@@ -72,7 +72,7 @@
                     </tr>
                     <tr>
                             <th>TP Number  :</th>
-                            <td><!--<?php echo $result['tp'] ?>-->0711234567</td>
+                            <td><?php echo $result['tp'] ?></td>
                     </tr>
                   
                     <?php

@@ -24,7 +24,7 @@
 				</div>
 				<div class="text">
 					</br>
-					<p>    Join with Us to get the best Bee-keeping experience in Sri Lanka. For more details <a href="">contact</a> our Divisional Managers.
+					<p>    Join with Us to get the best Bee-keeping experience in Sri Lanka. For more details <a href="contact_details.php">contact</a> our Divisional Managers.
 					</p>
 				</div>
 					

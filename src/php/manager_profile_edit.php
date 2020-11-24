@@ -12,7 +12,7 @@ require_once("func.php"); ?>
 <html>
     <head>
         
-        <title>Manager_home</title>
+    <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
@@ -113,7 +113,7 @@ require_once("func.php"); ?>
                                     $tp = $_POST['tp'];
 
 
-                                    $query = "UPDATE admin SET first_name='$first_name', last_name='$last_name', email=' $email', pwd='$pwd', tp='$tp'  ";
+                                    $query = "UPDATE manager SET first_name='$first_name', last_name='$last_name', email=' $email', pwd='$pwd', tp='$tp'  ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)

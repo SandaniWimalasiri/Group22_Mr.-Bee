@@ -11,12 +11,12 @@
     $password =mysqli_real_escape_string($connection,$_POST['password']);
 
     //prepare database query
-    //use "email" as username and "pwd" as password in "admin" table
+    //use "email" as username and "pwd" as password in "manager" table
     $query=mysqli_query($connection,"SELECT * FROM manager WHERE email='{$userName}' AND pwd ='{$password}' LIMIT 1");
     $row=mysqli_fetch_array($query);
     $type=$row['emp_status'];
 
-    //use "email" as username and "pwd" as password in "admin" table
+    //use "email" as username and "pwd" as password in "manager" table
     $isexist=mysqli_query($connection,"SELECT * FROM manager WHERE email='{$userName}' AND pwd ='{$password}' LIMIT 1");
     $check_user=mysqli_num_rows($isexist);
 
@@ -29,7 +29,7 @@
       $_SESSION["last_name"]=$user['last_name'];
       
       if($type=="manager"){
-        //redirect to admin page 
+        //redirect to manager page 
         header('Location: manager_home.php');
       }
     }else{

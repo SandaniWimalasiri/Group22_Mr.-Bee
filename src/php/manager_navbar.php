@@ -9,7 +9,7 @@
         <!--start of welcomeBox-->
         <div class="welcomeBox">       
             <a href="manager_home.php"><img src="../../public/img/manager2.jpg" class="icon"></a>
-            <h1>Welcome to Admin Homepage</h1>
+            <h1>Welcome to Admin Page</h1>
         </div> 
             <table class="nav_table" border="0" width="100%" align="left" cellpadding="10" cellspacing="0">
                 <div class="navibar">
@@ -37,7 +37,7 @@
                         <div class="dropdown-content">
                             <a href="manager_products.php">View Details</a>
                             <a href="manager_products_add.php">Add a Product</a>
-                            <a href="">Product Shelves</a>
+                            
                         </div>
                     </div>
 

@@ -32,7 +32,24 @@ body{
 
 .content{
     width: 1300px;
-    height: 700px;
+    height: 1500px;
+    position: absolute;
+   /* background:#b2ebf363 ;*/
+    background: #f7be74;
+    
+	top:130%;
+	left:50%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 100px 20px 100px;
+    color: #023765;
+    border-radius: 2%;
+    
+}
+.content0{
+    width: 1300px;
+    height: 670px;
     position: absolute;
    /* background:#b2ebf363 ;*/
     background: #f7be74;

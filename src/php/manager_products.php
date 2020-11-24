@@ -17,7 +17,7 @@
 <php >
     <head>
         
-        <title>manager_products</title>
+    <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_products.css">
@@ -33,7 +33,7 @@
         <div class="content">      
              <div class="viewform">
                     
-                        <button class="btn6" onclick="document.location=''">Go To Cart</button>   <!--go to products view page-->
+                        
                         <button class="btn6" type="submit" name="submit" onclick="document.location='manager_products_add.php'">Add Item</button>
                         <button class="btn6" type="submit" name="submit" onclick="document.location='manager_products_view.php'">Product List</button>
                     
@@ -63,8 +63,8 @@
                         <th>Product code</th>
                         <th>Product name</th>
                         <th>Description</th>
-                        <th>Price (Rs.)</th>
                         <th>Discounted Price (Rs.)</th>
+                        <th>Price (Rs.)</th>
                         <th>Amount in list</th>
                         <th>image</th>
                         <th>date-added</th>
@@ -74,14 +74,15 @@
                         </tr>";
                         $code =mysqli_real_escape_string($connection,$_POST['code']);
         
-                        $sql = "SELECT * FROM products WHERE id='{$_POST['code']}' OR name='{$_POST['code']}' OR type_of_product='{$_POST['code']}' OR amount='{$_POST['code']}' ;";
+                        $sql = "SELECT * FROM products WHERE id='{$_POST['code']}' OR pname='{$_POST['code']}' OR rrp='{$_POST['code']}' OR quantity='{$_POST['code']}' ;";
                         $query = $connection->query($sql);
+                        verify_query($query);
                         while ($result = $query->fetch_array()){
                 ?>
                         <tr>
                             <td><?php echo $result['id'] ?></td>
-                            <td><?php echo $result['name'] ?></td>
-                            <td><?php echo $result['desc'] ?></td>
+                            <td><?php echo $result['pname'] ?></td>
+                            <td><?php echo $result['descr'] ?></td>
                             <td><?php echo $result['price'] ?></td>
                             <td><?php echo $result['rrp'] ?></td>
                             <td><?php echo $result['quantity'] ?></td>

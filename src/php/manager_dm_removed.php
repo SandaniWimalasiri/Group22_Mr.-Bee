@@ -4,7 +4,7 @@
 
     <head>
         
-        <title>Manager</title>
+    <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
@@ -22,8 +22,9 @@
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Email</th>
+                        <th>TP No.</th>
                         <th>Employeement Status</th>
-                        <th>Divisional Code</th>
+                        <th>Division</th>
                         <th>No. of Employees</th>
                         <th style="text-align:center;">Replace</th>
                         <th style="text-align:center;">Remove</th>
@@ -42,8 +43,9 @@
                             <td><?php echo $result['first_name'] ?></td>
                             <td><?php echo $result['last_name'] ?></td>
                             <td><?php echo $result['email'] ?></td>
+                            <td><?php echo $result['tp'] ?></td>
                             <td><?php echo $result['emp_status'] ?></td>
-                            <td><?php echo $result['div_code'] ?></td>
+                            <td><?php echo $result['division'] ?></td>
                             <td style="text-align:center;"><?php echo $result['no_employee'] ?></td>
 
                             <form action="manager_dm_removed2.php" method="post">
@@ -52,7 +54,7 @@
                             </form>
                             <form action="manager_dm_removed2.php" method="post">
                                     <input type="hidden" name="div_id" value="<?php echo $result['div_id']; ?>">
-                                    <td><button class="btn7" type="submit" name="delete1" onclick="return confirm('Are you sure?')">Remove</a></td>
+                                    <td><button class="btn7" type="submit" name="delete1" onclick="return confirm('Are you sure? This will permenantly delete the data!')">Remove</a></td>
                             </form>
                            
                     

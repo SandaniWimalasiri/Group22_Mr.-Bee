@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2020 at 05:59 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Generation Time: Nov 24, 2020 at 05:42 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -111,7 +110,7 @@ INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail
 --
 
 CREATE TABLE `div_manager` (
-  `div_id` int(4) NOT NULL,
+  `div_id` varchar(4) NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -128,12 +127,15 @@ CREATE TABLE `div_manager` (
 --
 
 INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `pwd`, `emp_status`, `division`, `no_employee`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', 711234566, 'div_man@123', '   Divisional_Manager', 'Matara', 1, 0),
-(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', 711234567, 'div_man@123', '  Divisional_Manager', 'Ampara', 8, 0),
-(3, 'prasanna', 'silva', 'prasanna@gmail.com', 711234568, 'div_man@123', ' Divisional_Manager', 'Gampaha', 2, 0),
-(4, 'Prabath', 'Gunathilaka', 'prabath@gmail.com', 711234569, 'div_man@123', ' Divisional_Manager', 'Hambantota', 9, 0),
-(5, 'Sunil', 'Perera', 'sunil@gmail.com', 711234561, 'div_man@123', 'Divisional_Manager', 'Colombo', 2, 0),
-(6, 'sandani', 'vindya', 'sandani@gmail.com', 719874581, 'div_man@123', 'Divisional_Manager', 'Badulla', 10, 1);
+('10', 'sample', 'sample123', 'sample', 0, 'div_man@123', 'Divisional_Manager', '123', 10, 1),
+('345', 'sandani', 'vindya', 'sanda11ni@gmail.com', 0, 'div_man@123', 'Divisional_Manager', 'Colombo', 1, 0),
+('56', 'Sandani3', 'Wimalasiri12', 'sandanihgjwimalasiri@gmail.com', 0, 'div_man@123', '     Divisional_Manager', 's2', 12, 0),
+('57', 'Sandani', 'Wimsssalasiri', 'sssssandaniwimalasiri@gmail.com', 0, 'div_man@123', 'Divisional_Manager', '16', 23, 0),
+('D101', 'Lasith', 'Perera', 'lasithperera@gmail.com', 0, 'div_man@123', '   Divisional_Manager', 'D/R/220', 1, 1),
+('D102', 'Lasith123', 'Disanayaka', 'disanayaka@gmail.com', 0, 'div_man@123', '  Divisional_Manager', 'D/R/420', 8, 1),
+('D103', 'prasanna', 'silva', 'prasanna@gmail.com', 0, 'div_man@123', ' Divisional_Manager', '12', 2, 0),
+('D104', 'Prabath', 'Gunathilaka', 'prabath@gmail.com', 0, 'div_man@123', ' Divisional_Manager', 'D/R/783', 9, 0),
+('D105', 'Sunil', 'Perera', 'sunil@gmail.com', 0, 'div_man@123', 'Divisional_Manager', 'D/R/249', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -232,7 +234,7 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`first_name`, `last_name`, `email`, `pwd`, `tp`, `emp_status`) VALUES
-('Sunil', 'Gamage', '    sunil@gmail.com', '123', 711234910, 'manager');
+('Sunil', 'Gamage', 'sunil@gmail.com', '123', 711234567, 'manager');
 
 -- --------------------------------------------------------
 
@@ -261,8 +263,7 @@ INSERT INTO `products` (`id`, `pname`, `descr`, `price`, `rrp`, `quantity`, `img
 (2, 'Organic Bee Honey with Sour Sup', '<p>Pure Organic Bee Honey with Sour Sup of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Sour Sup Taste.</li>\r\n<li>Exquisite Flavour.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health with Antioxidants.</li>\r\n</ul>', '450.00', '500.00', 25, 'p2.jpg', '2020-11-23 18:52:49', 0),
 (3, 'Organic Bee Honey with Comb', '<p>Pure Organic Bee Honey with Honeycomb Included.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Honeycomb Taste.</li>\r\n<li>Exquisite Flavor.</li>\r\n<li>Rich with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.99', '500.00', 23, 'p3_1.jpg', '2020-11-20 18:47:56', 0),
 (4, 'Organic Raw Bee Honey', '<p>Pure Organic Raw Bee Honey.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Natural Honey Taste.</li>\r\n<li>Rich with Antioxidants.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '400.00', '420.00', 35, 'p0_7.jpg', '2020-11-25 17:42:04', 0),
-(8, 'sample ', 'dsddddsddsdsd', '250.00', '200.00', 20, 'honey5.jpg', '2020-11-24 04:56:57', 0),
-(9, 'sample 2', 'asdfghjk', '250.00', '300.00', 20, '4.jpg', '2020-11-24 20:30:55', 0);
+(8, 'sample ', 'dsddddsddsdsd', '250.00', '200.00', 20, 'honey5.jpg', '2020-11-24 04:56:57', 0);
 
 --
 -- Indexes for dumped tables
@@ -292,8 +293,7 @@ ALTER TABLE `customer`
 ALTER TABLE `div_manager`
   ADD PRIMARY KEY (`div_id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `div_code` (`division`),
-  ADD UNIQUE KEY `tp` (`tp`);
+  ADD UNIQUE KEY `div_code` (`division`);
 
 --
 -- Indexes for table `feeding`
@@ -348,12 +348,6 @@ ALTER TABLE `customer`
   MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `div_manager`
---
-ALTER TABLE `div_manager`
-  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `feeding`
 --
 ALTER TABLE `feeding`
@@ -375,7 +369,7 @@ ALTER TABLE `infohub`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

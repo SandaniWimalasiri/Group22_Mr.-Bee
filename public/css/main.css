@@ -266,7 +266,7 @@ nav{
  .bhivecontainer {
   
   background-color: #d4e2c89d;
-  padding: 20px 100px 20px 100px;
+  padding: 8px 100px 8px 100px;
   border: 3px solid rgb(222, 240, 219);
   border-radius: 3px;
   font-size: 14px;
@@ -286,7 +286,7 @@ nav{
   margin-left:20px;
   margin-right: 50px;
   margin-bottom: 100px;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 .col1 {
   float: left;
@@ -297,7 +297,7 @@ nav{
 
 .col2 {
   float: left;
-  width: 730px;
+  width: 400px;
   margin-top: 6px;
 }
 .c1 {

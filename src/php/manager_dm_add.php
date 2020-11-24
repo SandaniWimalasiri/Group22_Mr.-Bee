@@ -5,7 +5,7 @@
 <html>
     <head>
         
-        <title>manager_Divisional</title>
+        <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href=".../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href=".../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href=".../../public/css/style_manager_remove_dm.css">
@@ -24,10 +24,7 @@
                             
                             
                             <table class="div_man">
-                            <tr>
-                                <th><label>Registration ID</label></th>
-                                <td><input type="text" name="div_id" placeholder="Enter Registration ID" required ></td>
-                            </tr> 
+                            
                             
                             <tr>
                                 <th><label>First name</label></th>
@@ -41,6 +38,10 @@
                                 <th><label>E-mail</label></th>
                                 <td><input type="text" name="email" placeholder="Enter email address" required></td>
                             </tr>
+                            <tr>
+                                <th><label>TP No.</label></th>
+                                <td><input type="text" name="tp" placeholder="Enter TP No." required ></td>
+                            </tr> 
                             <tr>
                                 <th><label>Division</label></th>
                                     <td> 
@@ -85,7 +86,7 @@
            //echo "Done";                                                                                                 
            
            
-           $sql="INSERT INTO div_manager (div_id, first_name, last_name, email, division, no_employee) VALUES('".$_GET['div_id']."','".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['division']."','".$_GET['no_employee']."')";
+           $sql="INSERT INTO div_manager (first_name, last_name, email,tp, division, no_employee) VALUES('".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['tp']."','".$_GET['division']."','".$_GET['no_employee']."')";
            $result=mysqli_query($connection,$sql);
            //$result=$connection->query($sql);
            //print_r($result);

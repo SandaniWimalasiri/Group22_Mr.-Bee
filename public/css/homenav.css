@@ -156,4 +156,17 @@ body {
     color:rgba(155, 17, 17, 0.952);
   }
   
-  
+  .main2 {
+    margin-left: 100px;
+    margin-bottom: 10px;
+    margin-top: 200px;
+    margin-right: 100px;
+
+    }
+  .main2 a:hover{
+    color:rgba(155, 17, 17, 0.952);
+  }
+  .main2 a{
+    font-size: 18px;
+    color: black;
+  }

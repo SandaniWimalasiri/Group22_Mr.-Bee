@@ -4,7 +4,7 @@
 <php >
     <head>
         
-        <title>Manager_home</title>
+    <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
 

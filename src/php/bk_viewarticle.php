@@ -25,7 +25,7 @@ session_start();
 			<?php
     if(isset($_POST['enter'])){
         
-$sql = "SELECT * FROM infohub";
+$sql = "SELECT * FROM infohub ORDER BY date DESC";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 		while($row=mysqli_fetch_assoc($result)){  
