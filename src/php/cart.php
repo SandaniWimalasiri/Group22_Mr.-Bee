@@ -16,9 +16,10 @@ if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['produc
             $_SESSION['cart'] = array($product_id => $quantity);
         }
     }
-    header('location: index.php?page=cart');
+    header('location: customer_index.php?page=cart');
     exit;
 }
+
 
 if (isset($_GET['remove']) && is_numeric($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['remove']])) {
     unset($_SESSION['cart'][$_GET['remove']]);
@@ -34,12 +35,12 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
             }
         }
     }
-    header('location: index.php?page=cart');
+    header('location: customer_index.php?page=cart');
     exit;
 }
 
 if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    header('Location: index.php?page=placeorder');
+    header('Location: customer_index.php?page=placeorder');
     exit;
 }
 
@@ -61,7 +62,7 @@ if ($products_in_cart) {
 
 <div class="cart content-wrapper">
     <h1>Shopping Cart</h1>
-    <form action="index.php?page=cart" method="post">
+    <form action="customer_index.php?page=cart" method="post">
         <table>
             <thead>
                 <tr>
@@ -80,14 +81,14 @@ if ($products_in_cart) {
                 <?php foreach ($products as $product): ?>
                 <tr>
                     <td class="img">
-                        <a href="index.php?page=product&id=<?=$product['id']?>">
-                            <img src="./imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
+                        <a href="customer_index.php?page=product&id=<?=$product['id']?>">
+                            <img src="../../public/img/<?=$product['img']?>" width="50" height="50" alt="<?=$product['pname']?>">
                         </a>
                     </td>
                     <td>
-                        <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['name']?></a>
+                        <a href="customer_index.php?page=product&id=<?=$product['id']?>"><?=$product['pname']?></a>
                         <br>
-                        <a href="index.php?page=cart&remove=<?=$product['id']?>" class="remove">Remove</a>
+                        <a href="customer_index.php?page=cart&remove=<?=$product['id']?>" class="remove">Remove</a>
                     </td>
                     <td class="price">&#8360;<?=$product['price']?></td>
                     <td class="quantity">

@@ -24,11 +24,14 @@
             <h2>Products' Details</h2>
                 <table class="div_man">
                     <tr>
-                        <th>Product code</th>
-                        <th>Product name</th>
-                        <th>Type of product</th>
+                        <th>product ID</th>
+                        <th>product name</th>
+                        <th>Description</th>
+                        <th>Discounted price</th>
                         <th>Price (Rs.)</th>
-                        <th style="text-align:center;">Amount in list</th>
+                        <th style="text-align:center;">quantity</th>
+                        <th>Image</th>
+                        <th>Date-Added</th>
                         <th style="text-align:center;">Replace</th>
                         <th style="text-align:center;">Remove</th>
                     </tr>
@@ -38,18 +41,21 @@
                         while ($result = $query->fetch_assoc()) {
                         ?>
                         <tr>
-                            <td><?php echo $result['product_code'] ?></td>
-                            <td><?php echo $result['product_name'] ?></td>
-                            <td><?php echo $result['type_of_product'] ?></td>
+                            <td><?php echo $result['id'] ?></td>
+                            <td><?php echo $result['pname'] ?></td>
+                            <td><?php echo $result['descr'] ?></td>
                             <td><?php echo $result['price'] ?></td>
-                            <td style="text-align:center;"><?php echo $result['amount'] ?></td>
+                            <td><?php echo $result['rrp'] ?></td>
+                            <td><?php echo $result['quantity'] ?></td>
+                            <td><?php echo $result['img'] ?></td>
+                            <td><?php echo $result['date_added'] ?></td>
                             <form action="manager_products_removed2.php" method="post">
-                                    <input type="hidden" name="product_code" value="<?php echo $result['product_code']; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
                                     <td style="text-align:center;"><button class="btn8" type="submit" name="replace">Replace</a></td>
                             </form>
                             <form action="manager_products_removed2.php" method="post">
-                                    <input type="hidden" name="product_code" value="<?php echo $result['product_code']; ?>">
-                                    <td style="text-align:center;"><button class="btn7" type="submit" name="delete" onclick="return confirm('Are you sure?')">Remove</a></td>
+                                    <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
+                                    <td style="text-align:center;"><button class="btn7" type="submit" name="delete" onclick="return confirm('Are you sure? This will permenantly delete the data')">Remove</a></td>
                             </form>
                         </tr>
                         <?php

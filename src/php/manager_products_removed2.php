@@ -9,9 +9,9 @@
 <?php
             if(isset($_POST['delete']))
             {
-                $product_code = $_POST['product_code'];
+                $id = $_POST['id'];
             
-                $query = "DELETE FROM products WHERE product_code='$product_code' ";
+                $query = "DELETE FROM products WHERE id='$id' ";
                 $query_run = mysqli_query($connection, $query);
             
                 if($query_run)
@@ -30,9 +30,9 @@
         <?php
                 if(isset($_POST['replace']))
                 {
-                    $product_code = $_POST['product_code'];
+                    $id = $_POST['id'];
                 
-                    $query = "UPDATE products SET is_deleted=0 WHERE product_code='$product_code' ";
+                    $query = "UPDATE products SET is_deleted=0 WHERE id='$id' ";
                     $query_run = mysqli_query($connection, $query);
                 
                     if($query_run)

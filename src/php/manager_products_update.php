@@ -1,7 +1,11 @@
-<?php include('manager_alignments.php')?>
+<?php require_once("../../config/connect.php");
+require_once("func.php"); ?>
+<?php session_start(); 
 
-
-
+        if(!$_SESSION['userName']){
+            header('Location: sign_in_admin.php');
+        }
+?>
     <head>
         
         <title>Manager_home</title>
@@ -11,7 +15,36 @@
 
     </head>
 
+    <style>
+    
+    </style>
 <body>
+    <nav>   
+        <!--start of header-->
+        
+        <header>  
+                               
+            <div class="webName">
+                MR.<font color="#f4976c">BEE</font></a>
+            </div>
+            <div class="user">
+                You are logged in as 
+                    <?php echo $_SESSION['first_name'];
+                        echo " " ;
+                        echo $_SESSION['last_name']; ?>
+                <a href="log_out.php"> (Log Out) </a>
+            </div>
+            
+        </header>                       <!--end of header-->
+
+        <!--start of logo class-->
+        <div class="logo">
+        <img src="../../public/img/004.png" width="8%" height=width>
+        </div>                          <!--end of logo class-->
+
+    </nav> 
+
+
         <div class="welcomeBox">       
             <a href="manager_home.php"><img src="../../public/img/manager2.jpg" class="icon"></a>
             <h1>Products' Details</h1>
@@ -21,9 +54,9 @@
 
         <div class="content"> 
             <?php
-                $product_code=$_POST['product_code'];
+                $id=$_POST['id'];
 
-                $query = "SELECT * FROM products WHERE product_code='$product_code' ";
+                $query = "SELECT * FROM products WHERE id='$id' ";
                 $query_run = mysqli_query($connection, $query);
 
                 if($query_run){
@@ -34,29 +67,34 @@
 
                         <form class="f1" action="manager_products_update.php" method="post">
                         </br>
-                        <input type="hidden" name="product_code" value="<?php echo $row['product_code']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                             
                             <table class="div_man">
                             <tr>
-                                <th><label>product code</label></th>
-                                <td><input type="text" name="product_code" value="<?php echo $row['product_code'] ?>"></td>
-                            </tr>
-                            <tr>
                                 <th><label>product name</label></th>
-                                <td><input type="text" name="product_name" value="<?php echo $row['product_name'] ?>"></td>
+                                <td><input type="text" name="pname" value="<?php echo $row['pname'] ?>"></td>
                             </tr>
                             <tr>
-                                <th><label>type of product</label></th>
-                                <td><input type="text" name="type_of_product" value="<?php echo $row['type_of_product'] ?>"></td>
+                                <th><label>product Description</label></th>
+                                <td><input type="text" name="descr" value="<?php echo $row['descr'] ?>"></td>
+                            </tr>
+                            <tr>
+                                <th><label>Discounted Price (Rs.)</label></th>
+                                <td><input type="text" name="rrp" value="<?php echo $row['rrp'] ?>"></td>
                             </tr>
                             <tr>
                                 <th><label>price</label></th>
                                 <td><input type="text" name="price" value="<?php echo $row['price'] ?>"></td>
                             </tr>
                             <tr>
-                                <th><label>amount in list</label></th>
-                                <td><input type="text" name="amount" value="<?php echo $row['amount'] ?>"></td>
+                                <th><label>quantity</label></th>
+                                <td><input type="text" name="quantity" value="<?php echo $row['quantity'] ?>"></td>
                             </tr>
+                            <tr>
+                                <th><label>image</label></th>
+                                <td><input type="text" name="img" value="<?php echo $row['img'] ?>"></td>
+                            </tr>
+                            
                             </table>
                             <br/>
 
@@ -67,14 +105,14 @@
                         <?php
                                 if(isset($_POST['update']))
                                 {
-                                    $product_code = $_POST['product_code'];
-                                    $product_name = $_POST['product_name'];
-                                    $type_of_product = $_POST['type_of_product'];
+                                    $pname = $_POST['pname'];
+                                    $descr = $_POST['descr'];
                                     $price = $_POST['price'];
-                                    $amount = $_POST['amount'];
+                                    $rrp = $_POST['rrp'];
+                                    $quantity = $_POST['quantity'];
+                                    $img = $_POST['img'];
 
-
-                                    $query = "UPDATE products SET product_code='$product_code', product_name='$product_name', type_of_product=' $type_of_product', price='$price', amount='$amount'  WHERE product_code='$product_code'  ";
+                                    $query = "UPDATE products SET pname='$pname',descr='$descr', price='$price', rrp='$rrp', quantity='$quantity', img='$img'  WHERE id='$id'  ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)

@@ -42,8 +42,25 @@
                                 <td><input type="text" name="email" placeholder="Enter email address" required></td>
                             </tr>
                             <tr>
-                                <th><label>Divisional Code</label></th>
-                                <td><input type="text" name="div_code" placeholder="Enter division code" required></td>
+                                <th><label>Division</label></th>
+                                    <td> 
+                                   
+                                        <select name="division" id="division" value="<?= $division?>">
+                                            <option value="Ampara">Ampara</option>
+                                            <option value="Anuradhapura">Anuradhapura</option>
+                                            <option value="Badulla">Badulla</option>
+                                            <option value="Batticaloa">Batticaloa</option>
+                                            <option value="Colombo">Colombo</option>
+                                            <option value="Galle">Galle</option>
+                                            <option value="Gampaha">Gampaha</option>
+                                            <option value="Hambantota">Hambantota</option>
+                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                            <option value="Kandy">Kandy</option>
+                                            <option value="Matale">Matale</option>
+                                            <option value="Matara">Matara</option>
+                                        </select>
+                                        
+                                   </td>
                             </tr>
                             <tr>
                                 <th><label>No. of Employees</label></th>
@@ -68,7 +85,7 @@
            //echo "Done";                                                                                                 
            
            
-           $sql="INSERT INTO div_manager (div_id, first_name, last_name, email, div_code, no_employee) VALUES('".$_GET['div_id']."','".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['div_code']."','".$_GET['no_employee']."')";
+           $sql="INSERT INTO div_manager (div_id, first_name, last_name, email, division, no_employee) VALUES('".$_GET['div_id']."','".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['division']."','".$_GET['no_employee']."')";
            $result=mysqli_query($connection,$sql);
            //$result=$connection->query($sql);
            //print_r($result);

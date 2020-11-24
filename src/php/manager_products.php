@@ -3,7 +3,7 @@
 
 <?php
 			if(isset($_POST['delete'])){
-				$sql = "DELETE FROM products WHERE product_code = '{$_POST['product_code']}';";
+				$sql = "DELETE FROM products WHERE id = '{$_POST['id']}';";
 				$result = mysqli_query($connection,$sql);
 				if($result){
 				    header("Location:manager_products.php ");
@@ -62,36 +62,46 @@
                         echo"<tr>
                         <th>Product code</th>
                         <th>Product name</th>
-                        <th>Type of product</th>
+                        <th>Description</th>
                         <th>Price (Rs.)</th>
+                        <th>Discounted Price (Rs.)</th>
                         <th>Amount in list</th>
+                        <th>image</th>
+                        <th>date-added</th>
                         <th>Edit</th>
                         <th>Delete</>
                         
                         </tr>";
                         $code =mysqli_real_escape_string($connection,$_POST['code']);
         
-                        $sql = "SELECT * FROM products WHERE product_code='{$_POST['code']}' OR product_name='{$_POST['code']}' OR type_of_product='{$_POST['code']}' OR amount='{$_POST['code']}' ;";
+                        $sql = "SELECT * FROM products WHERE id='{$_POST['code']}' OR name='{$_POST['code']}' OR type_of_product='{$_POST['code']}' OR amount='{$_POST['code']}' ;";
                         $query = $connection->query($sql);
-                        while ($result = $query->fetch_assoc()){
+                        while ($result = $query->fetch_array()){
                 ?>
                         <tr>
-                            <td><?php echo $result['product_code'] ?></td>
-                            <td><?php echo $result['product_name'] ?></td>
-                            <td><?php echo $result['type_of_product'] ?></td>
+                            <td><?php echo $result['id'] ?></td>
+                            <td><?php echo $result['name'] ?></td>
+                            <td><?php echo $result['desc'] ?></td>
                             <td><?php echo $result['price'] ?></td>
-                            <td><?php echo $result['amount'] ?></td>
+                            <td><?php echo $result['rrp'] ?></td>
+                            <td><?php echo $result['quantity'] ?></td>
+                            <td><?php echo $result['img'] ?></td>
+                            <td><?php echo $result['date_added'] ?></td>
                             <form action="manager_products_update.php" method="post">
-                                    <input type="hidden" name="product_code" value="<?php echo $result['product_code']; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
                                     <td><button class="btn8" type="submit">Edit</a></td>
                             </form>
                             <form action="manager_products_delete.php" method="post">
-                                    <input type="hidden" name="product_code" value="<?php echo $result['product_code']; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
                                     <td><button class="btn7" type="submit" name="delete" onclick="return confirm('Are you sure?')">Delete</a></td>
                             </form>
                         </tr>
-                <?php
+                        <?php
                          }
+                    
+                ?>  
+                <?php
+                         
                     }
                 ?>
 

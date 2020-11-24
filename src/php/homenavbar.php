@@ -7,8 +7,8 @@
 <body>
 <div class="navbar">
 
-<a href="index_mrbee.php" >Home</a> 
-<a href="index.php" >Products</a>
+<a href="index.php" >Home</a> 
+<a href="customer_index.php" >Products</a>
 <a href="aboutus.php" >About Us</a>
   
 <div class="dropdown">

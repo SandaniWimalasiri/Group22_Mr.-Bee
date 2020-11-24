@@ -41,9 +41,10 @@ function carousel() {
     <h2>Recently Added Products</h2>
     <div class="products">
         <?php foreach ($recently_added_products as $product): ?>
-        <a href="index.php?page=product&id=<?=$product['id']?>" class="product">
-            <img src="../../public/img/<?=$product['img']?>" width="200" height="200" alt="<?=$product['name']?>">
-            <span class="name"><?=$product['name']?></span>
+        <a href="customer_index.php?page=product&id=<?=$product['id']?>" class="product">
+            <img src="../../public/img/<?=$product['img']?>" width="200" height="200" alt="<?=$product['pname']?>">
+        </br>
+            <span class="pname"><?=$product['pname']?></span>
             <span class="price">
                 &#8360;<?=$product['price']?>
                 <?php if ($product['rrp'] > 0): ?>

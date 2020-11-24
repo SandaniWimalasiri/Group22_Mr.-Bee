@@ -51,7 +51,7 @@
                    
                     <?php 
                     
-                    $sql = "SELECT * FROM admin;";
+                    $sql = "SELECT * FROM manager;";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);

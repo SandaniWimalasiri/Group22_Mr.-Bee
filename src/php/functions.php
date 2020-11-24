@@ -28,15 +28,15 @@ echo <<<EOT
             <div class="content-wrapper">
                 <h1>Nature Bee Honey Company Sri Lanka</h1>
                 <nav>
-                    <a href="index.php">Home</a>
-                    <a href="index.php?page=products">Products</a>
+                    <a href="customer_index.php">Home</a>
+                    <a href="customer_index.php?page=products">Products</a>
                 </nav>
                 <div class="link-icons">
                     <div class="search">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Search..." style="display: block;">
                     </div>
-                    <a href="index.php?page=cart">
+                    <a href="customer_index.php?page=cart">
 						<i class="fas fa-shopping-cart"></i>
                         <span>$num_items_in_cart</span>
 					</a>

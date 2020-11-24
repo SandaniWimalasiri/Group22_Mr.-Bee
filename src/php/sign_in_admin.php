@@ -12,12 +12,12 @@
 
     //prepare database query
     //use "email" as username and "pwd" as password in "admin" table
-    $query=mysqli_query($connection,"SELECT * FROM admin WHERE email='{$userName}' AND pwd ='{$password}' LIMIT 1");
+    $query=mysqli_query($connection,"SELECT * FROM manager WHERE email='{$userName}' AND pwd ='{$password}' LIMIT 1");
     $row=mysqli_fetch_array($query);
     $type=$row['emp_status'];
 
     //use "email" as username and "pwd" as password in "admin" table
-    $isexist=mysqli_query($connection,"SELECT * FROM admin WHERE email='{$userName}' AND pwd ='{$password}' LIMIT 1");
+    $isexist=mysqli_query($connection,"SELECT * FROM manager WHERE email='{$userName}' AND pwd ='{$password}' LIMIT 1");
     $check_user=mysqli_num_rows($isexist);
 
     if($check_user==1){

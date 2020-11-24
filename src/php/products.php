@@ -16,9 +16,10 @@ $total_products = $pdo->query('SELECT * FROM products')->rowCount();
     <p><?=$total_products?> Products</p>
     <div class="products-wrapper">
         <?php foreach ($products as $product): ?>
-        <a href="index.php?page=product&id=<?=$product['id']?>" class="product">
-            <img src="./imgs/<?=$product['img']?>" width="200" height="200" alt="<?=$product['name']?>">
-            <span class="name"><?=$product['name']?></span>
+        <a href="customer_index.php?page=product&id=<?=$product['id']?>" class="product">
+            <img src="../../public/img/<?=$product['img']?>" width="200" height="200" alt="<?=$product['pname']?>">
+        </br>
+            <span class="pname"><?=$product['pname']?></span>
             <span class="price">
                 &#8360;<?=$product['price']?>
                 <?php if ($product['rrp'] > 0): ?>
@@ -30,10 +31,10 @@ $total_products = $pdo->query('SELECT * FROM products')->rowCount();
     </div>
     <div class="buttons">
         <?php if ($current_page > 1): ?>
-        <a href="index.php?page=products&p=<?=$current_page-1?>">Prev</a>
+        <a href="customer_index.php?page=products&p=<?=$current_page-1?>">Prev</a>
         <?php endif; ?>
         <?php if ($total_products > ($current_page * $num_products_on_each_page) - $num_products_on_each_page + count($products)): ?>
-        <a href="index.php?page=products&p=<?=$current_page+1?>">Next</a>
+        <a href="customer_index.php?page=products&p=<?=$current_page+1?>">Next</a>
         <?php endif; ?>
     </div>
 </div>

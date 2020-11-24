@@ -1,23 +1,22 @@
 <?php require_once("../../config/connect.php"); ?>
 <?php session_start(); 
-
-        if(!$_SESSION['userName']){
-            header('Location: sign_in.php');
+  if(!$_SESSION['email']){
+            header('Location: sign_in_divman.php');
         }
 ?>
 <?php
    if(isset($_POST['delete']))
    {
-       $id = $_POST['id'];
+       $userID = $_POST['userID'];
    
-       $query = "UPDATE products SET is_deleted=1 WHERE id='$id' ";
+       $query = "DELETE FROM beekeeper WHERE userID='$userID' ";
        $query_run = mysqli_query($connection, $query);
    
        if($query_run)
        {
-           echo '<script> alert("Data Deleted"); </script>';
-           header("location:manager_products_view.php");
-           
+           echo "data deleted";  
+        // echo '<script> alert("Data Deleted"); </script>';
+           header("location:divman.php#beekeeper");
        }
        else
        {

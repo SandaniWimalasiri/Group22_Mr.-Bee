@@ -135,4 +135,7 @@ input[type=text]{
   border: 1px;
 }
 
-
+.div_man select{
+  font-size: 16px;
+  background-color: rgba(243, 227, 208, 0.918);
+}

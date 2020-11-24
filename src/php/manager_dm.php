@@ -53,7 +53,7 @@
                             <td><?php echo $result['last_name'] ?></td>
                             <td><?php echo $result['email'] ?></td>
                             <td><?php echo $result['emp_status'] ?></td>
-                            <td><?php echo $result['div_code'] ?></td>
+                            <td><?php echo $result['division'] ?></td>
                             <td style="text-align:center;"><?php echo $result['no_employee'] ?></td>
 
                             <form action="manager_dm_edit.php" method="post">

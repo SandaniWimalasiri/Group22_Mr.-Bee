@@ -56,7 +56,7 @@ require_once("func.php"); ?>
             <?php
                 
 
-                $query = "SELECT * FROM admin";
+                $query = "SELECT * FROM manager";
                 $query_run = mysqli_query($connection, $query);
 
                 if($query_run){

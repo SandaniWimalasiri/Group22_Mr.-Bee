@@ -21,29 +21,36 @@
                
                <table  class="div_man">
                    
-                   <tr>
-                       <th><label>product code</label></td>
-                       <td> <input type="text" placeholder="Enter product code" name="product_code" required></td>
-                   </tr>
+                   
    
                    <tr>
                        <th><label>product name</label></td>
-                       <td><input type="text" placeholder="Enter product name" name="product_name" required ></td>
+                       <td><input type="text" placeholder="Enter product name" name="pname" required ></td>
                    </tr>
    
                    <tr>
-                       <th><label>type of product</label></td>
-                       <td><input type="text" placeholder="Enter type of the product" name="type_of_product" required ></td>
+                       <th><label>Description</label></td>
+                       <td><input type="text" placeholder="Enter type of the product" name="descr" required ></td>
+                   </tr>
+   
+                   <tr>
+                       <th><label>Discounted price</label></td>
+                       <td><input type="text" placeholder="Enter discounted price" name="price" required ></td>
                    </tr>
    
                    <tr>
                        <th><label>price</label></td>
-                       <td><input type="text" placeholder="Enter price" name="price" required ></td>
+                       <td><input type="text" placeholder="Enter price" name="rrp" required >
                    </tr>
-   
+
                    <tr>
-                       <th><label>amount in list</label></td>
-                       <td><input type="text" placeholder="Enter amount of products in list" name="amount" required >
+                       <th><label>quantity in list</label></td>
+                       <td><input type="text" placeholder="Enter quantity in list" name="quantity" required >
+                   </tr>
+
+                   <tr>
+                       <th><label>Image</label></td>
+                       <td><input type="text" placeholder="Enter image of the product " name="img" required >
        <br></br></td>
                    </tr>
                </table>
@@ -65,7 +72,7 @@
            //echo "Done";                                                                                                 
            
            
-           $sql="INSERT INTO products (product_code, product_name, type_of_product, price, amount) VALUES('".$_GET['product_code']."','".$_GET['product_name']."','".$_GET['type_of_product']."','".$_GET['price']."','".$_GET['amount']."')";
+           $sql="INSERT INTO products (pname, descr, price, rrp,quantity,img) VALUES('".$_GET['pname']."','".$_GET['descr']."','".$_GET['price']."','".$_GET['rrp']."','".$_GET['quantity']."','".$_GET['img']."')";
            //$result=mysqli_query($connection,$sql);
            $result=$connection->query($sql);
            //print_r($result);
