@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="dropdown">
-                        <button class="dropbtn">Oders</button>
+                        <button class="dropbtn">Order Details </button>
                         <div class="dropdown-content">
                             <a href="">Ongoing Orders</a>
                             
