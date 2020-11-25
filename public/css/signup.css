@@ -1,6 +1,6 @@
 body{
 	margin: 0 auto;
-	background-image:url("../img/12.png");
+	background-image:url("../img/s3.jpg");
 	background-repeat:no-repeat;
 	background-size: 100%;
 	opacity: 0.9;
@@ -9,28 +9,28 @@ body{
 }
 
 .main {
-	margin-left: 600px;
+	margin-left: 450px;
 	margin-right: 300px;
 	margin-bottom: 10px;
-	margin-top: 100px;
+	margin-top: 0px;
   }
 .loginbox{
-	width: 400px;
-	height: 800px;
+	width: 600px;
+	height: 750px;
 	background: #000000;
-	color: #ffffff;
+	color: blanchedalmond;
 	position: center;
 	box-sizing: border-box;
-	padding: 70px 40px;
-	border-radius:20%;
+	padding: 40px 50px;
+	border-radius:1%;
 	
 }
 
 .center{
 	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
- 	width: 60%;
+  	margin-left: 50px;
+  	margin-right: 150px;
+ 	width: 50%;
 }
 
 .avatar{
@@ -56,7 +56,7 @@ h1{
 }
 
 .loginbox input{
-	width: 200;
+	width: 400;
 	margin-bottom:16px;
 }
 

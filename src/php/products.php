@@ -38,5 +38,11 @@ $total_products = $pdo->query('SELECT * FROM products')->rowCount();
         <?php endif; ?>
     </div>
 </div>
-
+<script>      
+function goBack() {
+    window.history.back();
+    location.href = "customer_index.php";
+}
+</script>
+<button type="button" id="backButton" class="float-left submit-button" onclick="goBack();">Back to Home Page</button>
 <?=template_footer()?>

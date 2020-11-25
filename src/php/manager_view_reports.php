@@ -16,26 +16,7 @@
 
          <!--start content-->
         <div class="content">   
-            <left>
-                    <p>Harvest report</p>
-                    <hr />
-                    
-                    <form  method="post" action="" >
-                        <div class="row">
-                            <div class="col1">
-                                <label for="beekeeperID">Beehiv</label>
-                            </div>
-                            <div class="col1">
-                                <input type="number" name="beehiveno1" >
-                                <span class="error"><?= $beehiveno1_error?></span>
-                            </div>
-                            <div class="col1">
-                                <input type="submit" value="View full harvest report >>" name="enterr" >
-                            </div>
-                        </div>
-                    </form>
-
-            </left>   
+           
            
         </div>               <!--end content-->
 

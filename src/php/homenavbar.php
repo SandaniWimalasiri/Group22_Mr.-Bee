@@ -8,7 +8,7 @@
 <div class="navbar">
 
 <a href="index.php" >Home</a> 
-<a href="customer_index.php" >Products</a>
+<a href="customer_unreg.php" >Products</a>
 <a href="aboutus.php" >About Us</a>
   
 <div class="dropdown">

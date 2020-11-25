@@ -1,17 +1,43 @@
-<?php
-$stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT 4');
-$stmt->execute();
-$recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
 
-<?=template_header('Home')?>
 
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Nature Bee honey company</title>
+		<link href="../../public/css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+
+<header>
+            <div class="content-wrapper">
+                <h1>Nature Bee Honey Company Sri Lanka</h1>
+                <nav>
+                    <a href="index.php">Home</a>
+                    <a href="customer_unreg.php">Discover</a>
+                   
+                </nav>
+               
+                <div class="link-icons">  
+                    
+                    
+                    <button id="logInButton" class="float-left submit-button" >Sign In or Create Account</button>
+                        <script type="text/javascript">
+                            document.getElementById("logInButton").onclick = function () {
+                            location.href = "customer_login.php";
+                            };
+                        </script>
+                </div>
+            </div>
+        </header>
+<main>
 <div class="featured">
     <h2>Pure Organic Bee Honey Products</h2>
     <p> From Your Nature Honey Bee Company Sri Lanka </p>
 </div>
-
+                        </main>
 <br>
+
+
 
 <div class="slideshow-container">
 
@@ -74,24 +100,6 @@ function showSlides() {
 }
 </script>
 
-<div class="recentlyadded content-wrapper">
-    <h2>Recently Added Products</h2>
-    <div class="products">
-        <?php foreach ($recently_added_products as $product): ?>
-          <a href="customer_index.php?page=product&id=<?=$product['id']?>" class="product">
-            <img src="../../public/img/<?=$product['img']?>" width="200" height="200" alt="<?=$product['pname']?>"></br>
-              <span class="pname"><?=$product['pname']?></span>
-              <span class="price">
-                &#8360;<?=$product['price']?>
-                  <?php if ($product['rrp'] > 0): ?>
-                    <span class="rrp">&#8360;<?=$product['rrp']?></span>
-                  <?php endif; ?>
-            </span>
-          </a>
-        <?php endforeach; ?>
-    </div>
-</div>
-
 <button onclick="topFunction()" id="scrollUpBtn" title="Back to Top">Back to Top</button>
 
 <script>
@@ -114,4 +122,4 @@ function topFunction() {
 </script>
 
 
-<?=template_footer()?>
+

@@ -88,9 +88,11 @@ body {
     }
 
   .main h1{
-    font-size: 45px;
-    color: rgb(2, 2, 31);
+    font-size: 50px;
+    color: blanchedalmond;
     font-weight: bold;
+    font-variant: small-caps;
+    font-style: oblique;
     
   }
 

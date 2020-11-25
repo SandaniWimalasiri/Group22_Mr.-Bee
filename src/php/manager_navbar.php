@@ -26,8 +26,8 @@
                     <div class="dropdown">
                         <button class="dropbtn">Reports</button>
                         <div class="dropdown-content">
-                            <a href="manager_view_reports.php">BeeKeeping Records</a>
-                            <a href="">Final Reports</a>
+                            <a href="manager_view_reports.php">Monthly Reports</a>
+                            <a href="manager_view_reports.php">Final Reports</a>
                             <a href="manager_products_removed.php">Removed Product List</a>
                         </div>
                     </div>
@@ -37,6 +37,17 @@
                         <div class="dropdown-content">
                             <a href="manager_products.php">View Details</a>
                             <a href="manager_products_add.php">Add a Product</a>
+                            
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Oders</button>
+                        <div class="dropdown-content">
+                            <a href="">Ongoing Orders</a>
+                            
+                            <a href="" name="enter">completed orders</a>
+                            </form>
                             
                         </div>
                     </div>

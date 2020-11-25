@@ -25,10 +25,7 @@ session_start(); ?>
                             
                             
                             <table class="div_man">
-                            <tr>
-                                <th><label>User ID</label></th>
-                                <td><input type="text" name="userID" placeholder="Enter User ID" required ></td>
-                            </tr> 
+                           
                             
                             <tr>
                                 <th><label>User name</label></th>
@@ -69,7 +66,7 @@ session_start(); ?>
            //echo "Done";                                                                                                 
            
            
-           $sql="INSERT INTO beekeeper (userID, userName, fullName, userAddress, userEmail, userTele) VALUES('".$_GET['userID']."','".$_GET['userName']."','".$_GET['fullName']."','".$_GET['userAddress']."','".$_GET['userEmail']."','".$_GET['userTele']."')";
+           $sql="INSERT INTO beekeeper ( userName, fullName, userAddress, userEmail, userTele) VALUES('".$_GET['userName']."','".$_GET['fullName']."','".$_GET['userAddress']."','".$_GET['userEmail']."','".$_GET['userTele']."')";
            $result=mysqli_query($connection,$sql);
            //$result=$connection->query($sql);
            //print_r($result);

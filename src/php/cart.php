@@ -111,4 +111,12 @@ if ($products_in_cart) {
     </form>
 </div>
 
+<script>    
+function goBack() {
+    window.history.back();
+    location.href = "customer_index.php?page=products";
+}
+</script>
+<button type="button" id="backButton" class="float-left submit-button" onclick="goBack();">Back to Products Page</button>
+
 <?=template_footer()?>

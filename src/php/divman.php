@@ -270,8 +270,7 @@ $result1 = mysqli_query($connection,$sql1);
                         	<th>Address</th>
                         	<th>Email</th>
                         	<th>Telephone No</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            
                         </tr>";
                         $code =mysqli_real_escape_string($connection,$_POST['code']);
         
@@ -288,7 +287,7 @@ $result1 = mysqli_query($connection,$sql1);
                             <td><?php echo $result['userAddress'] ?></td>
                             <td><?php echo $result['userEmail'] ?></td>
                             <td><?php echo $result['userTele'] ?></td>
-
+						<!--
                             <form action="manager_dm_edit.php" method="post">
                                     <input type="hidden" name="userID" value="<?php echo $result['userID']; ?>">
                                     <td><button class="btn8" type="submit">Edit</button></td>
@@ -298,7 +297,7 @@ $result1 = mysqli_query($connection,$sql1);
                                     <input type="hidden" name="userID" value="<?php echo $result['userID']; ?>">
                                     <td><button class="btn7" type="submit" name="delete" >Delete</button></td>
                             </form>
-
+						-->
                         </tr>
                                
                         <?php

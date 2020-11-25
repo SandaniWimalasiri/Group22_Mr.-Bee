@@ -9,11 +9,11 @@
     $password =mysqli_real_escape_string($connection,$_POST['password']);
 
     //prepare database query
-    $query=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}' LIMIT 1");
+    $query=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}'  LIMIT 1");
     $row=mysqli_fetch_array($query);
     $type=$row['emp_status'];
 
-    $isexist=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}' LIMIT 1");
+    $isexist=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}'  LIMIT 1");
     $check_user=mysqli_num_rows($isexist);
 
     if($check_user==1){

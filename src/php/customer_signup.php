@@ -29,7 +29,7 @@
 		
 	</head>
 	<body>
-<?php include('homenavbar.php');
+
         
         
 ?>

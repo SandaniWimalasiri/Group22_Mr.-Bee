@@ -10,7 +10,7 @@
     ?>
    
 	<div class="main">
-		<center><h1> Nature Bee Honey Company SriLanka</h1></center>
+		<center><h1> Nature Bee Honey Company Sri Lanka</h1></center>
 			</br></br>
 		<div class="conatainer">
 		 

@@ -48,10 +48,19 @@ header nav {
 }
 header nav a {
 	text-decoration: none;
-	color: #555555;
+	font-weight: bold;
+	color: #5e0c0c;
 	padding: 10px 10px;
 	margin: 0 10px;
 }
+
+a:hover, a:visited, a:link, a:active {   
+    text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
 header nav a:hover {
 	border-bottom: 1px solid #aaa;
 }
@@ -89,10 +98,100 @@ header .link-icons a span {
 	top: 22px;
 	right: 0;
 }
+
+form.searchbox input[type=text] {   
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+  }
+  
+form.searchbox button {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+}
+  
+form.searchbox button:hover {
+	background: #ffffff;
+}
+  
+form.searchbox::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+#logInButton {
+	position: fixed;
+	top: 0px;
+	right: 0px; 
+	border: none;
+	border-radius: 0px 0px 0px 10px;
+	color: white;
+	font-family: Tahoma, Geneva, sans-serif;
+	padding: 10px 18px;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: #1b6292;
+	z-index: 999;
+}
+
+#logInButton:hover {
+	background-color: #b12427;
+}
+
+#backButton {
+	position: relative;
+	top: 0px;
+	right: 0px; 
+	border: none;
+	border-radius: 0px 0x 0px 0px;
+	color: white;
+	font-family: Tahoma, Geneva, sans-serif;
+	padding: 10px 18px;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: rgb(167, 8, 8);
+	z-index: 999;
+}
+
+#backButton:hover {
+	background-color: #1b6292;
+}
+
+#scrollUpBtn {
+	display: none;
+	position: fixed;
+	bottom: 15px;
+	right: 25px;
+	z-index: 99;
+	font-size: 15px;
+	border: none;
+	outline: none;
+	background-color: rgb(167, 8, 8);
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
+  
+#scrollUpBtn:hover {
+	background-color: #1b6292;
+}
+
 main .featured {
 	display: flex;
 	flex-direction: column;
-	background-image: url(../../public/img/featured-image.jpg);
+	background-image: url(../../public/img/bg5.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 500px;
@@ -118,9 +217,53 @@ main .featured p {
 	color: #FFFFFF;
 }
 
+.slideshow {display: none;}      
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(245, 146, 53);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
 main .recentlyadded h2 {
 	display: block;
-	font-weight: normal;
+	font-weight: bold; 
 	margin: 0;
 	padding: 40px 0;
 	font-size: 24px;
@@ -148,15 +291,15 @@ main .recentlyadded .products .product img, main .products .products-wrapper .pr
 }
 main .recentlyadded .products .product .name, main .products .products-wrapper .product .name {
 	display: block;
-	color: #555555;
+	color: #241717;
 	padding: 20px 0 2px 0;
 }
 main .recentlyadded .products .product .price, main .products .products-wrapper .product .price {
 	display: block;
-	color: #999999;
+	color: #4b2020;
 }
 main .recentlyadded .products .product .rrp, main .products .products-wrapper .product .rrp {
-	color: #BBBBBB;
+	color: #554a4a;
 	text-decoration: line-through;
 }
 main .recentlyadded .products .product:hover img, main .products .products-wrapper .product:hover img {
@@ -164,7 +307,7 @@ main .recentlyadded .products .product:hover img, main .products .products-wrapp
 	transition: transform 1s;
 }
 main .recentlyadded .products .product:hover .name, main .products .products-wrapper .product:hover .name {
-	text-decoration: underline;
+	text-decoration: solid;
 }
 main > .product {
 	display: flex;
@@ -175,17 +318,17 @@ main > .product > div {
 }
 main > .product h1 {
 	font-size: 34px;
-	font-weight: normal;
+	font-weight: bold;
 	margin: 0;
 	padding: 20px 0 10px 0;
 }
 main > .product .price {
 	display: block;
 	font-size: 22px;
-	color: #999999;
+	color: #2b2323;
 }
 main > .product .rrp {
-	color: #BBBBBB;
+	color: #2b2323;
 	text-decoration: line-through;
 	font-size: 22px;
 	padding-left: 5px;
@@ -220,7 +363,7 @@ main > .product form input[type="submit"]:hover {
 }
 main > .products h1 {
 	display: block;
-	font-weight: normal;
+	font-weight: bold;
 	margin: 0;
 	padding: 40px 0;
 	font-size: 24px;
@@ -248,7 +391,7 @@ main > .products .buttons a:hover {
 }
 main .cart h1 {
 	display: block;
-	font-weight: normal;
+	font-weight: bold;
 	margin: 0;
 	padding: 40px 0;
 	font-size: 24px;
@@ -260,7 +403,8 @@ main .cart table {
 }
 main .cart table thead td {
 	padding: 30px 0;
-	border-bottom: 1px solid #EEEEEE;
+	border-bottom: 1px solid #ffffff;
+	font-weight: bold;
 }
 main .cart table thead td:last-child {
 	text-align: right;
@@ -276,15 +420,15 @@ main .cart table .img {
 	width: 80px;
 }
 main .cart table .remove {
-	color: #777777;
-	font-size: 12px;
+	color: #960808;
+	font-size: 14px;
 	padding-top: 3px;
 }
 main .cart table .remove:hover {
-	text-decoration: underline;
+	text-decoration: solid;
 }
 main .cart table .price {
-	color: #999999;
+	color: #464545; 
 }
 main .cart table a {
 	text-decoration: none;
@@ -307,7 +451,7 @@ main .cart .subtotal .text {
 }
 main .cart .subtotal .price {
 	font-size: 18px;
-	color: #999999;
+	color: #464545; 
 }
 main .cart .buttons {
 	text-align: right;
@@ -317,7 +461,7 @@ main .cart .buttons input[type="submit"] {
 	margin-left: 5px;
 	padding: 12px 20px;
 	border: 0;
-	background: #4e5c70;
+	background: #d8cb16;
 	color: #FFFFFF;
 	font-size: 14px;
 	font-weight: bold;

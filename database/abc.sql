@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2020 at 05:59 PM
+-- Generation Time: Nov 25, 2020 at 08:35 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -102,7 +102,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`) VALUES
-(1, 'mas', 'mas', 'aa', 'm@gmail.com', 11, '123');
+(1, 'mas', 'mas', 'aa', 'm@gmail.com', 11, '123'),
+(2, 'shantha@gmail.com', 'ss', 'dfgh', 'vvv', 0, '1'),
+(3, 'sandani', 'sandani wimalasiri', 'no 26, %th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', 719876541, '1');
 
 -- --------------------------------------------------------
 
@@ -232,7 +234,7 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`first_name`, `last_name`, `email`, `pwd`, `tp`, `emp_status`) VALUES
-('Sunil', 'Gamage', '    sunil@gmail.com', '123', 711234910, 'manager');
+('Shantha', 'Bandara', 'shantha@gmail.com', 'admin', 711234523, 'manager');
 
 -- --------------------------------------------------------
 
@@ -339,13 +341,13 @@ ALTER TABLE `beehive`
 -- AUTO_INCREMENT for table `beekeeper`
 --
 ALTER TABLE `beekeeper`
-  MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `div_manager`

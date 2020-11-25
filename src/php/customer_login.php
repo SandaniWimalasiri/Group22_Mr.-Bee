@@ -5,15 +5,15 @@
 
 	</head>
 	<body >
-<?php include('homenavbar.php');
+
         
         
 ?>
 		<div class="loginbox">
 			<div class="center">
-				<img src="../../public/img/login.png" class="avatar">
+				
 			</div>
-				<h2>Login Here</h2>
+				<center><h2>Login Here</h2></center>
 				<form method="post" action="customer_index.php" >
 					<p>Username</p>
 					<input type="text" name="name" placeholder="Enter your Username">

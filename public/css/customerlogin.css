@@ -1,6 +1,6 @@
 body{
 	margin: 0 auto;
-	background-image:url("../img/12.png");
+	background-image:url("../img/s3.jpg");
 	background-repeat:no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -12,8 +12,8 @@ body{
 .loginBox{
     width: 350px;
     height: 550px;
-    background: rgba(10, 10, 10, 0.9);
-    color: rgb(243, 216, 63);
+    background: rgba(10, 10, 10, 0.966);
+    color: rgb(245, 150, 8);
     top: 50%;
     left: 50%;
     position: absolute;
@@ -22,7 +22,9 @@ body{
 	padding: 70px 30px;
 	
 }
-
+.loginBox a{
+    color: blanchedalmond;
+}
 .avatar{
     width: 100px;
     height: 100px;

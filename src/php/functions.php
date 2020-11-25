@@ -18,32 +18,36 @@ echo <<<EOT
 <html>
 	<head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>$title</title>
 		<link href="../../public/css/style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
-	<body>
+    <body>
         <header>
             <div class="content-wrapper">
                 <h1>Nature Bee Honey Company Sri Lanka</h1>
                 <nav>
-                    <a href="customer_index.php">Home</a>
+                    <a href="index.php">Home</a>
+                    <a href="customer_index.php">Discover</a>
                     <a href="customer_index.php?page=products">Products</a>
                 </nav>
-                <div class="link-icons">
-                    <div class="search">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search..." style="display: block;">
-                    </div>
+               
+                <div class="link-icons">  
+                    <form class="serachbox" href="home.php" style="margin:auto; max-width:300px">
+                        <input type="text" placeholder="Search.." name="search" autocomplete="off" />
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>  
                     <a href="customer_index.php?page=cart">
-						<i class="fas fa-shopping-cart"></i>
+					    <i class="fas fa-shopping-cart"></i>
                         <span>$num_items_in_cart</span>
-					</a>
+                    </a>
+                    
+                   
                 </div>
             </div>
         </header>
-        <main>
+    <main>
 EOT;
 }
 
