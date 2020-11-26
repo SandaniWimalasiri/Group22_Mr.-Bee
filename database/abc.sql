@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2020 at 08:35 AM
+-- Generation Time: Nov 26, 2020 at 03:35 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -51,9 +51,10 @@ CREATE TABLE `beehive` (
 --
 
 INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`) VALUES
-(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 10),
+(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 9),
 (2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Active', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13),
-(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Inactive', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22);
+(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Inactive', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22),
+(4, 3, 4, '2020-07-07', '2020-11-01', '16:08:00.00', 'inactive', '21.3', 'humidity: 71%\r\nwind: 6.1km/h', 'Transfer bees', 11, 'none', 'none', 'fresh eggs provided', 10);
 
 -- --------------------------------------------------------
 
@@ -77,9 +78,9 @@ CREATE TABLE `beekeeper` (
 --
 
 INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`) VALUES
-(1, 'anupama', 'anupama sellahannadi', '3/2, Artigala, Godagama', 'a98@gmail.com', 112456723, '123', 0),
+(1, 'anupama', 'anupama sellahannadi', ' 3/2, Artigala, Godagama', 'a98@gmail.com', 112456724, 'anupama98', 0),
 (2, 'kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, '1289', 0),
-(3, 'madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, '1234', 0);
+(3, 'madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'madhavi98', 0);
 
 -- --------------------------------------------------------
 
@@ -102,9 +103,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`) VALUES
-(1, 'mas', 'mas', 'aa', 'm@gmail.com', 11, '123'),
-(2, 'shantha@gmail.com', 'ss', 'dfgh', 'vvv', 0, '1'),
-(3, 'sandani', 'sandani wimalasiri', 'no 26, %th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', 719876541, '1');
+(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', 719876541, 'sandani1996');
 
 -- --------------------------------------------------------
 
@@ -120,7 +119,7 @@ CREATE TABLE `div_manager` (
   `tp` int(10) NOT NULL,
   `pwd` varchar(100) NOT NULL DEFAULT 'div_man@123',
   `emp_status` varchar(25) NOT NULL DEFAULT 'Divisional_Manager',
-  `division` varchar(10) NOT NULL,
+  `division` varchar(20) NOT NULL,
   `no_employee` int(10) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -135,7 +134,9 @@ INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `
 (3, 'prasanna', 'silva', 'prasanna@gmail.com', 711234568, 'div_man@123', ' Divisional_Manager', 'Gampaha', 2, 0),
 (4, 'Prabath', 'Gunathilaka', 'prabath@gmail.com', 711234569, 'div_man@123', ' Divisional_Manager', 'Hambantota', 9, 0),
 (5, 'Sunil', 'Perera', 'sunil@gmail.com', 711234561, 'div_man@123', 'Divisional_Manager', 'Colombo', 2, 0),
-(6, 'sandani', 'vindya', 'sandani@gmail.com', 719874581, 'div_man@123', 'Divisional_Manager', 'Badulla', 10, 1);
+(6, 'sandani', 'vindya', 'sandani@gmail.com', 719874581, 'div_man@123', 'Divisional_Manager', 'Nuwara Eliya', 10, 0),
+(8, 'kamala', 'silva', 'kamala@gmail.com', 719874567, 'div_man@123', 'Divisional_Manager', 'Anuradhapu', 2, 1),
+(9, 'kamal', 'weerasinha', 'kamal@gmail.com', 911234567, 'div_man@123', 'Divisional_Manager', 'Batticaloa', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -263,8 +264,7 @@ INSERT INTO `products` (`id`, `pname`, `descr`, `price`, `rrp`, `quantity`, `img
 (2, 'Organic Bee Honey with Sour Sup', '<p>Pure Organic Bee Honey with Sour Sup of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Sour Sup Taste.</li>\r\n<li>Exquisite Flavour.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health with Antioxidants.</li>\r\n</ul>', '450.00', '500.00', 25, 'p2.jpg', '2020-11-23 18:52:49', 0),
 (3, 'Organic Bee Honey with Comb', '<p>Pure Organic Bee Honey with Honeycomb Included.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Honeycomb Taste.</li>\r\n<li>Exquisite Flavor.</li>\r\n<li>Rich with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.99', '500.00', 23, 'p3_1.jpg', '2020-11-20 18:47:56', 0),
 (4, 'Organic Raw Bee Honey', '<p>Pure Organic Raw Bee Honey.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Natural Honey Taste.</li>\r\n<li>Rich with Antioxidants.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '400.00', '420.00', 35, 'p0_7.jpg', '2020-11-25 17:42:04', 0),
-(8, 'sample ', 'dsddddsddsdsd', '250.00', '200.00', 20, 'honey5.jpg', '2020-11-24 04:56:57', 0),
-(9, 'sample 2', 'asdfghjk', '250.00', '300.00', 20, '4.jpg', '2020-11-24 20:30:55', 0);
+(8, 'sample ', 'dsddddsddsdsd', '250.00', '200.00', 20, 'honey5.jpg', '2020-11-24 04:56:57', 0);
 
 --
 -- Indexes for dumped tables
@@ -295,7 +295,8 @@ ALTER TABLE `div_manager`
   ADD PRIMARY KEY (`div_id`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `div_code` (`division`),
-  ADD UNIQUE KEY `tp` (`tp`);
+  ADD UNIQUE KEY `tp` (`tp`),
+  ADD UNIQUE KEY `division` (`division`);
 
 --
 -- Indexes for table `feeding`
@@ -335,7 +336,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `beehive`
 --
 ALTER TABLE `beehive`
-  MODIFY `BeehiveRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `BeehiveRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `beekeeper`
@@ -347,13 +348,13 @@ ALTER TABLE `beekeeper`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `div_manager`
 --
 ALTER TABLE `div_manager`
-  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `feeding`
