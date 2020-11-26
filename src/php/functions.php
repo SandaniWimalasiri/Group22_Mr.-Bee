@@ -26,7 +26,7 @@ echo <<<EOT
     <body>
         <header>
             <div class="content-wrapper">
-                <h1>Nature Bee Honey Company Sri Lanka</h1>
+                <h1>Nature Bee Honey Company SriLanka</h1>
                 <nav>
                     <a href="index.php">Home</a>
                     <a href="customer_index.php">Discover</a>

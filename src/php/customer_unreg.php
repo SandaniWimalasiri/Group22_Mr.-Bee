@@ -10,7 +10,7 @@
 
 <header>
             <div class="content-wrapper">
-                <h1>Nature Bee Honey Company Sri Lanka</h1>
+                <h1>Nature Bee Honey Company SriLanka</h1>
                 <nav>
                     <a href="index.php">Home</a>
                     <a href="customer_unreg.php">Discover</a>
@@ -20,7 +20,7 @@
                 <div class="link-icons">  
                     
                     
-                    <button id="logInButton" class="float-left submit-button" >Sign In or Create Account</button>
+                    <button id="logInButton" class="float-left submit-button" >Sign In</button>
                         <script type="text/javascript">
                             document.getElementById("logInButton").onclick = function () {
                             location.href = "customer_login.php";

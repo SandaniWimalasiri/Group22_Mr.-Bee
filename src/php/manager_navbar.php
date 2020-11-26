@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="dropdown">
-                        <button class="dropbtn">Infomation Forum</button>
+                        <button class="dropbtn">Info Hub</button>
                         <div class="dropdown-content">
                             <a href="manager_infohub.php">Add Article</a>
                             
