@@ -19,12 +19,16 @@
         <div class="content"> 
             <br>
             <div class="viewform">
-                    
-                        <button class="btn6" type="submit" name="submit" onclick="document.location='manager_dm_add.php'">Add </button>
-                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Divisional Manager</button>
+                            <div class="dropdown-content">
+                                <a href="manager_dm_add.php">Add new Division Manager</a>
+                                <a href="manager_dm_removed.php">Removed DM List</a>
+                            </div>
+                        </div>
                    
              </div>
-             <br>  
+             <br><br> <br> 
             <center>
                 <table class="div_man">
                     <tr>
