@@ -17,6 +17,7 @@
 
         <div class="content">
         <h1>Add a Product</h1>
+        <br>
         <form class="f1" action='manager_products_add.php' method="get">
                
                <table  class="div_man">
