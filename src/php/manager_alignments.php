@@ -31,15 +31,13 @@ require_once("func.php"); ?>
                     <?php echo $_SESSION['first_name'];
                         echo " " ;
                         echo $_SESSION['last_name']; ?>
-                <a href="log_out.php"> (Log Out) </a>
+                <a href="log_out.php"> (Log Out)__ </a>
             </div>
             
         </header>                       <!--end of header-->
 
         <!--start of logo class-->
-        <div class="logo">
-        <img src="../../public/img/004.png" width="8%" height=width>
-        </div>                          <!--end of logo class-->
+                                 <!--end of logo class-->
 
     </nav>    
          <!--start of footer-->
