@@ -1,6 +1,9 @@
 
 <?php require_once("../../config/connect.php");
 require_once("func.php"); ?>
+<?php include('manager_alignments.php')?>
+<?php include('manager_navbar.php')?>
+
 <?php session_start(); 
 
         if(!$_SESSION['userName']){
@@ -21,38 +24,7 @@ require_once("func.php"); ?>
     </head>
 
 <body>
-        <nav>   
-            <!--start of header-->
-            
-            <header>  
-                                
-                <div class="webName">
-                    MR.<font color="#f4976c">BEE</font></a>
-                </div>
-                <div class="user">
-                    You are logged in as 
-                        <?php echo $_SESSION['first_name'];
-                            echo " " ;
-                            echo $_SESSION['last_name']; ?>
-                    <a href="log_out.php"> (Log Out) </a>
-                </div>
-                
-            </header>                       <!--end of header-->
-
-            <!--start of logo class-->
-            <div class="logo">
-            <img src="../../public/img/004.png" width="8%" height=width>
-            </div>                          <!--end of logo class-->
-
-        </nav>    
-        <div class="welcomeBox">       
-            <a href="manager_home.php"><img src="../../public/img/manager2.jpg" class="icon"></a>
-            <h1>Divisional Manager Details</h1>
-        </div> 
-
-      
-
-
+       
     <div class="content"> 
             <?php
                 $div_id=$_POST['div_id'];
@@ -65,6 +37,7 @@ require_once("func.php"); ?>
                     ?>
 
                         <h1 >Update Divisional Manager's Details</h1>
+                        <br>
                         <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><<<b>Back</b></button> 
                         </br>
                             
