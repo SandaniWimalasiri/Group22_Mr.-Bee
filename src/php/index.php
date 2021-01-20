@@ -40,7 +40,7 @@
 				</div>
 				<div class="text">
 					</br>
-					<p>    We try our best to provide you quality bee-honey products with wide range. 
+					<p>    We try our best to provide you quality bee-honey products within a wide range. 
 					</p>
 				</div>
 					
