@@ -139,3 +139,17 @@ input[type=text]{
   font-size: 16px;
   background-color: rgba(243, 227, 208, 0.918);
 }
+
+.content3 input[type=submit]{
+  font-size: 18px;  
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  background-color: #d4780ec0;
+  height: 40px;
+
+  border-radius: 2px;
+  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0,0.226);
+  width: 200px;
+ 
+}
