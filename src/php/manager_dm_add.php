@@ -1,5 +1,4 @@
-<?php include('manager_alignments.php')?>
-<?php include('manager_navbar.php')?>
+
 
 
 <html>
@@ -98,6 +97,25 @@
                 echo '<script> alert("Insertion Failed"); </script>';
            }
        }
-                     
+         
+            $email=$_GET['email'];
+    
+            $to = '{$email}';
+            $subject = 'Change the Password';
+            $message = 'Welcome to Mr. Bee. And Thank You for Joining with us. Herewith we sent login informations for your Account. After the log in you should change your password because of security purpose.
+            yout user name = your email and your password=div_man@123';
+            $message .='<b>From:<b> Mr. BEE website<br>';
+            $from_address = 'vindysilva96@gmail.com';
+           
+            // Sending email
+            if(mail($to, $subject, $message,"From: $from_address", "-f $from_address")){
+                echo '<script> alert("Your mail has been sent successfully."); </script>';
+               
+            } else{
+                echo '<script> alert("Unable to send email. Please try again."); </script>';
+                
+            }
+
+     
   
 ?>
