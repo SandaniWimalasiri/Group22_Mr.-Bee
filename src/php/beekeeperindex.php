@@ -199,11 +199,16 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$wbeehive=$wstatus=$cbeehive=$noframe
         </div>
         <div class="row">
         <div class="col1">
-        <label for="actstatus">Active status and temperament of bees</label>
-        
+        <label for="actstatus">Active Status</label>
         </div>
-           <div class="col2">
-        <textarea id="actstatus" name="actstatus" style="height:100px" placeholder="Active status and temperament of bees" value="<?= $actstatus?>"></textarea>
+        <div class="col2">
+        <select id="actstatus" name="actstatus" value="<?= $actstatus?>" >
+             <option value="Strongly Active">Strongly Active</option>
+             <option value="Active">Active</option>
+             <option value="Neutral">Neutral</option>
+             <option value="Inactive">Inactive</option>
+             <option value="Empty">Empty</option>
+        </select> 
         <span class="error"><?= $actstatus_error?></span>
         </div>
         </div>
