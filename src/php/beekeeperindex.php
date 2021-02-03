@@ -4,8 +4,8 @@ if($_SESSION['loggedin']!=1){
     header('Location: beekeeperlogin.php');
 }
 
-$beehiveno_error=$sdate_error=$idate_error=$itime_error=$actstatus_error=$wbeehive_error=$wstatus_error=$cbeehive_error=$noframes_error=$disease_error=$treatment_error=$sqbee_error=$bcolony_error="";
-$beehiveno=$sdate=$idate=$itime=$actstatus=$wbeehive=$wstatus=$cbeehive=$noframes=$disease=$treatment=$sqbee=$bcolony="";
+$beehiveno_error=$sdate_error=$idate_error=$itime_error=$actstatus_error=$temperament_error=$wbeehive_error=$wstatus_error=$cbeehive_error=$noframes_error=$disease_error=$treatment_error=$sqbee_error=$bcolony_error="";
+$beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbeehive=$noframes=$disease=$treatment=$sqbee=$bcolony="";
 
     if(isset($_POST['enter'])){
 
@@ -34,6 +34,12 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$wbeehive=$wstatus=$cbeehive=$noframe
             $actstatus_error = "*Active status is required";
           } else {
             $actstatus = test_input($_POST["actstatus"]);
+          }
+
+          if (empty($_POST["temperament"])) {
+            $temperament_error = "*Temperament is required";
+          } else {
+            $temperament = test_input($_POST["temperament"]);
           }
         
           if (empty($_POST["wbeehive"])) {
