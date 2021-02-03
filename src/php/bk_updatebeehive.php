@@ -133,12 +133,13 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Status of queen bee </div><div class="col2"><select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
-        <option value="Strongly Active">Strongly Active</option>
-        <option value="Active">Active</option>
-        <option value="Neutral">Neutral</option>
-        <option value="Inactive">Inactive</option>
-        <option value="Empty">Empty</option>
-        </select> 
+             <option value="Missing">Missing</option>
+             <option value="No Fresh Eggs">No Fresh Eggs</option>
+             <option value="Fresh Eggs Provided">Fresh Eggs Provided</option>
+             <option value=" Queen Cell Introduced"> Queen Cell Introduced</option>
+             <option value="Virgin Queen Introduced">Virgin Queen Introduced</option>
+             <option value="Mated Queen Introduced">Mated Queen Introduced</option>
+             </select> 
         echo "</div>";
         echo "</div>";
         
