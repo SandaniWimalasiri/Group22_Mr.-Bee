@@ -269,11 +269,12 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         </div>
            <div class="col2">
            <select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
-             <option value="Strongly Active">Strongly Active</option>
-             <option value="Active">Active</option>
-             <option value="Neutral">Neutral</option>
-             <option value="Inactive">Inactive</option>
-             <option value="Empty">Empty</option>
+             <option value="Missing">Missing</option>
+             <option value="No Fresh Eggs">No Fresh Eggs</option>
+             <option value="Fresh Eggs Provided">Fresh Eggs Provided</option>
+             <option value=" Queen Cell Introduced"> Queen Cell Introduced</option>
+             <option value="Virgin Queen Introduced">Virgin Queen Introduced</option>
+             <option value="Mated Queen Introduced">Mated Queen Introduced</option>
         </select> 
            <span class="error"><?= $sqbee_error?></span>
         </div>
