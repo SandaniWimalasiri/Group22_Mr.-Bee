@@ -100,7 +100,15 @@ if(isset($_GET['BeehiveRecNo'])){
         </select> ';
         echo "</div>";
         echo "</div>";
-        
+        echo '<div class="row" >';
+        echo '<div class="col1">';
+        echo 'Temperament </div><div class="col2"><select id="temperament" name="temperament" value="<?= $temperament?>" >
+        <option value="Calm">Calm</option>
+        <option value=" Nervous"> Nervous</option>
+        <option value="Angry">Angry</option>
+        </select> ';
+        echo "</div>";
+        echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Weather status </div><div class="col2"><textarea name="wstatus" style="height:100px" required placeholder ="">'.$row['wstatus']."</textarea>";
