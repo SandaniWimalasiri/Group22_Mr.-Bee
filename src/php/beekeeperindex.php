@@ -213,6 +213,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         <span class="error"><?= $actstatus_error?></span>
         </div>
         </div>
+        <div class="row">
         <div class="col1">
         <label for="temperament">Temperament</label>
         </div>
