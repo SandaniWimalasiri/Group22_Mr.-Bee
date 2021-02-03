@@ -92,9 +92,11 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Active Status </div><div class="col2"><select id="actstatus" name="actstatus" value="<?= $actstatus?>" >
-        <option value="Raw Honey">Raw Honey</option>
-        <option value="Bee Colonies">Bee Colonies</option>
-        <option value="Royal Gel">Royal Gel</option>
+             <option value="Strongly Active">Strongly Active</option>
+             <option value="Active">Active</option>
+             <option value="Neutral">Neutral</option>
+             <option value="Inactive">Inactive</option>
+             <option value="Empty">Empty</option>
         </select> ';
         echo "</div>";
         echo "</div>";
