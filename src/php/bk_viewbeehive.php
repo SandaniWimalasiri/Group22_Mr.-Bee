@@ -48,7 +48,7 @@ if(isset($_POST['enter']) || isset($_POST['back'])){
 
 
         
-$sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."'";
+$sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."'";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
