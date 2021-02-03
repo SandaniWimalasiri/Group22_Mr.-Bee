@@ -18,8 +18,18 @@
 
          <!--start content-->
          <div class="content3"> 
-            
-            </br></br>
+                    <div class="dropdown">
+                        
+                        
+                    </div>
+                    
+            </br></br><br><br>
+                    <form  action="manager_infohub.php" method="post" >
+                        <div class="row">
+                            <input type="submit" value="Add a Article" name="back">
+                        </div>
+                    </form>
+                    <br>
          <?php
            // if(isset($_POST['enter'])){
                 
@@ -44,11 +54,7 @@
             
 
 
-                    <form  action="manager_infohub.php" method="post" >
-                        <div class="row">
-                            <input type="submit" value="<< Back" name="back" >
-                        </div>
-                    </form>
+                   
 
         </div>
 

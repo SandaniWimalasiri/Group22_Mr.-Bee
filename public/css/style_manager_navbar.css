@@ -1,5 +1,6 @@
+/*
 .navibar {
-    /*overflow: hidden;*/
+    /*overflow: hidden;
     background-color: rgba(51, 51, 51, 0.274);
     left:50%;
     width: 1300px;
@@ -21,21 +22,22 @@
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+  */
+
   .dropdown {
     float: left;
-    overflow: hidden;
   }
   
   .dropdown .dropbtn {
-    font-size: 16px;  
+    font-size: 18px;  
     border: none;
-    outline: none;
-    color: #b2ebf3;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
+    color: #000000;
+    padding: 10px 20px 10px 20px;
+    background-color: #d4780ec0;
+    height: 40px;
+    /*margin: 0;*/
+    border-radius: 2px;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0,0.226);
   }
   
   .navibar a:hover, .dropdown:hover .dropbtn {

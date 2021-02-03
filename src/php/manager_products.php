@@ -33,10 +33,15 @@
         <div class="content">      
              <div class="viewform">
                     
-                        
-                        <button class="btn6" type="submit" name="submit" onclick="document.location='manager_products_add.php'">Add Item</button>
-                        <button class="btn6" type="submit" name="submit" onclick="document.location='manager_products_view.php'">Product List</button>
-                    
+                        <div class="dropdown">
+                            <button class="dropbtn">Products</button>
+                            <div class="dropdown-content">
+                                <a href="manager_products_view.php">Product List</a>
+                                <a href="manager_products_add.php">Add a Product</a>
+                                
+                            </div>
+                        </div>
+                       
                     <br>
              </div>  
             

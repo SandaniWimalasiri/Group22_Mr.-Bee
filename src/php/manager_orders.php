@@ -17,11 +17,13 @@
          <!--start content-->
         <div class="content">   
                     <div class="dropdown">
-                        <button class="dropbtn">Reports</button>
+                        <button class="dropbtn">Order Details </button>
                         <div class="dropdown-content">
-                            <a href="manager_view_reports.php">Monthly Reports</a>
-                            <a href="manager_view_reports.php">Final Reports</a>
-                            <a href="manager_products_removed.php">Removed Product List</a>
+                            <a href="">Ongoing Orders</a>
+                            
+                            <a href="" name="enter">completed orders</a>
+                            </form>
+                            
                         </div>
                     </div>
            

@@ -16,87 +16,7 @@ body{
    
 }
 
-.welcomeBox{
-    width: 1300px;
-    height: 20px;
-    color: #FDC564;
-    top: 16%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
-}
 
-
-
-.content{
-    width: 1300px;
-    height: 1500px;
-    position: absolute;
-   /* background:#b2ebf363 ;*/
-    background: #f7be74;
-    
-	top:130%;
-	left:50%;
-    display:block;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 20px 100px 20px 100px;
-    color: #023765;
-    border-radius: 2%;
-    
-}
-.content0{
-    width: 1300px;
-    height: 670px;
-    position: absolute;
-   /* background:#b2ebf363 ;*/
-    background: #f7be74;
-    
-	top:77%;
-	left:50%;
-    display:block;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 20px 100px 20px 100px;
-    color: #023765;
-    border-radius: 2%;
-    
-}
-
-.content2{
-    width: 1300px;
-    height: 575px;
-    position:absolute;
-    background:#FDC564 ;
-    top:60%;
-    left:50%;
-    display:block;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding:5px 30px;
-    color: #023765;
-    border-radius: 2%;
-}
-
-.content3{
-    width: 1300px;
-    height: 1000px;
-    position: absolute;
-   /* background:#b2ebf363 ;*/
-    background: #fdc56400;
-    
-	top:97%;
-	left:50%;
-    display:block;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 5px 45px ;
-    color: #000000;
-    border-radius: 2%;
-    
-}
 
 .navBar{
     width: 180px;
@@ -111,15 +31,28 @@ body{
     box-sizing: border-box;
     padding: 30px 10px;
 }
-
+.welcomeBox{
+    position: fixed;
+    width: 1300px;
+    height: 20px;
+    color: #FDC564;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    z-index:10;
+}
 
 header{
+    position: fixed;
     background-color: #f4f7ff;
     overflow: hidden;
     padding: 10px;
     font-family: "calibri";
-    
-    
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    z-index: 10;
 }
 
 header .webName{
@@ -135,6 +68,7 @@ header .user{
     float: right;
     font-size: 16px;
     color: rgb(15, 15, 15);
+    
 }
 
 
@@ -181,6 +115,75 @@ a:hover {color: red;}
    
 }
 
+
+.content{
+    width: 1200px;
+    height: 1500px;
+    position: absolute;
+   /* background:#b2ebf363 ;*/
+    background: #f7be74;
+    
+	top:119%;
+	left:58%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 100px 20px 100px;
+    color: #023765;
+    border-radius: 1.5%;
+    
+}
+.content0{
+    width: 1200px;
+    height: 670px;
+    position: absolute;
+   /* background:#b2ebf363 ;*/
+    background: #f7be74;
+    
+	top:64%;
+	left:58%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 100px 20px 100px;
+    color: #023765;
+    border-radius: 2%;
+    
+}
+
+.content2{
+    width: 1200px;
+    height: 575px;
+    position:absolute;
+    background:#FDC564 ;
+    top:68%;
+	left:58%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:5px 30px;
+    color: #023765;
+    border-radius: 2%;
+}
+
+.content3{
+    width: 1200px;
+    height: 1000px;
+    position: absolute;
+   /* background:#b2ebf363 ;*/
+    background: #fdc56400;
+    
+	top:82%;
+	left:58%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 5px 45px ;
+    color: #000000;
+    border-radius: 2%;
+    
+}
+
 .footer{
     position:fixed;
     bottom: 0;
@@ -197,6 +200,57 @@ a:hover {color: red;}
     
   }
 
+@media screen and (max-width : 860px){
+  
+.content{
+    width: 1000px;
+    height: auto;
+    position: absolute;
+   
+    padding: 20px 100px 20px 100px;
+   
+    
+}
+.content0{
+    width: 810px;
+    height: auto;
+    position: relative;
+   
+    
+}
 
+.content2{
+    width: 1200px;
+    height: 575px;
+    position:absolute;
+    background:#FDC564 ;
+    top:68%;
+	left:58%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:5px 30px;
+    color: #023765;
+    border-radius: 2%;
+}
+
+.content3{
+    width: 1200px;
+    height: 1000px;
+    position: absolute;
+   /* background:#b2ebf363 ;*/
+    background: #fdc56400;
+    
+	top:82%;
+	left:58%;
+    display:block;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 5px 45px ;
+    color: #000000;
+    border-radius: 2%;
+    
+}  
+}
 
 

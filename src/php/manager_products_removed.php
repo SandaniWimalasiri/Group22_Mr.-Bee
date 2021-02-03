@@ -22,6 +22,7 @@
         <center>
             <br>
             <h2>Products' Details</h2>
+            <br>
                 <table class="div_man">
                     <tr>
                         <th>product ID</th>
@@ -67,7 +68,7 @@
             </center>
         
             <br>
-            <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><b>Back</b></button>
+            <button class="btn6" type="submit" name="back" onclick="document.location='manager_products_view.php'"><b>Back</b></button>
         </div>
         
     </body>
