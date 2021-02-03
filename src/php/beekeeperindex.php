@@ -268,7 +268,13 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         <label for="sqbee">Status of queen bee</label>
         </div>
            <div class="col2">
-           <textarea id="sqbee" name="sqbee" style="height:100px" placeholder="Status of queen bee" value="<?= $sqbee?>"></textarea>
+           <select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
+             <option value="Strongly Active">Strongly Active</option>
+             <option value="Active">Active</option>
+             <option value="Neutral">Neutral</option>
+             <option value="Inactive">Inactive</option>
+             <option value="Empty">Empty</option>
+        </select> 
            <span class="error"><?= $sqbee_error?></span>
         </div>
         </div>        
