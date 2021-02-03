@@ -1,4 +1,5 @@
-
+<?php include('manager_alignments.php')?>
+<?php include('manager_navbar.php')?>
 
 
 <html>
@@ -58,6 +59,8 @@
                                             <option value="Kandy">Kandy</option>
                                             <option value="Matale">Matale</option>
                                             <option value="Matara">Matara</option>
+                                            <option value="Jaffna">Jaffna</option>
+                                            <option value="Jaf">Jaf</option>
                                         </select>
                                         
                                    </td>
@@ -66,6 +69,13 @@
                                 <th><label>No. of Employees</label></th>
                                 <td><input type="text" name="no_employee" placeholder="Enter no. of employees" required></td>
                             </tr>
+                            <tr>
+                                <th><label>EmpId</label></th>
+                                <td><?php
+
+                                    
+                                 ?></td>
+                            </tr>
                             </table>
                             <br/>
                         
@@ -73,6 +83,11 @@
                             <button class="btn6" type="reset" class="cancelbtn"><b>Cancel<b></button>
                             <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><b>Back</b></button>
                            
+
+                           <?php 
+
+                              
+                           ?>
                         </form>
 
         </div>
@@ -87,6 +102,8 @@
            
            $sql="INSERT INTO div_manager (first_name, last_name, email,tp, division, no_employee) VALUES('".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['tp']."','".$_GET['division']."','".$_GET['no_employee']."')";
            $result=mysqli_query($connection,$sql);
+
+           
            //$result=$connection->query($sql);
            //print_r($result);
            if($result){
@@ -119,3 +136,22 @@
      
   
 ?>
+
+<?php
+if(isset($_GET['add'])){
+$employeeId=$_GET['div_id'];
+$divi=$_GET['division'];
+
+    $EmpId="DM/".$employeeId;
+    $sql0="UPDATE div_manager SET EmpId='$EmpId' where div_id='$employeeId'";
+    $result0=mysqli_query($connection,$sql0);
+
+    if($result0){
+     //echo "Successful";
+    // header( 'Location: manager_dm_add.php ');
+    echo '<script> alert("hari"); </script>';
+ }else{
+      echo '<script> alert("aaaa"); </script>';
+ }
+}
+ ?>
