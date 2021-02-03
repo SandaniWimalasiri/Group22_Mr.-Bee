@@ -207,6 +207,18 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$wbeehive=$wstatus=$cbeehive=$noframe
         <span class="error"><?= $actstatus_error?></span>
         </div>
         </div>
+        <div class="col1">
+        <label for="temperament">Temperament</label>
+        </div>
+        <div class="col2">
+        <select id="temperament" name="temperament" value="<?= $temperament?>" >
+             <option value="Calm">Calm</option>
+             <option value=" Nervous"> Nervous</option>
+             <option value="Angry">Angry</option>
+        </select> 
+        <span class="error"><?= $temperament_error?></span>
+        </div>
+        </div>
         <div class="row">
         <div class="col1">
         <label for="wstatus">Weather status</label>
