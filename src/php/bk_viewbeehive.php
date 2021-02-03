@@ -30,7 +30,8 @@ session_start();
                 <th>Start date</th>
                 <th>Inspection date</th>
                 <th>Inspection time</th>
-                <th>Active status and temperament of bees</th>
+                <th>Active status</th>
+                <th>Temperament</th>
                 <th>Weight of beehive</th>
                 <th>Weather status</th>
                 <th>Changes made to beehive</th>
@@ -70,6 +71,9 @@ $result = mysqli_query($connection,$sql);
         echo '</td>';
         echo '<td>';
         echo $row['actstatus'];
+        echo '</td>';
+        echo '<td>';
+        echo $row['temperament'];
         echo '</td>';
         echo '<td>';
         echo $row['wbeehive']." Kg";
