@@ -6,9 +6,9 @@ if(isset($_POST['update'])){
     
  
           
-    $sql2= "UPDATE beehive SET BeehiveRecNo ='".$_POST['BeehiveRecNo']."',beehiveno ='".$_POST['beehiveno']."', sdate ='".$_POST['sdate']."', idate ='".$_POST['idate']."', itime ='".$_POST['itime']."',actstatus ='".$_POST['actstatus']."',wbeehive ='".$_POST['wbeehive']."',wstatus ='".$_POST['wstatus']."',cbeehive ='".$_POST['cbeehive']."',noframes ='".$_POST['noframes']."',disease ='".$_POST['disease']."',treatment ='".$_POST['treatment']."',sqbee ='".$_POST['sqbee']."',bcolony ='".$_POST['bcolony']."' WHERE BeehiveRecNo='".$_POST['BeehiveRecNo']."'";
+    $sql2= "UPDATE beehive SET BeehiveRecNo ='".$_POST['BeehiveRecNo']."',beehiveno ='".$_POST['beehiveno']."', sdate ='".$_POST['sdate']."', idate ='".$_POST['idate']."', itime ='".$_POST['itime']."',actstatus ='".$_POST['actstatus']."',temperament ='".$_POST['temperament']."',wbeehive ='".$_POST['wbeehive']."',wstatus ='".$_POST['wstatus']."',cbeehive ='".$_POST['cbeehive']."',noframes ='".$_POST['noframes']."',disease ='".$_POST['disease']."',treatment ='".$_POST['treatment']."',sqbee ='".$_POST['sqbee']."',bcolony ='".$_POST['bcolony']."' WHERE BeehiveRecNo='".$_POST['BeehiveRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE BeehiveRecNo ='".$_POST['BeehiveRecNo']."'";
+    $sql3 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE BeehiveRecNo ='".$_POST['BeehiveRecNo']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
 
@@ -49,7 +49,7 @@ if(isset($_POST['update'])){
 <?php
 if(isset($_GET['BeehiveRecNo'])){
     
-  $sql1 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  BeehiveRecNo =".$_GET['BeehiveRecNo'];
+  $sql1 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  BeehiveRecNo =".$_GET['BeehiveRecNo'];
   $result1= mysqli_query($connection,$sql1);
   while($row=mysqli_fetch_assoc($result1)){  
             
