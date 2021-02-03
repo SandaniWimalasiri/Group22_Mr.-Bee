@@ -98,11 +98,6 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$wbeehive=$wstatus=$cbeehive=$noframe
 
         }
         }
-        
-       
-
-
-    
 
     function test_input($data) {
         $data = trim($data);
