@@ -31,7 +31,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$wbeehive=$wstatus=$cbeehive=$noframe
             $itime = test_input($_POST["itime"]);
           }
           if (empty($_POST["actstatus"])) {
-            $actstatus_error = "*Active status and temperament of bees is required";
+            $actstatus_error = "*Active status is required";
           } else {
             $actstatus = test_input($_POST["actstatus"]);
           }
