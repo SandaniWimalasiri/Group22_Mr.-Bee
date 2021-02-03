@@ -139,7 +139,7 @@ if(isset($_GET['BeehiveRecNo'])){
              <option value=" Queen Cell Introduced"> Queen Cell Introduced</option>
              <option value="Virgin Queen Introduced">Virgin Queen Introduced</option>
              <option value="Mated Queen Introduced">Mated Queen Introduced</option>
-             </select> 
+             </select> ';
         echo "</div>";
         echo "</div>";
         
