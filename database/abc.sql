@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2020 at 03:35 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Generation Time: Feb 03, 2021 at 06:22 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,6 +35,7 @@ CREATE TABLE `beehive` (
   `idate` date NOT NULL,
   `itime` time(2) NOT NULL,
   `actstatus` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `temperament` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `wbeehive` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `wstatus` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `cbeehive` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
@@ -50,11 +50,11 @@ CREATE TABLE `beehive` (
 -- Dumping data for table `beehive`
 --
 
-INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`) VALUES
-(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 9),
-(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Active', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13),
-(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Inactive', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22),
-(4, 3, 4, '2020-07-07', '2020-11-01', '16:08:00.00', 'inactive', '21.3', 'humidity: 71%\r\nwind: 6.1km/h', 'Transfer bees', 11, 'none', 'none', 'fresh eggs provided', 10);
+INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`) VALUES
+(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', 'Angry', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 9),
+(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Strongly Active', 'Calm', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13),
+(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Strongly Active', ' Nervous', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22),
+(4, 3, 4, '2020-07-07', '2020-11-01', '16:08:00.00', 'Strongly Active', ' Nervous', '21.3', 'humidity: 71%\r\nwind: 6.1km/h', 'Transfer bees', 11, 'none', 'none', 'fresh eggs provided', 10);
 
 -- --------------------------------------------------------
 
@@ -187,8 +187,8 @@ CREATE TABLE `harvest` (
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`) VALUES
 (1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '1.5 Kg'),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Raw Honey', '2 Kg'),
-(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Raw Honey', '0.25 Kg');
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '2.1 Kg'),
+(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '0.25 Kg');
 
 -- --------------------------------------------------------
 
