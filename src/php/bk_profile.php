@@ -8,9 +8,9 @@ if(isset($_POST['update'])){
     
  
           
-    $sql2= "UPDATE beekeeper SET userName ='".$_POST['userName']."',fullName ='".$_POST['fullName']."',  userAddress ='".$_POST['userAddress']."', userEmail ='".$_POST['userEmail']."',userTele ='".$_POST['userTele']."'WHERE userID='".$_SESSION['userid']."'";
+    $sql2= "UPDATE beekeeper SET userName ='".$_POST['userName']."',fullName ='".$_POST['fullName']."',  userAddress ='".$_POST['userAddress']."', userEmail ='".$_POST['userEmail']."',userTele ='".$_POST['userTele']."',userPassword ='".$_POST['userPassword']."'WHERE userID='".$_SESSION['userid']."'";
     $result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT userName,fullName,userAddress,userEmail,userTele  FROM beekeeper WHERE userID='".$_SESSION['userid']."'";
+    $sql3 = "SELECT userName,fullName,userAddress,userEmail,userTele,userPassword  FROM beekeeper WHERE userID='".$_SESSION['userid']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
    if($result2){
@@ -55,7 +55,7 @@ echo "failed";
 </br>
 <?php
 
-$sql1 = "SELECT userName,fullName,userAddress,userEmail,userTele  FROM beekeeper WHERE userID='".$_SESSION['userid']."'";
+$sql1 = "SELECT userName,fullName,userAddress,userEmail,userTele,userPassword  FROM beekeeper WHERE userID='".$_SESSION['userid']."'";
 mysqli_query($connection, $sql1);
 $result1 = mysqli_query($connection,$sql1);
 		while($row=mysqli_fetch_assoc($result1)){  
@@ -85,6 +85,11 @@ $result1 = mysqli_query($connection,$sql1);
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Contact No</div><div class="col2"><input type = "text" name="userTele" required value ="'.$row['userTele'].'" >';
+        echo "</div>";
+        echo "</div>";
+        echo '<div class="row" >';
+        echo '<div class="col1">';
+        echo 'Password</div><div class="col2"><input type = "password" name="userPassword" required value ="'.$row['userPassword'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Edit Profile" name="update" ></div></form>';
