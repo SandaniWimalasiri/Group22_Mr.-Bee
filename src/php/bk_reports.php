@@ -113,15 +113,15 @@ $beehiveno1="";
 
 
 
-  <div class="bhivecontainer">
+  <div class="bhivecontainer" >
 
 			
 
 
-<p>Beehive report</p>
+
  
         
-        <br/>
+  <br/><br/> <br/>
 <center>
         
         <form  method="post" action="" >
@@ -148,9 +148,8 @@ $beehiveno1="";
 <hr />
 
 
-<p>Harvest report</p>
         
-        <br/>
+<br/><br/> <br/>
       <center>  
         <form  method="post" action="" >
         <div class="row">
@@ -177,10 +176,8 @@ $beehiveno1="";
 <hr />
 			
 
-        
-<p>Feeding report</p>
-        
-        <br/>
+
+        <br/><br/> <br/>
         <center>
         
         <form  method="post" action="" >
