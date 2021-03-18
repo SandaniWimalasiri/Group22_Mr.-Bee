@@ -30,7 +30,7 @@ echo "failed";
 
     <head>
 
-      <title>bee-hive</title>
+      <title>my profile</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -49,8 +49,10 @@ echo "failed";
 
     <div class="bhivecontainer">
     <p >My Profile</p>
+    <br/><br/>
     
-    <center><img src="  ../../public/img/14.png" ></center>
+    <img src="  ../../public/img/14.png" >
+    <br/>
 </br>
 </br>
 <?php
@@ -92,6 +94,7 @@ $result1 = mysqli_query($connection,$sql1);
         echo 'Password</div><div class="col2"><input type = "password" name="userPassword" required value ="'.$row['userPassword'].'" >';
         echo "</div>";
         echo "</div>";
+        echo "<br/>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Edit Profile" name="update" ></div></form>';
         
 
