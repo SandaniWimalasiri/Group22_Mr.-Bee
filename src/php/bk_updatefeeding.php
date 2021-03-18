@@ -87,6 +87,7 @@ if(isset($_GET['FeedingRecNo'])){
         echo 'Feeding amount </div><div class="col2"><input type = "text" name="famount" value ="'.$row['famount'].'" >';
         echo "</div>";
         echo "</div>";
+        echo"<br/>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update record" name="update" ></div></form>';
 
   }}
