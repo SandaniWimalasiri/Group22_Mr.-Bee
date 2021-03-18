@@ -278,7 +278,8 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         </select> 
            <span class="error"><?= $sqbee_error?></span>
         </div>
-        </div>        
+        </div>  
+        <br/>      
         <div class="row">
         <div class="c1">
         <input type="submit" value="Submit" name="enter" >
