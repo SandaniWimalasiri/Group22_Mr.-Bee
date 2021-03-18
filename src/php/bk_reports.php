@@ -140,11 +140,11 @@ $beehiveno1="";
 
 
 
-</div>
+
 <br />
 <br />
 
-<div class="bhivecontainer">
+
 
 
 <p>Harvest report</p>
@@ -167,11 +167,10 @@ $beehiveno1="";
 
 
 
-</div>
+
 <br />
 <br />
 
-<div class="bhivecontainer">
 
 
 			
@@ -197,8 +196,9 @@ $beehiveno1="";
 
 
 
+<br />
+<br />
 
-</div>
 </div>	
 
 
