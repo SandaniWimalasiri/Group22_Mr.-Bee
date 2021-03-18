@@ -82,10 +82,10 @@ a:visited {
 .bhivecontainer p{
   
     font-size: 17px;
-    color: black;
+    color: white;
     text-align: left;
     padding: 8px;
-    background-color: 	#808080;
+    background-color:#202020;
 
 }
 
@@ -153,7 +153,7 @@ a:visited {
 
 
 input[type=submit] {
-  background-color: #2b3528;
+  background-color: #202020;
   color: white;
   padding: 10px 18px;
   border: none;
@@ -165,7 +165,8 @@ input[type=submit] {
 
 input[type=submit]:hover{
 
-  background-color: #202020	;
+  background-color: #da9100	;
+  color:black;
   
 
 }
