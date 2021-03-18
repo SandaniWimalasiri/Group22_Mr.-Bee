@@ -109,7 +109,7 @@ session_start();
         <label for="content">Content</label>
         </div>
     <div class="col2">
-        <textarea id="content" name="content" style="height:200px" placeholder="Content" value="<?= $content?>" ></textarea>
+        <textarea id="content" name="content" style="height:150px" placeholder="Content" value="<?= $content?>" ></textarea>
         <span class="error"><?= $content_error?></span>
     </div>
         </div>
