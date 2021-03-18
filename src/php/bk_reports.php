@@ -120,8 +120,9 @@ $beehiveno1="";
 
 <p>Beehive report</p>
  
-
-        <hr />
+        
+        <br/>
+<center>
         
         <form  method="post" action="" >
         <div class="row">
@@ -139,17 +140,18 @@ $beehiveno1="";
         </form>
 
 
-
+<center/>
 
 <br />
 <br />
 
-
+<hr />
 
 
 <p>Harvest report</p>
-        <hr />
         
+        <br/>
+      <center>  
         <form  method="post" action="" >
         <div class="row">
            <div class="col1">
@@ -165,19 +167,21 @@ $beehiveno1="";
         </div>
         </form>
 
-
+      </center>
 
 
 <br />
 <br />
 
 
-
+<hr />
 			
 
         
 <p>Feeding report</p>
-        <hr />
+        
+        <br/>
+        <center>
         
         <form  method="post" action="" >
         <div class="row">
@@ -194,7 +198,7 @@ $beehiveno1="";
 </div>
         </form>
 
-
+<center/>
 
 <br />
 <br />
