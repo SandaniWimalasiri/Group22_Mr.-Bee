@@ -118,6 +118,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo '<span class="error"><?= $amount_error?></span>';
         echo "</div>";
         echo "</div>";
+        echo"<br/>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update record" name="update" ></div></form>';
 }}       
 
