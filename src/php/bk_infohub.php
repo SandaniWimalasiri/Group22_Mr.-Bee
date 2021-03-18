@@ -113,6 +113,7 @@ session_start();
         <span class="error"><?= $content_error?></span>
     </div>
         </div>
+        <br/>
         <div class="row">
         <div class="c1" style="width: 870px">
         <input type="submit" value="Submit" name="submit" >
