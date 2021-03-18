@@ -142,6 +142,8 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         <span class="error"><?= $amount_error?></span>
         </div>
         </div>
+
+        <br/>
         <div class="row">
         <div class="c1">
         <input type="submit" value="Submit" name="enter" >
@@ -149,7 +151,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         </form>
 
 
-</script>
+
         <form  action="bk_viewharvest.php" method="post" >
         <div class="c2">
         <input type="submit" value="View harvest records >>" name="enter" >
