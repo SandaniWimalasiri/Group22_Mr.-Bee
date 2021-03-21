@@ -130,7 +130,7 @@ $beehiveno1="";
                <label for="beehiveno">Beehive no</label>
            </div>
            <div class="col1">
-               <input type="number" name="beehiveno" >
+               <input type="number" name="beehiveno" autofocus>
                <span class="error"><?= $beehiveno_error?></span>
            </div>
            <div class="col1">
