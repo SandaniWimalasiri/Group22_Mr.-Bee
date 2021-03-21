@@ -8,14 +8,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
 
         
-          if (empty($_POST["amount"])) {
-            $amount_error = "*Harvested amount is required";
-          } else {
-            $amount = test_input($_POST["amount"]);
-          }
-
-          if($amount_error==''){
-    
+         
     
  
           
@@ -26,7 +19,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
     $row=mysqli_fetch_assoc($result3);
 
     
-          }
+          
 
 
   
@@ -36,13 +29,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
       
        
-        function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-          }
-
+      
    
 
 ?>
@@ -115,7 +102,6 @@ while($row=mysqli_fetch_assoc($result1)){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Harvested amount </div><div class="col2"><input type = "text" name="amount"  value ="'.$row['amount'].'" >';
-        echo '<span class="error"><?= $amount_error?></span>';
         echo "</div>";
         echo "</div>";
         echo"<br/>";
