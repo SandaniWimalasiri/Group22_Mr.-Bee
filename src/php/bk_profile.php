@@ -91,8 +91,7 @@ $result1 = mysqli_query($connection,$sql1);
         echo 'Contact No</div><div class="col2"><input type = "text" name="userTele" required value ="'.$row['userTele'].'" >';
         echo "</div>";
         echo "</div>";
-        echo "<br/>";
-        echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_updatepassword.php' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> Change Password </a> </td>";
+       
         echo "<br/>";
         echo "<br/>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Edit Profile" name="update" ></div></form>';
