@@ -38,8 +38,7 @@ session_start();
                 </tr>
 
 			<?php
-if(isset($_POST['enter']) || isset($_POST['back'])){
-$id = isset($_POST['id']) ? $_POST['id'] : ''; 
+
 
         
 $sql = "SELECT FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount FROM feeding where userID='".$_SESSION['userid']."'";
@@ -73,7 +72,7 @@ $result = mysqli_query($connection,$sql);
         echo '</tr>';
 
 		
-		}}?>
+        }?>
 
             </table></center>
 
