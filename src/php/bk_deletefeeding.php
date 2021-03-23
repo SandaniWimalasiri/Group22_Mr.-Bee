@@ -6,10 +6,20 @@ mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 if($result){
 
-}
-else{
+    echo '<script>';
+    echo 'alert("Record Deleted Successfully");';
+    echo 'window.location.href = "bk_viewharvest.php";';
+    echo '</script>';
+    die();
+  }
 
-}
-header("Location: bk_feeding.php");
+  else{
+
+    echo '<script>';
+    echo 'alert("Failed");';
+    echo 'window.location.href = "bk_viewharvest.php";';
+    echo '</script>';
+    die();
+  }
 }
 ?>
