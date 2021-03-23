@@ -37,10 +37,21 @@ session_start();
      
      if($result){
 
-         header( 'Location: bk_infohub.php ');
-     }else{
-         echo "failed";
-     }
+      echo '<script>';
+      echo 'alert("Article Inserted Successfully");';
+      echo 'window.location.href = "bk_infohub.php";';
+      echo '</script>';
+      die();
+    }
+
+    else{
+
+      echo '<script>';
+      echo 'alert("Failed");';
+      echo 'window.location.href = "bk_infohub.php";';
+      echo '</script>';
+      die();
+    }
 
             }
         
