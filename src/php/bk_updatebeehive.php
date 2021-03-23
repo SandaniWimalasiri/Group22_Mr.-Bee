@@ -12,6 +12,24 @@ if(isset($_POST['update'])){
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
 
+       if($result2){
+
+      echo '<script>';
+      echo 'alert("Record Updated Successfully");';
+      echo 'window.location.href = "bk_updatebeehive.php?BeehiveRecNo='.$row["BeehiveRecNo"].'";';
+      echo '</script>';
+      die();
+    }
+
+    else{
+
+      echo '<script>';
+      echo 'alert("Failed");';
+      echo 'window.location.href = "bk_updatebeehive.php?BeehiveRecNo='.$row["BeehiveRecNo"].'";';
+      echo '</script>';
+      die();
+    }
+
 }
 
 
