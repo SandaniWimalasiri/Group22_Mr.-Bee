@@ -89,19 +89,28 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         
 
           if($beehiveno_error=='' and $sdate_error=='' and $idate_error=='' and $itime_error=='' and $actstatus_error=='' and $temperament_error=='' and $wbeehive_error=='' and $wstatus_error=='' and $cbeehive_error=='' and $noframes_error=='' and $disease_error=='' and $treatment_error=='' and $sqbee_error=='' and $bcolony_error==''){
-        //echo "Done";
+        
         $date=date("Y/m/d");
         $sql="INSERT INTO beehive (userID,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony) VALUES('".$_SESSION['userid']."','".$_POST['beehiveno']."','".$_POST['sdate']."','".$_POST['idate']."','".$_POST['itime']."','".$_POST['actstatus']."','".$_POST['temperament']."','".$_POST['wbeehive']."','".$_POST['wstatus']."','".$_POST['cbeehive']."','".$_POST['noframes']."','".$_POST['disease']."','".$_POST['treatment']."','".$_POST['sqbee']."','".$_POST['bcolony']."')";
         $result=$connection->query($sql);
-        //print_r($result);
         if($result){
-          header( 'Location: beekeeperindex.php ');
-           
-        }else{
-            echo "failed";
-        }
-     
 
+          echo '<script>';
+          echo 'alert("Record Inserted Successfully");';
+          echo 'window.location.href = "beekeeperindex.php";';
+          echo '</script>';
+          die();
+        }
+
+        else{
+
+          echo '<script>';
+          echo 'alert("Failed");';
+          echo 'window.location.href = "beekeeperindex.php";';
+          echo '</script>';
+          die();
+        }
+        
         }
         }
 
