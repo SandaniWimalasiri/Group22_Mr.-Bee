@@ -44,7 +44,7 @@ session_start();
 
 
 			<?php
-if(isset($_POST['enter']) || isset($_POST['back'])){
+
 
 
         
@@ -100,12 +100,12 @@ $result = mysqli_query($connection,$sql);
         echo $row['bcolony'];
         echo '</td>';
         echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_updatebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']."' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> update </a> </td>" ;
-		echo "<td style='border-style:hidden'><a href ='bk_deletebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']." ' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> delete </a> </td>" ;	
+		echo "<td style='border-style:hidden'><a href ='bk_deletebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']." ' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px' > delete </a> </td>" ;	
         echo '</td>';
         echo '</tr>';
 
 		
-		}}?>
+		}?>
 
             </table></center>
 
