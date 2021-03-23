@@ -6,11 +6,22 @@ mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
 if($result){
-header("Location:bk_harvest.php");
-}
-else{
 
-}
+    echo '<script>';
+    echo 'alert("Record Deleted Successfully");';
+    echo 'window.location.href = "bk_viewharvest.php";';
+    echo '</script>';
+    die();
+  }
+
+  else{
+
+    echo '<script>';
+    echo 'alert("Failed");';
+    echo 'window.location.href = "bk_viewharvest.php";';
+    echo '</script>';
+    die();
+  }
 
 }
 ?>
