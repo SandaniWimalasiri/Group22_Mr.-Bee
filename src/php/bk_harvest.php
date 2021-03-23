@@ -44,13 +44,20 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
       
       if($result){
 
-        header("Refresh: 0; url=bk_harvest.php");
-        
-        
-          
-          
-      }else{
-          echo "failed";
+        echo '<script>';
+        echo 'alert("Record Inserted Successfully");';
+        echo 'window.location.href = "bk_harvest.php";';
+        echo '</script>';
+        die();
+      }
+
+      else{
+
+        echo '<script>';
+        echo 'alert("Failed");';
+        echo 'window.location.href = "bk_harvest.php";';
+        echo '</script>';
+        die();
       }
 
         }}
