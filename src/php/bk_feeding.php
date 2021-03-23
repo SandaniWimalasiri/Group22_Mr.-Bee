@@ -34,20 +34,29 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
           }
 
           if($beehiveno_error =='' and  $fdate_error =='' and   $ftime_error=='' and $feedingtype_error=='' and $famount_error==''){
-        //echo "Done";
+        
         $date=date("Y/m/d");
         $sql="INSERT INTO feeding (userID,date,beehiveno,fdate,ftime,feedingtype,famount) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['fdate']."','".$_POST['ftime']."','".$_POST['feedingtype']."','".$_POST['famount']."')";
         $result=$connection->query($sql);
-        //print_r($result);
+        
         if($result){
-          
-         echo  '<script > alert("data submitted successfully"); </script>';
-         
-                 
-            header( 'Location: bk_feeding.php ');
-        }else{
-            echo "failed";
+
+          echo '<script>';
+          echo 'alert("Record Inserted Successfully");';
+          echo 'window.location.href = "bk_feeding.php";';
+          echo '</script>';
+          die();
         }
+
+        else{
+
+          echo '<script>';
+          echo 'alert("Failed");';
+          echo 'window.location.href = "bk_feeding.php";';
+          echo '</script>';
+          die();
+        }
+  
 
     }
 
