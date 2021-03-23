@@ -36,7 +36,6 @@ session_start();
             <?php
             
             
-if(isset($_POST['enter']) || isset($_POST['back']) ){
 
 
         
@@ -71,7 +70,7 @@ $result = mysqli_query($connection,$sql);
 
         echo '</tr>';
 		
-		}}?>
+		}?>
      </table></center>
 
      </br>
