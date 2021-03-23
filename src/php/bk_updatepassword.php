@@ -48,6 +48,25 @@ $currentpassword=$newpassword=$repassword="";
         $sql3 = "SELECT userPassword  FROM beekeeper where userID='".$_SESSION['userid']."'";
         $result3 = mysqli_query($connection,$sql3);
         $row=mysqli_fetch_assoc($result3);
+
+
+        if($result){
+
+          echo '<script>';
+          echo 'alert("Password Changed Successfully");';
+          echo 'window.location.href = "bk_updatepassword.php";';
+          echo '</script>';
+          die();
+        }
+
+        else{
+
+          echo '<script>';
+          echo 'alert("Failed");';
+          echo 'window.location.href = "bk_updatepassword.php";';
+          echo '</script>';
+          die();
+        }
           }
 
        
