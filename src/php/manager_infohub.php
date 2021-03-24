@@ -20,30 +20,11 @@
          <div class="content"> 
 
             <?php     
-                $authorname_error = $articlename_error = $content_error ="";
-                $authorname = $articlename = $content="";
+                
 
                 if(isset($_POST['submit'])){
 
-                    if (empty($_POST["authorname"])) {
-                    $authorname_error = "*Author name is required";
-                    } else {
-                    $authorname = test_input($_POST["authorname"]);
-                    }
                     
-                    if (empty($_POST["articlename"])) {
-                    $articlename_error = "*Article name is required";
-                    } else {
-                    $articlename = test_input($_POST["articlename"]);
-                    }
-                    
-                    if (empty($_POST["content"])) {
-                    $content_error = "*Content is required";
-                    } else {
-                    $content = test_input($_POST["content"]);
-                    }
-
-                    if($authorname_error =='' and  $articlename_error =='' and  $content_error==''){
             
             //echo "Done";
             $date=date("Y/m/d");
@@ -57,16 +38,10 @@
                 echo "failed";
             }
 
-                    }
+                    
                 
 
-            }
-
-            function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
+            
             }
             
         ?>
@@ -80,8 +55,8 @@
                     <label for="authorname">Name</label>
                 </div>
                 <div class="col2">
-                    <input type="text" name="authorname"  placeholder="Author Name" style="background-color:white" value="<?= $authorname?>" autofocus>
-                    <span class="error"><?= $authorname_error?></span>
+                    <input type="text" name="authorname"  placeholder="Author Name" style="background-color:white" >
+                    
                 </div>
             </div>
             <div class="row">
@@ -89,8 +64,8 @@
                     <label for="articlename">Article Name</label>
                 </div>
                 <div class="col2">
-                    <textarea id="articlename" name="articlename" style="height:50px" placeholder="Article Name" value="<?= $articlename?>"></textarea>
-                    <span class="error"><?= $articlename_error?></span>
+                    <textarea id="articlename" name="articlename" style="height:50px" placeholder="Article Name" ></textarea>
+                    
                 </div>
             </div>
             <div class="row">
@@ -98,8 +73,8 @@
                     <label for="content">Content</label>
                 </div>
                 <div class="col2">
-                    <textarea id="content" name="content" style="height:200px" placeholder="Content" value="<?= $content?>" ></textarea>
-                    <span class="error"><?= $content_error?></span>
+                    <textarea id="content" name="content" style="height:200px" placeholder="Content"  ></textarea>
+                    
                 </div>
             </div>
             <div class="row">
