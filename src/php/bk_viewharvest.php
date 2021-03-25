@@ -39,7 +39,7 @@ session_start();
 
 
         
-$sql = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount FROM harvest where userID='".$_SESSION['userid']."'";
+$sql = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount FROM harvest where userID='".$_SESSION['userid']."' and is_deleted=0";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
@@ -73,8 +73,12 @@ $result = mysqli_query($connection,$sql);
 		}?>
      </table></center>
 
-     </br>
+     <br/>
+        <br/>
+        <br/>
+        <td style='border-style:hidden; border-left:1px solid black'><a href ='bk_viewdelharvest.php' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> View Deleted Records </a> </td>
     </br>
+    <br/>
             <form  action="bk_harvest.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >
