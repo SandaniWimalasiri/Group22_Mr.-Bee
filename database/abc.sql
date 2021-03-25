@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2021 at 06:22 AM
+-- Generation Time: Mar 25, 2021 at 04:30 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -43,18 +43,19 @@ CREATE TABLE `beehive` (
   `disease` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `treatment` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `sqbee` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `bcolony` int(10) NOT NULL
+  `bcolony` int(10) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `beehive`
 --
 
-INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`) VALUES
-(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', 'Angry', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 9),
-(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Strongly Active', 'Calm', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13),
-(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Strongly Active', ' Nervous', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22),
-(4, 3, 4, '2020-07-07', '2020-11-01', '16:08:00.00', 'Strongly Active', ' Nervous', '21.3', 'humidity: 71%\r\nwind: 6.1km/h', 'Transfer bees', 11, 'none', 'none', 'fresh eggs provided', 10);
+INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`, `is_deleted`) VALUES
+(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', 'Angry', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 9, 0),
+(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Strongly Active', 'Calm', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13, 0),
+(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Strongly Active', ' Nervous', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22, 0),
+(4, 3, 4, '2020-07-07', '2020-11-01', '16:08:00.00', 'Strongly Active', ' Nervous', '21.3', 'humidity: 71%\r\nwind: 6.1km/h', 'Transfer bees', 11, 'none', 'none', 'fresh eggs provided', 10, 0);
 
 -- --------------------------------------------------------
 
@@ -152,17 +153,18 @@ CREATE TABLE `feeding` (
   `fdate` date NOT NULL,
   `ftime` time(2) NOT NULL,
   `feedingtype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `famount` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `famount` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `feeding`
 --
 
-INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '13 mg'),
-(2, 3, 2, '2020-11-21', '2020-11-03', '16:11:00.00', 'Suger syrup (1+1 ratio)', '11.5 mg'),
-(3, 3, 3, '2020-11-21', '2020-11-05', '16:12:00.00', 'Suger syrup (1+1 ratio)', '6.9 mg');
+INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`, `is_deleted`) VALUES
+(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '13 mg', 0),
+(2, 3, 2, '2020-11-21', '2020-11-03', '16:11:00.00', 'Suger syrup (1+1 ratio)', '11.5 mg', 0),
+(3, 3, 3, '2020-11-21', '2020-11-05', '16:12:00.00', 'Suger syrup (1+1 ratio)', '6.9 mg', 0);
 
 -- --------------------------------------------------------
 
@@ -178,17 +180,18 @@ CREATE TABLE `harvest` (
   `hdate` date NOT NULL,
   `htime` time(2) NOT NULL,
   `producttype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `amount` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `amount` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `harvest`
 --
 
-INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '1.5 Kg'),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '2.1 Kg'),
-(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '0.25 Kg');
+INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `is_deleted`) VALUES
+(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '1.5 Kg', 0),
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '2.1 Kg', 0),
+(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '0.25 Kg', 0);
 
 -- --------------------------------------------------------
 
