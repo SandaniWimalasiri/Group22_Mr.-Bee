@@ -68,7 +68,7 @@
             </center>
         
             <br>
-            <button class="btn6" type="submit" name="back" onclick="document.location='manager_products_view.php'"><b>Back</b></button>
+            <button class="btn6" type="submit" name="back" onclick="document.location='manager_products.php'"><b>Back</b></button>
         </div>
         
     </body>

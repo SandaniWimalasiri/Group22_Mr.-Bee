@@ -21,7 +21,7 @@
                         <div class="dropdown-content">
                             <a href="manager_view_reports.php">Monthly Reports</a>
                             <a href="manager_view_reports.php">Final Reports</a>
-                            <a href="manager_products_removed.php">Removed Product List</a>
+                            
                         </div>
                     </div>
            

@@ -38,6 +38,7 @@
                             <div class="dropdown-content">
                                 <a href="manager_products_view.php">Product List</a>
                                 <a href="manager_products_add.php">Add a Product</a>
+                                <a href="manager_products_removed.php">Removed Product List</a>
                                 
                             </div>
                         </div>

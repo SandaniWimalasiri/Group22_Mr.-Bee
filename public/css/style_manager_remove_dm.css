@@ -91,6 +91,34 @@ input[type=text]{
   background-color: rgba(245, 222, 179, 0.747);
 }
 
+/*design the input emails*/
+input[type=email]{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  width: 80%;
+  padding: 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(2, 32, 66);
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color: rgba(245, 222, 179, 0.747);
+}
+
+/*design the input emails*/
+input[type=date]{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  width: 80%;
+  padding: 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(2, 32, 66);
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color: rgba(245, 222, 179, 0.747);
+}
+
 
 
 

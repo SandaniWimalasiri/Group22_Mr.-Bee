@@ -60,7 +60,7 @@ require_once("func.php"); ?>
                             </tr>
                             <tr>
                                 <th><label>Email</label></th>
-                                <td><input type="text" name="email" placeholder="Enter Last Name" value="<?php echo $row['email'] ?>" readonly></td>
+                                <td><input type="email" name="email" placeholder="Enter Last Name" value="<?php echo $row['email'] ?>" readonly></td>
                             </tr>
                             <tr>
                                 <th><label>TP No.</label></th>
@@ -78,10 +78,23 @@ require_once("func.php"); ?>
                                             <option value="Galle">Galle</option>
                                             <option value="Gampaha">Gampaha</option>
                                             <option value="Hambantota">Hambantota</option>
-                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                            <option value="Jaffna">Jaffna</option>
+                                            <option value="Kalutara">Kalutara</option>
                                             <option value="Kandy">Kandy</option>
+                                            <option value="Kegalle">Kegalle</option>
+                                            <option value="Kilinochchi">Kilinochchi</option>
+                                            <option value="Kurunegala">Kurunegala</option>
+                                            <option value="Mannar">Mannar</option>
                                             <option value="Matale">Matale</option>
                                             <option value="Matara">Matara</option>
+                                            <option value="Moneragala">Moneragala</option>
+                                            <option value="Mullaitivu">Mullaitivu</option>
+                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                            <option value="Polonnaruwa">Polonnaruwa</option>
+                                            <option value="Puttalam">Puttalam</option>
+                                            <option value="Ratnapura">Ratnapura</option>
+                                            <option value="Trincomalee">Trincomalee</option>
+                                            <option value="Vavuniya">Vavuniya</option>
                                         </select>
                                 </td>
                             </tr>
@@ -115,7 +128,7 @@ require_once("func.php"); ?>
                                     if($query_run)
                                     {
                                         echo '<script> alert("Data Updated Successfully"); </script>';
-                                        //header("location:manager_dm.php");
+                                       
                                        
 
                                     }

@@ -36,7 +36,7 @@
                             </tr>
                             <tr>
                                 <th><label>E-mail</label></th>
-                                <td><input type="text" name="email" placeholder="Enter email address" required></td>
+                                <td><input type="email" name="email" placeholder="Enter email address" required></td>
                             </tr>
                             <tr>
                                 <th><label>TP No.</label></th>
@@ -55,12 +55,23 @@
                                             <option value="Galle">Galle</option>
                                             <option value="Gampaha">Gampaha</option>
                                             <option value="Hambantota">Hambantota</option>
-                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                            <option value="Jaffna">Jaffna</option>
+                                            <option value="Kalutara">Kalutara</option>
                                             <option value="Kandy">Kandy</option>
+                                            <option value="Kegalle">Kegalle</option>
+                                            <option value="Kilinochchi">Kilinochchi</option>
+                                            <option value="Kurunegala">Kurunegala</option>
+                                            <option value="Mannar">Mannar</option>
                                             <option value="Matale">Matale</option>
                                             <option value="Matara">Matara</option>
-                                            <option value="Jaffna">Jaffna</option>
-                                            <option value="Jaf">Jaf</option>
+                                            <option value="Moneragala">Moneragala</option>
+                                            <option value="Mullaitivu">Mullaitivu</option>
+                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                            <option value="Polonnaruwa">Polonnaruwa</option>
+                                            <option value="Puttalam">Puttalam</option>
+                                            <option value="Ratnapura">Ratnapura</option>
+                                            <option value="Trincomalee">Trincomalee</option>
+                                            <option value="Vavuniya">Vavuniya</option>
                                         </select>
                                         
                                    </td>
@@ -70,11 +81,10 @@
                                 <td><input type="text" name="no_employee" placeholder="Enter no. of employees" required></td>
                             </tr>
                             <tr>
-                                <th><label>EmpId</label></th>
-                                <td><?php
-
-                                    
-                                 ?></td>
+                                <th><label>emp_id</label></th>
+                                <td>
+                                 
+                                 </td>
                             </tr>
                             </table>
                             <br/>
@@ -94,15 +104,17 @@
         
     </body>
 </html>
+    
+     
     <?php
-        
+      
         if(isset($_GET['add'])){
            //echo "Done";                                                                                                 
            
-           
            $sql="INSERT INTO div_manager (first_name, last_name, email,tp, division, no_employee) VALUES('".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['tp']."','".$_GET['division']."','".$_GET['no_employee']."')";
            $result=mysqli_query($connection,$sql);
-
+               
+           
            
            //$result=$connection->query($sql);
            //print_r($result);
@@ -110,48 +122,24 @@
                //echo "Successful";
               // header( 'Location: manager_dm_add.php ');
               echo '<script> alert("Successfully Inserted"); </script>';
+
+                // $emailFrom ="mrbeemanager@gmail.com";
+                $subject ="Activate the account & Change the Password ";
+                $body="HI Mr/Mrs ".$_GET['last_name']." .Welcome to our Bee keeping community and Thank You for Joining with us. Herewith we sent login informations for your Account. After the log in you should change your password because of security purpose.
+                your user name = ".$_GET['email']."
+                your password=div_man@123.
+                (You can activate your account by using these User Credentials.)";
+                $headers="From: mrbeemanager@gmail.com";
+                    if (mail($_GET['email'],$subject,$body,$headers)) {
+                        echo '<script> alert("mail sent succesfully"); </script>';
+                    }else {
+                    echo '<script> alert("Unable to send email. Please try again to send the email manualy."); </script>';
+                    }
+             
+
            }else{
                 echo '<script> alert("Insertion Failed"); </script>';
            }
-       }
-         
-            $email=$_GET['email'];
-    
-            $to = '{$email}';
-            $subject = 'Change the Password';
-            $message = 'Welcome to Mr. Bee. And Thank You for Joining with us. Herewith we sent login informations for your Account. After the log in you should change your password because of security purpose.
-            yout user name = your email and your password=div_man@123';
-            $message .='<b>From:<b> Mr. BEE website<br>';
-            $from_address = 'vindysilva96@gmail.com';
-           
-            // Sending email
-            if(mail($to, $subject, $message,"From: $from_address", "-f $from_address")){
-                echo '<script> alert("Your mail has been sent successfully."); </script>';
-               
-            } else{
-                echo '<script> alert("Unable to send email. Please try again."); </script>';
-                
-            }
+       }  
+  ?>
 
-     
-  
-?>
-
-<?php
-if(isset($_GET['add'])){
-$employeeId=$_GET['div_id'];
-$divi=$_GET['division'];
-
-    $EmpId="DM/".$employeeId;
-    $sql0="UPDATE div_manager SET EmpId='$EmpId' where div_id='$employeeId'";
-    $result0=mysqli_query($connection,$sql0);
-
-    if($result0){
-     //echo "Successful";
-    // header( 'Location: manager_dm_add.php ');
-    echo '<script> alert("hari"); </script>';
- }else{
-      echo '<script> alert("aaaa"); </script>';
- }
-}
- ?>

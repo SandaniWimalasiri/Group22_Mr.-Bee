@@ -16,19 +16,13 @@
 
          <!--start content-->
         <div class="content">   
-                    <div class="dropdown">
-                        <button class="dropbtn">Order Details </button>
-                        <div class="dropdown-content">
-                            <a href="manager_order_ongoing.php">Ongoing Orders</a>
-                            
-                            <a href="manager_order_complete.php">completed orders</a>
-                            </form>
-                            
-                        </div>
-                    </div>
+        <h1 >Order Status :Completed</h1>
+        <br>
+        <button class="btn6" type="submit" name="back" onclick="document.location='manager_orders.php'"><<<b>Back</b></button> 
+        
             <br><br><br> <br> 
                     <center>
-                    <form action="manager_orders.php" method="GET">
+                    <form action="manager_order_complete.php" method="GET">
                 <table class="div_man">
                     <tr>
                         <th>Order ID</th>
@@ -42,12 +36,12 @@
                         <th>Order Date</th>
                         <th>Complete Date</th>
                         <th>Status</th>
-                        <th style="text-align:center;">Update</th>
+                        
                         
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM orders";
+                    $sql = "SELECT * FROM orders WHERE od_status='completed'";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);
@@ -66,11 +60,7 @@
                             <td><?php echo $result['order_date'] ?></td>
                             <td><?php echo $result['complete_date'] ?></td>
                             <td><?php echo $result['od_status'] ?></td>
-                            
-                            <form action="manager_order_update.php" method="post">
-                                    <input type="hidden" name="order_id" value="<?php echo $result['order_id']; ?>">
-                                    <td><button class="btn8" type="submit">Update</button></td>
-                            </form>
+                           
                         
                     </tr>
                     <?php
