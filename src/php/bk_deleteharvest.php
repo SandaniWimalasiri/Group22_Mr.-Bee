@@ -1,7 +1,7 @@
 <?php require_once('../../config/connect.php'); ?>
 <?php
 if(isset($_GET['HarvestRecNo'])){
-$sql = "DELETE FROM harvest WHERE HarvestRecNo = ".$_GET['HarvestRecNo'];
+$sql = "UPDATE harvest SET is_deleted=1  WHERE HarvestRecNo = ".$_GET['HarvestRecNo'];
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
