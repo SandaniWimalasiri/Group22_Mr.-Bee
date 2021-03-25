@@ -48,7 +48,7 @@ session_start();
 
 
         
-$sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."'";
+$sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."' and is_deleted=0";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
@@ -108,6 +108,11 @@ $result = mysqli_query($connection,$sql);
 		}?>
 
             </table></center>
+
+        <br/>
+        <br/>
+        <br/>
+        <td style='border-style:hidden; border-left:1px solid black'><a href ='bk_viewdelbeehive.php' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> View Deleted Records </a> </td>
 
     </br>
     </br>
