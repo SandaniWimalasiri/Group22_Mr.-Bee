@@ -1,13 +1,14 @@
 <html>
 	<head>
 		<title>Login Page</title>
-		<link rel="stylesheet" type="text/CSS" href="../../public/css/beekeeperlogin.css">
-        <link rel="stylesheet" type="text/css" href="../../public/css/homenav.css">
+		
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/index_page.css">
 
 	</head>
 	<body >
-    <?php include('homenavbar.php');
+    <?php
+    include_once('../../config/connect.php');
     include_once('func.php');
     ?>
 
