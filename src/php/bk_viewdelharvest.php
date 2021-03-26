@@ -19,7 +19,8 @@ session_start();
 
 
 <div class="bhivecontainer">
-<br/> <br/>
+<p>Harvest deleted Records</p>
+<br/> 
 	<center>		
      <table >
                 <tr style="background-color:#547454">
