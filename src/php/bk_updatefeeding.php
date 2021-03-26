@@ -103,7 +103,8 @@ if(isset($_GET['FeedingRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Feeding amount </div><div class="col2"><input type = "text" name="famount" style="width: 125px" value ="'.$row['famount'].'" >';
-        echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+        echo '<select id="unit" name="unit"  style="width: 55px" >
+        <option value="" selected>'.$row['unit'].'</option>
              <option value="Kg">Kg</option>
              <option value="g">g</option>
              <option value="mg">mg</option>
