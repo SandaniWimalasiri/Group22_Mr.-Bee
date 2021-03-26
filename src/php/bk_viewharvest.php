@@ -19,7 +19,8 @@ session_start();
 
 
 <div class="bhivecontainer">
-<br/> <br/>
+<p>Harvest Records</p>
+<br/> 
 	<center>		
      <table >
                 <tr style="background-color:#547454">
@@ -39,7 +40,7 @@ session_start();
 
 
         
-$sql = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount FROM harvest where userID='".$_SESSION['userid']."' and is_deleted=0";
+$sql = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount,unit FROM harvest where userID='".$_SESSION['userid']."' and is_deleted=0";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
@@ -62,7 +63,7 @@ $result = mysqli_query($connection,$sql);
         echo $row['producttype'];
         echo '</td>';
         echo '<td>';
-        echo $row['amount'];
+        echo $row['amount']." ".$row['unit'];
         echo '</td>';
         
         echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_updateharvest.php?HarvestRecNo=".$row['HarvestRecNo']."' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> update </a> </td>" ;
