@@ -36,7 +36,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
           if($beehiveno_error =='' and  $fdate_error =='' and   $ftime_error=='' and $feedingtype_error=='' and $famount_error==''){
         
         $date=date("Y/m/d");
-        $sql="INSERT INTO feeding (userID,date,beehiveno,fdate,ftime,feedingtype,famount) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['fdate']."','".$_POST['ftime']."','".$_POST['feedingtype']."','".$_POST['famount']."')";
+        $sql="INSERT INTO feeding (userID,date,beehiveno,fdate,ftime,feedingtype,famount,unit) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['fdate']."','".$_POST['ftime']."','".$_POST['feedingtype']."','".$_POST['famount']."','".$_POST['unit']."')";
         $result=$connection->query($sql);
         
         if($result){
@@ -131,7 +131,12 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <label for="famount">Feeding amount</label>
         </div>
     <div class="col2">
-        <input type="text" name="famount" value="<?= $famount?>"  >
+        <input type="text" name="famount" value="<?= $famount?>" style="width:125px" >
+        <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+             <option value="Kg">Kg</option>
+             <option value="g">g</option>
+             <option value="mg">mg</option>
+        </select> 
         <span class="error"><?= $famount_error?></span>
         </div>
         </div>
