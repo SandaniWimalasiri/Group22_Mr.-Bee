@@ -12,9 +12,9 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
     
  
           
-    $sql2= "UPDATE harvest SET HarvestRecNo ='".$_POST['HarvestRecNo']."',beehiveno ='".$_POST['beehiveno']."',  hdate ='".$_POST['hdate']."', htime ='".$_POST['htime']."',producttype ='".$_POST['producttype']."',amount ='".$_POST['amount']."' WHERE HarvestRecNo='".$_POST['HarvestRecNo']."'";
+    $sql2= "UPDATE harvest SET HarvestRecNo ='".$_POST['HarvestRecNo']."',beehiveno ='".$_POST['beehiveno']."',  hdate ='".$_POST['hdate']."', htime ='".$_POST['htime']."',producttype ='".$_POST['producttype']."',amount ='".$_POST['amount']."',unit ='".$_POST['unit']."' WHERE HarvestRecNo='".$_POST['HarvestRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount  FROM harvest WHERE HarvestRecNo ='".$_POST['HarvestRecNo']."'";
+    $sql3 = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount,unit  FROM harvest WHERE HarvestRecNo ='".$_POST['HarvestRecNo']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
 
@@ -82,7 +82,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
 if(isset($_GET['HarvestRecNo'])){
     
-  $sql1 = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount FROM harvest WHERE  HarvestRecNo =".$_GET['HarvestRecNo'];
+  $sql1 = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount,unit FROM harvest WHERE  HarvestRecNo =".$_GET['HarvestRecNo'];
   $result1= mysqli_query($connection,$sql1);
 
 while($row=mysqli_fetch_assoc($result1)){  
@@ -117,7 +117,11 @@ while($row=mysqli_fetch_assoc($result1)){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvested amount </div><div class="col2"><input type = "text" name="amount"  value ="'.$row['amount'].'" >';
+        echo 'Harvested amount </div><div class="col2"><input type = "text" name="amount" style="width: 125px" required value ="'.$row['amount'].'">';
+        echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+        <option value="Kg">Kg</option>
+        <option value=""></option>
+   </select> ';
         echo "</div>";
         echo "</div>";
         echo"<br/>";
