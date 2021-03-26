@@ -90,6 +90,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="col1">';
         echo 'Weight of beehive </div><div class="c3"><input type = "text" name="wbeehive" style="width: 125px" required value ="'.$row['wbeehive'].'">';
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+        <option value="'.$row['idate'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
         <option value="g">g</option>
    </select> ';
@@ -114,6 +115,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Active Status </div><div class="col2"><select id="actstatus" name="actstatus" value="<?= $actstatus?>" >
+             <option value="'.$row['noframes'].'">'.$row['actstatus'].'</option>
              <option value="Strongly Active">Strongly Active</option>
              <option value="Active">Active</option>
              <option value="Neutral">Neutral</option>
@@ -125,6 +127,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Temperament </div><div class="col2"><select id="temperament" name="temperament" value="<?= $temperament?>" >
+        <option value="'.$row['temperament'].'">'.$row['temperament'].'</option>
         <option value="Calm">Calm</option>
         <option value=" Nervous"> Nervous</option>
         <option value="Angry">Angry</option>
@@ -140,12 +143,12 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="col1">';
         echo 'Changes made to beehive </div><div class="col2">
         <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
+          <option value="'.$row['cbeehive'].'">'.$row['cbeehive'].'</option>
           <option value="Add">Add</option>
           <option value="Removal">Removal</option>
           <option value="Repair">Repair</option>
           <option value="Switch"> Switch</option>
-          <option value="Neutral">Neutral</option>
-            required placeholder ="">'.$row['cbeehive']."</select>";
+          <option value="Neutral">Neutral</option></select>';
         echo "</div>";
         echo "</div>";
         
@@ -162,6 +165,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Status of queen bee </div><div class="col2"><select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
+             <option value="'.$row['sqbee'].'">'.$row['sqbee'].'</option>
              <option value="Missing">Missing</option>
              <option value="No Fresh Eggs">No Fresh Eggs</option>
              <option value="Fresh Eggs Provided">Fresh Eggs Provided</option>
