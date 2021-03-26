@@ -42,15 +42,17 @@ $result = mysqli_query($connection,$sql);
         echo "</div>";
         echo "<br>";
         echo "<br>";
-        
-   
+       
 
 
 		
 
+        
 
 		
     }}?>
+
+   
     
 
 
