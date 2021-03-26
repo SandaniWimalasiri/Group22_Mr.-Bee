@@ -17,9 +17,9 @@ session_start();
 
 
 
-  <div class="bhivecontainer" style="padding: 20px 50px 20px 50px">
-
-       <br/><br/>     
+  <div class="bhivecontainer" style="padding: 20px 50px 20px 40px">
+<p>Beehive Deleted Records</p>
+       <br/>    
 
            <center>
             
@@ -48,7 +48,7 @@ session_start();
 
 
         
-$sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."' and is_deleted=1";
+$sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,unit,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."' and is_deleted=1";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
@@ -76,7 +76,7 @@ $result = mysqli_query($connection,$sql);
         echo $row['temperament'];
         echo '</td>';
         echo '<td>';
-        echo $row['wbeehive']." Kg";
+        echo $row['wbeehive']." ".$row['unit'];
         echo '</td>';
         echo '<td>';
         echo $row['wstatus'];
