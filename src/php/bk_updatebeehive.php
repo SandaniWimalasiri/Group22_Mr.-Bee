@@ -6,9 +6,9 @@ if(isset($_POST['update'])){
     
  
           
-    $sql2= "UPDATE beehive SET BeehiveRecNo ='".$_POST['BeehiveRecNo']."',beehiveno ='".$_POST['beehiveno']."', sdate ='".$_POST['sdate']."', idate ='".$_POST['idate']."', itime ='".$_POST['itime']."',actstatus ='".$_POST['actstatus']."',temperament ='".$_POST['temperament']."',wbeehive ='".$_POST['wbeehive']."',wstatus ='".$_POST['wstatus']."',cbeehive ='".$_POST['cbeehive']."',noframes ='".$_POST['noframes']."',disease ='".$_POST['disease']."',treatment ='".$_POST['treatment']."',sqbee ='".$_POST['sqbee']."',bcolony ='".$_POST['bcolony']."' WHERE BeehiveRecNo='".$_POST['BeehiveRecNo']."'";
+    $sql2= "UPDATE beehive SET BeehiveRecNo ='".$_POST['BeehiveRecNo']."',beehiveno ='".$_POST['beehiveno']."', sdate ='".$_POST['sdate']."', idate ='".$_POST['idate']."', itime ='".$_POST['itime']."',actstatus ='".$_POST['actstatus']."',temperament ='".$_POST['temperament']."',wbeehive ='".$_POST['wbeehive']."',unit='".$_POST['unit']."',wstatus ='".$_POST['wstatus']."',cbeehive ='".$_POST['cbeehive']."',noframes ='".$_POST['noframes']."',disease ='".$_POST['disease']."',treatment ='".$_POST['treatment']."',sqbee ='".$_POST['sqbee']."',bcolony ='".$_POST['bcolony']."' WHERE BeehiveRecNo='".$_POST['BeehiveRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE BeehiveRecNo ='".$_POST['BeehiveRecNo']."'";
+    $sql3 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,unit,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE BeehiveRecNo ='".$_POST['BeehiveRecNo']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
 
@@ -67,7 +67,7 @@ if(isset($_POST['update'])){
 <?php
 if(isset($_GET['BeehiveRecNo'])){
     
-  $sql1 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  BeehiveRecNo =".$_GET['BeehiveRecNo'];
+  $sql1 = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,unit,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  BeehiveRecNo =".$_GET['BeehiveRecNo'];
   $result1= mysqli_query($connection,$sql1);
   while($row=mysqli_fetch_assoc($result1)){  
             
@@ -88,7 +88,11 @@ if(isset($_GET['BeehiveRecNo'])){
         echo 'Start Date </div><div class="col1"><input type = "date" name="sdate" required value ="'.$row['sdate'].'" >'; 
         echo "</div>";
         echo '<div class="col1">';
-        echo 'Weight of beehive (in Kg)</div><div class="c3"><input type = "number" name="wbeehive" required value ="'.$row['wbeehive'].'">';
+        echo 'Weight of beehive </div><div class="c3"><input type = "text" name="wbeehive" style="width: 125px" required value ="'.$row['wbeehive'].'">';
+        echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+        <option value="Kg">Kg</option>
+        <option value="g">g</option>
+   </select> ';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -134,7 +138,14 @@ if(isset($_GET['BeehiveRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Changes made to beehive </div><div class="col2"><textarea name="cbeehive" style="height:100px" required placeholder ="">'.$row['cbeehive']."</textarea>";
+        echo 'Changes made to beehive </div><div class="col2">
+        <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
+          <option value="Add">Add</option>
+          <option value="Removal">Removal</option>
+          <option value="Repair">Repair</option>
+          <option value="Switch"> Switch</option>
+          <option value="Neutral">Neutral</option>
+            required placeholder ="">'.$row['cbeehive']."</select>";
         echo "</div>";
         echo "</div>";
         
