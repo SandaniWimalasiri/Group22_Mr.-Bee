@@ -24,7 +24,7 @@
 			</ul>
 		</div>
 		<div class="login">
-			<a href="#home">Login</a>
+			<a href="login.php">Login</a>
 		</div>
 	</div>
 
