@@ -9,9 +9,9 @@ if(isset($_POST['update'])){
     
  
           
-    $sql2= "UPDATE feeding SET FeedingRecNo ='".$_POST['FeedingRecNo']."',beehiveno ='".$_POST['beehiveno']."',  fdate ='".$_POST['fdate']."', ftime ='".$_POST['ftime']."',feedingtype ='".$_POST['feedingtype']."',famount ='".$_POST['famount']."' WHERE FeedingRecNo='".$_POST['FeedingRecNo']."'";
+    $sql2= "UPDATE feeding SET FeedingRecNo ='".$_POST['FeedingRecNo']."',beehiveno ='".$_POST['beehiveno']."',  fdate ='".$_POST['fdate']."', ftime ='".$_POST['ftime']."',feedingtype ='".$_POST['feedingtype']."',famount ='".$_POST['famount']."',unit ='".$_POST['unit']."' WHERE FeedingRecNo='".$_POST['FeedingRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT  FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount FROM feeding WHERE FeedingRecNo ='".$_POST['FeedingRecNo']."'";
+    $sql3 = "SELECT  FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount,unit FROM feeding WHERE FeedingRecNo ='".$_POST['FeedingRecNo']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
 
@@ -71,7 +71,7 @@ if(isset($_POST['update'])){
 <?php
 if(isset($_GET['FeedingRecNo'])){
     
-  $sql1 = "SELECT FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount FROM feeding WHERE  FeedingRecNo =".$_GET['FeedingRecNo'];
+  $sql1 = "SELECT FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount,unit FROM feeding WHERE  FeedingRecNo =".$_GET['FeedingRecNo'];
   $result1= mysqli_query($connection,$sql1);
   while($row=mysqli_fetch_assoc($result1)){  
             
@@ -102,7 +102,12 @@ if(isset($_GET['FeedingRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Feeding amount </div><div class="col2"><input type = "text" name="famount" value ="'.$row['famount'].'" >';
+        echo 'Feeding amount </div><div class="col2"><input type = "text" name="famount" style="width: 125px" value ="'.$row['famount'].'" >';
+        echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+             <option value="Kg">Kg</option>
+             <option value="g">g</option>
+             <option value="mg">mg</option>
+        </select> ';
         echo "</div>";
         echo "</div>";
         echo"<br/>";
