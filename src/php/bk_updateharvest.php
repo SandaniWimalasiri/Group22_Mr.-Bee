@@ -109,6 +109,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Harvested product type </div><div class="col2"><select id="producttype" name="producttype" value="<?= $producttype?>" >
+        <option value="'.$row['htime'].'">'.$row['producttype'].'</option>
         <option value="Raw Honey">Raw Honey</option>
         <option value="Bee Colonies">Bee Colonies</option>
         <option value="Royal Gel">Royal Gel</option>
@@ -119,6 +120,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo '<div class="col1">';
         echo 'Harvested amount </div><div class="col2"><input type = "text" name="amount" style="width: 125px" required value ="'.$row['amount'].'">';
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+        <option value="'.$row['unit'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
         <option value=""></option>
    </select> ';
