@@ -39,7 +39,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
       
       
       $date=date("Y/m/d");
-      $sql="INSERT INTO harvest (userID,date,beehiveno,hdate,htime,producttype,amount) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['hdate']."','".$_POST['htime']."','".$_POST['producttype']."','".$_POST['amount']."')";
+      $sql="INSERT INTO harvest (userID,date,beehiveno,hdate,htime,producttype,amount,unit) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['hdate']."','".$_POST['htime']."','".$_POST['producttype']."','".$_POST['amount']."',,'".$_POST['unit']."')";
       $result=$connection->query($sql);
       
       if($result){
@@ -145,7 +145,11 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         <label for="amount">Harvested amount</label>
         </div>
     <div class="col2">
-        <input type="text" name="amount" value="<?= $amount?>" >
+        <input type="text" name="amount" value="<?= $amount?>" style="width:125px" >
+        <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+             <option value="Kg">Kg</option>
+             <option value=" "></option>
+        </select> 
         <span class="error"><?= $amount_error?></span>
         </div>
         </div>
