@@ -91,7 +91,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
           if($beehiveno_error=='' and $sdate_error=='' and $idate_error=='' and $itime_error=='' and $actstatus_error=='' and $temperament_error=='' and $wbeehive_error=='' and $wstatus_error=='' and $cbeehive_error=='' and $noframes_error=='' and $disease_error=='' and $treatment_error=='' and $sqbee_error=='' and $bcolony_error==''){
         
         $date=date("Y/m/d");
-        $sql="INSERT INTO beehive (userID,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony) VALUES('".$_SESSION['userid']."','".$_POST['beehiveno']."','".$_POST['sdate']."','".$_POST['idate']."','".$_POST['itime']."','".$_POST['actstatus']."','".$_POST['temperament']."','".$_POST['wbeehive']."','".$_POST['wstatus']."','".$_POST['cbeehive']."','".$_POST['noframes']."','".$_POST['disease']."','".$_POST['treatment']."','".$_POST['sqbee']."','".$_POST['bcolony']."')";
+        $sql="INSERT INTO beehive (userID,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,unit,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony) VALUES('".$_SESSION['userid']."','".$_POST['beehiveno']."','".$_POST['sdate']."','".$_POST['idate']."','".$_POST['itime']."','".$_POST['actstatus']."','".$_POST['temperament']."','".$_POST['wbeehive']."','".$_POST['unit']."','".$_POST['wstatus']."','".$_POST['cbeehive']."','".$_POST['noframes']."','".$_POST['disease']."','".$_POST['treatment']."','".$_POST['sqbee']."','".$_POST['bcolony']."')";
         $result=$connection->query($sql);
         if($result){
 
@@ -167,10 +167,14 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
            </div>
            
            <div class="col1">
-        <label for="wbeehive">Weight of beehive (in Kg)</label>
+        <label for="wbeehive">Weight of beehive </label>
         </div>
            <div class="c3">
-        <input type="text" name="wbeehive" style="width: 185px" value="<?= $wbeehive?>" >
+        <input type="text" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
+        <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
+             <option value="Kg">Kg</option>
+             <option value="g">g</option>
+        </select> 
         <span class="error"><?= $wbeehive_error?></span>
         </div>
         </div>
@@ -235,6 +239,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         <span class="error"><?= $temperament_error?></span>
         </div>
         </div>
+        
         <div class="row">
         <div class="col1">
         <label for="wstatus">Weather status</label>
@@ -244,16 +249,21 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
            <span class="error"><?= $wstatus_error?></span>
         </div>
         </div>
+        
         <div class="row">
         <div class="col1">
         <label for="cbeehive">Changes made to beehive</label>
         </div>
            <div class="col2">
-           <textarea id="cbeehive" name="cbeehive" style="height:100px" placeholder="Changes made to beehive" value="<?= $cbeehive?>"></textarea>
-           <span class="error"><?= $cbeehive_error?></span>
+           <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
+             <option value="Add">Add</option>
+             <option value="Removal">Removal</option>
+             <option value="Repair">Repair</option>
+             <option value="Switch"> Switch</option>
+             <option value="Neutral">Neutral</option>
+             </select> 
         </div>
         </div>
-        
         <div class="row">
         <div class="col1">
         <label for="disease">Signs of diseases (if there's any) </label>
