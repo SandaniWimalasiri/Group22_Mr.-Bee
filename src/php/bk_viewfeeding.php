@@ -21,7 +21,8 @@ session_start();
 
 
 <div class="bhivecontainer">
- <br/><br/>
+<p>Feeding Records</p>
+ <br/>
 
 			<center>
 
@@ -41,7 +42,7 @@ session_start();
 
 
         
-$sql = "SELECT FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount FROM feeding where userID='".$_SESSION['userid']."' and is_deleted=0";
+$sql = "SELECT FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount,unit FROM feeding where userID='".$_SESSION['userid']."' and is_deleted=0";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
@@ -64,7 +65,7 @@ $result = mysqli_query($connection,$sql);
         echo $row['feedingtype'];
         echo '</td>';
         echo '<td>';
-        echo $row['famount'];
+        echo $row['famount']." ".$row['unit'];
         echo '</td>';
         echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_updatefeeding.php?FeedingRecNo=".$row['FeedingRecNo']."' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> update </a> </td>" ;
 		echo "<td style='border-style:hidden'><a href ='bk_deletefeeding.php?FeedingRecNo=".$row['FeedingRecNo']." ' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> delete </a> </td>" ;	
