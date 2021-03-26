@@ -31,7 +31,7 @@ require_once("func.php"); ?>
                     <?php echo $_SESSION['first_name'];
                         echo " " ;
                         echo $_SESSION['last_name']; ?>
-                <a href="log_out.php"> (Log Out)__ </a>
+                <a href="manager_log_out.php"> (Log Out)__ </a>
             </div>
             
         </header>                       <!--end of header-->
