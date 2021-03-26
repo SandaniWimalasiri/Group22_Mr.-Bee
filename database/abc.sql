@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2021 at 04:30 AM
+-- Generation Time: Mar 26, 2021 at 06:54 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -37,6 +37,7 @@ CREATE TABLE `beehive` (
   `actstatus` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `temperament` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `wbeehive` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `wstatus` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `cbeehive` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `noframes` int(50) NOT NULL,
@@ -44,18 +45,19 @@ CREATE TABLE `beehive` (
   `treatment` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `sqbee` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `bcolony` int(10) NOT NULL,
-  `is_deleted` tinyint(1) NOT NULL DEFAULT 0
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `beehive`
 --
 
-INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`, `is_deleted`) VALUES
-(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Neutral', 'Angry', '22', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'No fresh eggs provided', 9, 0),
-(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Strongly Active', 'Calm', '21.34', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Transfer bees', 4, 'none', 'none', 'Fresh eggs provided', 13, 0),
-(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Strongly Active', ' Nervous', '21.5', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Mated queen introduced', 22, 0),
-(4, 3, 4, '2020-07-07', '2020-11-01', '16:08:00.00', 'Strongly Active', ' Nervous', '21.3', 'humidity: 71%\r\nwind: 6.1km/h', 'Transfer bees', 11, 'none', 'none', 'fresh eggs provided', 10, 0);
+INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `unit`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`, `is_deleted`, `date`) VALUES
+(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Strongly Active', 'Calm', '22', 'g', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'Missing', 9, 0, '2020-10-26'),
+(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Strongly Active', 'Calm', '21.34', 'Kg', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Removal', 4, 'none', 'none', 'Missing', 13, 0, '2021-03-26'),
+(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Strongly Active', 'Calm', '21.5', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 22, 1, '2021-03-26'),
+(5, 3, 1, '2021-03-10', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '222', 'g', '222', '22', 2, '22', '22', 'Missing', 222, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -130,13 +132,13 @@ CREATE TABLE `div_manager` (
 --
 
 INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `pwd`, `emp_status`, `division`, `no_employee`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', 711234566, 'div_man@123', '   Divisional_Manager', 'Matara', 1, 0),
+(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', 711234566, 'div_man@123', '   Divisional_Manager', 'Matara', 1, 1),
 (2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', 711234567, 'div_man@123', '  Divisional_Manager', 'Ampara', 8, 0),
 (3, 'prasanna', 'silva', 'prasanna@gmail.com', 711234568, 'div_man@123', ' Divisional_Manager', 'Gampaha', 2, 0),
 (4, 'Prabath', 'Gunathilaka', 'prabath@gmail.com', 711234569, 'div_man@123', ' Divisional_Manager', 'Hambantota', 9, 0),
 (5, 'Sunil', 'Perera', 'sunil@gmail.com', 711234561, 'div_man@123', 'Divisional_Manager', 'Colombo', 2, 0),
 (6, 'sandani', 'vindya', 'sandani@gmail.com', 719874581, 'div_man@123', 'Divisional_Manager', 'Nuwara Eliya', 10, 0),
-(8, 'kamala', 'silva', 'kamala@gmail.com', 719874567, 'div_man@123', 'Divisional_Manager', 'Anuradhapu', 2, 1),
+(8, 'kamala', 'silva', 'kamala@gmail.com', 719874567, 'div_man@123', 'Divisional_Manager', 'Anuradhapu', 2, 0),
 (9, 'kamal', 'weerasinha', 'kamal@gmail.com', 911234567, 'div_man@123', 'Divisional_Manager', 'Batticaloa', 2, 0);
 
 -- --------------------------------------------------------
@@ -154,6 +156,7 @@ CREATE TABLE `feeding` (
   `ftime` time(2) NOT NULL,
   `feedingtype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `famount` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -161,10 +164,12 @@ CREATE TABLE `feeding` (
 -- Dumping data for table `feeding`
 --
 
-INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`, `is_deleted`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '13 mg', 0),
-(2, 3, 2, '2020-11-21', '2020-11-03', '16:11:00.00', 'Suger syrup (1+1 ratio)', '11.5 mg', 0),
-(3, 3, 3, '2020-11-21', '2020-11-05', '16:12:00.00', 'Suger syrup (1+1 ratio)', '6.9 mg', 0);
+INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`, `unit`, `is_deleted`) VALUES
+(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '13 ', 'mg', 0),
+(2, 3, 2, '2020-11-21', '2020-11-03', '16:11:00.00', 'Suger syrup (1+1 ratio)', '11.5', 'mg', 0),
+(3, 3, 3, '2020-11-21', '2020-11-05', '16:12:00.00', 'Suger syrup (1+1 ratio)', '6.9 mg', '', 1),
+(4, 3, 1, '2021-03-25', '2021-03-11', '13:58:00.00', 'Suger syrup (1+1 ratio)', '1', 'Kg', 0),
+(5, 3, 1, '2021-03-26', '2021-03-11', '12:21:00.00', 'Suger syrup (1+1 ratio)', '11', 'Kg', 0);
 
 -- --------------------------------------------------------
 
@@ -181,6 +186,7 @@ CREATE TABLE `harvest` (
   `htime` time(2) NOT NULL,
   `producttype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `amount` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -188,10 +194,10 @@ CREATE TABLE `harvest` (
 -- Dumping data for table `harvest`
 --
 
-INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `is_deleted`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '1.5 Kg', 0),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '2.1 Kg', 0),
-(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '0.25 Kg', 0);
+INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `unit`, `is_deleted`) VALUES
+(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '2', 'Kg', 0),
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Raw Honey', '1', 'Kg', 0),
+(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '0.25 Kg', '', 1);
 
 -- --------------------------------------------------------
 
@@ -339,7 +345,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `beehive`
 --
 ALTER TABLE `beehive`
-  MODIFY `BeehiveRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `BeehiveRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `beekeeper`
@@ -363,7 +369,7 @@ ALTER TABLE `div_manager`
 -- AUTO_INCREMENT for table `feeding`
 --
 ALTER TABLE `feeding`
-  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `harvest`
@@ -375,7 +381,7 @@ ALTER TABLE `harvest`
 -- AUTO_INCREMENT for table `infohub`
 --
 ALTER TABLE `infohub`
-  MODIFY `articleNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `articleNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
