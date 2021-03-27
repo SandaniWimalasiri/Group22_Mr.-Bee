@@ -29,7 +29,7 @@ require_once("func.php"); ?>
             <?php
                 $order_id=$_POST['order_id'];
 
-                $query = "SELECT * FROM orders WHERE order_id='$order_id' ";
+                $query = "SELECT * FROM orders WHERE order_id='$order_id'";
                 $query_run = mysqli_query($connection, $query);
 
                 if($query_run){

@@ -41,7 +41,7 @@
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM orders WHERE od_status='completed'";
+                    $sql = "SELECT * FROM orders WHERE od_status='completed'  ORDER BY complete_date DESC";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);

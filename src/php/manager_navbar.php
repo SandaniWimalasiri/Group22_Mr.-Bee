@@ -28,7 +28,7 @@
                     
                     <span>Profile</span>
                 </a>
-                <a href="manager_view_reports.php">
+                <a href="manager_reports.php">
                     
                     <span>Reports</span>
                 </a>

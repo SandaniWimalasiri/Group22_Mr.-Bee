@@ -128,7 +128,11 @@
                 $body="HI Mr/Mrs ".$_GET['last_name']." .Welcome to our Bee keeping community and Thank You for Joining with us. Herewith we sent login informations for your Account. After the log in you should change your password because of security purpose.
                 your user name = ".$_GET['email']."
                 your password=div_man@123.
-                (You can activate your account by using these User Credentials.)";
+                (You can activate your account by using these User Credentials.)
+                Thank You.
+                Your faithfully,
+                Mr. Bee Team."
+                ;
                 $headers="From: mrbeemanager@gmail.com";
                     if (mail($_GET['email'],$subject,$body,$headers)) {
                         echo '<script> alert("mail sent succesfully"); </script>';

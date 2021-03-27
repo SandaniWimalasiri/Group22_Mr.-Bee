@@ -89,7 +89,7 @@
 	</div>
 	<div class="contactus" id="contactus">
 		<h1 class="title">contact us</h1>
-		<form class="form" action="index.php" method="get">
+		<form class="form" action="index.php" method="post">
 			<div class="form_input">
 				<input type="email" placeholder="Email" name="email">
 			</div>
@@ -107,17 +107,25 @@
 
 	<?php
       
-		if(isset($_GET['submit'])){
+		if(isset($_POST['submit'])){
 		
 				$email="mrbeemanager@gmail.com";
-				$subject =$_GET['subject'];
-				$body    =$_GET['msg'];
-				$headers="From: ".$_GET['email']."";
-					if (mail($email,$subject,$body,$headers)) {
-						echo '<script> alert("mail sent succesfully"); </script>';
+				$subject =$_POST['subject'];
+				$body    ="".$_POST['msg']." 
+							This email is from: ".$_POST['email']." ";
+				$headers="From: ".$_POST['email']."";
+					if(empty($email) || empty($subject) || empty($body)){  
+						//display an alert message if one of them field is empty
+						echo "All inputs are required!";
 					}else {
-						echo '<script> alert("Unable to send email. Please try again to send the email manualy."); </script>';
+						if (mail($email,$subject,$body,$headers)) {
+							echo "mail sent succesfully";
+						}else {
+							echo "Unable to send email. Please try again to send the email manualy.";
+							
+						}
 					}
+					
 		}  
 	?>
 	
@@ -134,3 +142,6 @@
 	
 </body>
 </html>
+
+
+                           

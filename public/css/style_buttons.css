@@ -74,7 +74,7 @@
   }
 
   /*btn6 button located in manager_remove_dm.php*/
-  .btn6 {
+  .btn6{
     background-color: #d4780ec0;
     top: 75%;
     height: 35px;
@@ -88,6 +88,7 @@
     top:130%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.226);
   }
+
 
   /*this button is use to identify page*/
   .btn0 {
@@ -131,6 +132,23 @@
     border-radius: 2px;
     cursor: pointer;
    
+  }
+
+  /*this button is in report viewing page*/
+  .btn9{
+    background-color: #d4780ec0;
+    top: 75%;
+    height: 35px;
+    width: 120px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    top:130%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.226);
+    
   }
   
 .btn1:hover  {

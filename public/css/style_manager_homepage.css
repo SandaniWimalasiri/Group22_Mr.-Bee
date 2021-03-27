@@ -189,6 +189,8 @@ a:hover {color: red;}
     z-index: 1;
 }
 
+
+
 @media screen and (max-width: 600px) {
     .nav.welcomeBox {
         float: none;

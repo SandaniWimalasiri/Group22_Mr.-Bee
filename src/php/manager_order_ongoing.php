@@ -41,7 +41,7 @@
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM orders WHERE od_status='on-going'";
+                    $sql = "SELECT * FROM orders WHERE od_status='on-going'  ORDER BY order_date DESC";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);
