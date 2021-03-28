@@ -1,26 +1,115 @@
 
 <?php
 		require_once('../../config/connect.php');
-		$error="";
-		if(isset($_POST['submit'])){
-			if($_POST['password']!=$_POST['repassword']){	
-				$error="Password does not match";
-				
-			}
-			$sql="INSERT INTO customer (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['uname']."','".$_POST['username']."','".$_POST['useraddress']."','".$_POST['useremail']."','".$_POST['usertelephone']."','".$_POST['password']."')";
-			
-			$result=mysqli_query($connection,$sql);
-			
-			
-			if($result){
-			header('Location: login.php');
-			}
-			else{
-			echo "failed";	
-			}
+		
+		
 
-		}
-		?>
+$username_error=$fullname_error=$userAddress_error=$userEmail_error=$userTele_error=$userPassword_error=$repassword_error="";
+$username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword="";
+
+    if(isset($_POST['submit'])){
+
+        if (empty($_POST["username"])) {
+            $username_error = "</br>*User Name No is Required";
+          } else {
+            $username = test_input($_POST["username"]);
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$username)) {
+              $username_error = "<br/>*Only Letters and White Space Allowed";
+            }
+          }
+        if (empty($_POST["fullname"])) {
+            $fullname_error = "</br>*Full Name is Required";
+          } else {
+            $fullname = test_input($_POST["fullname"]);
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$fullname)) {
+              $fullname_error = "<br/>*Only Letters and White Space Allowed";
+            }
+          }
+        
+          if (empty($_POST["userAddress"])) {
+            $userAddress_error = "</br>*User Address is Required";
+          } else {
+            $userAddress = test_input($_POST["userAddress"]);
+          }
+          if (empty($_POST["userEmail"])) {
+            $userEmail_error = "<br/>*User Email is Required";
+          } else {
+			$userEmail = test_input($_POST["userEmail"]);
+			if (!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
+				$userEmail_error = "<br/>*Invalid Email Format";
+			  }
+          }
+          if (empty($_POST["userTele"])) {
+            $userTele_error = "<br/>*Telephone Number is Required";
+          } else {
+            $userTele = test_input($_POST["userTele"]);
+          }
+
+          if (empty($_POST["userPassword"])) {
+            $userPassword_error = "<br/>*Password is Required";
+          } else {
+            $userPassword = test_input($_POST["userPassword"]);
+          }
+        
+          if (empty($_POST["repassword"])) {
+            $repassword_error = "<br/>*Re-Enter Your Password";
+          } else {
+            $repassword = test_input($_POST["repassword"]);
+            if($userPassword!== $repassword){
+              $repassword_error = "</br>*Please Re-Enter Correct Password";
+		  }
+		  else{
+			if (strlen($_POST["userPassword"]) <= '8') {
+				$userPassword_error = "<br/>*Your Password Must Contain At Least 8 Characters!";
+			}
+			elseif(!preg_match("#[0-9]+#",$userPassword)) {
+				$userPassword_error= "<br/>*Your Password Must Contain At Least 1 Number!";
+			}
+			elseif(!preg_match("#[A-Z]+#",$userPassword)) {
+				$userPassword_error = "<br/>*Your Password Must Contain At Least 1 Capital Letter!";
+			}
+			elseif(!preg_match("#[a-z]+#",$userPassword)) {
+				$userPassword_error = "<br/>*Your Password Must Contain At Least 1 Lowercase Letter!";
+			}
+		  }
+
+		  }
+
+          if($username_error=='' and $fullname_error=='' and $userAddress_error=='' and $userEmail=='' and $userTele_error=='' and $userPassword_error=='' and $repassword_error==''){
+        
+        $date=date("Y/m/d");
+		$sql="INSERT INTO customer (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['username']."','".$_POST['fullname']."','".$_POST['userAddress']."','".$_POST['userEmail']."','".$_POST['userTelephone']."','".$_POST['userPassword']."')";
+			
+		$result=mysqli_query($connection,$sql);
+        if($result){
+
+          echo '<script>';
+          echo 'alert("Registered Successfully");';
+          echo 'window.location.href = "customer_login.php";';
+          echo '</script>';
+          die();
+        }
+
+        else{
+
+          echo '<script>';
+          echo 'alert("Failed");';
+          echo 'window.location.href = "customer_signup.php";';
+          echo '</script>';
+          die();
+        }
+        
+        }
+        }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+?>
 
 <html>
 	<head>
@@ -32,26 +121,32 @@
 
         
         
-?>
+
 <div class="main">
 		<div class="loginbox" >
 			<h1>Sign Up</h1>
-			<form method="POST" action="customer_signup.php" >
+			<form method="POST" action="" >
 				<p>User Name : </p>
-				<input type="text" name="uname" placeholder="Enter your User name" required/>
+				<input type="text" name="username" placeholder="Enter your User name" value="<?= $username?>">
+				<span class="error"><?= $username_error?></span>
 				<p>Name : </p>
-				<input type="text" name="username" placeholder="Enter your Name" required/>
+				<input type="text" name="fullname" placeholder="Enter your Name" value="<?= $fullname?>"/>
+				<span class="error"><?= $fullname_error?></span>
 				<p>Adress : </p>
-				<input type="text" name="useraddress" placeholder="Enter your address"/>
+				<input type="text" name="userAddress" placeholder="Enter your address" value="<?= $userAddress?>"/>
+				<span class="error"><?= $userAddress_error?></span>
 				<p>Email : </p>
-				<input type="text" name="useremail" placeholder="Enter your email address"/>
+				<input type="text" name="userEmail" placeholder="Enter your email address" value="<?= $userEmail?>"/>
+				<span class="error"><?= $userEmail_error?></span>
 				<p>Telephone : </p>
-				<input type="text" name="usertelephone" placeholder="Enter your telephone no"/>
+				<input type="text" name="userTele" placeholder="Enter your telephone no" value="<?= $userTele?>"/>
+				<span class="error"><?= $userTele_error?></span>
 				<p>Password : </p>
-				<input type="password" name="password" placeholder="Enter your password" required/>
+				<input type="password" name="userPassword" placeholder="Enter your password" value="<?= $userPassword?>"/>
+				<span class="error"><?= $userPassword_error?></span>
 				<p>Re-enter the Password : </p>
-				<input type="password" name="repassword" placeholder="Enter your password" required /><br />
-				<?php echo $error; ?>
+				<input type="password" name="repassword" placeholder="Enter your password" value="<?= $repassword?>" /><br />
+				<span class="error"><?= $repassword_error?></span>
 				<br />
 				
 				<div class="center" id="er">
@@ -59,7 +154,7 @@
 				 </div>  
 				 </form>
 				 <div class="center" id="er">
-				<form  action="customer_login.php" method="post" > <input type="submit" class=button style="background-color: white" value="Cancel"></form>
+				<form  action="" method="post" > <input type="submit" class=button style="background-color: white" value="Cancel"></form>
 				 </div>  
 			
 		</div>
