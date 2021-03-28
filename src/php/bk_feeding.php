@@ -7,28 +7,31 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
     if(isset($_POST['enter'])){
 
         if (empty($_POST["beehiveno"])) {
-            $beehiveno_error = "*Beehive no is required";
+            $beehiveno_error = "*Beehive No is Required";
           } else {
             $beehiveno = test_input($_POST["beehiveno"]);
           }
 
         if (empty($_POST["fdate"])) {
-            $fdate_error = "*Feeding date is required";
+            $fdate_error = "*Feeding Date is Required";
           } else {
             $fdate = test_input($_POST["fdate"]);
           }
           if (empty($_POST["ftime"])) {
-            $ftime_error = "*Feeding time is required";
+            $ftime_error = "*Feeding Time is Required";
           } else {
             $ftime = test_input($_POST["ftime"]);
           }
           if (empty($_POST["feedingtype"])) {
-            $feedingtype_error = "*Feeding type is required";
+            $feedingtype_error = "<br/>*Feeding Type is Required";
           } else {
             $feedingtype = test_input($_POST["feedingtype"]);
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$feedingtype)) {
+              $feedingtype_error = "<br/>*Only Letters and White Space Allowed";
+            }
           }
           if (empty($_POST["famount"])) {
-            $famount_error = "*Feeding amount is required";
+            $famount_error = "*Feeding Amount is Required";
           } else {
             $famount = test_input($_POST["famount"]);
           }
@@ -97,7 +100,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <label for="beehiveno">Beehive No</label>
         </div>
     <div class="col3">
-        <input type="number" name="beehiveno" value="<?= $beehiveno?>" autofocus style="width:225px">
+        <input type="number" min="0" name="beehiveno" value="<?= $beehiveno?>" autofocus style="width:225px">
         <span class="error"><?= $beehiveno_error?></span>
         </div>
         </div>
@@ -124,9 +127,9 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <div class="col1">
         <label for="feedingtype">Feeding Type</label>
         </div>
-    <div class="col3">
+    <div class="col3" style="width:300px">
         <input type="text" name="feedingtype"  placeholder="Feeding type" value="<?= $feedingtype?>" style="width:225px">
-        <span class="error"><?= $feedingtype_error?></span>
+        <span class="error" ><?= $feedingtype_error?></span>
         </div>
         </div>
         <div class="row">
@@ -134,7 +137,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <label for="famount">Feeding Amount</label>
         </div>
     <div class="col3">
-        <input type="number" name="famount" value="<?= $famount?>" style="width:166px" >
+        <input type="number" min="0.000" placeholder="0.000" step="0.001" name="famount" value="<?= $famount?>" style="width:166px" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value="g">g</option>
