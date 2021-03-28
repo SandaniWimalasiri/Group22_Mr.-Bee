@@ -7,9 +7,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
     if(isset($_POST['update'])){
 
 
-        
-         
-    
+      
  
           
     $sql2= "UPDATE harvest SET HarvestRecNo ='".$_POST['HarvestRecNo']."',beehiveno ='".$_POST['beehiveno']."',  hdate ='".$_POST['hdate']."', htime ='".$_POST['htime']."',producttype ='".$_POST['producttype']."',amount ='".$_POST['amount']."',unit ='".$_POST['unit']."' WHERE HarvestRecNo='".$_POST['HarvestRecNo']."'";
@@ -90,27 +88,27 @@ while($row=mysqli_fetch_assoc($result1)){
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
         echo 'Harvest Record No </div><div class="col3">';
-        echo "<input type = 'number' name='HarvestRecNo' style='width: 225px' required  value ='".$row['HarvestRecNo']."' readonly>";
+        echo "<input type = 'number' name='HarvestRecNo' style='width: 225px'  value ='".$row['HarvestRecNo']."' readonly>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Beehive No </div><div class="col3" ><input type = "number" name="beehiveno" style="width: 225px" value ="'.$row['beehiveno'].'" >';
+        echo 'Beehive No </div><div class="col3" ><input type = "number" min="0.000" name="beehiveno" required style="width: 225px" value ="'.$row['beehiveno'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvesting Date </div><div class="col3"><input type = "date" name="hdate" style="width: 225px" value ="'.$row['hdate'].'" >';
+        echo 'Harvesting Date </div><div class="col3"><input type = "date" name="hdate" required style="width: 225px" value ="'.$row['hdate'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvesting Time </div><div class="col3" ><input type = "time"" name="htime" style="width: 225px" value ="'.$row['htime'].'" >';
+        echo 'Harvesting Time </div><div class="col3" ><input type = "time"" name="htime" required style="width: 225px" value ="'.$row['htime'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvested Product Type </div><div class="col3" ><select id="producttype" name="producttype" value="<?= $producttype?>" >
+        echo 'Harvested Product Type </div><div class="col3" ><select id="producttype"required name="producttype" value="<?= $producttype?>" >
         <option value="'.$row['htime'].'">'.$row['producttype'].'</option>
         <option value="Raw Honey">Raw Honey</option>
         <option value="Bee Colonies">Bee Colonies</option>
@@ -120,7 +118,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvested Amount </div><div class="col3"><input type = "number" name="amount" style="width: 170px" required value ="'.$row['amount'].'">';
+        echo 'Harvested Amount </div><div class="col3"><input type = "number" min="0.000" placeholder="0.000" step="0.001" required name="amount" style="width: 170px" required value ="'.$row['amount'].'">';
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
         <option value="'.$row['unit'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
@@ -129,7 +127,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo "</div>";
         echo "</div>";
         echo"<br/></br>";
-        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="Update" ></div></form>';
+        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="update" ></div></form>';
 }}       
 
 ?>
