@@ -53,7 +53,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
     <head>
 
-      <title>bee-hive</title>
+      <title>Update Harvest Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -72,10 +72,10 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
     <div class="bhivecontainer">
 
-    <p >Update harvest records</p>
+    <p >Update Harvest Records</p>
 
     <br />
-    <br />
+    <br /></br>
 
 <?php
 
@@ -89,26 +89,28 @@ while($row=mysqli_fetch_assoc($result1)){
             
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvest Record no </div><div class="col2">';
-        echo "<input type = 'number' name='HarvestRecNo' required value ='".$row['HarvestRecNo']."' readonly>";
+        echo 'Harvest Record No </div><div class="col3">';
+        echo "<input type = 'number' name='HarvestRecNo' style='width: 225px' required  value ='".$row['HarvestRecNo']."' readonly>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Beehive no </div><div class="col2" ><input type = "number" name="beehiveno"  value ="'.$row['beehiveno'].'" >';
+        echo 'Beehive No </div><div class="col3" ><input type = "number" name="beehiveno" style="width: 225px" value ="'.$row['beehiveno'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvesting date </div><div class="col1"><input type = "date" name="hdate"  value ="'.$row['hdate'].'" >';
-        echo "</div>";
-        echo '<div class="col1">';
-        echo 'Harvesting time </div><div class="c3"><input type = "time"" name="htime"  value ="'.$row['htime'].'" >';
+        echo 'Harvesting Date </div><div class="col3"><input type = "date" name="hdate" style="width: 225px" value ="'.$row['hdate'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvested product type </div><div class="col2"><select id="producttype" name="producttype" value="<?= $producttype?>" >
+        echo 'Harvesting Time </div><div class="col3" ><input type = "time"" name="htime" style="width: 225px" value ="'.$row['htime'].'" >';
+        echo "</div>";
+        echo "</div>";
+        echo '<div class="row" >';
+        echo '<div class="col1">';
+        echo 'Harvested Product Type </div><div class="col3" ><select id="producttype" name="producttype" value="<?= $producttype?>" >
         <option value="'.$row['htime'].'">'.$row['producttype'].'</option>
         <option value="Raw Honey">Raw Honey</option>
         <option value="Bee Colonies">Bee Colonies</option>
@@ -118,7 +120,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Harvested amount </div><div class="col2"><input type = "text" name="amount" style="width: 125px" required value ="'.$row['amount'].'">';
+        echo 'Harvested Amount </div><div class="col3"><input type = "number" name="amount" style="width: 170px" required value ="'.$row['amount'].'">';
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
         <option value="'.$row['unit'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
@@ -126,8 +128,8 @@ while($row=mysqli_fetch_assoc($result1)){
    </select> ';
         echo "</div>";
         echo "</div>";
-        echo"<br/>";
-        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update record" name="update" ></div></form>';
+        echo"<br/></br>";
+        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="Update" ></div></form>';
 }}       
 
 ?>
@@ -139,7 +141,7 @@ while($row=mysqli_fetch_assoc($result1)){
         </div>
 </div>
         </form>
-
+</br>
     </div>
     
 <br />
