@@ -1,4 +1,3 @@
-
 <?php require_once("../../config/connect.php"); ?>
 <?php
   session_start();
@@ -23,7 +22,7 @@
       $user=mysqli_fetch_assoc($isexist);
       $_SESSION["first_name"]=$user['first_name'];
       $_SESSION["last_name"]=$user['last_name'];
-      
+
       if($type=="Divisional_Manager"){
         header('Location: divman.php');
       }
@@ -53,7 +52,7 @@
       $user=mysqli_fetch_assoc($isexist);
       $_SESSION["first_name"]=$user['first_name'];
       $_SESSION["last_name"]=$user['last_name'];
-      
+
       if($type=="manager"){
         header('Location: manager_home.php');
       }
@@ -62,21 +61,20 @@
   }
 
   if(isset($_POST['submit'])){
-		$uname=$_POST['email'];
-		$pwd=$_POST['password'];
+	
 
-		$sql="SELECT * FROM beekeeper WHERE username='".$uname."' AND userPassword='".$pwd."'";
+		$sql="SELECT * FROM beekeeper WHERE userEmail='".$_POST['email']."' AND userPassword='".$_POST['password']."'";
 		$result=mysqli_query($connection,$sql);
-		
+
 		if($result->num_rows==1){
 			$beekeeper=$result->fetch_assoc();
 			$_SESSION['loggedin']=1;
 			$_SESSION['username']=$beekeeper['userName'];
 			$_SESSION['userid']=$beekeeper['userID'];
-			
+
 			if($result){
-				$redirect =  "beekeeperindex.php";
-			
+				$redirect =  "bk_harvest.php";
+
                         }
 
                         header('Location: ' . $redirect);
@@ -89,16 +87,16 @@
 
 		$sql="SELECT * FROM customer WHERE username='".$uname."' AND userPassword='".$pwd."'";
 		$result=mysqli_query($connection,$sql);
-		
+
 		if($result->num_rows==1){
 			$beekeeper=$result->fetch_assoc();
 			$_SESSION['loggedin']=1;
 			$_SESSION['username']=$customer['username'];
 			$_SESSION['userid']=$customer['CID'];
-			
+
 			if($result){
 				$redirect =  "customer_index.php";
-			
+
                         }
 
                         header('Location: ' . $redirect);
@@ -125,4 +123,4 @@
     </div>
 
   </body>
-</html>
+</html> 
