@@ -12,17 +12,17 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
 
         if (empty($_POST["beehiveno"])) {
-            $beehiveno_error = "*Beehive no is required";
+            $beehiveno_error = "*Beehive No is Required";
           } else {
             $beehiveno = test_input($_POST["beehiveno"]);
           }
           if (empty($_POST["hdate"])) {
-            $hdate_error = "*Harvesting date is required";
+            $hdate_error = "*Harvesting Date is Required";
           } else {
             $hdate = test_input($_POST["hdate"]);
           }
           if (empty($_POST["htime"])) {
-            $htime_error = "*Harvesting time is required";
+            $htime_error = "*Harvesting Time is Required";
           } else {
             $htime = test_input($_POST["htime"]);
           }
@@ -32,7 +32,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
             $producttype = test_input($_POST["producttype"]);
           }
           if (empty($_POST["amount"])) {
-            $amount_error = "*Harvested amount is required";
+            $amount_error = "*Harvested Amount is Required";
           } else {
             $amount = test_input($_POST["amount"]);
           }
@@ -107,7 +107,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         <label for="beehiveno">Beehive No</label>
     </div>
     <div class="col3">
-        <input type="number" name="beehiveno"  value="<?= $beehiveno?>" autofocus style="width:225px">
+        <input type="number" min="0" name="beehiveno"  value="<?= $beehiveno?>" autofocus style="width:225px">
        
         <span class="error"><?= $beehiveno_error?></span>
         </div>
@@ -149,7 +149,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         <label for="amount">Harvested Amount</label>
         </div>
     <div class="col3">
-        <input type="number" placeholder="0.000" step="0.001" name="amount" value="<?= $amount?>" style="width:166px" >
+        <input type="number" min="0.000" placeholder="0.000" step="0.001" name="amount" value="<?= $amount?>" style="width:166px" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value=" "></option>
