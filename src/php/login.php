@@ -61,9 +61,10 @@
   }
 
   if(isset($_POST['submit'])){
-	
+		$uname=$_POST['email'];
+		$pwd=$_POST['password'];
 
-		$sql="SELECT * FROM beekeeper WHERE userEmail='".$_POST['email']."' AND userPassword='".$_POST['password']."'";
+		$sql="SELECT * FROM beekeeper WHERE username='".$uname."' AND userPassword='".$pwd."'";
 		$result=mysqli_query($connection,$sql);
 
 		if($result->num_rows==1){
@@ -73,7 +74,7 @@
 			$_SESSION['userid']=$beekeeper['userID'];
 
 			if($result){
-				$redirect =  "bk_harvest.php";
+				$redirect =  "beekeeperindex.php";
 
                         }
 
