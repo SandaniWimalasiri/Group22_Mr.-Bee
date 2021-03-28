@@ -120,6 +120,12 @@ a:visited {
   margin-top: 6px;
 }
 
+.col3 {
+  float: left;
+  width: 225px;
+  margin-top: 6px;
+}
+
 .column {
   float: left;
   width: 20%;
@@ -165,7 +171,7 @@ input[type=submit] {
 
 input[type=submit]:hover{
 
-  background-color: #da9100	;
+  background-color: #f4c430	;
   color:black;
   
 
