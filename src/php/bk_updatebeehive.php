@@ -75,12 +75,12 @@ if(isset($_GET['BeehiveRecNo'])){
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
         echo 'Beehive Record No </div><div class="col2">';
-        echo "<input type = 'number' name='BeehiveRecNo' required value ='".$row['BeehiveRecNo']."' readonly>";
+        echo "<input type = 'number' name='BeehiveRecNo'  value ='".$row['BeehiveRecNo']."' readonly>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Beehive No </div><div class="col2"><input type = "number" name="beehiveno" required value ="'.$row['beehiveno'].'">';
+        echo 'Beehive No </div><div class="col2"><input type = "number" min="0" name="beehiveno" required value ="'.$row['beehiveno'].'">';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -88,9 +88,9 @@ if(isset($_GET['BeehiveRecNo'])){
         echo 'Start Date </div><div class="col1"><input type = "date" name="sdate" required value ="'.$row['sdate'].'" >'; 
         echo "</div>";
         echo '<div class="col1">';
-        echo 'Weight of Beehive </div><div class="c3"><input type = "number" name="wbeehive" style="width: 125px" required value ="'.$row['wbeehive'].'">';
+        echo 'Weight of Beehive </div><div class="c3"><input type = "number" min="0.000" placeholder="0.000" step="0.001" name="wbeehive" style="width: 125px" required value ="'.$row['wbeehive'].'">';
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
-        <option value="'.$row['idate'].'">'.$row['unit'].'</option>
+        <option value="'.$row['unit'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
         <option value="g">g</option>
    </select> ';
@@ -106,16 +106,16 @@ if(isset($_GET['BeehiveRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Number of Bee Colonies  </div><div class="col1"><input type = "number" name="bcolony" required value ="'.$row['bcolony'].'">';
+        echo 'Number of Bee Colonies  </div><div class="col1"><input type = "number" min="0" name="bcolony" required value ="'.$row['bcolony'].'">';
         echo "</div>";
         echo '<div class="col1">';
-        echo 'Number of Frames </div><div class="c3"><input type = "number" name="noframes" required value ="'.$row['noframes'].'" >';
+        echo 'Number of Frames </div><div class="c3"><input type = "number" min="0" name="noframes" required value ="'.$row['noframes'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Active Status </div><div class="col2"><select id="actstatus" name="actstatus" value="<?= $actstatus?>" >
-             <option value="'.$row['noframes'].'">'.$row['actstatus'].'</option>
+        echo 'Active Status </div><div class="col2"><select id="actstatus" name="actstatus" required value="<?= $actstatus?>" >
+             <option value="'.$row['actstatus'].'">'.$row['actstatus'].'</option>
              <option value="Strongly Active">Strongly Active</option>
              <option value="Active">Active</option>
              <option value="Neutral">Neutral</option>
@@ -126,7 +126,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Temperament </div><div class="col2"><select id="temperament" name="temperament" value="<?= $temperament?>" >
+        echo 'Temperament </div><div class="col2"><select id="temperament" name="temperament" value="<?= $temperament?>" required>
         <option value="'.$row['temperament'].'">'.$row['temperament'].'</option>
         <option value="Calm">Calm</option>
         <option value=" Nervous"> Nervous</option>
@@ -164,7 +164,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Status of Queen Bee </div><div class="col2"><select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
+        echo 'Status of Queen Bee </div><div class="col2"><select id="sqbee" required name="sqbee" value="<?= $sqbee?>" >
              <option value="'.$row['sqbee'].'">'.$row['sqbee'].'</option>
              <option value="Missing">Missing</option>
              <option value="No Fresh Eggs">No Fresh Eggs</option>
