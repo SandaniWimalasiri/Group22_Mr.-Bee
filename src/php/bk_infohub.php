@@ -10,20 +10,23 @@ session_start();
 
         if(isset($_POST['submit'])){
 
-            if (empty($_POST["authorname"])) {
-              $authorname_error = "*Author name is required";
-            } else {
-              $authorname = test_input($_POST["authorname"]);
+          if (empty($_POST["authorname"])) {
+            $authorname_error = "*Author Name is Required";
+          } else {
+            $authorname = test_input($_POST["authorname"]);
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$authorname)) {
+              $authorname_error = "*Only Letters and White Spaces Allowed";
             }
+          }
             
             if (empty($_POST["articlename"])) {
-              $articlename_error = "*Article name is required";
+              $articlename_error = "*Article Name is Required";
             } else {
               $articlename = test_input($_POST["articlename"]);
             }
               
             if (empty($_POST["content"])) {
-              $content_error = "*Content is required";
+              $content_error = "*Content is Required";
             } else {
               $content = test_input($_POST["content"]);
             }
