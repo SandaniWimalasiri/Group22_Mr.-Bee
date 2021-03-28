@@ -131,7 +131,7 @@
 	
 
 	<div class="footer">
-		<a href="#">© 2021 Mr. BEE</a>
+		<a href="#">© 2021, Nature Bee Honey Company Sri Lanka</a>
 	</div>
 
 

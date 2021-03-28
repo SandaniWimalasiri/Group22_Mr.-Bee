@@ -4,12 +4,7 @@ require_once("func.php"); ?>
 <?php include('manager_alignments.php')?>
 <?php include('manager_navbar.php')?>
 
-<?php session_start(); 
 
-        if(!$_SESSION['userName']){
-            header('Location: sign_in_admin.php');
-        }
-?>
 
     <head>
         

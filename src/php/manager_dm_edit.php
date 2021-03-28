@@ -1,15 +1,9 @@
 
-<?php require_once("../../config/connect.php");
-require_once("func.php"); ?>
+
 <?php include('manager_alignments.php')?>
 <?php include('manager_navbar.php')?>
 
-<?php session_start(); 
 
-        if(!$_SESSION['userName']){
-            header('Location: sign_in_admin.php');
-        }
-?>
 
 
 
@@ -60,12 +54,17 @@ require_once("func.php"); ?>
                             </tr>
                             <tr>
                                 <th><label>Email</label></th>
-                                <td><input type="email" name="email" placeholder="Enter Last Name" value="<?php echo $row['email'] ?>" readonly></td>
+                                <td><input type="email" name="email" placeholder="Enter Email" value="<?php echo $row['email'] ?>" readonly></td>
                             </tr>
                             <tr>
                                 <th><label>TP No.</label></th>
-                                <td><input type="text" name="tp" placeholder="Enter Last Name" value="<?php echo $row['tp'] ?>" readonly></td>
+                                <td><input type="tel" name="tp" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>" readonly></td>
                             </tr>
+                            <tr>
+                                <th><label>Address</label></th>
+                                <td><input type="text" placeholder="Address" name="addr" value="<?php echo $row['addr'] ?>" readonly>></td>
+                            </tr>
+                            
                             <tr>
                                 <th><label>Division</label></th>
                                 <td>
@@ -98,10 +97,7 @@ require_once("func.php"); ?>
                                         </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <th><label>No. of Employees</label></th>
-                                <td><input type="text" name="no_employee" placeholder="Enter no. of employees" value="<?php echo $row['no_employee'] ?>"></td>
-                            </tr>
+                           
                             </table>
                             <br/>
                         

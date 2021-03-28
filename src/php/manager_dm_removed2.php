@@ -1,10 +1,5 @@
 <?php require_once("../../config/connect.php"); ?>
-<?php session_start(); 
 
-        if(!$_SESSION['userName']){
-            header('Location: sign_in.php');
-        }
-?>
 
 <?php
                 if(isset($_POST['replace1']))

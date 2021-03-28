@@ -41,6 +41,10 @@
                             <tr>
                                 <th><label>TP No.</label></th>
                                 <td><input type="text" name="tp" placeholder="Enter TP No." required ></td>
+                            </tr>
+                            <tr>
+                                <th><label>Address</label></th>
+                                <td><textarea placeholder="Address" name="addr" value="<?php echo $row['addr'] ?>" required></textarea></td>
                             </tr> 
                             <tr>
                                 <th><label>Division</label></th>
@@ -76,16 +80,7 @@
                                         
                                    </td>
                             </tr>
-                            <tr>
-                                <th><label>No. of Employees</label></th>
-                                <td><input type="text" name="no_employee" placeholder="Enter no. of employees" required></td>
-                            </tr>
-                            <tr>
-                                <th><label>emp_id</label></th>
-                                <td>
-                                 
-                                 </td>
-                            </tr>
+                            
                             </table>
                             <br/>
                         

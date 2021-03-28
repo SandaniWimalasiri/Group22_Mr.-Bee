@@ -87,9 +87,7 @@
 
        
 
-        <div class="nav_pane">
-            
-        </div>
+       
 
     </body>
 </php>

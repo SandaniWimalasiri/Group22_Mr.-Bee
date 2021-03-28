@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2021 at 06:54 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Mar 28, 2021 at 05:12 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -120,9 +121,10 @@ CREATE TABLE `div_manager` (
   `last_name` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   `tp` int(10) NOT NULL,
+  `addr` varchar(255) NOT NULL,
   `pwd` varchar(100) NOT NULL DEFAULT 'div_man@123',
   `emp_status` varchar(25) NOT NULL DEFAULT 'Divisional_Manager',
-  `division` varchar(20) NOT NULL,
+  `division` varchar(25) NOT NULL,
   `no_employee` int(10) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -131,15 +133,9 @@ CREATE TABLE `div_manager` (
 -- Dumping data for table `div_manager`
 --
 
-INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `pwd`, `emp_status`, `division`, `no_employee`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', 711234566, 'div_man@123', '   Divisional_Manager', 'Matara', 1, 1),
-(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', 711234567, 'div_man@123', '  Divisional_Manager', 'Ampara', 8, 0),
-(3, 'prasanna', 'silva', 'prasanna@gmail.com', 711234568, 'div_man@123', ' Divisional_Manager', 'Gampaha', 2, 0),
-(4, 'Prabath', 'Gunathilaka', 'prabath@gmail.com', 711234569, 'div_man@123', ' Divisional_Manager', 'Hambantota', 9, 0),
-(5, 'Sunil', 'Perera', 'sunil@gmail.com', 711234561, 'div_man@123', 'Divisional_Manager', 'Colombo', 2, 0),
-(6, 'sandani', 'vindya', 'sandani@gmail.com', 719874581, 'div_man@123', 'Divisional_Manager', 'Nuwara Eliya', 10, 0),
-(8, 'kamala', 'silva', 'kamala@gmail.com', 719874567, 'div_man@123', 'Divisional_Manager', 'Anuradhapu', 2, 0),
-(9, 'kamal', 'weerasinha', 'kamal@gmail.com', 911234567, 'div_man@123', 'Divisional_Manager', 'Batticaloa', 2, 0);
+INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `addr`, `pwd`, `emp_status`, `division`, `no_employee`, `is_deleted`) VALUES
+(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', 711234566, 'no 34/A, yatiyana road,Ampara', 'div_man@123', '   Divisional_Manager', 'Ampara', 1, 1),
+(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', 711234567, '26/5, Nadun uyana, weraduwa, Matara', 'div_man@123', '  Divisional_Manager', 'Matara', 8, 0);
 
 -- --------------------------------------------------------
 
@@ -185,7 +181,7 @@ CREATE TABLE `harvest` (
   `hdate` date NOT NULL,
   `htime` time(2) NOT NULL,
   `producttype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `amount` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `amount` double NOT NULL,
   `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -195,9 +191,11 @@ CREATE TABLE `harvest` (
 --
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `unit`, `is_deleted`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '2', 'Kg', 0),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Raw Honey', '1', 'Kg', 0),
-(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '0.25 Kg', '', 1);
+(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', 2, 'Kg', 0),
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Raw Honey', 1, 'Kg', 0),
+(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', 0.25, 'Kg', 1),
+(4, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', 2, 'Kg', 0),
+(5, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', 2, 'Kg', 0);
 
 -- --------------------------------------------------------
 
@@ -245,6 +243,36 @@ CREATE TABLE `manager` (
 
 INSERT INTO `manager` (`first_name`, `last_name`, `email`, `pwd`, `tp`, `emp_status`) VALUES
 ('Shantha', 'Bandara', 'shantha@gmail.com', 'admin', 711234523, 'manager');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(100) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_id` int(100) NOT NULL,
+  `cus_name` varchar(255) NOT NULL,
+  `customer_id` int(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tp` int(10) NOT NULL,
+  `order_date` date NOT NULL,
+  `complete_date` date NOT NULL,
+  `od_status` varchar(100) NOT NULL DEFAULT 'on-going'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `product_name`, `product_id`, `cus_name`, `customer_id`, `address`, `email`, `tp`, `order_date`, `complete_date`, `od_status`) VALUES
+(1, 'Organic Raw Bee Honey', 4, 'ishara', 5, '	\r\nno26, 5th lane, kandy.', 'ishara@gmail.com', 711234567, '2021-03-01', '0000-00-00', 'on-going'),
+(2, 'sample', 2, 'sample', 16, 'sample', 'sample@gmail.com', 719834567, '2021-03-08', '2021-03-22', 'completed'),
+(3, 'sample2', 3, 'sandani', 2, 'abc', 'abc@email.com', 711234567, '2021-03-09', '2021-03-24', 'completed'),
+(4, 'sample2', 6, 'sandani', 2, 'abc', 'abc@email.com', 711234567, '2021-03-09', '0000-00-00', 'on-going');
 
 -- --------------------------------------------------------
 
@@ -303,9 +331,7 @@ ALTER TABLE `customer`
 ALTER TABLE `div_manager`
   ADD PRIMARY KEY (`div_id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `div_code` (`division`),
-  ADD UNIQUE KEY `tp` (`tp`),
-  ADD UNIQUE KEY `division` (`division`);
+  ADD UNIQUE KEY `tp` (`tp`);
 
 --
 -- Indexes for table `feeding`
@@ -330,6 +356,12 @@ ALTER TABLE `infohub`
 --
 ALTER TABLE `manager`
   ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `products`
@@ -363,7 +395,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `div_manager`
 --
 ALTER TABLE `div_manager`
-  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `feeding`
@@ -375,13 +407,19 @@ ALTER TABLE `feeding`
 -- AUTO_INCREMENT for table `harvest`
 --
 ALTER TABLE `harvest`
-  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `infohub`
 --
 ALTER TABLE `infohub`
   MODIFY `articleNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
