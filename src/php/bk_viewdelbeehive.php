@@ -53,6 +53,7 @@ mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
 		while($row=mysqli_fetch_assoc($result)){
+ 
         echo '<tr >';
         echo '<td>';
         echo $row['BeehiveRecNo'];
@@ -107,7 +108,8 @@ $result = mysqli_query($connection,$sql);
         echo '</tr>';
 
 		
-		}?>
+		}
+?>
 
             </table></center>
         
