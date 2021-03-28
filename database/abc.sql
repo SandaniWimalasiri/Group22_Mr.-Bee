@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2021 at 05:12 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Generation Time: Mar 28, 2021 at 05:09 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -37,7 +36,7 @@ CREATE TABLE `beehive` (
   `itime` time(2) NOT NULL,
   `actstatus` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `temperament` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `wbeehive` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `wbeehive` decimal(20,3) NOT NULL,
   `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `wstatus` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `cbeehive` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
@@ -55,10 +54,11 @@ CREATE TABLE `beehive` (
 --
 
 INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `unit`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`, `is_deleted`, `date`) VALUES
-(1, 3, 1, '2020-07-07', '2020-11-01', '08:59:00.00', 'Strongly Active', 'Calm', '22', 'g', 'Humidity: 81%\r\nWind: 6Km/h', 'Transfer bees', 2, 'none', 'none', 'Missing', 9, 0, '2020-10-26'),
-(2, 3, 2, '2020-11-03', '2020-11-09', '09:43:00.00', 'Strongly Active', 'Calm', '21.34', 'Kg', 'Humidity: 78%\r\nWind: 5.3Km/h', 'Removal', 4, 'none', 'none', 'Missing', 13, 0, '2021-03-26'),
-(3, 3, 3, '2020-11-06', '2020-11-07', '16:09:00.00', 'Strongly Active', 'Calm', '21.5', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 22, 1, '2021-03-26'),
-(5, 3, 1, '2021-03-10', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '222', 'g', '222', '22', 2, '22', '22', 'Missing', 222, 0, '0000-00-00');
+(1, 3, 1, '2020-07-07', '2020-07-09', '08:59:00.00', 'Active', 'Calm', '1.354', 'Kg', 'Humidity: 81%\r\nWind: 6Km/h', 'Add', 2, 'none', 'none', 'No Fresh Eggs', 3, 0, '2020-10-26'),
+(2, 3, 2, '2020-08-10', '2020-08-14', '09:43:00.00', 'Strongly Active', 'Calm', '3.546', 'Kg', 'Humidity: 68%\r\nWind: 4.7Km/h', 'Removal', 2, 'None', 'None', ' Queen Cell Introduced', 4, 0, '2021-03-26'),
+(3, 3, 3, '2020-09-16', '2020-09-18', '16:09:00.00', 'Strongly Active', 'Calm', '22.000', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 3, 0, '2021-03-26'),
+(4, 4, 1, '2020-07-09', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '1.256', 'g', 'Humidity: 58% \r\nWind: 4.2Km/h', 'Switch', 1, 'None', 'None', 'No Fresh Eggs', 3, 0, '0000-00-00'),
+(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -74,17 +74,19 @@ CREATE TABLE `beekeeper` (
   `userEmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `userTele` int(20) NOT NULL,
   `userPassword` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `userRole` int(10) NOT NULL
+  `userRole` int(10) NOT NULL,
+  `div_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `beekeeper`
 --
 
-INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`) VALUES
-(1, 'anupama', 'anupama sellahannadi', ' 3/2, Artigala, Godagama', 'a98@gmail.com', 112456724, 'anupama98', 0),
-(2, 'kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, '1289', 0),
-(3, 'madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'madhavi98', 0);
+INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`, `div_id`) VALUES
+(1, 'Anupama', 'Anupama Sellahannadi', ' 3/2, Artigala, Godagama', 'anupama98@gmail.com', 112456724, 'Anupama98', 0, 1),
+(2, 'Kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, 'KAMAL@11a', 0, 1),
+(3, 'Madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'Madhavi98', 0, 2),
+(4, 'Ranmini', 'Ranmini Nisansa', 'No 1/5, Galagedara, Padukka.', 'ranminNi@gmail.com', 112343451, 'RanminiP@rera98', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +153,7 @@ CREATE TABLE `feeding` (
   `fdate` date NOT NULL,
   `ftime` time(2) NOT NULL,
   `feedingtype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `famount` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `famount` decimal(20,3) NOT NULL,
   `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -161,11 +163,13 @@ CREATE TABLE `feeding` (
 --
 
 INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`, `unit`, `is_deleted`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '09:08:00.00', 'Suger syrup (1+1 ratio)', '13 ', 'mg', 0),
-(2, 3, 2, '2020-11-21', '2020-11-03', '16:11:00.00', 'Suger syrup (1+1 ratio)', '11.5', 'mg', 0),
-(3, 3, 3, '2020-11-21', '2020-11-05', '16:12:00.00', 'Suger syrup (1+1 ratio)', '6.9 mg', '', 1),
-(4, 3, 1, '2021-03-25', '2021-03-11', '13:58:00.00', 'Suger syrup (1+1 ratio)', '1', 'Kg', 0),
-(5, 3, 1, '2021-03-26', '2021-03-11', '12:21:00.00', 'Suger syrup (1+1 ratio)', '11', 'Kg', 0);
+(1, 3, 1, '2020-07-09', '2020-07-07', '09:08:00.00', 'Suger Syrup (1+1 ratio)', '3.214', 'mg', 0),
+(2, 3, 1, '2020-07-13', '2020-07-10', '16:11:00.00', 'Suger Syrup (1+1 ratio)', '12.125', 'g', 0),
+(3, 2, 3, '2020-10-21', '2020-10-07', '16:12:00.00', 'Suger Syrup (1+1 ratio)', '7.372', 'mg', 0),
+(4, 3, 2, '2020-08-16', '2020-08-12', '13:58:00.00', 'Suger Syrup (1+1 ratio)', '2.546', 'mg', 0),
+(5, 3, 1, '2021-03-26', '2021-03-11', '12:21:00.00', 'Suger Syrup (1+1 ratio)', '1.897', 'mg', 1),
+(6, 3, 1, '2021-03-28', '2021-03-16', '13:10:00.00', 'Suger Syrup (1+1 ratio)', '1.114', 'mg', 0),
+(7, 3, 4, '2020-12-16', '2020-12-09', '10:11:00.00', 'Suger Syrup (1+1 ratio)', '1.325', 'g', 1);
 
 -- --------------------------------------------------------
 
@@ -181,7 +185,7 @@ CREATE TABLE `harvest` (
   `hdate` date NOT NULL,
   `htime` time(2) NOT NULL,
   `producttype` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `amount` double NOT NULL,
+  `amount` decimal(20,3) NOT NULL,
   `unit` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -191,11 +195,13 @@ CREATE TABLE `harvest` (
 --
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `unit`, `is_deleted`) VALUES
-(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', 2, 'Kg', 0),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Raw Honey', 1, 'Kg', 0),
-(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', 0.25, 'Kg', 1),
-(4, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', 2, 'Kg', 0),
-(5, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', 2, 'Kg', 0);
+(1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '2.134', 'Kg', 0),
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', '09:49:00.00', '1.724', 'Kg', 0),
+(3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '2.000', '', 0),
+(4, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
+(5, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
+(6, 3, 1, '2021-03-28', '2021-03-08', '14:47:00.00', 'Royal Gel', '8.341', 'Kg', 0),
+(7, 3, 1, '2021-03-28', '2021-03-17', '10:31:00.00', 'Bee Colonies', '3.000', ' ', 1);
 
 -- --------------------------------------------------------
 
@@ -217,10 +223,11 @@ CREATE TABLE `infohub` (
 --
 
 INSERT INTO `infohub` (`articleNo`, `userID`, `date`, `authorname`, `articlename`, `content`) VALUES
-(1, 3, '2020-07-22', 'Madhavi Anupama', 'BEEKEEPING', 'Beekeeping (or apiculture) is the maintenance of bee colonies, commonly in man-made hives, by humans. Most such bees are honey bees in the genus Apis, but other honey-producing bees such as Melipona stingless bees are also kept.'),
-(2, 3, '2020-07-24', 'M. A. Sellahannadi', 'Honey bee colony\r\n', 'Honey bees are social insects that live in colonies. Honey bee colonies consist of a single queen, hundreds of male drones, and 20,000 to 80,000 female worker bees. Each honey bee colony also consists of developing eggs, larvae, and pupae.\r\n\r\nThe number of individuals within a honey bee colony depends largely upon seasonal changes. A colony could reach up to 80,000 individuals during the active season, when workers forage for food, store honey for winter, and build combs. However, this population will decrease dramatically during colder seasons.'),
+(1, 3, '2020-07-22', 'Madhavi Sellahannadi', 'BEEKEEPING', 'Beekeeping (or apiculture) is the maintenance of bee colonies, commonly in man-made hives, by humans. Most such bees are honey bees in the genus Apis, but other honey-producing bees such as Melipona stingless bees are also kept.'),
+(2, 3, '2020-07-24', 'Madhavi Sellahannadi', 'Honey bee colony\r\n', 'Honey bees are social insects that live in colonies. Honey bee colonies consist of a single queen, hundreds of male drones, and 20,000 to 80,000 female worker bees. Each honey bee colony also consists of developing eggs, larvae, and pupae.\r\n\r\nThe number of individuals within a honey bee colony depends largely upon seasonal changes. A colony could reach up to 80,000 individuals during the active season, when workers forage for food, store honey for winter, and build combs. However, this population will decrease dramatically during colder seasons.'),
 (3, 3, '2020-07-29', 'Madhavi Sellahannadi', 'Honey Bee', 'A honey bee (also spelled honeybee) is a eusocial flying insect within the genus Apis of the bee clade, all native to Eurasia but spread to four other continents by human beings. They are known for their construction of perennial colonial nests from wax, the large size of their colonies, and surplus production and storage of honey, distinguishing their hives as a prized foraging target of many animals, including honey badgers, bears, and human hunter-gatherers. Only eight surviving species of honey bee are recognized, with a total of 43 subspecies, though historically 7 to 11 species are recognized. Honey bees represent only a small fraction of the roughly 20,000 known species of bees.'),
-(4, 3, '2020-11-11', 'sandani vindya', 'what are bee stings good for', 'Bee venom has powerful anti-inflammatory properties and may benefit the health of your skin and immune system. It may also improve certain medical conditions like rheumatoid arthritis and chronic pain.');
+(4, 3, '2020-11-11', 'sandani vindya', 'what are bee stings good for', 'Bee venom has powerful anti-inflammatory properties and may benefit the health of your skin and immune system. It may also improve certain medical conditions like rheumatoid arthritis and chronic pain.'),
+(5, 4, '2021-03-28', 'Ranmini Nisansa', 'What does a Beekeeper do?', 'If you love the outdoors, nature and animals, and are curious about how creatures contribute to our environment, then you\'ll probably be very intrigued by honey bees. If you like the idea of harvesting your own honey, and farming on a small scale, then chances are you\'ll enjoy being a beekeeper.');
 
 -- --------------------------------------------------------
 
@@ -401,13 +408,13 @@ ALTER TABLE `div_manager`
 -- AUTO_INCREMENT for table `feeding`
 --
 ALTER TABLE `feeding`
-  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `harvest`
 --
 ALTER TABLE `harvest`
-  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `infohub`
