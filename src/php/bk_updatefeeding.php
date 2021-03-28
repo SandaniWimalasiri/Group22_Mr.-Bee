@@ -79,12 +79,12 @@ if(isset($_GET['FeedingRecNo'])){
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
         echo 'Feeding Record No </div><div class="col3">';
-        echo "<input type = 'number' name='FeedingRecNo' style='width: 225px' required value ='".$row['FeedingRecNo']."' readonly>";
+        echo "<input type = 'number' name='FeedingRecNo' style='width: 225px'  value ='".$row['FeedingRecNo']."' readonly>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Beehive No </div><div class="col3" ><input type = "number" name="beehiveno" style="width: 225px" required value ="'.$row['beehiveno'].'" >';
+        echo 'Beehive No </div><div class="col3" ><input type = "number" min="0" name="beehiveno" style="width: 225px" required value ="'.$row['beehiveno'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -99,12 +99,12 @@ if(isset($_GET['FeedingRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Feeding Type </div><div class="col3"><input type = "text" name="feedingtype" style="width: 225px" value ="'.$row['feedingtype'].'" >';
+        echo 'Feeding Type </div><div class="col3"><input type = "text" name="feedingtype" style="width: 225px" value ="'.$row['feedingtype'].'" required >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Feeding Amount </div><div class="col3"><input type = "number" name="famount" style="width: 169px" value ="'.$row['famount'].'" >';
+        echo 'Feeding Amount </div><div class="col3"><input type = "number" min="0.000" placeholder="0.000" step="0.001" name="famount" style="width: 169px" value ="'.$row['famount'].'" required>';
         echo '<select id="unit" name="unit"  style="width: 55px" >
         <option value="" selected>'.$row['unit'].'</option>
              <option value="Kg">Kg</option>
@@ -114,7 +114,7 @@ if(isset($_GET['FeedingRecNo'])){
         echo "</div>";
         echo "</div>";
         echo"<br/>";
-        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="Update" ></div></form>';
+        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="update" ></div></form>';
 
   }}
    
