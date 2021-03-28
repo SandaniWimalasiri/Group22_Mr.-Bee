@@ -13,9 +13,9 @@
 		
 		if($result->num_rows==1){
 			$div_manager=$result->fetch_assoc();
-
-      $_SESSION["first_name"]=$manager['first_name'];
-      $_SESSION["last_name"]=$manager['last_name'];
+      $_SESSION['email']=$div_manager['email'];
+      $_SESSION["first_name"]=$div_manager['first_name'];
+      $_SESSION["last_name"]=$div_manager['last_name'];
       
       if($result){
 				$redirect =  "divman.php";
