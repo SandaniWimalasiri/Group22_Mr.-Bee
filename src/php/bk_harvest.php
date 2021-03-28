@@ -1,7 +1,9 @@
 <?php 
 require_once('../../config/connect.php'); 
 session_start();
-
+if($_SESSION['loggedin']!=1){
+    header('Location: beekeeperlogin.php');
+}
 
 $beehiveno_error=$hdate_error= $htime_error=$producttype_error= $amount_error="";
 $beehiveno=$hdate= $htime=$producttype=$amount="";
@@ -10,12 +12,12 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
 
         if (empty($_POST["beehiveno"])) {
-            $beehiveno_error = "</br>*Beehive no is required";
+            $beehiveno_error = "*Beehive no is required";
           } else {
             $beehiveno = test_input($_POST["beehiveno"]);
           }
           if (empty($_POST["hdate"])) {
-            $hdate_error = "</br>*Harvesting date is required";
+            $hdate_error = "*Harvesting date is required";
           } else {
             $hdate = test_input($_POST["hdate"]);
           }
@@ -77,7 +79,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
     <head>
 
-      <title>harvest</title>
+      <title>Add Harvest Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -94,43 +96,45 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         
 ?>
 <div class="main">
-    <div class="bhivecontainer">
+    <div class="bhivecontainer" >
   
         <form method="post" action="bk_harvest.php" >
-        <p >Add harvest records</p>
+        <p >Add Harvest Records</p>
         </br>
-    </br>
+    </br></br>
         <div class="row">
         <div class="col1">
         <label for="beehiveno">Beehive No</label>
     </div>
-    <div class="col2">
-        <input type="number" name="beehiveno"  value="<?= $beehiveno?>" autofocus >
+    <div class="col3">
+        <input type="number" name="beehiveno"  value="<?= $beehiveno?>" autofocus style="width:225px">
        
         <span class="error"><?= $beehiveno_error?></span>
         </div>
         </div>
         <div class="row">
         <div class="col1">
-        <label for="hdate">Harvesting date</label>
+        <label for="hdate">Harvesting Date</label>
         </div>
-    <div class="col1">
-        <input type="date" name="hdate" value="<?= $hdate?>" >
+    <div class="col3">
+        <input type="date" name="hdate" value="<?= $hdate?>" style="width:225px">
         <span class="error"><?= $hdate_error?></span>
         </div>
-        <div class="col1">
-        <label for="hdate">Harvesting time</label>
         </div>
-    <div class="c3">
-        <input type="time" name="htime" value="<?= $htime?>" >
+        <div class="row">
+        <div class="col1">
+        <label for="hdate">Harvesting Time</label>
+        </div>
+    <div class="col3">
+        <input type="time" name="htime" value="<?= $htime?>" style="width:225px">
         <span class="error"><?= $htime_error?></span>
         </div>
         </div>
         <div class="row">
         <div class="col1">
-        <label for="producttype">Harvested product type</label>
+        <label for="producttype">Harvested Product Type</label>
         </div>
-    <div class="col2">
+    <div class="col3">
         <select id="producttype" name="producttype" value="<?= $producttype?>" >
              <option value="Raw Honey">Raw Honey</option>
              <option value="Bee Colonies">Bee Colonies</option>
@@ -142,10 +146,10 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         </div>
         <div class="row">
         <div class="col1">
-        <label for="amount">Harvested amount</label>
+        <label for="amount">Harvested Amount</label>
         </div>
-    <div class="col2">
-        <input type="text" name="amount" value="<?= $amount?>" style="width:125px" >
+    <div class="col3">
+        <input type="number" name="amount" value="<?= $amount?>" style="width:166px" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value=" "></option>
@@ -153,7 +157,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         <span class="error"><?= $amount_error?></span>
         </div>
         </div>
-
+        </br>
         <br/>
         <div class="row">
         <div class="c1">
@@ -165,11 +169,11 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
         <form  action="bk_viewharvest.php" method="post" >
         <div class="c2">
-        <input type="submit" value="View harvest records >>" name="enter" >
+        <input type="submit" value="View Harvest Records >>" name="enter" >
         </div>
         </div>
         </form>
-
+        </br>
 
 </div>
 
