@@ -2,7 +2,7 @@
 require_once('../../config/connect.php'); 
 session_start();
 if($_SESSION['loggedin']!=1){
-    header('Location: beekeeperlogin.php');
+    header('Location: login.php');
 }
 
 $beehiveno_error=$hdate_error= $htime_error=$producttype_error= $amount_error="";
@@ -41,7 +41,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
       
       
       $date=date("Y/m/d");
-      $sql="INSERT INTO harvest (userID,date,beehiveno,hdate,htime,producttype,amount,unit) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['hdate']."','".$_POST['htime']."','".$_POST['producttype']."','".$_POST['amount']."',,'".$_POST['unit']."')";
+      $sql="INSERT INTO harvest (userID,date,beehiveno,hdate,htime,producttype,amount,unit) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['hdate']."','".$_POST['htime']."','".$_POST['producttype']."','".$_POST['amount']."','".$_POST['unit']."')";
       $result=$connection->query($sql);
       
       if($result){
@@ -149,7 +149,7 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
         <label for="amount">Harvested Amount</label>
         </div>
     <div class="col3">
-        <input type="number" name="amount" value="<?= $amount?>" style="width:166px" >
+        <input type="number" placeholder="0.000" step="0.001" name="amount" value="<?= $amount?>" style="width:166px" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value=" "></option>
