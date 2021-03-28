@@ -40,7 +40,7 @@ if(isset($_POST['update'])){
 
     <head>
 
-      <title>bee-hive</title>
+      <title>Update Beehive Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -59,7 +59,7 @@ if(isset($_POST['update'])){
 
     <div class="bhivecontainer">
 
-    <p >Update beehive records</p>
+    <p >Update Beehive Records</p>
 
     <br />
     <br />
@@ -74,13 +74,13 @@ if(isset($_GET['BeehiveRecNo'])){
    
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
-        echo 'Beehive Record no </div><div class="col2">';
+        echo 'Beehive Record No </div><div class="col2">';
         echo "<input type = 'number' name='BeehiveRecNo' required value ='".$row['BeehiveRecNo']."' readonly>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Beehive no </div><div class="col2"><input type = "number" name="beehiveno" required value ="'.$row['beehiveno'].'">';
+        echo 'Beehive No </div><div class="col2"><input type = "number" name="beehiveno" required value ="'.$row['beehiveno'].'">';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -88,7 +88,7 @@ if(isset($_GET['BeehiveRecNo'])){
         echo 'Start Date </div><div class="col1"><input type = "date" name="sdate" required value ="'.$row['sdate'].'" >'; 
         echo "</div>";
         echo '<div class="col1">';
-        echo 'Weight of beehive </div><div class="c3"><input type = "text" name="wbeehive" style="width: 125px" required value ="'.$row['wbeehive'].'">';
+        echo 'Weight of Beehive </div><div class="c3"><input type = "number" name="wbeehive" style="width: 125px" required value ="'.$row['wbeehive'].'">';
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
         <option value="'.$row['idate'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
@@ -98,18 +98,18 @@ if(isset($_GET['BeehiveRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Inspection date </div><div class="col1"><input type = "date" name="idate" required value ="'.$row['idate'].'" >';
+        echo 'Inspection Date </div><div class="col1"><input type = "date" name="idate" required value ="'.$row['idate'].'" >';
         echo "</div>";
         echo '<div class="col1">';
-        echo 'Inspection time </div><div class="c3"><input type = "time" name="itime" required value ="'.$row['itime'].'" >';
+        echo 'Inspection Time </div><div class="c3"><input type = "time" name="itime" required value ="'.$row['itime'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Number of bee colonies  </div><div class="col1"><input type = "number" name="bcolony" required value ="'.$row['bcolony'].'">';
+        echo 'Number of Bee Colonies  </div><div class="col1"><input type = "number" name="bcolony" required value ="'.$row['bcolony'].'">';
         echo "</div>";
         echo '<div class="col1">';
-        echo 'Number of frames </div><div class="c3"><input type = "number" name="noframes" required value ="'.$row['noframes'].'" >';
+        echo 'Number of Frames </div><div class="c3"><input type = "number" name="noframes" required value ="'.$row['noframes'].'" >';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -136,12 +136,12 @@ if(isset($_GET['BeehiveRecNo'])){
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Weather status </div><div class="col2"><textarea name="wstatus" style="height:100px" required placeholder ="">'.$row['wstatus']."</textarea>";
+        echo 'Weather Status </div><div class="col2"><textarea name="wstatus" style="height:100px" required placeholder ="">'.$row['wstatus']."</textarea>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Changes made to beehive </div><div class="col2">
+        echo 'Changes Made to Beehive </div><div class="col2">
         <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
           <option value="'.$row['cbeehive'].'">'.$row['cbeehive'].'</option>
           <option value="Add">Add</option>
@@ -154,17 +154,17 @@ if(isset($_GET['BeehiveRecNo'])){
         
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo "Signs of diseases (if there's any)</div><div class='col2'><textarea name='disease' style='height:100px' placeholder =''>".$row['disease']."</textarea>";
+        echo "Signs of Diseases (If there's any)</div><div class='col2'><textarea name='disease' style='height:100px' placeholder =''>".$row['disease']."</textarea>";
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo "Treatments (if there's any) </div><div class='col2'><textarea name='treatment' style='height:100px' placeholder =''>".$row['treatment'].'</textarea>';
+        echo "Treatments (If there's any) </div><div class='col2'><textarea name='treatment' style='height:100px' placeholder =''>".$row['treatment'].'</textarea>';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
         echo '<div class="col1">';
-        echo 'Status of queen bee </div><div class="col2"><select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
+        echo 'Status of Queen Bee </div><div class="col2"><select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
              <option value="'.$row['sqbee'].'">'.$row['sqbee'].'</option>
              <option value="Missing">Missing</option>
              <option value="No Fresh Eggs">No Fresh Eggs</option>
@@ -178,7 +178,7 @@ if(isset($_GET['BeehiveRecNo'])){
 
         echo"<br/>";
         
-        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update record" name="update" ></div></form>';
+        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="update" ></div></form>';
         
 
   }}

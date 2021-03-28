@@ -1,6 +1,13 @@
 <?php require_once('../../config/connect.php'); 
-session_start();
+ session_start();
+?>
 
+<?php
+
+
+?>
+
+<?php
 $beehiveno_error="";
 $beehiveno="";
 
@@ -9,6 +16,8 @@ $beehiveno="";
         if (empty($_POST["beehiveno"])) {
             $beehiveno_error = "</br>*Beehive no is required";
           }else {
+
+            
 
             $beehiveno = test_input($_POST["beehiveno"]);
 
@@ -22,7 +31,8 @@ while($row = mysqli_fetch_array($result))
     }
 
     else{
-      header( 'Location: bk_fbeehivereport.php?beehiveno='.$beehiveno);
+      $_SESSION['beehiveno']=$_POST["beehiveno"]; 
+      header( 'Location: bk_fbeehivereport.php');
     }
   }
 
@@ -37,11 +47,11 @@ $beehiveno1="";
 
         if(isset($_POST['enterr'])){
 
-            if (empty($_POST["beehiveno1"])) {
+            if (empty($_POST["beehiveno"])) {
                 $beehiveno1_error = "</br>*Beehive no is required";
               } else {            
               
-              $beehiveno1 = test_input($_POST["beehiveno1"]);
+              $beehiveno1 = test_input($_POST["beehiveno"]);
 
               $sql = "SELECT beehiveno FROM harvest WHERE  userID='".$_SESSION['userid']."'";
               $result = mysqli_query($connection,$sql);
@@ -52,7 +62,8 @@ $beehiveno1="";
                   }
               
                   else{
-                    header( 'Location: bk_fharvestreport.php?beehiveno1='.$beehiveno1);
+                    $_SESSION['beehiveno']=$_POST["beehiveno"]; 
+                    header( 'Location: bk_fharvestreport.php');
                   }
                 }
               }
@@ -63,11 +74,11 @@ $beehiveno1="";
 
             if(isset($_POST['enterrr'])){
 
-                if (empty($_POST["beehiveno2"])) {
+                if (empty($_POST["beehiveno"])) {
                     $beehiveno2_error = "</br>*Beehive no is required";
                   } else {            
               
-                    $beehiveno2 = test_input($_POST["beehiveno2"]);
+                    $beehiveno2 = test_input($_POST["beehiveno"]);
       
                     $sql = "SELECT beehiveno FROM feeding WHERE  userID='".$_SESSION['userid']."'";
         
@@ -79,7 +90,8 @@ $beehiveno1="";
                         }
                     
                         else{
-                          header( 'Location: bk_ffeedingreport.php?beehiveno2='.$beehiveno2);
+                          $_SESSION['beehiveno']=$_POST["beehiveno"]; 
+                          header( 'Location: bk_ffeedingreport.php');
                         }
                       }
                   }
@@ -98,14 +110,13 @@ $beehiveno1="";
 <html>
 
 	<head>	
-		<title>reports</title>
+		<title>Reports</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
 	<body >
 <?php include('bk_navbar.php');
         include('bk_sidenavbar.php');
-        
         ?>
 
         
@@ -127,14 +138,14 @@ $beehiveno1="";
         <form  method="post" action="" >
         <div class="row">
            <div class="col1">
-               <label for="beehiveno">Beehive no</label>
+               <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col1">
                <input type="number" name="beehiveno" autofocus>
                <span class="error"><?= $beehiveno_error?></span>
            </div>
            <div class="col1">
-        <input type="submit" value="View full beehive report >>" name="enter" >
+        <input type="submit" value="View Full Beehive Report >>" name="enter" >
         </div>
         </div>
         </form>
@@ -154,14 +165,14 @@ $beehiveno1="";
         <form  method="post" action="" >
         <div class="row">
            <div class="col1">
-               <label for="beehiveno1">Beehive no</label>
+               <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col1">
-               <input type="number" name="beehiveno1" >
+               <input type="number" name="beehiveno" >
                <span class="error"><?= $beehiveno1_error?></span>
            </div>
            <div class="col1">
-        <input type="submit" value="View full harvest report >>" name="enterr" >
+        <input type="submit" value="View Full Harvest Report >>" name="enterr" >
         </div>
         </div>
         </form>
@@ -183,14 +194,14 @@ $beehiveno1="";
         <form  method="post" action="" >
         <div class="row">
            <div class="col1">
-               <label for="beehiveno2">Beehive no</label>
+               <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col1">
-               <input type="number" name="beehiveno2"  >
+               <input type="number" name="beehiveno"  >
                <span class="error"><?= $beehiveno2_error?></span>
            </div>
            <div class="col1">
-        <input type="submit" value="View full feeding report >>" name="enterrr" >
+        <input type="submit" value="View Full Feeding Report >>" name="enterrr" >
         </div>
 </div>
         </form>

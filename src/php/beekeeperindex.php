@@ -1,8 +1,5 @@
 <?php require_once('../../config/connect.php'); 
 session_start();
-if($_SESSION['loggedin']!=1){
-    header('Location: login.php');
-}
 
 $beehiveno_error=$sdate_error=$idate_error=$itime_error=$actstatus_error=$temperament_error=$wbeehive_error=$wstatus_error=$cbeehive_error=$noframes_error=$disease_error=$treatment_error=$sqbee_error=$bcolony_error="";
 $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbeehive=$noframes=$disease=$treatment=$sqbee=$bcolony="";
@@ -126,7 +123,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
 
     <head>
 
-      <title>bee-hive</title>
+      <title>Add Beehive Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -144,13 +141,13 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
 
 
     <div class="bhivecontainer">
-        <p >Add Bee-hive records</p>
+        <p >Add Beehive Records</p>
     </br>
-    </br>
+    </br><br/>
            <form method="post" action="beekeeperindex.php"  >
            <div class="row">
            <div class="col1">
-               <label for="beehiveno">Beehive no</label>
+               <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col2">
                <input type="number" name="beehiveno" value="<?= $beehiveno?>" autofocus >
@@ -159,7 +156,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
            </div>
            <div class="row">
            <div class="col1">
-               <label for="sdate">Start date</label>
+               <label for="sdate">Start Date</label>
            </div>
            <div class="col1">
                <input type="date" name="sdate"  value="<?= $sdate?>">
@@ -167,10 +164,10 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
            </div>
            
            <div class="col1">
-        <label for="wbeehive">Weight of beehive </label>
+        <label for="wbeehive">Weight of Beehive </label>
         </div>
            <div class="c3">
-        <input type="text" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
+        <input type="number" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value="g">g</option>
@@ -181,14 +178,14 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
 
            <div class="row">
            <div class="col1">
-               <label for="idate">Inspection date</label>
+               <label for="idate">Inspection Date</label>
            </div>
            <div class="col1">
                <input type="date" name="idate" value="<?= $idate?>" >
                <span class="error"><?= $idate_error?></span>
            </div>
         <div class="col1">        
-        <label for="idate">Inspection time</label>
+        <label for="idate">Inspection Time</label>
         </div>
            <div class="c3">
         <input type="time" name="itime" value="<?= $itime?>" >
@@ -197,14 +194,14 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         </div>      
         <div class="row">       
         <div class="col1">
-        <label for="bcolony">Number of bee colonies</label>
+        <label for="bcolony">Number of Bee Colonies</label>
         </div>
            <div class="col1">
         <input type="number" name="bcolony" value="<?= $bcolony?>">
         <span class="error"><?= $bcolony_error?></span>
         </div>
         <div class="col1">
-        <label for="noframes">Number of frames</label>
+        <label for="noframes">Number of Frames</label>
         </div>
            <div class="c3">
            <input type="number" name="noframes"  value="<?= $noframes?>">
@@ -242,7 +239,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         
         <div class="row">
         <div class="col1">
-        <label for="wstatus">Weather status</label>
+        <label for="wstatus">Weather Status</label>
         </div>
            <div class="col2">
            <textarea id="wstatus" name="wstatus" style="height:100px" placeholder="Weather status" value="<?= $wstatus?>"></textarea>
@@ -252,7 +249,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         
         <div class="row">
         <div class="col1">
-        <label for="cbeehive">Changes made to beehive</label>
+        <label for="cbeehive">Changes Made to Beehive</label>
         </div>
            <div class="col2">
            <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
@@ -266,7 +263,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         </div>
         <div class="row">
         <div class="col1">
-        <label for="disease">Signs of diseases (if there's any) </label>
+        <label for="disease">Signs of Diseases (If there's any) </label>
         </div>
            <div class="col2">
            <textarea id="disease" name="disease" style="height:100px" placeholder="Signs of diseases" value="<?= $disease?>"></textarea>
@@ -275,7 +272,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         </div>
         <div class="row">
         <div class="col1">
-        <label for="treatment">Treatments (if there's any)</label>
+        <label for="treatment">Treatments (If there's any)</label>
         </div>
            <div class="col2">
            <textarea id="treatment" name="treatment" style="height:100px" placeholder="Treatments" value="<?= $treatment?>"></textarea>
@@ -284,7 +281,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         </div>
         <div class="row">
         <div class="col1">
-        <label for="sqbee">Status of queen bee</label>
+        <label for="sqbee">Status of Queen Bee</label>
         </div>
            <div class="col2">
            <select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
@@ -298,7 +295,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
            <span class="error"><?= $sqbee_error?></span>
         </div>
         </div>  
-        <br/>      
+        <br/> </br>
         <div class="row">
         <div class="c1">
         <input type="submit" value="Submit" name="enter" >
@@ -308,7 +305,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
 
         <form  action="bk_viewbeehive.php" method="post" >
         <div class="c2">
-        <input type="submit" value="View beehive records >>" name="enter" >
+        <input type="submit" value="View Beehive Records >>" name="enter" >
         </div>
     </div>
         </form>

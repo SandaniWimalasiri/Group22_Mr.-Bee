@@ -6,7 +6,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>feeding report</title>
+		<title>View Feeding Deleted Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -22,19 +22,19 @@ session_start();
 
 <div class="bhivecontainer">
 <p>Feeding Deleted Records</p>
- <br/>
+ <br/></br></br>
 
 			<center>
 
             <table >
                 <tr style="background-color:#547454">
     
-                <th>Feeding Record no</th>
+                <th>Feeding Record No</th>
                 <th>Beehive No</th>
-                <th>Feeding date</th>
-                <th>Feeding time</th>
-                <th>Feeding type</th>
-                <th>Feeding amount</th>
+                <th>Feeding Date</th>
+                <th>Feeding Time</th>
+                <th>Feeding Type</th>
+                <th>Feeding Amount</th>
                 
                 </tr>
 
@@ -78,7 +78,7 @@ $result = mysqli_query($connection,$sql);
             </table></center>
 
             </br>
-    </br>
+    </br></br></br>
             <form  action="bk_viewfeeding.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >

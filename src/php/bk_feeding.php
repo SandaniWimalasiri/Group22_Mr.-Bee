@@ -7,13 +7,13 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
     if(isset($_POST['enter'])){
 
         if (empty($_POST["beehiveno"])) {
-            $beehiveno_error = "</br>*Beehive no is required";
+            $beehiveno_error = "*Beehive no is required";
           } else {
             $beehiveno = test_input($_POST["beehiveno"]);
           }
 
         if (empty($_POST["fdate"])) {
-            $fdate_error = "</br>*Feeding date is required";
+            $fdate_error = "*Feeding date is required";
           } else {
             $fdate = test_input($_POST["fdate"]);
           }
@@ -73,7 +73,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
 
     <head>
 
-      <title>feeding</title>
+      <title>Add Feeding Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -88,50 +88,53 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
     <div class="bhivecontainer">
   
         <form method="post" action="bk_feeding.php" >
-        <p >Add Feeding records</p>
+        <p >Add Feeding Records</p>
 
         </br>
-    </br>
+    </br></br>
         <div class="row">
         <div class="col1">
-        <label for="beehiveno">Beehive no</label>
+        <label for="beehiveno">Beehive No</label>
         </div>
-    <div class="col2">
-        <input type="number" name="beehiveno" value="<?= $beehiveno?>" autofocus >
+    <div class="col3">
+        <input type="number" name="beehiveno" value="<?= $beehiveno?>" autofocus style="width:225px">
         <span class="error"><?= $beehiveno_error?></span>
         </div>
         </div>
         <div class="row">
         <div class="col1">
-        <label for="fdate">Feeding date</label>
+        <label for="fdate">Feeding Date</label>
         </div>
-    <div class="col1">
-        <input type="date" name="fdate" value="<?= $fdate?>" >
+    
+    <div class="col3">
+        <input type="date" name="fdate" value="<?= $fdate?>" style="width:225px">
         <span class="error"><?= $fdate_error?></span>
         </div>
-        <div class="col1">
-        <label for="ftime">Feeding time</label>
         </div>
-    <div class="c3">
-        <input type="time" name="ftime" value="<?= $ftime?>" >
+    <div class="row">
+        <div class="col1">
+        <label for="ftime">Feeding Time</label>
+        </div>
+    <div class="col3">
+        <input type="time" name="ftime" value="<?= $ftime?>"style="width:225px" >
         <span class="error"><?= $ftime_error?></span>
         </div>
         </div>
         <div class="row">
         <div class="col1">
-        <label for="feedingtype">Feeding type</label>
+        <label for="feedingtype">Feeding Type</label>
         </div>
-    <div class="col2">
-        <input type="text" name="feedingtype"  placeholder="Feeding type" value="<?= $feedingtype?>" >
+    <div class="col3">
+        <input type="text" name="feedingtype"  placeholder="Feeding type" value="<?= $feedingtype?>" style="width:225px">
         <span class="error"><?= $feedingtype_error?></span>
         </div>
         </div>
         <div class="row">
         <div class="col1">
-        <label for="famount">Feeding amount</label>
+        <label for="famount">Feeding Amount</label>
         </div>
-    <div class="col2">
-        <input type="text" name="famount" value="<?= $famount?>" style="width:125px" >
+    <div class="col3">
+        <input type="number" name="famount" value="<?= $famount?>" style="width:166px" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value="g">g</option>
@@ -140,7 +143,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <span class="error"><?= $famount_error?></span>
         </div>
         </div>
-        <br/>
+        <br/></br>
         <div class="row">
         <div class="c1">
         <input type="submit" value="Submit" name="enter" >
@@ -150,10 +153,11 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
 
         <form  action="bk_viewfeeding.php" method="post" >
         <div class="c2">
-        <input type="submit" value="View feeding records >>" name="enter" >
+        <input type="submit" value="View Feeding Records >>" name="enter" >
         </div>
     </div>
         </form>
+    </br>
 
 </div>
 
