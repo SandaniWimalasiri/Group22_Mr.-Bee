@@ -7,56 +7,56 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
     if(isset($_POST['enter'])){
 
         if (empty($_POST["beehiveno"])) {
-            $beehiveno_error = "</br>*Beehive no is required";
+            $beehiveno_error = "</br>*Beehive No is Required";
           } else {
             $beehiveno = test_input($_POST["beehiveno"]);
           }
         if (empty($_POST["sdate"])) {
-            $sdate_error = "</br>*Start date is required";
+            $sdate_error = "</br>*Start Date is Required";
           } else {
             $sdate = test_input($_POST["sdate"]);
           }
         
           if (empty($_POST["idate"])) {
-            $idate_error = "</br>*Inspection date is required";
+            $idate_error = "</br>*Inspection Date is Required";
           } else {
             $idate = test_input($_POST["idate"]);
           }
           if (empty($_POST["itime"])) {
-            $itime_error = "*Inspection time is required";
+            $itime_error = "*Inspection Time is Required";
           } else {
             $itime = test_input($_POST["itime"]);
           }
           if (empty($_POST["actstatus"])) {
-            $actstatus_error = "*Active status is required";
+            $actstatus_error = "*Active Status is Required";
           } else {
             $actstatus = test_input($_POST["actstatus"]);
           }
 
           if (empty($_POST["temperament"])) {
-            $temperament_error = "*Temperament is required";
+            $temperament_error = "*Temperament is Required";
           } else {
             $temperament = test_input($_POST["temperament"]);
           }
         
           if (empty($_POST["wbeehive"])) {
-            $wbeehive_error = "*Weight of beehive is required";
+            $wbeehive_error = "*Weight of Beehive is Required";
           } else {
             $wbeehive = test_input($_POST["wbeehive"]);
           }
           if (empty($_POST["wstatus"])) {
-            $wstatus_error = "*Weather status is required";
+            $wstatus_error = "*Weather Status is Required";
           } else {
             $wstatus = test_input($_POST["wstatus"]);
           }
           if (empty($_POST["cbeehive"])) {
-            $cbeehive_error = "*Changes made to beehive is required";
+            $cbeehive_error = "*Changes Made to Beehive is Required";
           } else {
             $cbeehive = test_input($_POST["cbeehive"]);
           }
         
           if (empty($_POST["noframes"])) {
-            $noframes_error = "*Number of frames is required";
+            $noframes_error = "*Number of Frames is Required";
           } else {
             $noframes = test_input($_POST["noframes"]);
           }
@@ -72,14 +72,14 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
           }
         
           if (empty($_POST["sqbee"])) {
-            $sqbee_error = "*Status of queen bee is required";
+            $sqbee_error = "*Status of Queen Bee is Required";
           } else {
             $sqbee = test_input($_POST["sqbee"]);
           }
         
          
           if (empty($_POST["bcolony"])) {
-            $bcolony_error = "</br>*Number of bee colonies is required";
+            $bcolony_error = "</br>*Number of Bee Colonies is Required";
           } else {
             $bcolony = test_input($_POST["bcolony"]);
           }
@@ -150,7 +150,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
                <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col2">
-               <input type="number" name="beehiveno" value="<?= $beehiveno?>" autofocus >
+               <input type="number" min="0" name="beehiveno" value="<?= $beehiveno?>" autofocus >
                <span class="error"><?= $beehiveno_error?></span>
            </div>
            </div>
@@ -167,7 +167,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         <label for="wbeehive">Weight of Beehive </label>
         </div>
            <div class="c3">
-        <input type="number" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
+        <input type="number" min="0.000" placeholder="0.000" step="0.001" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value="g">g</option>
@@ -197,14 +197,14 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         <label for="bcolony">Number of Bee Colonies</label>
         </div>
            <div class="col1">
-        <input type="number" name="bcolony" value="<?= $bcolony?>">
+        <input type="number" min="0" name="bcolony" value="<?= $bcolony?>">
         <span class="error"><?= $bcolony_error?></span>
         </div>
         <div class="col1">
         <label for="noframes">Number of Frames</label>
         </div>
            <div class="c3">
-           <input type="number" name="noframes"  value="<?= $noframes?>">
+           <input type="number" min="0" name="noframes"  value="<?= $noframes?>">
            <span class="error"><?= $noframes_error?></span>
         </div>
         </div>
