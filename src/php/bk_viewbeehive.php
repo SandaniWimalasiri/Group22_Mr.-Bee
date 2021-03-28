@@ -17,33 +17,29 @@ session_start();
 
 
 
-  <div class="bhivecontainer" style="padding: 20px 50px 20px 50px">
+  <div class="bhivecontainer" style="padding: 20px 30px 20px 30px">
   <p>Beehive Records</p>
 
        <br/>   
        <br/>   
        <br/>   
-           <center>
-            
-            <table >
-                <tr style="background-color:#547454">
-                <th>Beehive Record No</th>
-                <th>Beehive No</th>
-                <th>Start Date</th>
-                <th>Inspection Date</th>
-                <th>Inspection Time</th>
-                <th>Active Status</th>
-                <th>Temperament</th>
-                <th>Weight of Beehive</th>
-                <th>Weather Status</th>
-                <th>Changes Made to Beehive</th>
-                <th>Number of Frames</th>
-                <th>Signs of Diseases</th>
-                <th>Treatments</th>
-                <th>Status of Queen Bee</th>
-                <th>Number of Bee Colonies in Beehive</th>
-                </tr>
-
+       <center><table ><tr style="background-color:#547454">
+        <th>Beehive Record No</th>
+        <th>Beehive No</th>
+        <th>Start Date</th>
+         <th>Inspection Date</th>
+         <th>Inspection Time</th>
+        <th>Active Status</th>
+         <th>Temperament</th>
+        <th>Weight of Beehive</th>
+        <th>Weather Status</th>
+         <th>Changes Made to Beehive</th>
+         <th>Number of Frames</th>
+        <th>Signs of Diseases</th>
+        <th>Treatments</th>
+        <th>Status of Queen Bee</th>
+        <th>Number of Bee Colonies</th>
+        </tr>
 
 			<?php
 
@@ -55,6 +51,9 @@ mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
 		while($row=mysqli_fetch_assoc($result)){
+
+ 
+
         echo '<tr >';
         echo '<td>';
         echo $row['BeehiveRecNo'];
@@ -107,7 +106,8 @@ $result = mysqli_query($connection,$sql);
         echo '</tr>';
 
 		
-		}?>
+		}
+?>
 
             </table></center>
 
