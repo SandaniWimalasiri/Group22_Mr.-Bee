@@ -9,5 +9,5 @@
     }
 
     session_destroy();
-    header('Location: sign_in_admin.php');
+    header('Location: index.php');
 ?>

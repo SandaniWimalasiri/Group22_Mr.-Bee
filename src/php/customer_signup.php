@@ -13,7 +13,7 @@
 			
 			
 			if($result){
-			header('Location: customer_login.php');
+			header('Location: login.php');
 			}
 			else{
 			echo "failed";	

@@ -1,16 +1,17 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(../img/12.jpg);
+    background-image:url("../img/s3.jpg");
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+    background-color: rgba(243, 221, 94, 0.726);;
 }
 
 .loginBox{
     width: 350px;
     height: 450px;
-    background: rgba(10, 10, 10, 0.9);
+    background: rgba(10, 10, 10, 0.959);
     color: rgb(243, 216, 63);
     top: 50%;
     left: 50%;
@@ -47,7 +48,7 @@ h1{
     margin-bottom: 50px;
 }
 
-.loginBox input[type="text"] , input[type="password"]{
+.loginBox input[type="text"] , input[type="password"] ,input[type="email"]{
     border: none;
     border-bottom: 1px solid rgb(250, 250, 0);
     background: transparent; 

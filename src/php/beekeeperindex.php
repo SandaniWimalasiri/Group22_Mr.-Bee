@@ -1,7 +1,6 @@
 <?php require_once('../../config/connect.php'); 
 session_start();
 
-
 $beehiveno_error=$sdate_error=$idate_error=$itime_error=$actstatus_error=$temperament_error=$wbeehive_error=$wstatus_error=$cbeehive_error=$noframes_error=$disease_error=$treatment_error=$sqbee_error=$bcolony_error="";
 $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbeehive=$noframes=$disease=$treatment=$sqbee=$bcolony="";
 
@@ -316,7 +315,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
 
 </div>
 
-    
+   
  
   </body>
 </html>

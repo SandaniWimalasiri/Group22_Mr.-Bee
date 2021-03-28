@@ -24,9 +24,10 @@
                         <th>Last name</th>
                         <th>Email</th>
                         <th>TP No.</th>
+                        <th>Address</th>
                         <th>Employeement Status</th>
                         <th>Division</th>
-                        <th>No. of Employees</th>
+                        
                         <th style="text-align:center;">Replace</th>
                         <th style="text-align:center;">Remove</th>
                     </tr>
@@ -45,9 +46,10 @@
                             <td><?php echo $result['last_name'] ?></td>
                             <td><?php echo $result['email'] ?></td>
                             <td><?php echo $result['tp'] ?></td>
+                            <td><?php echo $result['addr'] ?></td>
                             <td><?php echo $result['emp_status'] ?></td>
                             <td><?php echo $result['division'] ?></td>
-                            <td style="text-align:center;"><?php echo $result['no_employee'] ?></td>
+                           
 
                             <form action="manager_dm_removed2.php" method="post">
                                     <input type="hidden" name="div_id" value="<?php echo $result['div_id']; ?>">
