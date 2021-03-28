@@ -123,7 +123,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
 
     <head>
 
-      <title>Add Beehive Records<</title>
+      <title>Add Beehive Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
@@ -167,7 +167,7 @@ $beehiveno=$sdate=$idate=$itime=$actstatus=$temperament=$wbeehive=$wstatus=$cbee
         <label for="wbeehive">Weight of Beehive </label>
         </div>
            <div class="c3">
-        <input type="text" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
+        <input type="number" name="wbeehive" style="width: 125px" value="<?= $wbeehive?>" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
              <option value="g">g</option>
