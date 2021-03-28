@@ -37,7 +37,7 @@
 		
 		if($result->num_rows==1){
 			$manager=$result->fetch_assoc();
-
+      $_SESSION['email']=$manager['email'];
       $_SESSION["first_name"]=$manager['first_name'];
       $_SESSION["last_name"]=$manager['last_name'];
       
