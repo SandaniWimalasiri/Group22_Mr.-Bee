@@ -2,11 +2,22 @@
 session_start();
 
 
-
+$userName="";
+$userName_error="";
 
 if(isset($_POST['update'])){
     
- 
+  if(isset($_POST['enter'])){
+
+    if (empty($_POST["userName"])) {
+        $userName_error = "</br>*Beehive no is required";
+      } else {
+        $userName = test_input($_POST["userName"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $emailErr = "Invalid email format";}
+      }
+
+      if($userName_error==''){
           
     $sql2= "UPDATE beekeeper SET userName ='".$_POST['userName']."',fullName ='".$_POST['fullName']."',  userAddress ='".$_POST['userAddress']."', userEmail ='".$_POST['userEmail']."',userTele ='".$_POST['userTele']."' WHERE userID='".$_SESSION['userid']."'";
     $result2 = mysqli_query($connection,$sql2);
@@ -32,10 +43,18 @@ if(isset($_POST['update'])){
       die();
     }
 
+  }}
 }
 
 
-   
+
+
+  function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+  }
 
 ?>
 <html>
@@ -81,6 +100,7 @@ $result1 = mysqli_query($connection,$sql1);
         echo '<div class="col1">';
         echo 'User Name </div><div class="col2">';
         echo "<input type = 'text' name='userName' required value ='".$row['userName']."'>";
+        echo '<span class="error"><?= $userName_error?></span>';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
