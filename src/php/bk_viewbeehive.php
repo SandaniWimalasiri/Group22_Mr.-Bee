@@ -6,7 +6,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>Full beehive report</title>
+		<title>View Beehive Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -21,26 +21,27 @@ session_start();
   <p>Beehive Records</p>
 
        <br/>   
-
+       <br/>   
+       <br/>   
            <center>
             
             <table >
                 <tr style="background-color:#547454">
                 <th>Beehive Record No</th>
                 <th>Beehive No</th>
-                <th>Start date</th>
-                <th>Inspection date</th>
-                <th>Inspection time</th>
-                <th>Active status</th>
+                <th>Start Date</th>
+                <th>Inspection Date</th>
+                <th>Inspection Time</th>
+                <th>Active Status</th>
                 <th>Temperament</th>
-                <th>Weight of beehive</th>
-                <th>Weather status</th>
-                <th>Changes made to beehive</th>
-                <th>Number of frames</th>
-                <th>Signs of diseases</th>
+                <th>Weight of Beehive</th>
+                <th>Weather Status</th>
+                <th>Changes Made to Beehive</th>
+                <th>Number of Frames</th>
+                <th>Signs of Diseases</th>
                 <th>Treatments</th>
-                <th>Status of queen bee</th>
-                <th>Number of bee colonies in beehive</th>
+                <th>Status of Queen Bee</th>
+                <th>Number of Bee Colonies in Beehive</th>
                 </tr>
 
 
@@ -100,8 +101,8 @@ $result = mysqli_query($connection,$sql);
         echo '<td>';
         echo $row['bcolony'];
         echo '</td>';
-        echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_updatebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']."' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> update </a> </td>" ;
-		echo "<td style='border-style:hidden'><a href ='bk_deletebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']." ' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px' > delete </a> </td>" ;	
+        echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_updatebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']."' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> Update </a> </td>" ;
+		echo "<td style='border-style:hidden'><a href ='bk_deletebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']." ' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px' > Delete </a> </td>" ;	
         echo '</td>';
         echo '</tr>';
 
@@ -112,18 +113,19 @@ $result = mysqli_query($connection,$sql);
 
         <br/>
         <br/>
-        <br/>
-        <td style='border-style:hidden; border-left:1px solid black'><a href ='bk_viewdelbeehive.php' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> View Deleted Records </a> </td>
-
-    </br>
-    </br>
-            <form  action="beekeeperindex.php" method="post" >
-        <div class="row">
-        <input type="submit" value="<< Back" name="back" >
+        <br/></br>
+        <form  action="bk_viewdelbeehive.php" method="post" >
+        <div class="row"><div class="c1" style="width:840px">
+        <input type="submit" value="View Deleted Records >>" name="back" >
         </div>
         </form>
+            <form  action="beekeeperindex.php" method="post" >
+        <div class="c2">
+        <input type="submit" value="<< Back" name="back" style="width:90px">
+        </div></div>
+        </form>
 
-    </div>
+    
 </div>
 
 
