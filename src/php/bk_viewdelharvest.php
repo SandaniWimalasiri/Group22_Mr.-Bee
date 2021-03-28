@@ -6,7 +6,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>harvest report</title>
+		<title>View Harvest Deleted Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -19,18 +19,18 @@ session_start();
 
 
 <div class="bhivecontainer">
-<p>Harvest deleted Records</p>
-<br/> 
+<p>Harvest Deleted Records</p>
+<br/> </br></br>
 	<center>		
      <table >
                 <tr style="background-color:#547454">
     
-                <th>Harvesting Record no</th>
+                <th>Harvesting Record No</th>
                 <th>Beehive No</th>
-                <th>Harvesting date</th>
-                <th>Harvesting time</th>
-                <th>Harvested product type</th>
-                <th>Harvested amount</th>
+                <th>Harvesting Date</th>
+                <th>Harvesting Time</th>
+                <th>Harvested Product Type</th>
+                <th>Harvested Amount</th>
                 
                 </tr>
 
@@ -76,7 +76,7 @@ $result = mysqli_query($connection,$sql);
 
      
     </br>
-    <br/>
+    </br></br></br>
             <form  action="bk_viewharvest.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >
