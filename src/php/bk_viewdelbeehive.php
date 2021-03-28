@@ -6,7 +6,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>Full beehive report</title>
+		<title>View Beehive Deleted Records</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -19,7 +19,7 @@ session_start();
 
   <div class="bhivecontainer" style="padding: 20px 50px 20px 40px">
 <p>Beehive Deleted Records</p>
-       <br/>    
+       <br/><br/>    </br>
 
            <center>
             
@@ -27,19 +27,19 @@ session_start();
                 <tr style="background-color:#547454">
                 <th>Beehive Record No</th>
                 <th>Beehive No</th>
-                <th>Start date</th>
-                <th>Inspection date</th>
-                <th>Inspection time</th>
-                <th>Active status</th>
+                <th>Start Date</th>
+                <th>Inspection Date</th>
+                <th>Inspection Time</th>
+                <th>Active Status</th>
                 <th>Temperament</th>
-                <th>Weight of beehive</th>
-                <th>Weather status</th>
-                <th>Changes made to beehive</th>
-                <th>Number of frames</th>
-                <th>Signs of diseases</th>
+                <th>Weight of Beehive</th>
+                <th>Weather Status</th>
+                <th>Changes Made to Beehive</th>
+                <th>Number of Frames</th>
+                <th>Signs of Diseases</th>
                 <th>Treatments</th>
-                <th>Status of queen bee</th>
-                <th>Number of bee colonies in beehive</th>
+                <th>Status of Queen Bee</th>
+                <th>Number of Bee Colonies in Beehive</th>
                 </tr>
 
 
@@ -113,7 +113,7 @@ $result = mysqli_query($connection,$sql);
         
 
     </br>
-    </br>
+    </br><br/><br/>
             <form  action="bk_viewbeehive.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >
