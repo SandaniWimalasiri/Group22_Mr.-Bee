@@ -5,7 +5,7 @@ require_once("func.php"); ?>
 <?php session_start(); 
 
         if(!$_SESSION['email']){
-            header('Location: sign_in_divman.php');
+            header('Location: login.php');
         }
 ?>
 <head>
