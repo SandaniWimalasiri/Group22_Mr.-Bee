@@ -75,7 +75,7 @@
 			$_SESSION['userid']=$beekeeper['userID'];
 			
 			if($result){
-				$redirect =  "beekeeperindex.php";
+				$redirect =  "bk_harvest.php";
 			
                         }
 
