@@ -42,7 +42,7 @@ $result = mysqli_query($connection,$sql);
 
   </br>
 
-<a href="beekeeperlogin.php" style="float: right; font-size:14px;color:grey" >Log out</a> 
+<a href="index.php" style="float: right; font-size:14px;color:grey" >Log out</a> 
  
 <a href="bk_profile.php" style="float: left; font-size:14px;color:grey" >Edit Profile</a>
     
