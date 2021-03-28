@@ -14,7 +14,7 @@ $beehiveno="";
     if(isset($_POST['enter'])){
  
         if (empty($_POST["beehiveno"])) {
-            $beehiveno_error = "</br>*Beehive no is required";
+            $beehiveno_error = "</br>*Beehive No is Required";
           }else {
 
             
@@ -27,7 +27,7 @@ $result = mysqli_query($connection,$sql);
 while($row = mysqli_fetch_array($result))
   {
     if($row['beehiveno']!== $beehiveno){
-      $beehiveno_error = "</br>*Invalid beehive no";
+      $beehiveno_error = "</br>*Invalid Beehive No";
     }
 
     else{
@@ -48,7 +48,7 @@ $beehiveno1="";
         if(isset($_POST['enterr'])){
 
             if (empty($_POST["beehiveno"])) {
-                $beehiveno1_error = "</br>*Beehive no is required";
+                $beehiveno1_error = "</br>*Beehive No is Required";
               } else {            
               
               $beehiveno1 = test_input($_POST["beehiveno"]);
@@ -58,7 +58,7 @@ $beehiveno1="";
               while($row = mysqli_fetch_array($result))
                 {
                   if($row['beehiveno']!== $beehiveno1){
-                    $beehiveno1_error = "</br>*Invalid beehive no";
+                    $beehiveno1_error = "</br>*Invalid Beehive No";
                   }
               
                   else{
@@ -75,7 +75,7 @@ $beehiveno1="";
             if(isset($_POST['enterrr'])){
 
                 if (empty($_POST["beehiveno"])) {
-                    $beehiveno2_error = "</br>*Beehive no is required";
+                    $beehiveno2_error = "</br>*Beehive No is Required";
                   } else {            
               
                     $beehiveno2 = test_input($_POST["beehiveno"]);
@@ -86,7 +86,7 @@ $beehiveno1="";
                     while($row = mysqli_fetch_array($result))
                       {
                         if($row['beehiveno']!== $beehiveno2){
-                          $beehiveno2_error = "</br>*Invalid beehive no";
+                          $beehiveno2_error = "</br>*Invalid Beehive No";
                         }
                     
                         else{
@@ -141,7 +141,7 @@ $beehiveno1="";
                <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col1">
-               <input type="number" name="beehiveno" autofocus>
+               <input type="number" min="0" name="beehiveno" autofocus>
                <span class="error"><?= $beehiveno_error?></span>
            </div>
            <div class="col1">
@@ -168,7 +168,7 @@ $beehiveno1="";
                <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col1">
-               <input type="number" name="beehiveno" >
+               <input type="number" min="0" name="beehiveno" >
                <span class="error"><?= $beehiveno1_error?></span>
            </div>
            <div class="col1">
@@ -197,7 +197,7 @@ $beehiveno1="";
                <label for="beehiveno">Beehive No</label>
            </div>
            <div class="col1">
-               <input type="number" name="beehiveno"  >
+               <input type="number" min="0" name="beehiveno"  >
                <span class="error"><?= $beehiveno2_error?></span>
            </div>
            <div class="col1">
