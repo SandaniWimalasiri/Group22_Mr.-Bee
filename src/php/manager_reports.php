@@ -54,7 +54,7 @@
                         </tr>";
                        // $code =mysqli_real_escape_string($connection,$_POST['code']);
         
-                        $sql = "SELECT * FROM harvest WHERE is_deleted=0 AND producttype='Raw Honey';";
+                        $sql = "SELECT * FROM harvest WHERE is_deleted=0 AND producttype='Raw Honey' ORDER BY date DESC;";
                         $query = $connection->query($sql);
                         verify_query($query);
                         while ($result = $query->fetch_array()){

@@ -46,6 +46,7 @@
     if($check_user==1){
       $_SESSION["type"]=$row['emp_status'];
       $_SESSION["email"]=$row['email'];
+      $_SESSION["div_id"]=$row['div_id'];
      
       $user=mysqli_fetch_assoc($isexist);
       $_SESSION["first_name"]=$user['first_name'];
@@ -119,7 +120,7 @@
           <p>Username</p>
           <input type="text" name="email" placeholder="Enter Username" required>
           <p>Password</p>
-          <input type="password" name="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          <input type="password" name="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
           <input type="submit" name="submit" value="Login">
          
         </form> 

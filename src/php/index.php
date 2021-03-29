@@ -113,7 +113,7 @@
 				$subject =$_POST['subject'];
 				$body    ="".$_POST['msg']." 
 							This email is from: ".$_POST['email']." ";
-				$headers="From: ".$_POST['email']."";
+				$headers="From: mrbeemanager@gmail.com";
 					if(empty($email) || empty($subject) || empty($body)){  
 						//display an alert message if one of them field is empty
 						echo "All inputs are required!";
