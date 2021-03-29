@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2021 at 05:31 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Mar 29, 2021 at 08:58 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -100,7 +101,7 @@ CREATE TABLE `customer` (
   `fullname` varchar(100) NOT NULL,
   `userAddress` varchar(200) NOT NULL,
   `userEmail` varchar(100) NOT NULL,
-  `userTele` int(20) NOT NULL,
+  `userTele` varchar(10) NOT NULL,
   `userPassword` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -109,7 +110,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`) VALUES
-(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', 719876541, 'sandani1996');
+(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', '0719876541', 'sandani1996'),
+(2, 'ishara', 'Ishara Wijekoon', 'no: 32, Digana, Kandy', 'ishara1996@gmail.com', '0712299865', 'Kmd9t32');
 
 -- --------------------------------------------------------
 
@@ -122,12 +124,11 @@ CREATE TABLE `div_manager` (
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `tp` int(10) NOT NULL,
+  `tp` varchar(10) NOT NULL,
   `addr` varchar(255) NOT NULL,
-  `pwd` varchar(100) NOT NULL DEFAULT 'div_man@123',
+  `pwd` varchar(100) NOT NULL DEFAULT 'Div_man@123',
   `emp_status` varchar(25) NOT NULL DEFAULT 'Divisional_Manager',
   `division` varchar(25) NOT NULL,
-  `no_employee` int(10) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -135,9 +136,9 @@ CREATE TABLE `div_manager` (
 -- Dumping data for table `div_manager`
 --
 
-INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `addr`, `pwd`, `emp_status`, `division`, `no_employee`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', 711234566, 'no 34/A, yatiyana road,Ampara', 'div_man@123', '   Divisional_Manager', 'Ampara', 1, 1),
-(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', 711234567, '26/5, Nadun uyana, weraduwa, Matara', 'div_man@123', '  Divisional_Manager', 'Matara', 8, 0);
+INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `addr`, `pwd`, `emp_status`, `division`, `is_deleted`) VALUES
+(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, yatiyana road,Ampara', 'Div_man@123', 'Divisional_Manager', 'Ampara', 1),
+(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', '0711234567', '26/5, Nadun uyana, weraduwa, Matara', 'Div_man@123', 'Divisional_Manager', 'Matara', 0);
 
 -- --------------------------------------------------------
 
@@ -196,11 +197,11 @@ CREATE TABLE `harvest` (
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `unit`, `is_deleted`) VALUES
 (1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '2.134', 'Kg', 0),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', '09:49:00.00', '1.724', 'Kg', 0),
+(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '1.724', 'Kg', 0),
 (3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '2.000', '', 0),
 (4, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
 (5, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
-(6, 3, 1, '2021-03-28', '2021-03-08', '14:47:00.00', 'Royal Gel', '8.341', 'Kg', 0),
+(6, 2, 1, '2021-03-28', '2021-03-08', '14:47:00.00', 'Royal Gel', '8.341', 'Kg', 0),
 (7, 3, 1, '2021-03-28', '2021-03-17', '10:31:00.00', 'Bee Colonies', '3.000', ' ', 1);
 
 -- --------------------------------------------------------
@@ -240,7 +241,7 @@ CREATE TABLE `manager` (
   `last_name` varchar(10) NOT NULL,
   `email` varchar(25) NOT NULL,
   `pwd` varchar(10) NOT NULL,
-  `tp` int(10) NOT NULL,
+  `tp` varchar(10) NOT NULL,
   `emp_status` varchar(7) NOT NULL DEFAULT 'manager'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -249,7 +250,7 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`first_name`, `last_name`, `email`, `pwd`, `tp`, `emp_status`) VALUES
-('Shantha', 'Bandara', 'shantha@gmail.com', 'admin', 711234523, 'manager');
+('Nishantha', 'Perera', 'perera123@gmail.com', 'Perera123', '0712647876', 'manager');
 
 -- --------------------------------------------------------
 
@@ -330,7 +331,9 @@ ALTER TABLE `beekeeper`
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`CID`);
+  ADD PRIMARY KEY (`CID`),
+  ADD UNIQUE KEY `username` (`username`,`userEmail`,`userPassword`),
+  ADD KEY `userPassword` (`userPassword`) USING BTREE;
 
 --
 -- Indexes for table `div_manager`
@@ -391,12 +394,6 @@ ALTER TABLE `beehive`
 --
 ALTER TABLE `beekeeper`
   MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `div_manager`
