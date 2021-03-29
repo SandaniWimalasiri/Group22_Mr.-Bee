@@ -276,9 +276,22 @@ p{
 		margin-top: 35px;
 	}
 
+	.services .detail_boxes img{
+		width: 0px;
+	}
+
+	.services .detail_boxes .detail_boxes_item {
+		margin-top: 10px;
+		width: 120px;
+	}
+
 	.detail_boxes{
 		margin-top: 35px;
+		width: 600px;
 	}
+
+	
+	
 
 }
 

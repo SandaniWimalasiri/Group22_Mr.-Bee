@@ -59,8 +59,8 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
               $repassword_error = "</br>*Please Re-Enter Correct Password";
 		  }
 		  else{
-			if (strlen($_POST["userPassword"]) <= '8') {
-				$userPassword_error = "<br/>*Your Password Must Contain At Least 8 Characters!";
+			if (strlen($_POST["userPassword"]) <= '6') {
+				$userPassword_error = "<br/>*Your Password Must Contain At Least 6 Characters!";
 			}
 			elseif(!preg_match("#[0-9]+#",$userPassword)) {
 				$userPassword_error= "<br/>*Your Password Must Contain At Least 1 Number!";
@@ -127,26 +127,33 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
 			<h1>Sign Up</h1>
 			<form method="POST" action="" >
 				<p>User Name : </p>
+        <div class="error"><?= $username_error?></div>
 				<input type="text" name="username" placeholder="Enter your User name" value="<?= $username?>">
-				<span class="error"><?= $username_error?></span>
+				
 				<p>Name : </p>
+        <div class="error"><?= $fullname_error?></div>
 				<input type="text" name="fullname" placeholder="Enter your Name" value="<?= $fullname?>"/>
-				<span class="error"><?= $fullname_error?></span>
+				
 				<p>Adress : </p>
+        <div class="error"><?= $userAddress_error?></div>
 				<input type="text" name="userAddress" placeholder="Enter your address" value="<?= $userAddress?>"/>
-				<span class="error"><?= $userAddress_error?></span>
+				
 				<p>Email : </p>
+        <div class="error"><?= $userEmail_error?></div>
 				<input type="text" name="userEmail" placeholder="Enter your email address" value="<?= $userEmail?>"/>
-				<span class="error"><?= $userEmail_error?></span>
+				
 				<p>Telephone : </p>
+        <div class="error"><?= $userTele_error?></div>
 				<input type="text" name="userTele" placeholder="Enter your telephone no" value="<?= $userTele?>"/>
-				<span class="error"><?= $userTele_error?></span>
+				
 				<p>Password : </p>
+        <div class="error"><?= $userPassword_error?></div>
 				<input type="password" name="userPassword" placeholder="Enter your password" value="<?= $userPassword?>"/>
-				<span class="error"><?= $userPassword_error?></span>
+				
 				<p>Re-enter the Password : </p>
+        <div class="error"><?= $repassword_error?></div>
 				<input type="password" name="repassword" placeholder="Enter your password" value="<?= $repassword?>" /><br />
-				<span class="error"><?= $repassword_error?></span>
+				
 				<br />
 				
 				<div class="center" id="er">

@@ -58,7 +58,7 @@
                             </tr>
                             <tr>
                                 <th><label>TP No.</label></th>
-                                <td><input type="tel" name="tp" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>" readonly></td>
+                                <td><input type="tel" name="tp"  pattern="[0]{1}[0-9]{9}" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>" readonly></td>
                             </tr>
                             <tr>
                                 <th><label>Address</label></th>

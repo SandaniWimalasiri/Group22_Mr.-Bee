@@ -1,7 +1,9 @@
 <?php require_once("../../config/connect.php");
 require_once("func.php"); ?>
 <?php session_start(); 
-
+    if(!$_SESSION['email']){
+     header('Location: login.php');
+    }
         
 ?>
 <head>
@@ -10,6 +12,7 @@ require_once("func.php"); ?>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <style>
@@ -39,8 +42,6 @@ require_once("func.php"); ?>
 
     </nav>    
          <!--start of footer-->
-         <footer>    
-            <h3></h3>
-        </footer>   <!--end of footer-->
+         
 
 </body>

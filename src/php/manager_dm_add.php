@@ -40,7 +40,7 @@
                             </tr>
                             <tr>
                                 <th><label>TP No.</label></th>
-                                <td><input type="text" name="tp" placeholder="Enter TP No." required ></td>
+                                <td><input type="text" name="tp"  pattern="[0]{1}[0-9]{9}" placeholder="Enter TP No." required ></td>
                             </tr>
                             <tr>
                                 <th><label>Address</label></th>

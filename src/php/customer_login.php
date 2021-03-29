@@ -1,15 +1,19 @@
+<div class="errs">
+
 <?php 
 	require_once('../../config/connect.php');
 	session_start();
 	
+	
 	$username_error=$userPassword_error="";
 	$username=$userPassword="";
+	
 
 	if(isset($_POST['submit'])){
 		
 
 		if (empty($_POST["username"])) {
-            $username_error = "</br>* User Name is required";
+            $username_error = "* User Name is required";
           }else {
 
             $username = test_input($_POST["username"]);
@@ -19,7 +23,7 @@
             while($row = mysqli_fetch_array($result))
             {
               if($row['username']!== $username){
-              $username_error = "</br>*Invalid User Name";
+              $username_error = "*Invalid User Name";
             }
 
            }
@@ -27,7 +31,7 @@
 		
 		  
 		  if (empty($_POST["userPassword"])) {
-            $userPassword_error = "</br>* Password is required";
+            $userPassword_error = "* Password is required";
           }else {
 
             $userPassword = test_input($_POST["userPassword"]);
@@ -37,7 +41,7 @@
             while($row = mysqli_fetch_array($result))
             {
               if($row['userPassword']!== $userPassword){
-              $userPassword_error = "</br>*Invalid Password";
+              $userPassword_error = "*Invalid Password";
             }
 
            }
@@ -68,7 +72,7 @@ function test_input($data) {
 	return $data;
   }
 ?>
-
+</div>
 <html>
 	<head>
 		<title>Login Page</title>
@@ -87,11 +91,12 @@ function test_input($data) {
 				<center><h2>Login Here</h2></center>
 				<form method="post" action="" >
 					<p>Username</p>
+					<div class="error"><?= $username_error?></div>
 					<input type="text" name="username" placeholder="Enter your Username" value="<?= $username?>">
-					<span class="error"><?= $username_error?></span>
+					
 					<p>Password</p>
-					<input type="password" name="userPassword" placeholder="Enter Password" value="<?= $userPassword?>">
-					<span class="error"><?= $userPassword_error?></span>
+					<div class="error"><?= $userPassword_error?></div>
+					<input type="password" name="userPassword" placeholder="Enter Password" value="<?= $userPassword?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
 					<input type="submit" class="button" name="submit" value="LOGIN"><br /><br />
 					<div class="txt">Don't have an account? <a href="customer_signup.php" class="txt1"> Sign Up</a></div><br />
 				</form>

@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_managerhome_content.css">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
        
@@ -51,7 +51,7 @@
                    
                     <?php 
                     
-                    $sql = "SELECT * FROM manager;";
+                    $sql = "SELECT * FROM manager where email='".$_SESSION['email']."';";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);
@@ -59,15 +59,15 @@
                     while ($result =mysqli_fetch_assoc($query)) {
                     ?>
                     <tr>  
-                            <th>First name :</th>      
+                            <th>First name:</th>      
                             <td><?php echo $result['first_name'] ?></td>
                     </tr>
                     <tr>
-                            <th>Last name :</th>
+                            <th>Last name:</th>
                             <td><?php echo $result['last_name'] ?></td>
                     </tr>
                     <tr>
-                            <th>Email   :</th>
+                            <th>Email :</th>
                             <td><?php echo $result['email'] ?></td>
                     </tr>
                     <tr>
@@ -87,6 +87,7 @@
 
        
 
+        
        
 
     </body>

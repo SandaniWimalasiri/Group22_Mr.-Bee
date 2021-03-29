@@ -78,3 +78,8 @@ h1{
     color: rgb(247, 245, 246);
 }
 
+.error{
+    font-style: italic;
+    color: rgb(250, 8, 8);
+    font-size: 19x;
+}

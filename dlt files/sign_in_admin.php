@@ -1,4 +1,4 @@
-<?php include('homenavbar.php'); ?>
+
 <?php require_once("../../config/connect.php"); ?>
 
 <?php
@@ -53,7 +53,7 @@
           <p>Username</p>
           <input type="text" name="userName" placeholder="Enter Username" required>
           <p>Password</p>
-          <input type="password" name="password" placeholder="Enter Password" required>
+          <input type="password" name="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
           <input type="submit" name="submit" value="Login">
         </form> 
     </div>

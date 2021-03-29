@@ -16,7 +16,7 @@ body{
   }
 .loginbox{
 	width: 600px;
-	height: 750px;
+	height: 1000px;
 	background: #000000;
 	color: blanchedalmond;
 	position: center;
@@ -112,4 +112,10 @@ h1{
 	text-align: center;
 	font-size: 14px;
 	font-weight: standard;
+}
+
+.error{
+	font-style: italic;
+    color: rgb(250, 8, 8);
+    font-size: 19x;
 }

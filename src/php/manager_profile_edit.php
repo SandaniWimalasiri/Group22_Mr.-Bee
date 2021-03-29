@@ -57,8 +57,8 @@
                                 <td><input type="password" name="pwd" placeholder="Enter division code" value="<?php echo $row['pwd'] ?>"></td>
                             </tr>
                             <tr>
-                                <th><label>No. of Employees</label></th>
-                                <td><input type="text" name="tp" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>"></td>
+                                <th><label>TP Number</label></th>
+                                <td><input type="text" name="tp" pattern="[0]{1}[0-9]{9}" placeholder="Enter TP No(eg:0712345678)" value="<?php echo $row['tp'] ?>"></td>
                             </tr>
                             </table>
                             <br/>
@@ -86,7 +86,7 @@
                                     if($query_run)
                                     {
                                         echo '<script> alert("Data Updated Successfully"); </script>';
-                                        header("location:manager_home.php");
+                                        //header("location:manager_home.php");
                                     }
                                     else
                                     {

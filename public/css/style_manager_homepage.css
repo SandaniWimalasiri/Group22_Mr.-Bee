@@ -183,11 +183,7 @@ a:hover {color: red;}
     
 }
 
-.footer{
-    position:fixed;
-    bottom: 0;
-    z-index: 1;
-}
+
 
 
 
@@ -204,7 +200,7 @@ a:hover {color: red;}
 @media screen and (max-width : 860px){
   
 .content{
-    width: 1000px;
+    width: 600px;
     height: auto;
     position: absolute;
    
@@ -213,11 +209,10 @@ a:hover {color: red;}
     
 }
 .content0{
-    width: 810px;
-    height: auto;
-    position: relative;
-   
-    
+    width: 200px;
+    float: none;
+    display: block;;
+    text-align: left;
 }
 
 .content2{
