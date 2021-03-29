@@ -96,7 +96,7 @@ function test_input($data) {
 					
 					<p>Password</p>
 					<div class="error"><?= $userPassword_error?></div>
-					<input type="password" name="userPassword" placeholder="Enter Password" value="<?= $userPassword?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+					<input type="password" name="userPassword" placeholder="Enter Password" value="<?= $userPassword?>">
 					<input type="submit" class="button" name="submit" value="LOGIN"><br /><br />
 					<div class="txt">Don't have an account? <a href="customer_signup.php" class="txt1"> Sign Up</a></div><br />
 				</form>
