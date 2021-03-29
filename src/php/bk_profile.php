@@ -2,22 +2,11 @@
 session_start();
 
 
-$userName="";
-$userName_error="";
+
 
 if(isset($_POST['update'])){
     
-  if(isset($_POST['enter'])){
 
-    if (empty($_POST["userName"])) {
-        $userName_error = "</br>*Beehive no is required";
-      } else {
-        $userName = test_input($_POST["userName"]);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $emailErr = "Invalid email format";}
-      }
-
-      if($userName_error==''){
           
     $sql2= "UPDATE beekeeper SET userName ='".$_POST['userName']."',fullName ='".$_POST['fullName']."',  userAddress ='".$_POST['userAddress']."', userEmail ='".$_POST['userEmail']."',userTele ='".$_POST['userTele']."' WHERE userID='".$_SESSION['userid']."'";
     $result2 = mysqli_query($connection,$sql2);
@@ -43,25 +32,20 @@ if(isset($_POST['update'])){
       die();
     }
 
-  }}
-}
-
-
-
-
-  function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
   }
+
+
+
+
+
+
 
 ?>
 <html>
 
     <head>
 
-      <title>my profile</title>
+      <title>My Profile</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 
