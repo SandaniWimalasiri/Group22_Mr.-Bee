@@ -143,7 +143,7 @@ $result1 = mysqli_query($connection,$sql1);
         </div>
         <div class="row" >
 		<div class="col1">
-		TP No. </div><div class="col2" ><input type = "text" name="addr" required value ="<?php echo $row['addr']; ?>" >
+		Address. </div><div class="col2" ><input type = "text" name="addr" required value ="<?php echo $row['addr']; ?>" >
         </div>
         </div>
         <div class="row" >
