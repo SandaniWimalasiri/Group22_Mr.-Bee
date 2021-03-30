@@ -27,6 +27,14 @@ session_start();
 <p>Monthly Harvest Report</p>
 <br/><br/>
 
+<center> <table ><tr style="background-color:#547454">
+    
+          <th>Harvesting Record No</th>
+            <th>Harvesting Date</th>
+           <th>Harvesting Time</th>
+    <th>Harvested Product Type</th>
+            <th>Harvested Amount</th></tr>
+
 	
 
            
@@ -39,16 +47,9 @@ if(isset($_POST['enter'])){
     mysqli_query($connection, $sql);
     $result = mysqli_query($connection,$sql);
 
-    $count=mysqli_num_rows($result);
-if($count>=1){
+   
 
-        echo '<center> <table ><tr style="background-color:#547454">';
-    
-        echo '        <th>Harvesting Record No</th>';
-        echo '        <th>Harvesting Date</th>';
-        echo '        <th>Harvesting Time</th>';
-        echo '        <th>Harvested Product Type</th>';
-        echo '        <th>Harvested Amount</th></tr>';
+        
 
     while($row=mysqli_fetch_assoc($result)){
         //echo '<tr style="background-color:white">';
@@ -72,12 +73,7 @@ if($count>=1){
             
     
 }}
-else{
 
-        
-        echo "<center>RESULT NOT FOUND<center>";
-
-}}
 
 		
         
