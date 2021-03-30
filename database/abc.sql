@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 05:06 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Generation Time: Mar 30, 2021 at 05:47 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -55,11 +54,11 @@ CREATE TABLE `beehive` (
 --
 
 INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `unit`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`, `is_deleted`, `date`) VALUES
-(1, 3, 1, '2020-07-07', '2020-07-09', '08:59:00.00', 'Active', 'Calm', '1.354', 'Kg', 'Humidity: 81%\r\nWind: 6Km/h', 'Add', 2, 'none', 'none', 'No Fresh Eggs', 3, 0, '2020-10-26'),
-(2, 3, 2, '2020-08-10', '2020-08-14', '09:43:00.00', 'Strongly Active', 'Calm', '3.546', 'Kg', 'Humidity: 68%\r\nWind: 4.7Km/h', 'Removal', 2, 'None', 'None', ' Queen Cell Introduced', 4, 0, '2021-03-26'),
-(3, 3, 3, '2020-09-16', '2020-09-18', '16:09:00.00', 'Strongly Active', 'Calm', '22.000', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 3, 1, '2021-03-26'),
-(4, 4, 1, '2020-07-09', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '1.256', 'g', 'Humidity: 58% \r\nWind: 4.2Km/h', 'Switch', 1, 'None', 'None', 'No Fresh Eggs', 3, 0, '0000-00-00'),
-(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '0000-00-00');
+(1, 3, 1, '2020-07-07', '2020-07-09', '08:59:00.00', 'Active', 'Calm', '1.354', 'Kg', 'Humidity: 81%\r\nWind: 6Km/h', 'Add', 2, 'none', 'none', 'No Fresh Eggs', 3, 0, '2020-07-13'),
+(2, 3, 2, '2020-08-10', '2020-08-14', '09:43:00.00', 'Strongly Active', 'Calm', '3.546', 'Kg', 'Humidity: 68%\r\nWind: 4.7Km/h', 'Removal', 2, 'None', 'None', ' Queen Cell Introduced', 4, 0, '2020-08-18'),
+(3, 3, 3, '2020-09-16', '2020-09-18', '16:09:00.00', 'Strongly Active', 'Calm', '22.000', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 3, 1, '2020-09-24'),
+(4, 4, 1, '2020-07-09', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '1.256', 'g', 'Humidity: 58% \r\nWind: 4.2Km/h', 'Switch', 1, 'None', 'None', 'No Fresh Eggs', 3, 0, '2021-03-11'),
+(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '2020-09-26');
 
 -- --------------------------------------------------------
 
