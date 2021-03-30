@@ -27,11 +27,30 @@ session_start(); ?>
          <div class="content"> 
 
             <?php     
-                
+                $authorname_error = $articlename_error = $content_error ="";
+                $authorname = $articlename = $content="";
 
                 if(isset($_POST['submit'])){
 
-                   
+                    if (empty($_POST["authorname"])) {
+                    $authorname_error = "*Author name is required";
+                    } else {
+                    $authorname = test_input($_POST["authorname"]);
+                    }
+                    
+                    if (empty($_POST["articlename"])) {
+                    $articlename_error = "*Article name is required";
+                    } else {
+                    $articlename = test_input($_POST["articlename"]);
+                    }
+                    
+                    if (empty($_POST["content"])) {
+                    $content_error = "*Content is required";
+                    } else {
+                    $content = test_input($_POST["content"]);
+                    }
+
+                    if($authorname_error =='' and  $articlename_error =='' and  $content_error==''){
             
             //echo "Done";
             $date=date("Y/m/d");
@@ -48,7 +67,14 @@ session_start(); ?>
                     }
                 
 
-            
+            }
+
+            function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+            }
             
         ?>
         
@@ -61,8 +87,8 @@ session_start(); ?>
                     <label for="authorname">Name</label>
                 </div>
                 <div class="col2">
-                    <input type="text" name="authorname"  placeholder="Author Name" style="background-color:white" >
-                    
+                    <input type="text" name="authorname"  placeholder="Author Name" style="background-color:white" value="<?= $authorname?>" autofocus>
+                    <span class="error"><?= $authorname_error?></span>
                 </div>
             </div>
             <div class="row">
@@ -70,8 +96,8 @@ session_start(); ?>
                     <label for="articlename">Article Name</label>
                 </div>
                 <div class="col2">
-                    <textarea id="articlename" name="articlename" style="height:50px" placeholder="Article Name" ></textarea>
-                    
+                    <textarea id="articlename" name="articlename" style="height:50px" placeholder="Article Name" value="<?= $articlename?>"></textarea>
+                    <span class="error"><?= $articlename_error?></span>
                 </div>
             </div>
             <div class="row">
@@ -79,8 +105,8 @@ session_start(); ?>
                     <label for="content">Content</label>
                 </div>
                 <div class="col2">
-                    <textarea id="content" name="content" style="height:200px" placeholder="Content" ></textarea>
-                    
+                    <textarea id="content" name="content" style="height:200px" placeholder="Content" value="<?= $content?>" ></textarea>
+                    <span class="error"><?= $content_error?></span>
                 </div>
             </div>
             <div class="row">
@@ -90,12 +116,7 @@ session_start(); ?>
             
         </form>
 
-        <form  action="divman_viewarticle.php" method="post" >
-                <div class="c2" style="width: 130px">
-                    <input type="submit" value="View Articles >>" name="enter" >
-                </div>
-            </div>
-        </form>
+        
 
 
 

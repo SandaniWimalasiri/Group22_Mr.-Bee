@@ -1,11 +1,11 @@
-<?php require_once("../../config/connect.php");
-require_once("func.php"); ?>
+ <?php require_once("../../config/connect.php");
+require_once("func.php"); ?> 
 <!DOCTYPE html>
 <html>
 <?php session_start(); 
 
         if(!$_SESSION['email']){
-            header('Location: login.php');
+            header('Location: sign_in_divman.php');
         }
 ?>
 <head>
@@ -84,9 +84,9 @@ if(isset($_POST['update'])){
     
  
           
-	$sql2= "UPDATE div_manager SET first_name ='".$_POST['first_name']."',last_name ='".$_POST['last_name']."',pwd ='".$_POST['pwd']."',tp ='".$_POST['tp']."',email ='".$_POST['email']."',  division ='".$_POST['division']."', no_employee ='".$_POST['no_employee']."' WHERE email='".$_SESSION['email']."'";
+	$sql2= "UPDATE div_manager SET first_name ='".$_POST['first_name']."',last_name ='".$_POST['last_name']."',tp ='".$_POST['tp']."', addr ='".$_POST['addr']."' WHERE email='".$_SESSION['email']."'";
 	$result2 = mysqli_query($connection,$sql2);
-    $sql3 = "SELECT first_name,last_name,pwd,tp,email,division,no_employee,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
+    $sql3 = "SELECT first_name,last_name,email,tp,division,addr,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
    if($result2){
@@ -111,55 +111,69 @@ echo "failed";
     
 <?php
 
-$sql1 = "SELECT first_name,last_name,pwd,tp,email,division,no_employee,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
+$sql1 = "SELECT COUNT(userID) AS noofbeekeepers  FROM beekeeper WHERE div_id='".$_SESSION['div_id']."'";
+mysqli_query($connection, $sql1);
+$noOfBeeKeepers = mysqli_query($connection,$sql1);
+$row2=mysqli_fetch_assoc($noOfBeeKeepers);
+//print_r($row2['noofbeekeepers']);
+
+
+
+$sql1 = "SELECT first_name,last_name,pwd,tp,email,division,addr,div_id  FROM div_manager WHERE email='".$_SESSION['email']."'";
 mysqli_query($connection, $sql1);
 $result1 = mysqli_query($connection,$sql1);
 		while($row=mysqli_fetch_assoc($result1)){  
  
-   
-        echo '<form  method="post" action="" ><div class="row" >';
-        echo '<div class="col1">';
-        echo 'First Name </div><div class="col2">';
-        echo "<input type = 'text' name='first_name' required value ='".$row['first_name']."'>";
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-        echo '<div class="col1">';
-        echo 'Last Name </div><div class="col2" ><input type = "text" name="last_name" required value ="'.$row['last_name'].'" >';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-		echo '<div class="col1">';
-		echo 'Password </div><div class="col2" ><input type = "text" name="pwd" required value ="'.$row['pwd'].'" >';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-		echo '<div class="col1">';
-		echo 'TP No. </div><div class="col2" ><input type = "text" name="tp" required value ="'.$row['tp'].'" >';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-		echo '<div class="col1">';
-		echo 'Email </div><div class="col2" ><input type = "text" name="email" required value ="'.$row['email'].'" readonly>';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-        echo '<div class="col1">';
-        echo 'Division </div><div class="col2"><input type = "text" name="division" required value ="'.$row['division'].'"  readonly>';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-        echo '<div class="col1">';
-        echo 'No of emploees </div><div class="col2"><input type = "text"" name="no_employee" required value ="'.$row['no_employee'].'" >';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row" >';
-        echo '<div class="col1">';
-        echo 'Div ID</div><div class="col2"><input type = "text" name="div_id" required value ="'.$row['div_id'].'" readonly>';
-        echo "</div>";
-        echo "</div>";
-        echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Edit Profile" name="update" ></div></form>';
-        
+   ?>
+        <form  method="post" action="#about" ><div class="row" >
+        <div class="col1">
+        First Name </div><div class="col2">
+        <input type = 'text' name='first_name' required value ='<?php echo $row['first_name']; ?>'>
+        </div>
+        </div>
+        <div class="row" >
+        <div class="col1">
+        Last Name </div><div class="col2" ><input type = "text" name="last_name" required value ="<?php echo $row['last_name']; ?>" >
+        </div>
+        </div>
+        <div class="row" >
+		<div class="col1">
+		TP No. </div><div class="col2" ><input type = "text" name="tp" required value ="<?php echo $row['tp']; ?>" >
+        </div>
+        </div>
+        <div class="row" >
+		<div class="col1">
+		TP No. </div><div class="col2" ><input type = "text" name="addr" required value ="<?php echo $row['addr']; ?>" >
+        </div>
+        </div>
+        <div class="row" >
+		<div class="col1">
+		Email </div><div class="col2" ><input type = "text" name="email" disabled value ="<?php echo $row['email']; ?>" readonly>
+        </div>
+        </div>
+        <div class="row" >
+        <div class="col1">
+        Division </div><div class="col2"><input type = "text" name="division" disabled value ="<?php echo $row['division']; ?>"  readonly>
+        </div>
+        </div>
+        <div class="row" >
+        <div class="col1">
+        No of emploees </div><div class="col2"><input type = "text" name="no_employee" disabled value ="<?php echo $row2['noofbeekeepers']; ?>" >
+        </div>
+        </div>
+        <div class="row" >
+        <div class="col1">
+        Div ID</div><div class="col2"><input type = "text" name="div_id" disabled value ="<?php echo $row['div_id']; ?>" readonly>
+        </div>
+        </div>
+        <div class="row">
+            <div class="c1" style="width: 910px">
+                <input type="submit" value="Edit Profile" name="update" >
+                <input type="button" onclick="changePassword(<?php echo $row['div_id']; ?>)" value="Change Password" name="change-password" >
+            </div>
+        </div>
+        </form>
+        <?php
 
         }?>
 
@@ -212,7 +226,7 @@ $result1 = mysqli_query($connection,$sql1);
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM beekeeper ;";
+                    $sql = "SELECT * FROM beekeeper WHERE div_id='".$_SESSION['div_id']."'" ;
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);
@@ -313,10 +327,52 @@ $result1 = mysqli_query($connection,$sql1);
 	<section id="reports">
 	<!--beekeeper heading-->
 	<div class="r-heading">
+		<br/>
 		<h1>Reports</h1>
 	</div>
+	<div class="content"> 
+            
+            <center>
+                <table class="div_man">
+                    <tr>
+                        <th>Registration ID</th>
+                        <th>User name</th>
+                        <th>Full name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Telephone No</th>
+                    </tr>
+                    <?php 
+                    
+                    $sql = "SELECT * FROM beekeeper WHERE div_id='".$_SESSION['div_id']."' ;";
+                    
+                    $query=mysqli_query($connection,$sql);
+                    verify_query($query);
+
+                    while ($result =mysqli_fetch_assoc($query)) {
+                    ?>
+                    <tr>
+                            <td><?php echo $result['userID'] ?></td>
+                            <td><?php echo $result['userName'] ?></td>
+                            <td><?php echo $result['fullName'] ?></td>
+                            <td><?php echo $result['userAddress'] ?></td>
+                            <td><?php echo $result['userEmail'] ?></td>
+                            <td><?php echo $result['userTele'] ?></td>
+                            	<form action="divman_viewreports.php" method="post">
+                                    <input type="hidden" name="userID" id="userID" value="<?php echo $result['userID']; ?>">
+                            <td><button class="btn8" name="viewReport" type="submit">Reports</button></td>
+                            	</form>
+                    </tr>
+                  
+                    <?php
+                    }
+                    ?> 
+                </table>
+            </center>
+            </div>
 		
 	</section>
+	
 
 	<!--info-->
 	<section id="info">
@@ -324,74 +380,7 @@ $result1 = mysqli_query($connection,$sql1);
 	<div class="i-heading">
 		<h1>Infomation Hub</h1>
 	</div>
-	<!--info box container-->
-	<div class="i-b-conatainer">
-	<!--box1-->
-	<div class="i-box">
-	<!--info box image-->
-	<div class="i-b-img">
-	<!--type-->
-	<div class="i-type">Info-Hub</div>
-	<!--img-->
-	<img src="../../public/img/div5.jpg">
-	</div>
-	<!--info box text-->	
-	<div class="i-b-text">
-		<a href="divman_viewarticle.php" name="enter">Beekeeping (or apiculture) is the maintenance of bee colonies, commonly in man-made hives, by humans. Most such bees are honey bees in the genus Apis, but other honey-producing bees such as Melipona stingless bees are also kept</a>
-	</div>	
-	
-	</div>
-	<!--box1-->
-	<div class="i-box">
-	<!--info box image-->
-	<div class="i-b-img">
-	<!--type-->
-	<div class="i-type">Info-Hub</div>
-	<!--img-->
-	<img src="../../public/img/div6.jpg">
-	</div>
-	<!--info box text-->
-	
-	<div class="i-b-text">
-		<a href="divman_viewarticle.php" name="enter">Honey bees are social insects that live in colonies. Honey bee colonies consist of a single queen, hundreds of male drones, and 20,000 to 80,000 female worker bees. Each honey bee colony also consists of developing eggs, larvae, and pupae. The number of individuals within a honey bee colony depends largely upon seasonal changes. A colony could reach up to 80,000 individuals during the active season, when workers forage for food, store honey for winter, and build combs. However, this population will decrease dramatically during colder seasons.</a>
-	</div>	
-	
-	</div>
-	<!--box1-->
-	<div class="i-box">
-	<!--info box image-->
-	<div class="i-b-img">
-	<!--type-->
-	<div class="i-type">Info-Hub</div>
-	<!--img-->
-	<img src="../../public/img/div7.jpg">
-	</div>
-	<!--info box text-->	
-	<div class="i-b-text">
-		<a href="divman_viewarticle.php" name="enter">A honey bee (also spelled honeybee) is a eusocial flying insect within the genus Apis of the bee clade, all native to Eurasia but spread to four other continents by human beings. They are known for their construction of perennial colonial nests from wax, the large size of their colonies, and surplus production and storage of honey, distinguishing their hives as a prized foraging target of many animals, including honey badgers, bears, and human hunter-gatherers. Only eight surviving species of honey bee are recognized, with a total of 43 subspecies, though historically 7 to 11 species are recognized. Honey bees represent only a small fraction of the roughly 20,000 known species of bees.</a>
-	</div>	
-	
-	</div>
-	<!--box1-->
-	<div class="i-box">
-	<!--info box image-->
-	<div class="i-b-img">
-	<!--type-->
-	<div class="i-type">Info-Hub</div>
-	<!--img-->
-	<img src="../../public/img/div8.jpg">
-	</div>
-	<!--info box text-->	
-	<div class="i-b-text">
-		<a href="divman_viewarticle.php" name="enter">Bee venom has powerful anti-inflammatory properties and may benefit the health of your skin and immune system. It may also improve certain medical conditions like rheumatoid arthritis and chronic pain.</a>
-	</div>	
-	
-	</div>
-	</div>
-	<form  action="divman_viewarticle.php" method="post" >
-                
-                    <input class=i-btn type="submit" value="View Articles" name="enter" >
-        </form>
+    <iframe src="divman_viewarticle.php" height="600" width="95%" title="info_hub"></iframe>
 	<br/>
 	<a href="divman_infohub.php" class=i-btn>Add Articles</a>
 	</section>
@@ -401,4 +390,11 @@ $result1 = mysqli_query($connection,$sql1);
 
 
 </body>
+
+<script type="text/javascript">
+    function changePassword(id) {
+        window.location.href = './divma_resetpass.php?id=' + id
+    }
+</script>
+
 </html>

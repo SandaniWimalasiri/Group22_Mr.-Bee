@@ -14,12 +14,7 @@
 
     </head>
     <body>
-        <nav>
-      <!--logo-->
-        <a href="#" class="logo">Mr.<font color="#f4976c">Bee</font></a>
-      
-        <a href="divman.php#info" class="lang">Back</a>
-        </nav>
+        
         <section id="about">
          
         
@@ -52,11 +47,7 @@
             
 
 
-                    <form  action="divman_infohub.php" method="post" >
-                        <div class="row">
-                            <input type="submit" value="<< Back" name="back" >
-                        </div>
-                    </form>
+                   
 
         </div>
 
