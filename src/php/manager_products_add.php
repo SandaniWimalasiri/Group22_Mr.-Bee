@@ -18,7 +18,7 @@
         <div class="content">
         <h1>Add a Product</h1>
         <br>
-        <form class="f1" action='manager_products_add.php' method="get">
+        <form class="f1" action='manager_products_add.php' method="get" enctype="multipart/form-data">
                
                <table  class="div_man">
                    
@@ -31,7 +31,7 @@
    
                    <tr>
                        <th><label>Description</label></td>
-                       <td><input type="text" placeholder="Enter type of the product" name="descr" required ></td>
+                       <td><div class="des"><textarea placeholder="product Description" name="descr" value="" rows="20" cols="50"></textarea></div></td>
                    </tr>
    
                    <tr>
@@ -50,8 +50,8 @@
                    </tr>
 
                    <tr>
-                       <th><label>Image</label></td>
-                       <td><input type="text" placeholder="Enter image of the product " name="img" required >
+                   <th><label>image</label></th>
+                        <td><input type="file" name="img" value="<?php echo $row['img'] ?>" required></td>
        <br></br></td>
                    </tr>
                </table>
@@ -84,6 +84,23 @@
                 echo '<script> alert("Insertion Failed"); </script>';
            }
        }
+
+       //if button with the name submit has been clicked
+       if(isset($_POST['submit'])) {
+        //declaring variables
+        $filename = $_FILES['img']['name'];
+        $filetmpname = $_FILES['img']['tmp_name'];
+        //folder where images will be uploaded
+        $folder = '../../public/img/';
+        //function for saving the uploaded images in a specific folder
+        move_uploaded_file($filetmpname, $folder.$filename);
+        //inserting image details (ie image name) in the database
+        $sql = "INSERT INTO 'products' ('img') VALUES ('$filename')";
+        $qry = mysqli_query($conn, $sql);
+        if( $qry) {
+        echo "</br>image uploaded";
+        }
+    }
                      
   
 ?>

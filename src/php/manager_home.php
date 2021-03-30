@@ -80,7 +80,8 @@
                     ?> 
                 </table>
                 </br>
-                
+                </br>
+                <a href="manager_profile_edit.php">click here</a> to Edit the Profile
             </div>
         </div>               <!--end content-->
 

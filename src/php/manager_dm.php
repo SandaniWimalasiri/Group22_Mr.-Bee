@@ -30,6 +30,7 @@
              </div>
              <br><br> <br> 
             <center>
+            <h2>Divisional managers' Details</h2>
                 <table class="div_man">
                     <tr>
                         <th>Registration ID</th>

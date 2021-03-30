@@ -42,15 +42,15 @@
                             <table class="div_man">
                             <tr>
                                 <th><label>ID</label></th>
-                                <td><input type="text" name="div_id" placeholder="Enter Last Name" value="<?php echo $row['div_id'] ?>" readonly></td>
+                                <td><input type="text" name="div_id" placeholder="Enter ID" value="<?php echo $row['div_id'] ?>" readonly></td>
                             </tr>
                             <tr>
                                 <th><label>First name</label></th>
-                                <td><input type="text" name="first_name" placeholder="Enter First Name" value="<?php echo $row['first_name'] ?>"></td>
+                                <td><input type="text" name="first_name" pattern="[a-zA-Z]+" title="Only Upper case and Lower case Letters Allowed" placeholder="Enter First Name" value="<?php echo $row['first_name'] ?>"></td>
                             </tr>
                             <tr>
                                 <th><label>Last name</label></th>
-                                <td><input type="text" name="last_name" placeholder="Enter Last Name" value="<?php echo $row['last_name'] ?>"></td>
+                                <td><input type="text" name="last_name" pattern="[a-zA-Z]+" title="Only Upper case and Lower case Letters Allowed" placeholder="Enter Last Name" value="<?php echo $row['last_name'] ?>"></td>
                             </tr>
                             <tr>
                                 <th><label>Email</label></th>
@@ -58,17 +58,18 @@
                             </tr>
                             <tr>
                                 <th><label>TP No.</label></th>
-                                <td><input type="tel" name="tp"  pattern="[0]{1}[0-9]{9}" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>" readonly></td>
+                                <td><input type="tel" name="tp"  pattern="[0]{1}[0-9]{9}" placeholder="Enter TP number" value="<?php echo $row['tp'] ?>" ></td>
                             </tr>
                             <tr>
                                 <th><label>Address</label></th>
-                                <td><input type="text" placeholder="Address" name="addr" value="<?php echo $row['addr'] ?>" readonly>></td>
+                                <td><textarea placeholder="Address" name="addr" value=""><?php echo $row['addr'] ?></textarea></td>
                             </tr>
                             
                             <tr>
                                 <th><label>Division</label></th>
                                 <td>
-                                        <select name="division" id="division" value="<?php echo $row['division'] ?>">
+                                        <select name="division" id="division" value="">
+                                            <option><?php echo $row['division'] ?></option>
                                             <option value="Ampara">Ampara</option>
                                             <option value="Anuradhapura">Anuradhapura</option>
                                             <option value="Badulla">Badulla</option>
@@ -109,16 +110,18 @@
                     ?>    
 
                         <?php
+                        
                                 if(isset($_POST['update']))
                                 {
                                     $first_name = $_POST['first_name'];
                                     $last_name = $_POST['last_name'];
-                                    
+                                    $tp = $_POST['tp'];
+                                    $addr = $_POST['addr'];
                                     $division = $_POST['division'];
-                                    $no_employee = $_POST['no_employee'];
+                                    
 
 
-                                    $query = "UPDATE div_manager SET first_name='$first_name', last_name='$last_name', division='$division', no_employee='$no_employee'  WHERE div_id='$div_id'  ";
+                                    $query = "UPDATE div_manager SET first_name='$first_name', last_name='$last_name', tp='$tp', addr='$addr', division='$division'  WHERE div_id='$div_id'  ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)
@@ -130,7 +133,7 @@
                                     }
                                     else
                                     {
-                                        echo '<script> alert("Data Not Updated"); </script>';
+                                        echo '<script> alert("Failed to update the database"); </script>';
                                     }
                                 }
                     ?>

@@ -21,7 +21,7 @@
 
         <center>
             <br>
-            <h2>Products' Details</h2>
+            <h2>Removed Products' Details</h2>
             <br>
                 <table class="div_man">
                     <tr>

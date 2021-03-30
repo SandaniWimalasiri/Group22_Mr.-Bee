@@ -40,25 +40,23 @@
                             
                             <table class="div_man">
                             
+                           
                             <tr>
-                                <th><label>First name</label></th>
-                                <td><input type="text" name="first_name"  title="Should be contain only uppercase and lowercase letters" placeholder="Enter First Name" value="<?php echo $row['first_name'] ?>" required></td>
+                                <th><label>Address</label></th>
+                                <td><textarea placeholder="Address" name="addr" value=""><?php echo $row['addr'] ?></textarea></td>
                             </tr>
                             <tr>
-                                <th><label>Last name</label></th>
-                                <td><input type="text" name="last_name"  title="Should be contain only uppercase and lowercase letters" placeholder="Enter Last Name" value="<?php echo $row['last_name'] ?>" required></td>
+                                <th><label>Additional Email</label></th>
+                                <td><input type="email" name="a_email" placeholder="Email" value="<?php echo $row['a_email'] ?>" required></td>
                             </tr>
+                          
                             <tr>
-                                <th><label>Email</label></th>
-                                <td><input type="email" name="email" placeholder="Email" value="<?php echo $row['email'] ?>" readonly></td>
-                            </tr>
-                            <tr>
-                                <th><label>Password</label></th>
-                                <td><input type="password" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter division code" value="<?php echo $row['pwd'] ?>" required></td>
-                            </tr>
-                            <tr>
-                                <th><label>TP Number</label></th>
+                                <th><label>Personal TP Number</label></th>
                                 <td><input type="text" name="tp" pattern="[0]{1}[0-9]{9}" placeholder="Enter TP No(eg:0712345678)" value="<?php echo $row['tp'] ?>" required></td>
+                            </tr>
+                            <tr>
+                                <th><label>Company TP Number</label></th>
+                                <td><input type="text" name="ctp" pattern="[0]{1}[0-9]{9}" placeholder="Enter TP No(eg:0712345678)" value="<?php echo $row['ctp'] ?>" required></td>
                             </tr>
                             </table>
                             <br/>
@@ -73,14 +71,14 @@
                         <?php
                                 if(isset($_POST['update']))
                                 {
-                                    $first_name = $_POST['first_name'];
-                                    $last_name = $_POST['last_name'];
-                                    $email = $_POST['email'];
-                                    $pwd = $_POST['pwd'];
+                                    $addr = $_POST['addr'];
+                                    $ctp = $_POST['ctp'];
+                                    $a_email = $_POST['a_email'];
+                                   
                                     $tp = $_POST['tp'];
 
 
-                                    $query = "UPDATE manager SET first_name='$first_name', last_name='$last_name', email=' $email', pwd='$pwd', tp='$tp'  ";
+                                    $query = "UPDATE manager SET tp='$tp' , addr='$addr', ctp='$ctp', a_email=' $a_email'";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)

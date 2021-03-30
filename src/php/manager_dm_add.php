@@ -28,11 +28,11 @@
                             
                             <tr>
                                 <th><label>First name</label></th>
-                                <td><input type="text" name="first_name" placeholder="Enter First Name" required></td>
+                                <td><input type="text" name="first_name" pattern="[a-zA-Z]+" title="Only Upper case and Lower case Letters Allowed" placeholder="Enter First Name" required></td>
                             </tr>
                             <tr>
                                 <th><label>Last name</label></th>
-                                <td><input type="text" name="last_name" placeholder="Enter Last Name" required></td>
+                                <td><input type="text" name="last_name" pattern="[a-zA-Z]+" title="Only Upper case and Lower case Letters Allowed" placeholder="Enter Last Name" required></td>
                             </tr>
                             <tr>
                                 <th><label>E-mail</label></th>
@@ -50,7 +50,8 @@
                                 <th><label>Division</label></th>
                                     <td> 
                                    
-                                        <select name="division" id="division" value="<?= $division?>">
+                                        <select name="division" id="division" value="<?= $division?>" required>
+                                            <option value="" selected disabled hidden>Select a division</option>
                                             <option value="Ampara">Ampara</option>
                                             <option value="Anuradhapura">Anuradhapura</option>
                                             <option value="Badulla">Badulla</option>
@@ -106,7 +107,7 @@
         if(isset($_GET['add'])){
            //echo "Done";                                                                                                 
            
-           $sql="INSERT INTO div_manager (first_name, last_name, email,tp, division, no_employee) VALUES('".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['tp']."','".$_GET['division']."','".$_GET['no_employee']."')";
+           $sql="INSERT INTO div_manager (first_name, last_name, email,tp,addr, division) VALUES('".$_GET['first_name']."','".$_GET['last_name']."','".$_GET['email']."','".$_GET['tp']."','".$_GET['addr']."','".$_GET['division']."')";
            $result=mysqli_query($connection,$sql);
                
            
@@ -116,13 +117,13 @@
            if($result){
                //echo "Successful";
               // header( 'Location: manager_dm_add.php ');
-              echo '<script> alert("Successfully Inserted"); </script>';
+              echo '<script> alert("Data Inserted Successfully"); </script>';
 
                 // $emailFrom ="mrbeemanager@gmail.com";
                 $subject ="Activate the account & Change the Password ";
                 $body="HI Mr/Mrs ".$_GET['last_name']." .Welcome to our Bee keeping community and Thank You for Joining with us. Herewith we sent login informations for your Account. After the log in you should change your password because of security purpose.
                 your user name = ".$_GET['email']."
-                your password=div_man@123.
+                your password=Div_man@123.
                 (You can activate your account by using these User Credentials.)
                 Thank You.
                 Your faithfully,
@@ -130,9 +131,9 @@
                 ;
                 $headers="From: mrbeemanager@gmail.com";
                     if (mail($_GET['email'],$subject,$body,$headers)) {
-                        echo '<script> alert("mail sent succesfully"); </script>';
+                        echo '<script> alert("mail sent successfully"); </script>';
                     }else {
-                    echo '<script> alert("Unable to send email. Please try again to send the email manualy."); </script>';
+                    echo '<script> alert("Unable to send email. Please try again to send the email."); </script>';
                     }
              
 

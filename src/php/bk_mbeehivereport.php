@@ -6,7 +6,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>Full beehive report</title>
+		<title>Monthly Beehive Report</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -18,38 +18,45 @@ session_start();
 
 
   <div class="bhivecontainer">
-
-            <br/><br/>
+<p>Monthly Beehive Report</p>
+            <br/><br/><br/>
      
            
-            <center>
-            <table >
-                <tr style="background-color:#547454">
-                <th>Beehive Record No</th>
-                <th>Start date</th>
-                <th>Inspection date</th>
-                <th>Inspection time</th>
-                <th>Active status and temperament of bees</th>
-                <th>Weight of beehive</th>
-                <th>Weather status</th>
-                <th>Changes made to beehive</th>
-                <th>Number of frames</th>
-                <th>Signs of diseases</th>
-                <th>Treatments</th>
-                <th>Status of queen bee</th>
-                <th>Number of bee colonies in beehive</th>
-                </tr>
+            
 
 
 			<?php
 if(isset($_POST['enter'])){
+
+
         
         
-$sql = "SELECT BeehiveRecNo,sdate,idate,itime,actstatus,wbeehive,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE beehiveno='".$_SESSION['beehiveno']."' AND userID='".$_SESSION['userid']."' AND is_deleted=0  AND MONTH(date)='".$_POST['mon']. "'";
+$sql = "SELECT BeehiveRecNo,sdate,idate,itime,actstatus,wbeehive,wstatus,temperament,cbeehive,noframes,disease,treatment,sqbee,bcolony,unit FROM beehive WHERE beehiveno='".$_SESSION['beehiveno']."' AND userID='".$_SESSION['userid']."' AND is_deleted=0  AND MONTH(date)='".$_POST['mon']. "'";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
+$count=mysqli_num_rows($result);
+if($count>=1){
 while($row=mysqli_fetch_assoc($result)){
+
+        
+        echo '<center><table ><tr style="background-color:#547454">';
+        echo '<th>Beehive Record No</th>';
+        echo '<th>Start Date</th>';
+        echo ' <th>Inspection Date</th>';
+        echo ' <th>Inspection Time</th>';
+        echo ' <th>Active Status</th>';
+        echo ' <th>Temperament</th>';
+        echo ' <th>Weight of Beehive</th>';
+        echo ' <th>Weather Status</th>';
+        echo ' <th>Changes Made to Beehive</th>';
+        echo ' <th>Number of Frames</th>';
+        echo ' <th>Signs of Diseases</th>';
+        echo ' <th>Treatments</th>';
+        echo ' <th>Status of Queen Bee</th>';
+        echo ' <th>Number of Bee Colonies in Beehive</th>';
+        echo ' </tr>';
+
         echo '<tr >';
         echo '<td>';
         echo $row['BeehiveRecNo'];
@@ -67,7 +74,10 @@ while($row=mysqli_fetch_assoc($result)){
         echo $row['actstatus'];
         echo '</td>';
         echo '<td>';
-        echo $row['wbeehive']." Kg";
+        echo $row['temperament'];
+        echo '</td>';
+        echo '<td>';
+        echo $row['wbeehive']." ".$row['unit'];
         echo '</td>';
         echo '<td>';
         echo $row['wstatus'];
@@ -97,6 +107,12 @@ while($row=mysqli_fetch_assoc($result)){
                 
 		
                 }}
+                else{
+
+                        
+                        echo "<center>RESULT NOT FOUND<center>";
+                
+                }}
                 
                 
 
@@ -106,7 +122,7 @@ while($row=mysqli_fetch_assoc($result)){
             </table></center>
 
             </br>
-    </br>
+    </br><br/>
     <form  action="bk_fbeehivereport.php" method="post" >
            
         <div class="row">

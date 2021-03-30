@@ -4,13 +4,12 @@
 		
 		
 
-$username_error=$fullname_error=$userAddress_error=$userEmail_error=$userTele_error=$userPassword_error=$repassword_error="";
-$username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword="";
 
     if(isset($_POST['submit'])){
+<<<<<<< HEAD
 
         if (empty($_POST["username"])) {
-            $username_error = "</br>*User Name No is Required";
+            $username_error = "</br>*User Name is Required";
           } else {
             $username = test_input($_POST["username"]);
             if (!preg_match("/^[a-zA-Z-' ]*$/",$username)) {
@@ -76,9 +75,11 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
 		  }
 
           if($username_error=='' and $fullname_error=='' and $userAddress_error=='' and $userEmail=='' and $userTele_error=='' and $userPassword_error=='' and $repassword_error==''){
+=======
+>>>>>>> db46ba53b473ae6f50517f8dc822be3cd3ff1317
         
         $date=date("Y/m/d");
-		$sql="INSERT INTO customer (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['username']."','".$_POST['fullname']."','".$_POST['userAddress']."','".$_POST['userEmail']."','".$_POST['userTelephone']."','".$_POST['userPassword']."')";
+		$sql="INSERT INTO customer (username,fullname,userAddress,userEmail,userTele,userPassword) VALUES('".$_POST['username']."','".$_POST['fullname']."','".$_POST['userAddress']."','".$_POST['userEmail']."','".$_POST['userTele']."','".$_POST['userPassword']."')";
 			
 		$result=mysqli_query($connection,$sql);
         if($result){
@@ -100,14 +101,7 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
         }
         
         }
-        }
 
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-      }
 
 ?>
 
@@ -127,32 +121,30 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
 			<h1>Sign Up</h1>
 			<form method="POST" action="" >
 				<p>User Name : </p>
-        <div class="error"><?= $username_error?></div>
-				<input type="text" name="username" placeholder="Enter your User name" value="<?= $username?>">
+				<input type="text" name="username" placeholder="Enter your User name" required>
 				
 				<p>Name : </p>
-        <div class="error"><?= $fullname_error?></div>
-				<input type="text" name="fullname" placeholder="Enter your Name" value="<?= $fullname?>"/>
+				<input type="text" name="fullname" placeholder="Enter your Name" required/>
 				
 				<p>Adress : </p>
-        <div class="error"><?= $userAddress_error?></div>
-				<input type="text" name="userAddress" placeholder="Enter your address" value="<?= $userAddress?>"/>
+				<input type="text" name="userAddress" placeholder="Enter your address" required/>
 				
 				<p>Email : </p>
-        <div class="error"><?= $userEmail_error?></div>
-				<input type="text" name="userEmail" placeholder="Enter your email address" value="<?= $userEmail?>"/>
+				<input type="text" name="userEmail" placeholder="Enter your email address" required/>
 				
 				<p>Telephone : </p>
-        <div class="error"><?= $userTele_error?></div>
-				<input type="text" name="userTele" placeholder="Enter your telephone no" value="<?= $userTele?>"/>
+				<input type="text" name="userTele" placeholder="Enter your telephone no" required/>
 				
 				<p>Password : </p>
-        <div class="error"><?= $userPassword_error?></div>
-				<input type="password" name="userPassword" placeholder="Enter your password" value="<?= $userPassword?>"/>
+				<input type="password" name="userPassword" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required/>
 				
 				<p>Re-enter the Password : </p>
-        <div class="error"><?= $repassword_error?></div>
+<<<<<<< HEAD
+        <div class="error"><?= $repassword_error?></div> 
 				<input type="password" name="repassword" placeholder="Enter your password" value="<?= $repassword?>" /><br />
+=======
+				<input type="password" name="repassword" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required /><br />
+>>>>>>> db46ba53b473ae6f50517f8dc822be3cd3ff1317
 				
 				<br />
 				

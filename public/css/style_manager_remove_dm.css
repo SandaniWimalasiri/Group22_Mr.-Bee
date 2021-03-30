@@ -92,7 +92,7 @@ input[type=text]{
 }
 
 /*design the input emails*/
-input[type=email]{
+input[type=email] , input[type=file]{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 16px;
   width: 80%;
@@ -119,7 +119,8 @@ input[type=date]{
   background-color: rgba(245, 222, 179, 0.747);
 }
 
-textarea{
+/*design the input telephone numbers*/
+input[type=tel]{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 16px;
   width: 80%;
@@ -130,6 +131,24 @@ textarea{
   border-radius: 2px;
   box-sizing: border-box;
   background-color: rgba(245, 222, 179, 0.747);
+}
+
+textarea{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  width: 80%;
+  height: 70px;
+  padding: 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(2, 32, 66);
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color: rgba(245, 222, 179, 0.747);
+}
+
+.des textarea{
+  height: 170px;
 }
 
 select{

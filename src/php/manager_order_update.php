@@ -78,12 +78,13 @@
                             </tr>
                             <tr>
                                 <th><label>Complete Date</label></th>
-                                <td><input type="date" name="complete_date"></td>
+                                <td><input type="date" name="complete_date" value="<?php echo $row['complete_date'] ?>" max="<?php echo date("Y-m-d"); ?>"></td>
                             </tr>
                             <tr>
                                 <th><label>Order Status</label></th>
                                 <td>    
-                                        <select name="od_status" id="od_status" value="<?php echo $row['od_status'] ?>">
+                                        <select name="od_status" id="od_status" value="">
+                                            <option value=""><?php echo $row['od_status'] ?></option>
                                             <option value="on-going">on-going</option>
                                             <option value="completed">completed</option>
                                         </select>
@@ -118,7 +119,7 @@
                                     }
                                     else
                                     {
-                                        echo '<script> alert("Data Not Updated"); </script>';
+                                        echo '<script> alert("Failed to update the database"); </script>';
                                     }
                                 }
                     ?>

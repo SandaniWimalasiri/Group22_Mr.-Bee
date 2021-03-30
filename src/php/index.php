@@ -121,7 +121,7 @@
 						if (mail($email,$subject,$body,$headers)) {
 							echo "mail sent succesfully";
 						}else {
-							echo "Unable to send email. Please try again to send the email manualy.";
+							echo "Unable to send email. Please try again to send the email.";
 							
 						}
 					}
