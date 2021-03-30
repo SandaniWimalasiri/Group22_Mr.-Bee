@@ -38,8 +38,8 @@ $currentpassword=$newpassword=$repassword="";
               $repassword_error = "</br>*Please re-enter correct new password";
             }
               else{
-                if (strlen($_POST["newpassword"]) <= '8') {
-                  $newpassword_error = "<br/>*Your Password Must Contain At Least 8 Characters";
+                if (strlen($_POST["newpassword"]) <= '6') {
+                  $newpassword_error = "<br/>*Your Password Must Contain At Least 6 Characters";
                 }
                 elseif(!preg_match("#[0-9]+#",$newpassword)) {
                   $newpassword_error= "<br/>*Your Password Must Contain At Least 1 Number";
