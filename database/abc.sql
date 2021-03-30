@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 05:06 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Mar 30, 2021 at 08:45 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -54,11 +55,11 @@ CREATE TABLE `beehive` (
 --
 
 INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, `itime`, `actstatus`, `temperament`, `wbeehive`, `unit`, `wstatus`, `cbeehive`, `noframes`, `disease`, `treatment`, `sqbee`, `bcolony`, `is_deleted`, `date`) VALUES
-(1, 3, 1, '2020-07-07', '2020-07-09', '08:59:00.00', 'Active', 'Calm', '1.354', 'Kg', 'Humidity: 81%\r\nWind: 6Km/h', 'Add', 2, 'none', 'none', 'No Fresh Eggs', 3, 0, '2020-07-11'),
-(2, 3, 2, '2020-08-10', '2020-08-14', '09:43:00.00', 'Strongly Active', 'Calm', '3.546', 'Kg', 'Humidity: 68%\r\nWind: 4.7Km/h', 'Removal', 2, 'None', 'None', ' Queen Cell Introduced', 4, 0, '2020-08-16'),
-(3, 3, 3, '2020-09-16', '2020-09-18', '16:09:00.00', 'Strongly Active', 'Calm', '22.000', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 3, 1, '2020-09-20'),
-(4, 4, 1, '2020-07-09', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '1.256', 'g', 'Humidity: 58% \r\nWind: 4.2Km/h', 'Switch', 1, 'None', 'None', 'No Fresh Eggs', 3, 0, '2021-03-10'),
-(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '2020-08-26');
+(1, 3, 1, '2020-07-07', '2020-07-09', '08:59:00.00', 'Active', 'Calm', '1.354', 'Kg', 'Humidity: 81%\r\nWind: 6Km/h', 'Add', 2, 'none', 'none', 'No Fresh Eggs', 3, 0, '2020-10-26'),
+(2, 3, 2, '2020-08-10', '2020-08-14', '09:43:00.00', 'Strongly Active', 'Calm', '3.546', 'Kg', 'Humidity: 68%\r\nWind: 4.7Km/h', 'Removal', 2, 'None', 'None', ' Queen Cell Introduced', 4, 0, '2021-03-26'),
+(3, 3, 3, '2020-09-16', '2020-09-18', '16:09:00.00', 'Strongly Active', 'Calm', '22.000', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 3, 1, '2021-03-26'),
+(4, 4, 1, '2020-07-09', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '1.256', 'g', 'Humidity: 58% \r\nWind: 4.2Km/h', 'Switch', 1, 'None', 'None', 'No Fresh Eggs', 3, 0, '0000-00-00'),
+(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -111,8 +112,7 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `role`) VALUES
 (1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', '0719876541', 'sandani1996', 0),
-(2, 'ishara', 'Ishara Wijekoon', 'no: 32, Digana, Kandy', 'ishara1996@gmail.com', '0712299865', 'Kmd9t32', 0),
-(5, 'qq', 'aa', 'qq', 'aa', '122', '123Qwe', 0);
+(2, 'ishara', 'Ishara Wijekoon', 'no: 32, Digana, Kandy', 'ishara1996@gmail.com', '0712299865', 'Kmd9t32', 0);
 
 -- --------------------------------------------------------
 
@@ -138,8 +138,8 @@ CREATE TABLE `div_manager` (
 --
 
 INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `addr`, `pwd`, `emp_status`, `division`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, yatiyana road,Ampara', 'Div_man@123', 'Divisional_Manager', 'Ampara', 1),
-(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', '0711234567', '26/5, Nadun uyana, weraduwa, Matara', 'Div_man@123', 'Divisional_Manager', 'Matara', 0);
+(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, yatiyana road,Ampara', 'Div_man@123', 'Divisional_Manager', 'Ampara', 0),
+(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', '0711234561', '26/5, Nadun uyana, weraduwa, Matara', 'Div_man@123', 'Divisional_Manager', 'Matara', 0);
 
 -- --------------------------------------------------------
 
@@ -198,12 +198,13 @@ CREATE TABLE `harvest` (
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `unit`, `is_deleted`) VALUES
 (1, 3, 1, '2020-11-11', '2020-11-01', '08:37:00.00', 'Raw Honey', '2.134', 'Kg', 0),
-(2, 3, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '1.724', 'Kg', 0),
+(2, 2, 1, '2020-11-11', '2020-11-02', '09:49:00.00', 'Royal Gel', '1.724', 'Kg', 0),
 (3, 3, 2, '2020-11-11', '2020-11-01', '08:50:00.00', 'Bee Colonies', '2.000', '', 0),
 (4, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
 (5, 2, 2, '2021-03-16', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
-(6, 2, 1, '2021-03-28', '2021-03-08', '14:47:00.00', 'Royal Gel', '8.341', 'Kg', 0),
-(7, 3, 1, '2021-03-28', '2021-03-17', '10:31:00.00', 'Bee Colonies', '3.000', ' ', 1);
+(6, 4, 1, '2021-03-28', '2021-03-08', '14:47:00.00', 'Royal Gel', '8.341', 'Kg', 0),
+(7, 3, 1, '2021-03-28', '2021-03-17', '10:31:00.00', 'Bee Colonies', '3.000', ' ', 1),
+(8, 3, 2, '2021-03-29', '2021-03-15', '16:29:00.00', 'Royal Gel', '3.092', 'Kg', 0);
 
 -- --------------------------------------------------------
 
@@ -243,15 +244,18 @@ CREATE TABLE `manager` (
   `email` varchar(25) NOT NULL,
   `pwd` varchar(10) NOT NULL,
   `tp` varchar(10) NOT NULL,
-  `emp_status` varchar(7) NOT NULL DEFAULT 'manager'
+  `emp_status` varchar(7) NOT NULL DEFAULT 'manager',
+  `addr` varchar(50) NOT NULL,
+  `ctp` varchar(10) NOT NULL,
+  `a_email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `manager`
 --
 
-INSERT INTO `manager` (`first_name`, `last_name`, `email`, `pwd`, `tp`, `emp_status`) VALUES
-('Nishantha', 'Perera', 'perera123@gmail.com', 'Perera123', '0712647876', 'manager');
+INSERT INTO `manager` (`first_name`, `last_name`, `email`, `pwd`, `tp`, `emp_status`, `addr`, `ctp`, `a_email`) VALUES
+('Sunil', 'Gamage', 'sunilG123@gmail.com', 'Sunil123@', '0767347899', 'manager', 'Nature bee honey company, Digana, Kandy.', '0232289456', ' mrbeemanager@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -278,10 +282,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `product_name`, `product_id`, `cus_name`, `customer_id`, `address`, `email`, `tp`, `order_date`, `complete_date`, `od_status`) VALUES
-(1, 'Organic Raw Bee Honey', 4, 'ishara', 5, '	\r\nno26, 5th lane, kandy.', 'ishara@gmail.com', 711234567, '2021-03-01', '0000-00-00', 'on-going'),
-(2, 'sample', 2, 'sample', 16, 'sample', 'sample@gmail.com', 719834567, '2021-03-08', '2021-03-22', 'completed'),
-(3, 'sample2', 3, 'sandani', 2, 'abc', 'abc@email.com', 711234567, '2021-03-09', '2021-03-24', 'completed'),
-(4, 'sample2', 6, 'sandani', 2, 'abc', 'abc@email.com', 711234567, '2021-03-09', '0000-00-00', 'on-going');
+(1, 'Organic Raw Bee Honey', 4, 'ishara', 2, '	\r\nno32, digana, kandy.', 'ishara1996@gmail.com', 712299865, '2021-03-01', '2021-03-29', 'completed'),
+(2, 'Organic Bee Honey with Comb', 3, 'sample', 16, 'sample', 'sample@gmail.com', 719834567, '2021-03-08', '2021-03-22', 'completed'),
+(3, 'Organic Bee Honey with Sour Sup', 2, 'Sandani', 1, 'no 26, 5th lane, weraduwa,Matara', 'sandaniwimalasiri@gmail.com', 719876541, '2021-03-15', '0000-00-00', 'on-going');
 
 -- --------------------------------------------------------
 
@@ -306,11 +309,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `pname`, `descr`, `price`, `rrp`, `quantity`, `img`, `date_added`, `is_deleted`) VALUES
-(1, 'Organic Bee Honey with Mixed Nuts', '<p>Pure Organic Bee Honey with Mixed Nuts of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Almonds, Macadamia nuts and Hazelnuts.</li>\r\n<li>Exquisite Taste.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '500.00', '0.00', 30, 'p1.jpg', '2020-11-21 17:55:22', 0),
+(1, 'Organic Bee Honey with Nuts', '<p>Pure Organic Bee Honey with Mixed Nuts of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Almonds, Macadamia nuts and Hazelnuts.</li>\r\n<li>Exquisite Taste.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.00', '600.00', 30, 'p1.jpg', '2020-11-21 17:55:22', 0),
 (2, 'Organic Bee Honey with Sour Sup', '<p>Pure Organic Bee Honey with Sour Sup of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Sour Sup Taste.</li>\r\n<li>Exquisite Flavour.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health with Antioxidants.</li>\r\n</ul>', '450.00', '500.00', 25, 'p2.jpg', '2020-11-23 18:52:49', 0),
-(3, 'Organic Bee Honey with Comb', '<p>Pure Organic Bee Honey with Honeycomb Included.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Honeycomb Taste.</li>\r\n<li>Exquisite Flavor.</li>\r\n<li>Rich with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.99', '500.00', 23, 'p3_1.jpg', '2020-11-20 18:47:56', 0),
+(3, 'Organic Bee Honey with Comb', '<p>Pure Organic Bee Honey with Honeycomb Included.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Honeycomb Taste.</li>\r\n<li>Exquisite Flavor.</li>\r\n<li>Rich with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.99', '500.00', 23, 'p3_1.jpg', '2020-11-20 18:47:56', 1),
 (4, 'Organic Raw Bee Honey', '<p>Pure Organic Raw Bee Honey.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Natural Honey Taste.</li>\r\n<li>Rich with Antioxidants.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '400.00', '420.00', 35, 'p0_7.jpg', '2020-11-25 17:42:04', 0),
-(8, 'sample ', 'dsddddsddsdsd', '250.00', '200.00', 20, 'honey5.jpg', '2020-11-24 04:56:57', 0);
+(6, 'Pure raw bee honey jar', 'weight 300g. Honey is preserve in its purest natural form. Rich with Antioxidants.\r\nEnhances Your Good Health.', '600.00', '750.00', 3, '', '2021-03-30 00:47:34', 0);
 
 --
 -- Indexes for dumped tables
@@ -398,13 +401,13 @@ ALTER TABLE `beekeeper`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `div_manager`
 --
 ALTER TABLE `div_manager`
-  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `feeding`
@@ -416,7 +419,7 @@ ALTER TABLE `feeding`
 -- AUTO_INCREMENT for table `harvest`
 --
 ALTER TABLE `harvest`
-  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `infohub`
@@ -428,13 +431,13 @@ ALTER TABLE `infohub`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
