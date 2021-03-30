@@ -10,7 +10,7 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
     if(isset($_POST['submit'])){
 
         if (empty($_POST["username"])) {
-            $username_error = "</br>*User Name No is Required";
+            $username_error = "</br>*User Name is Required";
           } else {
             $username = test_input($_POST["username"]);
             if (!preg_match("/^[a-zA-Z-' ]*$/",$username)) {
@@ -151,7 +151,7 @@ $username=$fullname=$userAddress=$userEmail=$userTele=$userPassword=$repassword=
 				<input type="password" name="userPassword" placeholder="Enter your password" value="<?= $userPassword?>"/>
 				
 				<p>Re-enter the Password : </p>
-        <div class="error"><?= $repassword_error?></div>
+        <div class="error"><?= $repassword_error?></div> 
 				<input type="password" name="repassword" placeholder="Enter your password" value="<?= $repassword?>" /><br />
 				
 				<br />

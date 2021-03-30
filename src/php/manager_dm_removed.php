@@ -15,7 +15,8 @@
         <div class="content">
             
         <center>
-            <h2>Divisional managers' Details</h2>
+            <h2>Deleted Divisional managers' Details</h2>
+            </center>
             <br>
                 <table class="div_man">
                     <tr>
@@ -25,7 +26,6 @@
                         <th>Email</th>
                         <th>TP No.</th>
                         <th>Address</th>
-                        <th>Employeement Status</th>
                         <th>Division</th>
                         
                         <th style="text-align:center;">Replace</th>
@@ -47,7 +47,6 @@
                             <td><?php echo $result['email'] ?></td>
                             <td><?php echo $result['tp'] ?></td>
                             <td><?php echo $result['addr'] ?></td>
-                            <td><?php echo $result['emp_status'] ?></td>
                             <td><?php echo $result['division'] ?></td>
                            
 
@@ -57,7 +56,7 @@
                             </form>
                             <form action="manager_dm_removed2.php" method="post">
                                     <input type="hidden" name="div_id" value="<?php echo $result['div_id']; ?>">
-                                    <td><button class="btn7" type="submit" name="delete1" onclick="return confirm('Are you sure? This will permenantly delete the data!')">Remove</a></td>
+                                    <td><button class="btn7" type="submit" name="delete1" onclick="return confirm('Are you sure? This will permanently delete the data!')">Remove</a></td>
                             </form>
                            
                     
@@ -67,7 +66,7 @@
                     }
                     ?> 
                 </table>
-            </center>
+           
             <br>
             <button class="btn6" type="submit" name="back" onclick="document.location='manager_dm.php'"><b>Back</b></button>
         </div>
