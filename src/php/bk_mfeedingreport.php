@@ -6,7 +6,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>feeding report</title>
+		<title>Monthly Feeding Report</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -21,21 +21,12 @@ session_start();
 
 
 <div class="bhivecontainer">
-
-<br/><br/>
+<p>Monthly Feeding Report</p>
+<br/><br/><br/>
 
 </form>		
 
-           <center> <table >
-                <tr style="background-color:#547454">
-    
-                <th>Feeding Record no</th>
-                <th>Feeding date</th>
-                <th>Feeding time</th>
-                <th>Feeding type</th>
-                <th>Feeding amount</th>
-                
-                </tr>
+           
 
 			<?php
 
@@ -45,11 +36,25 @@ session_start();
 
     if(isset($_POST['enter'])){
    
-    $sql = "SELECT FeedingRecNo,fdate,ftime,feedingtype,famount FROM feeding WHERE beehiveno='".$_SESSION['beehiveno']."' AND userID='".$_SESSION['userid']."' AND is_deleted=0  AND MONTH(date)='".$_POST['mon']. "'";
+    $sql = "SELECT FeedingRecNo,fdate,ftime,feedingtype,famount,unit FROM feeding WHERE beehiveno='".$_SESSION['beehiveno']."' AND userID='".$_SESSION['userid']."' AND is_deleted=0  AND MONTH(date)='".$_POST['mon']. "'";
     mysqli_query($connection, $sql);
     $result = mysqli_query($connection,$sql);
 
+$count=mysqli_num_rows($result);
+if($count>=1){
+
 		while($row=mysqli_fetch_assoc($result)){
+
+            echo '<center> <table ><tr style="background-color:#547454">';
+    
+            echo '    <th>Feeding Record No</th>';
+            echo '    <th>Feeding Date</th>';
+            echo '    <th>Feeding Time</th>';
+            echo '    <th>Feeding Type</th>';
+            echo '    <th>Feeding Amount</th></tr>';
+                
+                
+
             
             echo '<tr >';
             echo '<td>';
@@ -65,7 +70,7 @@ session_start();
         echo $row['feedingtype'];
         echo '</td>';
         echo '<td>';
-        echo $row['famount'];
+        echo $row['famount']." ".$row['unit'];
         echo '</td>';
 
         echo '</tr>';
@@ -73,7 +78,14 @@ session_start();
         
         
 		
-        }}?>
+       }}
+                else{
+
+                        
+                        echo "<center>RESULT NOT FOUND<center>";
+                
+                }}
+?>
         
         
 
