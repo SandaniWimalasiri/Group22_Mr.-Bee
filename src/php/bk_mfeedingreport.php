@@ -24,7 +24,14 @@ session_start();
 <p>Monthly Feeding Report</p>
 <br/><br/><br/>
 
-</form>		
+		
+<center> <table ><tr style="background-color:#547454">
+    
+    <th>Feeding Record No</th>
+    <th>Feeding Date</th>
+    <th>Feeding Time</th>
+    <th>Feeding Type</th>
+   <th>Feeding Amount</th></tr>
 
            
 
@@ -40,18 +47,9 @@ session_start();
     mysqli_query($connection, $sql);
     $result = mysqli_query($connection,$sql);
 
-$count=mysqli_num_rows($result);
-if($count>=1){
 
 		while($row=mysqli_fetch_assoc($result)){
 
-            echo '<center> <table ><tr style="background-color:#547454">';
-    
-            echo '    <th>Feeding Record No</th>';
-            echo '    <th>Feeding Date</th>';
-            echo '    <th>Feeding Time</th>';
-            echo '    <th>Feeding Type</th>';
-            echo '    <th>Feeding Amount</th></tr>';
                 
                 
 
@@ -79,12 +77,7 @@ if($count>=1){
         
 		
        }}
-                else{
-
-                        
-                        echo "<center>RESULT NOT FOUND<center>";
-                
-                }}
+               
 ?>
         
         
