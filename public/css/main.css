@@ -74,8 +74,8 @@ nav{
 	font-family:calibri;
 	width:500px;
 	position:absolute;
-	left:10%;
-	top:70%;
+	left:20%;
+	top:50%;
 	transform: translate(-20%,-50%);
 	
 }
@@ -90,7 +90,7 @@ nav{
 }
 .name h1{
 	font-family: Poppins;
-	font-size: 40px;
+	font-size: 50px;
 	margin:0px;
 	letter-spacing: 3px;
 	color:#26495c;
@@ -106,8 +106,8 @@ nav{
 	padding:0;
 	font-family: 'poppins', sans-serif;
 	position:absolute;
-	left:50%;
-	top:2%;
+	left:40%;
+	top:10%;
 
 }
 .honeycomb{
@@ -325,6 +325,23 @@ input[type=submit] {
 }
 
 input[type=submit]:hover{
+
+  background-color: #202020	;
+  
+
+}
+input[type=button] {
+  background-color: #2b3528;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  
+}
+
+input[type=button]:hover{
 
   background-color: #202020	;
   
