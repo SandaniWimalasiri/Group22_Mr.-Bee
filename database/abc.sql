@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 03:55 PM
+-- Generation Time: Mar 30, 2021 at 05:06 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -75,7 +75,6 @@ CREATE TABLE `beekeeper` (
   `userEmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `userTele` int(20) NOT NULL,
   `userPassword` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `userRole` int(10) NOT NULL,
   `div_id` int(11) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -84,11 +83,14 @@ CREATE TABLE `beekeeper` (
 -- Dumping data for table `beekeeper`
 --
 
-INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`, `div_id`, `is_deleted`) VALUES
-(1, 'Anupama', 'Anupama Sellahannadi', ' 3/2, Artigala, Godagama', 'anupama98@gmail.com', 112456724, 'Anupama98', 0, 1, 0),
-(2, 'Kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, 'KAMAL@11a', 0, 1, 0),
-(3, 'Madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'Madhavi98', 0, 2, 0),
-(4, 'Ranmini', 'Ranmini Nisansa', 'No 1/5, Galagedara, Padukka.', 'ranminNi@gmail.com', 112343451, 'RanminiP@rera98', 0, 1, 0);
+INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `div_id`, `is_deleted`) VALUES
+(1, 'Anupama', 'Anupama Sellahannadi', ' 3/2, Artigala, Godagama', 'anupama98@gmail.com', 112456724, 'Anupama98', 1, 0),
+(2, 'Kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, 'KAMAL@11a', 1, 0),
+(3, 'Madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'Madhavi98', 1, 0),
+(4, 'Ranmini', 'Ranmini Nisansa', 'No 1/5, Galagedara, Padukka.', 'ranminNi@gmail.com', 112343451, 'RanminiP@rera98', 1, 0),
+(5, 'Nirmani', 'Gamage', 'no:35, dickwella, Matara', 'nir123@gmail.com', 114573256, 'W234dr', 2, 0),
+(6, 'Kalpa', 'Perera', '28,Maddawaththa,silva Lane,Matara', 'kkperera@gmail.com', 712256842, 'KaL86@', 2, 0),
+(7, 'Nihal', 'Perera', '28,Ilma road,Hakmana.', 'nperea12@gmail.com', 112846842, 'niHal98', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -138,8 +140,10 @@ CREATE TABLE `div_manager` (
 --
 
 INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `addr`, `pwd`, `emp_status`, `division`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, yatiyana road,Ampara', 'Div_man@123', 'Divisional_Manager', 'Ampara', 0),
-(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', '0711234561', '26/5, Nadun uyana, weraduwa, Matara', 'Div_man@123', 'Divisional_Manager', 'Matara', 0);
+(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, Godagama road,colombo.', 'Div_man@123', 'Divisional_Manager', 'Colombo', 0),
+(2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', '0711234561', '26/5, Nadun uyana, weraduwa, Matara', 'Div_man@123', 'Divisional_Manager', 'Matara', 0),
+(4, 'Sanath', 'Dasanyaka', 'sanath65@gmail.com', '0762348621', 'n034/A,dikpitiya,Galle', 'Div_man@123', 'Divisional_Manager', 'Galle', 1),
+(5, 'Saman', 'Amarakoon', 'amarakoon12@gmail.com', '0112354678', '23,Isadeen road,Ampara', 'Div_man@123', 'Divisional_Manager', 'Ampara', 0);
 
 -- --------------------------------------------------------
 
@@ -395,7 +399,7 @@ ALTER TABLE `beehive`
 -- AUTO_INCREMENT for table `beekeeper`
 --
 ALTER TABLE `beekeeper`
-  MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -407,7 +411,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `div_manager`
 --
 ALTER TABLE `div_manager`
-  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `div_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `feeding`
