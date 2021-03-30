@@ -49,6 +49,7 @@ session_start(); ?>
                             </tr>
                             </table>
                             <br/>
+                            <input type="hidden" name='div_id' value="<?php echo $_GET['id']; ?>"/>
                         
                             <button class="btn6" type="submit" name="add" ><b>Add</b></button>
                        
@@ -66,7 +67,7 @@ session_start(); ?>
            //echo "Done";                                                                                                 
            
            
-           $sql="INSERT INTO beekeeper ( userName, fullName, userAddress, userEmail, userTele) VALUES('".$_GET['userName']."','".$_GET['fullName']."','".$_GET['userAddress']."','".$_GET['userEmail']."','".$_GET['userTele']."')";
+           $sql="INSERT INTO beekeeper ( userName, fullName, userAddress, userEmail, userTele,div_id) VALUES('".$_GET['userName']."','".$_GET['fullName']."','".$_GET['userAddress']."','".$_GET['userEmail']."','".$_GET['userTele']."','".$_GET['div_id']."')";
            $result=mysqli_query($connection,$sql);
            //$result=$connection->query($sql);
            //print_r($result);

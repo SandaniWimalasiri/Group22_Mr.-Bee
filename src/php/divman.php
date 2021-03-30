@@ -207,7 +207,8 @@ $result1 = mysqli_query($connection,$sql1);
             <br>
             <div class="viewform">
                     
-                        <button class="btn6" type="submit" name="submit" onclick="document.location='divman_bk_add.php'">Add Beekeeper </button>
+                        <button class="btn6" type="submit" name="submit" onclick="addBk(<?php echo $_SESSION['div_id']; ?>)">Add Beekeeper </button>
+                    
                         <button class="btn6" type="submit" name="submit" onclick="document.location='divman_deleted_bk.php'">Deactivated Beekeepers </button>
                     
                    
@@ -395,6 +396,11 @@ $result1 = mysqli_query($connection,$sql1);
 <script type="text/javascript">
     function changePassword(id) {
         window.location.href = './divma_resetpass.php?id=' + id
+    }
+</script>
+<script type="text/javascript">
+    function addBk(id) {
+        window.location.href = './divman_bk_add.php?id=' + id
     }
 </script>
 
