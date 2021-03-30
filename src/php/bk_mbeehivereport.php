@@ -22,7 +22,22 @@ session_start();
             <br/><br/><br/>
      
            
-            
+            <center><table ><tr style="background-color:#547454">
+        <th>Beehive Record No</th>
+        <th>Start Date</th>
+        <th>Inspection Date</th>
+        <th>Inspection Time</th>
+        <th>Active Status</th>
+         <th>Temperament</th>
+        <th>Weight of Beehive</th>
+        <th>Weather Status</th>
+        <th>Changes Made to Beehive</th>
+        <th>Number of Frames</th>
+       <th>Signs of Diseases</th>
+         <th>Treatments</th>
+        <th>Status of Queen Bee</th>
+       <th>Number of Bee Colonies in Beehive</th>
+        </tr>
 
 
 			<?php
@@ -35,27 +50,11 @@ $sql = "SELECT BeehiveRecNo,sdate,idate,itime,actstatus,wbeehive,wstatus,tempera
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
-$count=mysqli_num_rows($result);
-if($count>=1){
+
 while($row=mysqli_fetch_assoc($result)){
 
         
-        echo '<center><table ><tr style="background-color:#547454">';
-        echo '<th>Beehive Record No</th>';
-        echo '<th>Start Date</th>';
-        echo ' <th>Inspection Date</th>';
-        echo ' <th>Inspection Time</th>';
-        echo ' <th>Active Status</th>';
-        echo ' <th>Temperament</th>';
-        echo ' <th>Weight of Beehive</th>';
-        echo ' <th>Weather Status</th>';
-        echo ' <th>Changes Made to Beehive</th>';
-        echo ' <th>Number of Frames</th>';
-        echo ' <th>Signs of Diseases</th>';
-        echo ' <th>Treatments</th>';
-        echo ' <th>Status of Queen Bee</th>';
-        echo ' <th>Number of Bee Colonies in Beehive</th>';
-        echo ' </tr>';
+    
 
         echo '<tr >';
         echo '<td>';
@@ -107,12 +106,7 @@ while($row=mysqli_fetch_assoc($result)){
                 
 		
                 }}
-                else{
-
-                        
-                        echo "<center>RESULT NOT FOUND<center>";
                 
-                }}
                 
                 
 
