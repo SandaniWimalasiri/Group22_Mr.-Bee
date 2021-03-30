@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 10:42 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Mar 30, 2021 at 03:55 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -75,18 +76,19 @@ CREATE TABLE `beekeeper` (
   `userTele` int(20) NOT NULL,
   `userPassword` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `userRole` int(10) NOT NULL,
-  `div_id` int(11) NOT NULL
+  `div_id` int(11) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `beekeeper`
 --
 
-INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`, `div_id`) VALUES
-(1, 'Anupama', 'Anupama Sellahannadi', ' 3/2, Artigala, Godagama', 'anupama98@gmail.com', 112456724, 'Anupama98', 0, 1),
-(2, 'Kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, 'KAMAL@11a', 0, 1),
-(3, 'Madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'Madhavi98', 0, 2),
-(4, 'Ranmini', 'Ranmini Nisansa', 'No 1/5, Galagedara, Padukka.', 'ranminNi@gmail.com', 112343451, 'RanminiP@rera98', 0, 1);
+INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `userRole`, `div_id`, `is_deleted`) VALUES
+(1, 'Anupama', 'Anupama Sellahannadi', ' 3/2, Artigala, Godagama', 'anupama98@gmail.com', 112456724, 'Anupama98', 0, 1, 0),
+(2, 'Kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, 'KAMAL@11a', 0, 1, 0),
+(3, 'Madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'Madhavi98', 0, 2, 0),
+(4, 'Ranmini', 'Ranmini Nisansa', 'No 1/5, Galagedara, Padukka.', 'ranminNi@gmail.com', 112343451, 'RanminiP@rera98', 0, 1, 0);
 
 -- --------------------------------------------------------
 
