@@ -111,7 +111,7 @@ echo "failed";
     
 <?php
 
-$sql1 = "SELECT COUNT(userID) AS noofbeekeepers  FROM beekeeper WHERE div_id='".$_SESSION['div_id']."'";
+$sql1 = "SELECT COUNT(userID) AS noofbeekeepers  FROM beekeeper WHERE (div_id='".$_SESSION['div_id']."') AND (is_deleted=0)";
 mysqli_query($connection, $sql1);
 $noOfBeeKeepers = mysqli_query($connection,$sql1);
 $row2=mysqli_fetch_assoc($noOfBeeKeepers);
@@ -207,7 +207,8 @@ $result1 = mysqli_query($connection,$sql1);
             <br>
             <div class="viewform">
                     
-                        <button class="btn6" type="submit" name="submit" onclick="document.location='divman_bk_add.php'">Add </button>
+                        <button class="btn6" type="submit" name="submit" onclick="document.location='divman_bk_add.php'">Add Beekeeper </button>
+                        <button class="btn6" type="submit" name="submit" onclick="document.location='divman_deleted_bk.php'">Deactivated Beekeepers </button>
                     
                    
              </div>
@@ -226,7 +227,7 @@ $result1 = mysqli_query($connection,$sql1);
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM beekeeper WHERE div_id='".$_SESSION['div_id']."'" ;
+                    $sql = "SELECT * FROM beekeeper WHERE div_id='".$_SESSION['div_id']."' AND is_deleted=0" ;
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);
@@ -247,7 +248,7 @@ $result1 = mysqli_query($connection,$sql1);
                             </form>
                             <form action="divman_bk_delete.php" method="post">
                                     <input type="hidden" name="userID" value="<?php echo $result['userID']; ?>">
-                                    <td><button class="btn7" type="submit" name="delete" onclick="return confirm('Are you sure?')">Delete</button></td>
+                                    <td><button class="btn7" type="submit" name="delete" onclick="return confirm('Are you sure?')">Deactivate</button></td>
                             </form>
                            
                     
@@ -288,7 +289,7 @@ $result1 = mysqli_query($connection,$sql1);
                         </tr>";
                         $code =mysqli_real_escape_string($connection,$_POST['code']);
         
-                        $sql = "SELECT * FROM beekeeper WHERE (userID='{$_POST['code']}' OR userName='{$_POST['code']}' );";
+                        $sql = "SELECT * FROM beekeeper WHERE (div_id='".$_SESSION['div_id']."') AND (is_deleted=0) AND (userID='{$_POST['code']}' OR userName='{$_POST['code']}' );";
                         $query = $connection->query($sql);
                         verify_query($query);
                         
@@ -344,7 +345,7 @@ $result1 = mysqli_query($connection,$sql1);
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM beekeeper WHERE div_id='".$_SESSION['div_id']."' ;";
+                    $sql = "SELECT * FROM beekeeper WHERE div_id='".$_SESSION['div_id']."' AND is_deleted=0 ;";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);

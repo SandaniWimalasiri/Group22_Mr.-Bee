@@ -9,7 +9,7 @@
    {
        $userID = $_POST['userID'];
    
-       $query = "DELETE FROM beekeeper WHERE userID='$userID' ";
+       $query = "UPDATE beekeeper SET is_deleted=1 WHERE userID='$userID' ";
        $query_run = mysqli_query($connection, $query);
    
        if($query_run)
