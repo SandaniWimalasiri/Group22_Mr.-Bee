@@ -37,7 +37,7 @@
     $password =mysqli_real_escape_string($connection,$_POST['password']);
 
     //prepare database query
-    $query=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}' AND is_deleted=0  LIMIT 1");
+    $query=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}'  LIMIT 1");
     $row=mysqli_fetch_array($query);
    
     $isexist=mysqli_query($connection,"SELECT * FROM div_manager WHERE email='{$email}' AND pwd ='{$password}'  LIMIT 1");
@@ -66,7 +66,7 @@
 		$uname=$_POST['email'];
 		$pwd=$_POST['password'];
 
-		$sql3="SELECT * FROM beekeeper WHERE userEmail='".$uname."' AND userPassword='".$pwd."' is_deleted=0";
+		$sql3="SELECT * FROM beekeeper WHERE userEmail='".$uname."' AND userPassword='".$pwd."'";
 		$result=mysqli_query($connection,$sql3);
 
 		if($result->num_rows==1){
