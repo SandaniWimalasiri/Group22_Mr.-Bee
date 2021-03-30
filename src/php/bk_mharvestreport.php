@@ -9,7 +9,7 @@ session_start();
 <html>
 
 	<head>	
-		<title>feeding report</title>
+		<title>View Monthly Harvest Report</title>
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
@@ -24,29 +24,31 @@ session_start();
 
 
 <div class="bhivecontainer">
-
+<p>Monthly Harvest Report</p>
 <br/><br/>
 
 	
 
-           <center> <table >
-                <tr style="background-color:#547454">
-    
-                <th>Harvesting Record no</th>
-                <th>Harvesting date</th>
-                <th>Harvesting time</th>
-                <th>Harvested produaact type</th>
-                <th>Harvested amount</th>
-                
-                </tr>
+           
                
 
 			<?php
 if(isset($_POST['enter'])){
 
-        $sql = "SELECT HarvestRecNo,hdate,htime,producttype,amount FROM harvest where beehiveno='".$_SESSION['beehiveno']."' and userID='".$_SESSION['userid']."' and is_deleted=0 and MONTH(date)='".$_POST['mon']. "'";
+        $sql = "SELECT HarvestRecNo,hdate,htime,producttype,amount,unit FROM harvest where beehiveno='".$_SESSION['beehiveno']."' and userID='".$_SESSION['userid']."' and is_deleted=0 and MONTH(date)='".$_POST['mon']. "'";
     mysqli_query($connection, $sql);
     $result = mysqli_query($connection,$sql);
+
+    $count=mysqli_num_rows($result);
+if($count>=1){
+
+        echo '<center> <table ><tr style="background-color:#547454">';
+    
+        echo '        <th>Harvesting Record No</th>';
+        echo '        <th>Harvesting Date</th>';
+        echo '        <th>Harvesting Time</th>';
+        echo '        <th>Harvested Product Type</th>';
+        echo '        <th>Harvested Amount</th></tr>';
 
     while($row=mysqli_fetch_assoc($result)){
         //echo '<tr style="background-color:white">';
@@ -68,8 +70,15 @@ if(isset($_POST['enter'])){
     echo '</td>';
     echo '</tr>';
             
-    }}
+    
+}}
+else{
+
         
+        echo "<center>RESULT NOT FOUND<center>";
+
+}}
+
 		
         
   
@@ -90,7 +99,7 @@ if(isset($_POST['enter'])){
             </table></center>
 
             </br>
-    </br>
+    </br><br/><br/>
             <form  action="bk_fharvestreport.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >
