@@ -1,53 +1,15 @@
-<div class="errs">
+
 
 <?php 
 	require_once('../../config/connect.php');
 	session_start();
 	
-	
-	$username_error=$userPassword_error="";
-	$username=$userPassword="";
+
 	
 
 	if(isset($_POST['submit'])){
 		
 
-		if (empty($_POST["username"])) {
-            $username_error = "* User Name is required";
-          }else {
-
-            $username = test_input($_POST["username"]);
-
-            $sql = "SELECT username FROM customer";
-            $result = mysqli_query($connection,$sql);
-            while($row = mysqli_fetch_array($result))
-            {
-              if($row['username']!== $username){
-              $username_error = "*Invalid User Name";
-            }
-
-           }
-		  }
-		
-		  
-		  if (empty($_POST["userPassword"])) {
-            $userPassword_error = "* Password is required";
-          }else {
-
-            $userPassword = test_input($_POST["userPassword"]);
-
-            $sql = "SELECT userPassword FROM customer";
-            $result = mysqli_query($connection,$sql);
-            while($row = mysqli_fetch_array($result))
-            {
-              if($row['userPassword']!== $userPassword){
-              $userPassword_error = "*Invalid Password";
-            }
-
-           }
-		  }
-		  
-		  if($username_error =='' and  $userPassword_error =='' ){
 
 
 		$sql="SELECT * FROM customer WHERE username='".$_POST['username']."' AND userPassword='".$_POST['userPassword']."'";
@@ -63,14 +25,6 @@
 		}
 	}
 
-}
-
-function test_input($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-  }
 ?>
 </div>
 <html>
@@ -81,9 +35,7 @@ function test_input($data) {
 	</head>
 	<body >
 
-  <?php      
-	
-?>
+ 
 		<div class="loginbox">
 			<div class="center">
 				
@@ -91,12 +43,12 @@ function test_input($data) {
 				<center><h2>Login Here</h2></center>
 				<form method="post" action="" >
 					<p>Username</p>
-					<div class="error"><?= $username_error?></div>
-					<input type="text" name="username" placeholder="Enter your Username" value="<?= $username?>">
+					
+					<input type="text" name="username" placeholder="Enter your Username" required>
 					
 					<p>Password</p>
-					<div class="error"><?= $userPassword_error?></div>
-					<input type="password" name="userPassword" placeholder="Enter Password" value="<?= $userPassword?>">
+				
+					<input type="password" name="userPassword" placeholder="Enter Password" required >
 					<input type="submit" class="button" name="submit" value="LOGIN"><br /><br />
 					<div class="txt">Don't have an account? <a href="customer_signup.php" class="txt1"> Sign Up</a></div><br />
 				</form>

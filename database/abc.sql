@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2021 at 10:41 AM
+-- Generation Time: Mar 30, 2021 at 05:06 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -101,16 +101,18 @@ CREATE TABLE `customer` (
   `userAddress` varchar(200) NOT NULL,
   `userEmail` varchar(100) NOT NULL,
   `userTele` varchar(10) NOT NULL,
-  `userPassword` varchar(100) NOT NULL
+  `userPassword` varchar(100) NOT NULL,
+  `role` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`) VALUES
-(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', '0719876541', 'sandani1996'),
-(2, 'ishara', 'Ishara Wijekoon', 'no: 32, Digana, Kandy', 'ishara1996@gmail.com', '0712299865', 'Kmd9t32');
+INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`, `role`) VALUES
+(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', '0719876541', 'sandani1996', 0),
+(2, 'ishara', 'Ishara Wijekoon', 'no: 32, Digana, Kandy', 'ishara1996@gmail.com', '0712299865', 'Kmd9t32', 0),
+(5, 'qq', 'aa', 'qq', 'aa', '122', '123Qwe', 0);
 
 -- --------------------------------------------------------
 
@@ -330,9 +332,7 @@ ALTER TABLE `beekeeper`
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`CID`),
-  ADD UNIQUE KEY `username` (`username`,`userEmail`,`userPassword`),
-  ADD KEY `userPassword` (`userPassword`) USING BTREE;
+  ADD PRIMARY KEY (`CID`);
 
 --
 -- Indexes for table `div_manager`
@@ -393,6 +393,12 @@ ALTER TABLE `beehive`
 --
 ALTER TABLE `beekeeper`
   MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `CID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `div_manager`
