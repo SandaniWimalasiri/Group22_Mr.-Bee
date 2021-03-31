@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2021 at 04:07 AM
+-- Generation Time: Mar 31, 2021 at 10:02 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -58,7 +58,7 @@ INSERT INTO `beehive` (`BeehiveRecNo`, `userID`, `beehiveno`, `sdate`, `idate`, 
 (2, 3, 2, '2020-08-10', '2020-08-14', '09:43:00.00', 'Strongly Active', 'Calm', '3.546', 'Kg', 'Humidity: 68%\r\nWind: 4.7Km/h', 'Removal', 2, 'None', 'None', ' Queen Cell Introduced', 4, 0, '2020-08-17 18:30:00'),
 (3, 3, 3, '2020-09-16', '2020-09-18', '16:09:00.00', 'Strongly Active', 'Calm', '22.000', 'g', 'Humidity: 68%\r\nWind: 4.3Km/h', 'neutral', 3, 'none', 'none', 'Missing', 3, 1, '2020-09-23 18:30:00'),
 (4, 4, 1, '2020-07-09', '2021-03-08', '17:23:00.00', 'Strongly Active', 'Calm', '1.256', 'g', 'Humidity: 58% \r\nWind: 4.2Km/h', 'Switch', 1, 'None', 'None', 'No Fresh Eggs', 3, 0, '2021-03-10 18:30:00'),
-(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '2020-09-25 18:30:00');
+(5, 3, 1, '2020-07-07', '2020-08-21', '22:02:00.00', 'Strongly Active', 'Calm', '1.987', 'Kg', 'Humidity: 48% \r\nWind: 4.0Km/h', 'Add', 2, 'None', 'None', 'Missing', 4, 0, '2021-01-02 18:30:00');
 
 -- --------------------------------------------------------
 
@@ -169,12 +169,13 @@ CREATE TABLE `feeding` (
 
 INSERT INTO `feeding` (`FeedingRecNo`, `userID`, `beehiveno`, `date`, `fdate`, `ftime`, `feedingtype`, `famount`, `unit`, `is_deleted`) VALUES
 (1, 3, 1, '2020-07-08 18:30:00', '2020-07-07', '09:08:00.00', 'Suger Syrup (1+1 ratio)', '3.214', 'mg', 0),
-(2, 3, 1, '2020-07-12 18:30:00', '2020-07-10', '16:11:00.00', 'Suger Syrup (1+1 ratio)', '12.125', 'g', 0),
+(2, 3, 1, '2021-01-04 18:30:00', '2020-07-10', '16:11:00.00', 'Suger Syrup (1+1 ratio)', '12.125', 'g', 0),
 (3, 2, 3, '2020-10-20 18:30:00', '2020-10-07', '16:12:00.00', 'Suger Syrup (1+1 ratio)', '7.372', 'mg', 0),
 (4, 3, 2, '2020-08-15 18:30:00', '2020-08-12', '13:58:00.00', 'Suger Syrup (1+1 ratio)', '2.546', 'mg', 0),
 (5, 3, 1, '2021-03-25 18:30:00', '2021-03-11', '12:21:00.00', 'Suger Syrup (1+1 ratio)', '1.897', 'mg', 1),
 (6, 3, 1, '2021-03-27 18:30:00', '2021-03-16', '13:10:00.00', 'Suger Syrup (1+1 ratio)', '1.114', 'mg', 0),
-(7, 3, 4, '2020-12-15 18:30:00', '2020-12-09', '10:11:00.00', 'Suger Syrup (1+1 ratio)', '1.325', 'g', 1);
+(7, 3, 4, '2020-12-15 18:30:00', '2020-12-09', '10:11:00.00', 'Suger Syrup (1+1 ratio)', '1.325', 'g', 1),
+(8, 3, 1, '2021-03-30 18:30:00', '2021-03-16', '07:49:00.00', 'qq', '0.002', 'Kg', 0);
 
 -- --------------------------------------------------------
 
@@ -200,14 +201,15 @@ CREATE TABLE `harvest` (
 --
 
 INSERT INTO `harvest` (`HarvestRecNo`, `userID`, `beehiveno`, `date`, `hdate`, `htime`, `producttype`, `amount`, `unit`, `is_deleted`) VALUES
-(1, 3, 1, '2020-11-10 18:30:00', '2020-11-01', '08:37:00.00', 'Raw Honey', '2.134', 'Kg', 0),
+(1, 3, 1, '2021-01-02 18:30:00', '2020-11-01', '08:37:00.00', 'Raw Honey', '2.134', 'Kg', 0),
 (2, 2, 1, '2020-11-10 18:30:00', '2020-11-02', '09:49:00.00', 'Royal Gel', '1.724', 'Kg', 0),
 (3, 3, 2, '2020-11-10 18:30:00', '2020-11-01', '08:50:00.00', 'Bee Colonies', '2.000', '', 0),
 (4, 2, 2, '2021-03-15 18:30:00', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
 (5, 2, 2, '2021-03-15 18:30:00', '2021-03-08', '16:15:00.00', 'Raw Honey', '2.000', 'Kg', 0),
 (6, 4, 1, '2021-03-27 18:30:00', '2021-03-08', '14:47:00.00', 'Royal Gel', '8.341', 'Kg', 0),
 (7, 3, 1, '2021-03-27 18:30:00', '2021-03-17', '10:31:00.00', 'Bee Colonies', '3.000', ' ', 1),
-(8, 3, 2, '2021-03-28 18:30:00', '2021-03-15', '16:29:00.00', 'Royal Gel', '3.092', 'Kg', 0);
+(8, 3, 2, '2021-03-28 18:30:00', '2021-03-15', '16:29:00.00', 'Royal Gel', '3.092', 'Kg', 0),
+(9, 3, 1, '2021-03-30 18:30:00', '2021-03-17', '07:45:00.00', 'Raw Honey', '0.001', 'Kg', 0);
 
 -- --------------------------------------------------------
 
@@ -416,13 +418,13 @@ ALTER TABLE `div_manager`
 -- AUTO_INCREMENT for table `feeding`
 --
 ALTER TABLE `feeding`
-  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `FeedingRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `harvest`
 --
 ALTER TABLE `harvest`
-  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `HarvestRecNo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `infohub`
