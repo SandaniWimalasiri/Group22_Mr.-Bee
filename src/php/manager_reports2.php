@@ -16,6 +16,10 @@
 
          <!--start content-->
     <div class="content">   
+                    
+        
+                    <center>
+                <div class="viewform">
                     <div class="dropdown">
                         <button class="dropbtn">Reports</button>
                         <div class="dropdown-content">
@@ -24,9 +28,6 @@
                             
                         </div>
                     </div>
-        
-                    <center>
-                <div class="viewform">
                     <form method="post">
                         <br><br>
                         <label> Search by UserID</label>
