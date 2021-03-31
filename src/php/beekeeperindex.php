@@ -195,130 +195,135 @@
                   <span class="error"><?= $itime_error?></span>
                 </div>
               </div>      
-        <div class="row">       
-        <div class="col1">
-        <label for="bcolony">Number of Bee Colonies</label>
-        </div>
-           <div class="col1">
-        <input type="number" min="0" name="bcolony" value="<?= $bcolony?>">
-        <span class="error"><?= $bcolony_error?></span>
-        </div>
-        <div class="col1">
-        <label for="noframes">Number of Frames</label>
-        </div>
-           <div class="c3">
-           <input type="number" min="0" name="noframes"  value="<?= $noframes?>">
-           <span class="error"><?= $noframes_error?></span>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col1">
-        <label for="actstatus">Active Status</label>
-        </div>
-        <div class="col2">
-        <select id="actstatus" name="actstatus" value="<?= $actstatus?>" >
-             <option value="Strongly Active">Strongly Active</option>
-             <option value="Active">Active</option>
-             <option value="Neutral">Neutral</option>
-             <option value="Inactive">Inactive</option>
-             <option value="Empty">Empty</option>
-        </select> 
-        <span class="error"><?= $actstatus_error?></span>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col1">
-        <label for="temperament">Temperament</label>
-        </div>
-        <div class="col2">
-        <select id="temperament" name="temperament" value="<?= $temperament?>" >
-             <option value="Calm">Calm</option>
-             <option value=" Nervous"> Nervous</option>
-             <option value="Angry">Angry</option>
-        </select> 
-        <span class="error"><?= $temperament_error?></span>
-        </div>
-        </div>
+
+              <div class="row">       
+                <div class="col1">
+                  <label for="bcolony">Number of Bee Colonies</label>
+                </div>
+                <div class="col1">
+                  <input type="number" min="0" name="bcolony" value="<?= $bcolony?>">
+                  <span class="error"><?= $bcolony_error?></span>
+                </div>
+                <div class="col1">
+                  <label for="noframes">Number of Frames</label>
+                </div>
+                <div class="c3">
+                  <input type="number" min="0" name="noframes"  value="<?= $noframes?>">
+                  <span class="error"><?= $noframes_error?></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col1">
+                  <label for="actstatus">Active Status</label>
+                </div>
+                <div class="col2">
+                  <select id="actstatus" name="actstatus" value="<?= $actstatus?>" >
+                    <option value="Strongly Active">Strongly Active</option>
+                    <option value="Active">Active</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Empty">Empty</option>
+                  </select> 
+                  <span class="error"><?= $actstatus_error?></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col1">
+                  <label for="temperament">Temperament</label>
+                </div>
+                <div class="col2">
+                  <select id="temperament" name="temperament" value="<?= $temperament?>" >
+                    <option value="Calm">Calm</option>
+                    <option value=" Nervous"> Nervous</option>
+                    <option value="Angry">Angry</option>
+                  </select> 
+                  <span class="error"><?= $temperament_error?></span>
+                </div>
+              </div>
         
-        <div class="row">
-        <div class="col1">
-        <label for="wstatus">Weather Status</label>
-        </div>
-           <div class="col2">
-           <textarea id="wstatus" name="wstatus" style="height:100px" placeholder="Weather status" value="<?= $wstatus?>"></textarea>
-           <span class="error"><?= $wstatus_error?></span>
-        </div>
-        </div>
+              <div class="row">
+                <div class="col1">
+                  <label for="wstatus">Weather Status</label>
+                </div>
+                <div class="col2">
+                  <textarea id="wstatus" name="wstatus" style="height:100px" placeholder="Weather status" value="<?= $wstatus?>"></textarea>
+                  <span class="error"><?= $wstatus_error?></span>
+                </div>
+              </div>
         
-        <div class="row">
-        <div class="col1">
-        <label for="cbeehive">Changes Made to Beehive</label>
-        </div>
-           <div class="col2">
-           <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
-             <option value="Add">Add</option>
-             <option value="Removal">Removal</option>
-             <option value="Repair">Repair</option>
-             <option value="Switch"> Switch</option>
-             <option value="Neutral">Neutral</option>
-             </select> 
-        </div>
-        </div>
-        <div class="row">
-        <div class="col1">
-        <label for="disease">Signs of Diseases (If there's any) </label>
-        </div>
-           <div class="col2">
-           <textarea id="disease" name="disease" style="height:100px" placeholder="Signs of diseases" value="<?= $disease?>"></textarea>
-           <span class="error"><?= $disease_error?></span> 
-        </div>
-        </div>
-        <div class="row">
-        <div class="col1">
-        <label for="treatment">Treatments (If there's any)</label>
-        </div>
-           <div class="col2">
-           <textarea id="treatment" name="treatment" style="height:100px" placeholder="Treatments" value="<?= $treatment?>"></textarea>
-           <span class="error"><?= $treatment_error?></span>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col1">
-        <label for="sqbee">Status of Queen Bee</label>
-        </div>
-           <div class="col2">
-           <select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
-             <option value="Missing">Missing</option>
-             <option value="No Fresh Eggs">No Fresh Eggs</option>
-             <option value="Fresh Eggs Provided">Fresh Eggs Provided</option>
-             <option value=" Queen Cell Introduced"> Queen Cell Introduced</option>
-             <option value="Virgin Queen Introduced">Virgin Queen Introduced</option>
-             <option value="Mated Queen Introduced">Mated Queen Introduced</option>
-        </select> 
-           <span class="error"><?= $sqbee_error?></span>
-        </div>
-        </div>  
-        <br/> </br>
-        <div class="row">
-        <div class="c1">
-        <input type="submit" value="Submit" name="enter" >
-        </div>
-        </form>
+              <div class="row">
+                <div class="col1">
+                  <label for="cbeehive">Changes Made to Beehive</label>
+                </div>
+                <div class="col2">
+                  <select id="cbeehive" name="cbeehive" value="<?= $cbeehive?>" >
+                    <option value="Add">Add</option>
+                    <option value="Removal">Removal</option>
+                    <option value="Repair">Repair</option>
+                    <option value="Switch"> Switch</option>
+                    <option value="Neutral">Neutral</option>
+                  </select> 
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col1">
+                  <label for="disease">Signs of Diseases (If there's any) </label>
+                </div>
+                <div class="col2">
+                  <textarea id="disease" name="disease" style="height:100px" placeholder="Signs of diseases" value="<?= $disease?>"></textarea>
+                  <span class="error"><?= $disease_error?></span> 
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col1">
+                  <label for="treatment">Treatments (If there's any)</label>
+                </div>
+                <div class="col2">
+                  <textarea id="treatment" name="treatment" style="height:100px" placeholder="Treatments" value="<?= $treatment?>"></textarea>
+                  <span class="error"><?= $treatment_error?></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col1">
+                  <label for="sqbee">Status of Queen Bee</label>
+                </div>
+                <div class="col2">
+                  <select id="sqbee" name="sqbee" value="<?= $sqbee?>" >
+                    <option value="Missing">Missing</option>
+                    <option value="No Fresh Eggs">No Fresh Eggs</option>
+                    <option value="Fresh Eggs Provided">Fresh Eggs Provided</option>
+                    <option value=" Queen Cell Introduced"> Queen Cell Introduced</option>
+                    <option value="Virgin Queen Introduced">Virgin Queen Introduced</option>
+                    <option value="Mated Queen Introduced">Mated Queen Introduced</option>
+                  </select> 
+                  <span class="error"><?= $sqbee_error?></span>
+                </div>
+              </div>  
+
+              <br/> <br/>
+
+              <div class="row">
+                <div class="c1">
+                  <input type="submit" value="Submit" name="enter" >
+                </div>
+            </form>
+
+            <form  action="bk_viewbeehive.php" method="post" >
+                <div class="c2">
+                  <input type="submit" value="View Beehive Records >>" name="enter" >
+                </div>
+              </div>
+            </form>
 
 
-        <form  action="bk_viewbeehive.php" method="post" >
-        <div class="c2">
-        <input type="submit" value="View Beehive Records >>" name="enter" >
         </div>
-    </div>
-        </form>
 
-
-</div>
-
-</div>
-
-   
+      </div>
  
-  </body>
+    </body>
 </html>
