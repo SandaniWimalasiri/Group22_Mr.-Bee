@@ -61,10 +61,7 @@ $currentpassword=$newpassword=$repassword="";
         
         $sql2= "UPDATE beekeeper SET userPassword ='".$_POST['newpassword']."'where userID='".$_SESSION['userid']."'";
         $result2 = mysqli_query($connection,$sql2);
-        $sql3 = "SELECT userPassword  FROM beekeeper where userID='".$_SESSION['userid']."'";
-        $result3 = mysqli_query($connection,$sql3);
-        $row=mysqli_fetch_assoc($result3);
-
+        
 
         if($result){
 
