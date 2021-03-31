@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
 <?=template_header('Product')?>
 
 <div class="product content-wrapper">
-    <img src="../../public/img/<?=$product['img']?>" width="500" height="500" alt="<?=$product['pname']?>">
+    <img src="../../public/img/products/<?=$product['img']?>" width="500" height="500" alt="<?=$product['pname']?>">
     <div>
         <h1 class="pname"><?=$product['pname']?></h1>
         <span class="price">

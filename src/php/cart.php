@@ -82,7 +82,7 @@ if ($products_in_cart) {
                 <tr>
                     <td class="img">
                         <a href="customer_index.php?page=product&id=<?=$product['id']?>">
-                            <img src="../../public/img/<?=$product['img']?>" width="50" height="50" alt="<?=$product['pname']?>">
+                            <img src="../../public/img/products/<?=$product['img']?>" width="50" height="50" alt="<?=$product['pname']?>">
                         </a>
                     </td>
                     <td>
@@ -110,6 +110,8 @@ if ($products_in_cart) {
         </div>
     </form>
 </div>
+
+
 
 <script>    
 function goBack() {
