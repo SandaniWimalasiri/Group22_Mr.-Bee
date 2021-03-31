@@ -58,7 +58,7 @@ if(isset($_SESSION['beehiveno'])){
         echo $row['HarvestRecNo'];
         echo '</td>';
         echo '<td>';    
-        echo $row['hdate'];
+        echo $row['date'];
         echo '</td>';
             echo '<td>';    
     echo $row['hdate'];
