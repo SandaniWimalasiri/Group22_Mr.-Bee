@@ -10,6 +10,7 @@ session_start(); ?>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/beekeeper_CRUD.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/main.css"/>
     </head>
 
 <body>
@@ -20,7 +21,8 @@ session_start(); ?>
       <a href="divman.php#beekeeper" class="lang">Back</a>
     </nav>
  <section id="about">
-    <div class="content2"> 
+        <div class="pro">
+        <div class="bhivecontainer"> 
             <?php
                 $userID=$_POST['userID'];
 
@@ -96,7 +98,14 @@ session_start(); ?>
                    
                 }
                 ?>
+        </div>
+        
         </div>               <!--end content2-->
+
+        <div class="about-model">
+			<img src="../../public/img/div4.png" alt="me"/>
+			
+		</div>
 
 </section>       
 </body>

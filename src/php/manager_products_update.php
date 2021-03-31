@@ -63,7 +63,7 @@ require_once("func.php"); ?>
                             </tr>
                             <tr>
                                 <th><label>image</label></th>
-                                <td><input type="file" name="img" value="<?php echo $row['img'] ?>"></td>
+                                <td><input type="file" name="img" ><br><span><?php echo $row['img']?></span></td>
                             </tr>
                             
                             </table>
@@ -72,8 +72,10 @@ require_once("func.php"); ?>
                             <button class="btn6" type="submit" name="update"><b>Update</b></button>
                         </form>
            
-                    <?php }   ?> 
-                        <?php
+                    <?php 
+                        }   
+                    
+                    
                                 if(isset($_POST['update']))
                                 {
                                     $pname = $_POST['pname'];
@@ -81,7 +83,10 @@ require_once("func.php"); ?>
                                     $price = $_POST['price'];
                                     $rrp = $_POST['rrp'];
                                     $quantity = $_POST['quantity'];
+
+                                    //adding a image
                                     //declaring variables
+                                    
                                     $filename = $_FILES['img']['name'];
                                     $filetmpname = $_FILES['img']['tmp_name'];
                                     //folder where images will be uploaded
@@ -104,16 +109,7 @@ require_once("func.php"); ?>
                                     }
                                 }
 
-                                //if button "submit" has been clicked
-                                if(isset($_POST['submit'])) {
-                                    
-                                    if( $qry) {
-                                    echo "</br>image uploaded";
-                                    }
-                                }
-                        ?>
-                        <?php
-                    
+                        
                    
                 }
                 ?>

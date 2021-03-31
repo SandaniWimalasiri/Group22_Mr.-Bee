@@ -1,12 +1,12 @@
 <?php
 $num_products_on_each_page = 4;
 $current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
-$stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT ?,?');
+$stmt = $pdo->prepare('SELECT * FROM products where is_deleted=0 ORDER BY date_added DESC LIMIT ?,?');
 $stmt->bindValue(1, ($current_page - 1) * $num_products_on_each_page, PDO::PARAM_INT);
 $stmt->bindValue(2, $num_products_on_each_page, PDO::PARAM_INT);
 $stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$total_products = $pdo->query('SELECT * FROM products')->rowCount();
+$total_products = $pdo->query('SELECT * FROM products where is_deleted=0')->rowCount();
 ?>
 
 <?=template_header('Products')?>
@@ -17,7 +17,7 @@ $total_products = $pdo->query('SELECT * FROM products')->rowCount();
     <div class="products-wrapper">
         <?php foreach ($products as $product): ?>
         <a href="customer_index.php?page=product&id=<?=$product['id']?>" class="product">
-            <img src="../../public/img/<?=$product['img']?>" width="200" height="200" alt="<?=$product['pname']?>">
+            <img src="../../public/img/products/<?=$product['img']?>" width="200" height="200" alt="<?=$product['pname']?>">
         </br>
             <span class="pname"><?=$product['pname']?></span>
             <span class="price">

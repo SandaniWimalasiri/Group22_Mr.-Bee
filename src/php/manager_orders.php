@@ -50,7 +50,7 @@
                     </tr>
                     <?php 
                     
-                    $sql = "SELECT * FROM orders ORDER BY order_date DESC";
+                    $sql = "SELECT * FROM orders";
                     
                     $query=mysqli_query($connection,$sql);
                     verify_query($query);

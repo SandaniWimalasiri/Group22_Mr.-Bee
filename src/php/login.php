@@ -120,7 +120,7 @@
           <p>Username</p>
           <input type="text" name="email" placeholder="Enter Username" required>
           <p>Password</p>
-          <input type="password" name="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+          <input type="password" name="password" placeholder="Enter Password"  required>
           <input type="submit" name="submit" value="Login">
          
         </form> 

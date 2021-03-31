@@ -13,7 +13,7 @@
                 <h1>Nature Bee Honey Company SriLanka</h1>
                 <nav>
                     <a href="index.php">Home</a>
-                    <a href="customer_unreg.php">Discover</a>
+                    <a href="#products">Discover</a>
                    
                 </nav>
                
@@ -77,6 +77,35 @@
   <span class="dot"></span>
   <span class="dot"></span> 
 </div>
+
+<div class="header" id="products">
+  <h1>Our Products</h1>
+</div>
+
+<div class="container" >
+    <div class="gallery">
+        <figure class="gallery__item gallery__item--1">
+          <img src="../../public/img/p0_7.jpg" alt="Gallery image 1" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img src="../../public/img/p1.jpg" alt="Gallery image 2" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img src="../../public/img/p2.jpg" alt="Gallery image 3" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <img src="../../public/img/p3_1.jpg" alt="Gallery image 4" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--5">
+          <img src="../../public/img/p1.jpg" alt="Gallery image 5" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--6">
+          <img src="../../public/img/p0_7.jpg" alt="Gallery image 6" class="gallery__img">
+        </figure>
+    </div>
+</div>
+
+
 
 <script>
 var slideIndex = 0;
