@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2021 at 10:02 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Mar 31, 2021 at 06:19 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -73,7 +74,7 @@ CREATE TABLE `beekeeper` (
   `userAddress` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `userEmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `userTele` int(20) NOT NULL,
-  `userPassword` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `userPassword` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Beekeeper@123',
   `div_id` int(11) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -87,9 +88,10 @@ INSERT INTO `beekeeper` (`userID`, `userName`, `fullName`, `userAddress`, `userE
 (2, 'Kamal', 'Kamal Peris', '2/33, Udagewaththa, Godagama', 'kamal3@gmail.com', 114587233, 'KAMAL@11a', 1, 0),
 (3, 'Madhavi', 'Madhavi Sellahannadi', '54/33, IsuruUyana, Watareka, Meegoda', 'msellahannadi@gmail.com', 113456789, 'Madhavi98', 1, 0),
 (4, 'Ranmini', 'Ranmini Nisansa', 'No 1/5, Galagedara, Padukka.', 'ranminNi@gmail.com', 112343451, 'RanminiP@rera98', 1, 0),
-(5, 'Nirmani', 'Gamage', 'no:35, dickwella, Matara', 'nir123@gmail.com', 114573256, 'W234dr', 2, 0),
+(5, 'Nirmani', 'Gamage', ' no:36, dickwella, Matara', 'nir123@gmail.com', 114573256, 'W234dr', 2, 0),
 (6, 'Kalpa', 'Perera', '28,Maddawaththa,silva Lane,Matara', 'kkperera@gmail.com', 712256842, 'KaL86@', 2, 0),
-(7, 'Nihal', 'Perera', '28,Ilma road,Hakmana.', 'nperea12@gmail.com', 112846842, 'niHal98', 2, 0);
+(7, 'Nihal', 'Perera', '28,Ilma road,Hakmana.', 'nperea12@gmail.com', 112846842, 'niHal98', 2, 0),
+(8, 'sewwandi', 'sewwandi perera', 'n0:23, yakkala Rd, Galle', 'vindysilva96@gmail.com', 769834628, 'Beekeeper@123', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -112,7 +114,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`CID`, `username`, `fullname`, `userAddress`, `userEmail`, `userTele`, `userPassword`) VALUES
-(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandaniwimalasiri@gmail.com', '0719876541', 'sandani1996'),
+(1, 'sandani', 'sandani wimalasiri', 'no 26, 5th lane, weraduwa,Matara.', 'sandani@gmail.com', '0719876541', 'sandani1996'),
 (2, 'ishara', 'Ishara Wijekoon', 'no: 32, Digana, Kandy', 'ishara1996@gmail.com', '0712299865', 'Kmd9t32');
 
 -- --------------------------------------------------------
@@ -139,9 +141,9 @@ CREATE TABLE `div_manager` (
 --
 
 INSERT INTO `div_manager` (`div_id`, `first_name`, `last_name`, `email`, `tp`, `addr`, `pwd`, `emp_status`, `division`, `is_deleted`) VALUES
-(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, Godagama road,colombo.', 'Div_man@123', 'Divisional_Manager', 'Colombo', 0),
+(1, 'Lasith', 'Perera', 'lasithperera@gmail.com', '0711234566', 'no 34/A, Godagama road,colombo.', 'Div_man@123', 'Divisional_Manager', 'Colombo', 1),
 (2, 'Lasith', 'Disanayaka', 'disanayaka@gmail.com', '0711234561', '26/5, Nadun uyana, weraduwa, Matara', 'Div_man@123', 'Divisional_Manager', 'Matara', 0),
-(4, 'Sanath', 'Dasanyaka', 'sanath65@gmail.com', '0762348621', 'n034/A,dikpitiya,Galle', 'Div_man@123', 'Divisional_Manager', 'Galle', 1),
+(4, 'Sanath', 'Dasanyaka', 'sanath65@gmail.com', '0762348621', 'n034/A,dikpitiya,Galle', 'Div_man@123', 'Divisional_Manager', 'Galle', 0),
 (5, 'Saman', 'Amarakoon', 'amarakoon12@gmail.com', '0112354678', '23,Isadeen road,Ampara', 'Div_man@123', 'Divisional_Manager', 'Ampara', 0);
 
 -- --------------------------------------------------------
@@ -289,7 +291,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`order_id`, `product_name`, `product_id`, `cus_name`, `customer_id`, `address`, `email`, `tp`, `order_date`, `complete_date`, `od_status`) VALUES
 (1, 'Organic Raw Bee Honey', 4, 'ishara', 2, '	\r\nno32, digana, kandy.', 'ishara1996@gmail.com', 712299865, '2021-03-01', '2021-03-29', 'completed'),
 (2, 'Organic Bee Honey with Comb', 3, 'sample', 16, 'sample', 'sample@gmail.com', 719834567, '2021-03-08', '2021-03-22', 'completed'),
-(3, 'Organic Bee Honey with Sour Sup', 2, 'Sandani', 1, 'no 26, 5th lane, weraduwa,Matara', 'sandaniwimalasiri@gmail.com', 719876541, '2021-03-15', '0000-00-00', 'on-going');
+(3, 'Organic Bee Honey with Sour Sup', 2, 'Sandani', 1, 'no 26, 5th lane, weraduwa,Matara', 'sandani@gmail.com', 719876541, '2021-03-15', '0000-00-00', 'on-going');
 
 -- --------------------------------------------------------
 
@@ -318,7 +320,10 @@ INSERT INTO `products` (`id`, `pname`, `descr`, `price`, `rrp`, `quantity`, `img
 (2, 'Organic Bee Honey with Sour Sup', '<p>Pure Organic Bee Honey with Sour Sup of Greatest Quality.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Sour Sup Taste.</li>\r\n<li>Exquisite Flavour.</li>\r\n<li>Filled with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health with Antioxidants.</li>\r\n</ul>', '450.00', '500.00', 25, 'p2.jpg', '2020-11-23 18:52:49', 0),
 (3, 'Organic Bee Honey with Comb', '<p>Pure Organic Bee Honey with Honeycomb Included.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Honeycomb Taste.</li>\r\n<li>Exquisite Flavor.</li>\r\n<li>Rich with Essentials Nutrients.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '450.99', '500.00', 23, 'p3_1.jpg', '2020-11-20 18:47:56', 1),
 (4, 'Organic Raw Bee Honey', '<p>Pure Organic Raw Bee Honey.</p>\r\n<h3>Features</h3>\r\n<ul>\r\n<li>Unique Natural Honey Taste.</li>\r\n<li>Rich with Antioxidants.</li>\r\n<li>Enhances Your Good Health.</li>\r\n</ul>', '400.00', '420.00', 35, 'p0_7.jpg', '2020-11-25 17:42:04', 0),
-(6, 'Pure raw bee honey jar', 'weight 300g. Honey is preserve in its purest natural form. Rich with Antioxidants.\r\nEnhances Your Good Health.', '600.00', '750.00', 3, '', '2021-03-30 00:47:34', 0);
+(6, 'Pure raw bee honey jar', 'weight 300g. Honey is preserve in its purest natural form. Rich with Antioxidants.\r\nEnhances Your Good Health.', '700.00', '800.00', 3, 'raw bee.jpg', '2021-03-30 00:47:34', 0),
+(8, 'Cinnamon Bee Honey', '250g\r\nConsuming honey and cinnamon on a regular basis can boost your immune system and protect you from foreign bacteria and viruses.', '900.00', '950.00', 2, 'cinnamon.jpg', '2021-03-31 14:06:33', 0),
+(10, ' Garlic Bee Honey', 'Both garlic and honey are high in antioxidant compounds. These healthy chemicals help to balance your immune system and prevent illness.', '700.00', '850.00', 4, '', '2021-03-31 14:11:06', 1),
+(11, ' Garlic Bee Honey-300g', 'Both garlic and honey are high in antioxidant compounds. These healthy chemicals help to balance your immune system and prevent illness.', '700.00', '750.00', 2, 'garlic.jpg', '2021-03-31 14:14:14', 0);
 
 --
 -- Indexes for dumped tables
@@ -400,7 +405,7 @@ ALTER TABLE `beehive`
 -- AUTO_INCREMENT for table `beekeeper`
 --
 ALTER TABLE `beekeeper`
-  MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `userID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -442,7 +447,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
