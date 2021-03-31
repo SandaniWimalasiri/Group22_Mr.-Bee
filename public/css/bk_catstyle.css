@@ -21,9 +21,8 @@ body {
   left: 0;
   overflow-x: hidden;
 
+
 }
-
-
 .sidenav a{
 
 
@@ -40,13 +39,20 @@ body {
   border-bottom: 0px solid #333;
   transition: .5s;
   
+
 }
 
 
-.sidenav a:hover{ 
+.sidenav a:hover{
 
+  
   padding-left: 70px;
 
+
+}
+
+.sidenav a:active{
+  background-color : black;
 }
 
 
@@ -59,6 +65,12 @@ body {
 
 
 
+.content{
+         margin-left:200px;
+         border-left:none;
+         padding:none;
+         }
 
 
-
+* {
+  box-sizing: border-box;}
