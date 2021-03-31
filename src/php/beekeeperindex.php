@@ -279,7 +279,7 @@
         </div>
            <div class="col2">
            <textarea id="treatment" name="treatment" style="height:100px" placeholder="Treatments" value="<?= $treatment?>"></textarea>
-           
+           <span class="error"><?= $treatment_error?></span>
         </div>
         </div>
         <div class="row">
@@ -295,7 +295,7 @@
              <option value="Virgin Queen Introduced">Virgin Queen Introduced</option>
              <option value="Mated Queen Introduced">Mated Queen Introduced</option>
         </select> 
-           
+           <span class="error"><?= $sqbee_error?></span>
         </div>
         </div>  
         <br/> </br>
