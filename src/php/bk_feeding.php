@@ -26,9 +26,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
             $feedingtype_error = "<br/>*Feeding Type is Required";
           } else {
             $feedingtype = test_input($_POST["feedingtype"]);
-            if (!preg_match("/^[a-zA-Z-' ]*$/",$feedingtype)) {
-              $feedingtype_error = "<br/>*Only Letters and White Space Allowed";
-            }
+            
           }
           if (empty($_POST["famount"])) {
             $famount_error = "*Feeding Amount is Required";
