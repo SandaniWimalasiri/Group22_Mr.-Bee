@@ -81,9 +81,16 @@ require_once("func.php"); ?>
                                     $price = $_POST['price'];
                                     $rrp = $_POST['rrp'];
                                     $quantity = $_POST['quantity'];
+                                    //declaring variables
+                                    $filename = $_FILES['img']['name'];
+                                    $filetmpname = $_FILES['img']['tmp_name'];
+                                    //folder where images will be uploaded
+                                    $folder = '../../public/img/products/';
+                                    //function for saving the uploaded images in a specific folder
+                                    move_uploaded_file($filetmpname, $folder.$filename);
                                    
 
-                                    $query = "UPDATE products SET pname='$pname',descr='$descr', price='$price', rrp='$rrp', quantity='$quantity'  WHERE id='$id'  ";
+                                    $query = "UPDATE products SET pname='$pname',descr='$descr', price='$price', rrp='$rrp', quantity='$quantity',img='$filename'  WHERE id='$id'  ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if($query_run)
@@ -97,18 +104,9 @@ require_once("func.php"); ?>
                                     }
                                 }
 
-                                //if button with the name submit has been clicked
+                                //if button "submit" has been clicked
                                 if(isset($_POST['submit'])) {
-                                    //declaring variables
-                                    $filename = $_FILES['img']['name'];
-                                    $filetmpname = $_FILES['img']['tmp_name'];
-                                    //folder where images will be uploaded
-                                    $folder = '../../public/img/';
-                                    //function for saving the uploaded images in a specific folder
-                                    move_uploaded_file($filetmpname, $folder.$filename);
-                                    //inserting image details (ie image name) in the database
-                                    $sql = "UPDATE products SET img='$filename' WHERE id='$id'";
-                                    $qry = mysqli_query($conn, $sql);
+                                    
                                     if( $qry) {
                                     echo "</br>image uploaded";
                                     }
