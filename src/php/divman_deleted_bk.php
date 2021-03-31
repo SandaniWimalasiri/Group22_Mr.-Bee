@@ -49,7 +49,7 @@
                     </tr>
                     <?php 
                     $user_id='';
-                    $sql = "SELECT * FROM beekeeper WHERE is_deleted=1";
+                    $sql = "SELECT * FROM beekeeper WHERE is_deleted=1 ";
                     
                     $query=mysqli_query($connection,$sql);
                     // verify_query($query);
