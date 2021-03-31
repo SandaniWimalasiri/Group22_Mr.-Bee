@@ -34,7 +34,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
             $famount = test_input($_POST["famount"]);
           }
 
-          if($beehiveno_error =='' and  $fdate_error =='' and   $ftime_error=='' and $feedingtype_error=='' and $famount_error==''){
+        if($beehiveno_error =='' and  $fdate_error =='' and   $ftime_error=='' and $feedingtype_error=='' and $famount_error==''){
         
         $date=date("Y/m/d");
         $sql="INSERT INTO feeding (userID,date,beehiveno,fdate,ftime,feedingtype,famount,unit) VALUES('".$_SESSION['userid']."','".$date."','".$_POST['beehiveno']."','".$_POST['fdate']."','".$_POST['ftime']."','".$_POST['feedingtype']."','".$_POST['famount']."','".$_POST['unit']."')";
@@ -91,13 +91,12 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <form method="post" action="bk_feeding.php" >
         <p >Add Feeding Records</p>
 
-        </br>
-    </br></br>
+        </br> </br></br>
         <div class="row">
         <div class="col1">
         <label for="beehiveno">Beehive No</label>
         </div>
-    <div class="col3">
+        <div class="col3">
         <input type="number" min="0" name="beehiveno" value="<?= $beehiveno?>" autofocus style="width:225px">
         <span class="error"><?= $beehiveno_error?></span>
         </div>
@@ -106,17 +105,16 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <div class="col1">
         <label for="fdate">Feeding Date</label>
         </div>
-    
-    <div class="col3">
+        <div class="col3">
         <input type="date" name="fdate" value="<?= $fdate?>" style="width:225px">
         <span class="error"><?= $fdate_error?></span>
         </div>
         </div>
-    <div class="row">
+        <div class="row">
         <div class="col1">
         <label for="ftime">Feeding Time</label>
         </div>
-    <div class="col3">
+        <div class="col3">
         <input type="time" name="ftime" value="<?= $ftime?>"style="width:225px" >
         <span class="error"><?= $ftime_error?></span>
         </div>
@@ -125,7 +123,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <div class="col1">
         <label for="feedingtype">Feeding Type</label>
         </div>
-    <div class="col3" style="width:300px">
+        <div class="col3" style="width:300px">
         <input type="text" name="feedingtype"  placeholder="Feeding type" value="<?= $feedingtype?>" style="width:225px">
         <span class="error" ><?= $feedingtype_error?></span>
         </div>
@@ -134,7 +132,7 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <div class="col1">
         <label for="famount">Feeding Amount</label>
         </div>
-    <div class="col3">
+        <div class="col3">
         <input type="number" min="0.000" placeholder="0.000" step="0.001" name="famount" value="<?= $famount?>" style="width:166px" >
         <select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
              <option value="Kg">Kg</option>
@@ -144,27 +142,28 @@ $beehiveno=$fdate= $ftime=$feedingtype=$famount="";
         <span class="error"><?= $famount_error?></span>
         </div>
         </div>
+
         <br/></br>
+
         <div class="row">
         <div class="c1">
         <input type="submit" value="Submit" name="enter" >
         </div>
-        </form>
 
+        </form>
 
         <form  action="bk_viewfeeding.php" method="post" >
         <div class="c2">
         <input type="submit" value="View Feeding Records >>" name="enter" >
         </div>
-    </div>
+        </div>
         </form>
-    </br>
 
-</div>
+        </br>
 
-</div>
+    </div>
 
-     
- 
-  </body>
+  </div>
+  
+    </body>
 </html>

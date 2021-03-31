@@ -7,22 +7,20 @@ session_start();
 
 	<head>	
 		<title>View Beehive Deleted Records</title>
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
+        <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
+        <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
 	<body>
-<?php include('bk_navbar.php');
-        include('bk_sidenavbar.php');?>
+<?php 
+include('bk_navbar.php');
+include('bk_sidenavbar.php');
+?>
 <div class="main">
-
-
-
   <div class="bhivecontainer" style="padding: 20px 50px 20px 40px">
-<p>Beehive Deleted Records</p>
+  <p>Beehive Deleted Records</p>
        <br/><br/>    </br>
 
            <center>
-            
             <table >
                 <tr style="background-color:#547454">
                 <th>Beehive Record No</th>
@@ -43,13 +41,9 @@ session_start();
                 </tr>
 
 
-			<?php
-
-
-
+<?php
         
 $sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,unit,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."' and is_deleted=1";
-mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
 		while($row=mysqli_fetch_assoc($result)){
@@ -102,21 +96,18 @@ $result = mysqli_query($connection,$sql);
         echo '</td>';
         echo "<td style='border-style:hidden; border-left:1px solid black'><a href ='bk_restorebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']."' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px'> Restore </a> </td>" ;
 		echo "<td style='border-style:hidden'><a href ='bk_removebeehive.php?BeehiveRecNo=".$row['BeehiveRecNo']." ' style='background-color: #2b3528; color: white; text-decoration: none; padding:4px' > Remove </a> </td>" ;	
-        echo '</td>';
-        
-        
+        echo '</td>';        
         echo '</tr>';
 
 		
 		}
 ?>
 
-            </table></center>
-        
+        </table></center>
 
-    </br>
-    </br><br/><br/>
-            <form  action="bk_viewbeehive.php" method="post" >
+        </br></br><br/><br/>
+
+        <form  action="bk_viewbeehive.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >
         </div>
@@ -125,10 +116,7 @@ $result = mysqli_query($connection,$sql);
     </div>
 </div>
 
-
 </div>	
-
-
 
 	</body>
 </html>

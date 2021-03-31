@@ -4,7 +4,6 @@ session_start();
 
 if(isset($_POST['update'])){
     
- 
           
     $sql2= "UPDATE beehive SET BeehiveRecNo ='".$_POST['BeehiveRecNo']."',beehiveno ='".$_POST['beehiveno']."', sdate ='".$_POST['sdate']."', idate ='".$_POST['idate']."', itime ='".$_POST['itime']."',actstatus ='".$_POST['actstatus']."',temperament ='".$_POST['temperament']."',wbeehive ='".$_POST['wbeehive']."',unit='".$_POST['unit']."',wstatus ='".$_POST['wstatus']."',cbeehive ='".$_POST['cbeehive']."',noframes ='".$_POST['noframes']."',disease ='".$_POST['disease']."',treatment ='".$_POST['treatment']."',sqbee ='".$_POST['sqbee']."',bcolony ='".$_POST['bcolony']."' WHERE BeehiveRecNo='".$_POST['BeehiveRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
@@ -12,7 +11,7 @@ if(isset($_POST['update'])){
     $result3 = mysqli_query($connection,$sql3);
     $row=mysqli_fetch_assoc($result3);
 
-       if($result2){
+      if($result2){
 
       echo '<script>';
       echo 'alert("Record Updated Successfully");';
@@ -31,8 +30,6 @@ if(isset($_POST['update'])){
     }
 
 }
-
-
    
 
 ?>
@@ -47,15 +44,12 @@ if(isset($_POST['update'])){
     </head>
   <body  >
       
-
         <?php include('bk_navbar.php');
         include('bk_sidenavbar.php');
         
 ?>
 
-
 <div class="main">
-
 
     <div class="bhivecontainer">
 
@@ -93,7 +87,7 @@ if(isset($_GET['BeehiveRecNo'])){
         <option value="'.$row['unit'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
         <option value="g">g</option>
-   </select> ';
+        </select> ';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -120,8 +114,7 @@ if(isset($_GET['BeehiveRecNo'])){
              <option value="Active">Active</option>
              <option value="Neutral">Neutral</option>
              <option value="Inactive">Inactive</option>
-             <option value="Empty">Empty</option>
-        </select> ';
+             <option value="Empty">Empty</option></select> ';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -151,7 +144,6 @@ if(isset($_GET['BeehiveRecNo'])){
           <option value="Neutral">Neutral</option></select>';
         echo "</div>";
         echo "</div>";
-        
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo "Signs of Diseases (If there's any)</div><div class='col2'><textarea name='disease' style='height:100px' placeholder =''>".$row['disease']."</textarea>";
@@ -175,9 +167,7 @@ if(isset($_GET['BeehiveRecNo'])){
              </select> ';
         echo "</div>";
         echo "</div>";
-
         echo"<br/>";
-        
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="update" ></div></form>';
         
 
@@ -187,11 +177,11 @@ if(isset($_GET['BeehiveRecNo'])){
 ?>
 
 
-<form  action="bk_viewbeehive.php" method="post" >
+        <form  action="bk_viewbeehive.php" method="post" >
         <div class="c2" style="width: 90px">
         <input type="submit" value="<< Back" name="back" >
         </div>
-</div>
+        </div>
         </form>
 
     </div>

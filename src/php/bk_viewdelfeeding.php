@@ -7,55 +7,44 @@ session_start();
 
 	<head>	
 		<title>View Feeding Deleted Records</title>
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
+        <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
+        <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
 	<body>
-<?php include('bk_navbar.php');
-        include('bk_sidenavbar.php');?>
+<?php 
+include('bk_navbar.php');
+include('bk_sidenavbar.php');
+?>
 <div class="main">
-
-
-
-  
-
-
 <div class="bhivecontainer">
-<p>Feeding Deleted Records</p>
- <br/></br></br>
-
+  <p>Feeding Deleted Records</p>
+   <br/></br></br>
 			<center>
-
             <table >
                 <tr style="background-color:#547454">
-    
                 <th>Feeding Record No</th>
                 <th>Beehive No</th>
                 <th>Feeding Date</th>
                 <th>Feeding Time</th>
                 <th>Feeding Type</th>
                 <th>Feeding Amount</th>
-                
                 </tr>
 
-			<?php
-
-
-        
+<?php
+      
 $sql = "SELECT FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount FROM feeding where userID='".$_SESSION['userid']."' and is_deleted=1";
-mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
 		while($row=mysqli_fetch_assoc($result)){
             
-            echo '<tr >';
-            echo '<td>';
+        echo '<tr >';
+        echo '<td>';
         echo $row['FeedingRecNo'];
         echo '</td>';
         echo '<td>';
         echo $row['beehiveno'];
         echo '</td>';
-            echo '<td>';
+        echo '<td>';
         echo $row['fdate'];
         echo '</td>';
         echo '<td>';
@@ -77,17 +66,15 @@ $result = mysqli_query($connection,$sql);
 
             </table></center>
 
-            </br>
-    </br></br></br>
+            </br></br></br></br>
+
             <form  action="bk_viewfeeding.php" method="post" >
-        <div class="row">
-        <input type="submit" value="<< Back" name="back" >
-        </div>
-        </form>
+            <div class="row">
+            <input type="submit" value="<< Back" name="back" >
+            </div>
+            </form>
 </div>
 </div>	
-
-
 
 	</body>
 </html>

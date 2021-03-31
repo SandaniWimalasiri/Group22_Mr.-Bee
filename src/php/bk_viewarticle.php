@@ -21,18 +21,15 @@ session_start();
 
 
 <div class="main">
-
-			<?php
+<?php
     if(isset($_POST['enter'])){
         
-$sql = "SELECT * FROM infohub ORDER BY date DESC";
-mysqli_query($connection, $sql);
-$result = mysqli_query($connection,$sql);
+    $sql = "SELECT * FROM infohub ORDER BY date DESC";
+    $result = mysqli_query($connection,$sql);
 		while($row=mysqli_fetch_assoc($result)){  
 
             
-            echo '<div class="bhivecontainer">';
-           
+        echo '<div class="bhivecontainer">';   
         echo "<B>".$row['articlename']."</B>";
         echo "<br>";
         echo $row['date']." by <I>" .$row['authorname']."</I>";
@@ -42,21 +39,11 @@ $result = mysqli_query($connection,$sql);
         echo "</div>";
         echo "<br>";
         echo "<br>";
-       
-
-
-		
-
-        
-
 		
     }}?>
 
    
-    
-
-
-            <form  action="bk_infohub.php" method="post" >
+        <form  action="bk_infohub.php" method="post" >
         <div class="row">
         <input type="submit" value="<< Back" name="back" >
         </div>

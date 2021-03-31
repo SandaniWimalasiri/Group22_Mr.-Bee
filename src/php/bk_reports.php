@@ -2,10 +2,6 @@
  session_start();
 ?>
 
-<?php
-
-
-?>
 
 <?php
 $beehiveno_error="";
@@ -15,26 +11,23 @@ $beehiveno="";
  
         if (empty($_POST["beehiveno"])) {
             $beehiveno_error = "</br>*Beehive No is Required";
-          }else {
+          }else {          
 
-            
+           $beehiveno = test_input($_POST["beehiveno"]);
 
-            $beehiveno = test_input($_POST["beehiveno"]);
+           $sql = "SELECT beehiveno FROM beehive WHERE  userID='".$_SESSION['userid']."'";
+           $result = mysqli_query($connection,$sql);
+           while($row = mysqli_fetch_array($result))
+           {
+           if($row['beehiveno']!== $beehiveno){
+              $beehiveno_error = "</br>*Invalid Beehive No";
+           }
 
-            $sql = "SELECT beehiveno FROM beehive WHERE  userID='".$_SESSION['userid']."'";
-
-$result = mysqli_query($connection,$sql);
-while($row = mysqli_fetch_array($result))
-  {
-    if($row['beehiveno']!== $beehiveno){
-      $beehiveno_error = "</br>*Invalid Beehive No";
-    }
-
-    else{
-      $_SESSION['beehiveno']=$_POST["beehiveno"]; 
-      header( 'Location: bk_fbeehivereport.php');
-    }
-  }
+           else{
+             $_SESSION['beehiveno']=$_POST["beehiveno"]; 
+             header( 'Location: bk_fbeehivereport.php');
+              }
+           }
 
             
           }
@@ -115,22 +108,16 @@ $beehiveno1="";
       <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
 	<body >
-<?php include('bk_navbar.php');
-        include('bk_sidenavbar.php');
-        ?>
+    
+<?php 
+include('bk_navbar.php');
+include('bk_sidenavbar.php');
+?>
 
         
 <div class="main">
 
-
-
   <div class="bhivecontainer" >
-
-			
-
-
-
- 
         
   <br/><br/> <br/>
 <center>

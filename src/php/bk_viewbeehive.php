@@ -7,52 +7,44 @@ session_start();
 
 	<head>	
 		<title>View Beehive Records</title>
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
+        <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
+        <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
 	</head>
 	<body>
-<?php include('bk_navbar.php');
-        include('bk_sidenavbar.php');?>
+<?php 
+include('bk_navbar.php');
+include('bk_sidenavbar.php');
+        
+?>
 <div class="main">
-
-
-
   <div class="bhivecontainer" style="padding: 20px 30px 20px 30px">
   <p>Beehive Records</p>
 
-       <br/>   
-       <br/>   
-       <br/>   
+       <br/><br/><br/>   
        <center><table ><tr style="background-color:#547454">
         <th>Beehive Record No</th>
         <th>Beehive No</th>
         <th>Start Date</th>
-         <th>Inspection Date</th>
-         <th>Inspection Time</th>
+        <th>Inspection Date</th>
+        <th>Inspection Time</th>
         <th>Active Status</th>
-         <th>Temperament</th>
+        <th>Temperament</th>
         <th>Weight of Beehive</th>
         <th>Weather Status</th>
-         <th>Changes Made to Beehive</th>
-         <th>Number of Frames</th>
+        <th>Changes Made to Beehive</th>
+        <th>Number of Frames</th>
         <th>Signs of Diseases</th>
         <th>Treatments</th>
         <th>Status of Queen Bee</th>
         <th>Number of Bee Colonies</th>
         </tr>
 
-			<?php
-
-
-
-        
+<?php
+       
 $sql = "SELECT BeehiveRecNo,beehiveno,sdate,idate,itime,actstatus,temperament,wbeehive,unit,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE  userID='".$_SESSION['userid']."' and is_deleted=0";
-mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
 		while($row=mysqli_fetch_assoc($result)){
-
- 
 
         echo '<tr >';
         echo '<td>';
@@ -111,27 +103,22 @@ $result = mysqli_query($connection,$sql);
 
             </table></center>
 
-        <br/>
-        <br/>
-        <br/></br>
+        <br/><br/><br/></br>
+
         <form  action="bk_viewdelbeehive.php" method="post" >
         <div class="row"><div class="c1" style="width:840px">
         <input type="submit" value="View Deleted Records >>" name="back" >
         </div>
         </form>
-            <form  action="beekeeperindex.php" method="post" >
+
+        <form  action="beekeeperindex.php" method="post" >
         <div class="c2">
         <input type="submit" value="<< Back" name="back" style="width:90px">
         </div></div>
         </form>
-
     
 </div>
-
-
 </div>	
-
-
 
 	</body>
 </html>
