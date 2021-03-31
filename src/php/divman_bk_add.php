@@ -73,11 +73,31 @@ session_start(); ?>
            //print_r($result);
            if($result){
                //echo "Successful";
-               header( 'Location: divman_bk_add.php ');
+               //header( 'Location: divman_bk_add.php ');
+               echo '<script> alert("Data Inserted Successfully"); </script>';
+
+                // $emailFrom ="mrbeemanager@gmail.com";
+                $subject ="Activate the account & Change the Password ";
+                $body="HI Mr/Mrs ".$_GET['fullName']." .Welcome to our Bee keeping community and Thank You for Joining with us. Herewith we sent login informations for your Account. After the log in you should change your password because of security purpose.
+                your user name = ".$_GET['userEmail']."
+                your password=Beekeeper@123.
+                (You can activate your account by using these User Credentials.)
+                Thank You.
+                Your faithfully,
+                Mr. Bee Team."
+                ;
+                $headers="From: mrbeemanager@gmail.com";
+                    if (mail($_GET['userEmail'],$subject,$body,$headers)) {
+                        echo '<script> alert("mail sent successfully"); </script>';
+                    }else {
+                    echo '<script> alert("Unable to send email. Please try again to send the email."); </script>';
+                    }
+             
+
            }else{
-               echo "failed";
+                echo '<script> alert("Insertion Failed"); </script>';
            }
-       }
-                     
+       }  
+                  
   
 ?>
