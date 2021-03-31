@@ -89,7 +89,7 @@ if(isset($_GET['HarvestRecNo'])){
         echo '<div class="row" >';
         echo '<div class="col1">';
         echo 'Harvested Product Type </div><div class="col3" ><select id="producttype"required name="producttype" value="<?= $producttype?>" >
-        <option value="'.$row['htime'].'">'.$row['producttype'].'</option>
+        <option value="'.$row['producttype'].'">'.$row['producttype'].'</option>
         <option value="Raw Honey">Raw Honey</option>
         <option value="Bee Colonies">Bee Colonies</option>
         <option value="Royal Gel">Royal Gel</option></select> ';
