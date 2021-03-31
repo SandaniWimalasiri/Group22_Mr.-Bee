@@ -9,7 +9,7 @@ if($result){
 
     echo '<script>';
     echo 'alert("Record Removed Successfully");';
-    echo 'window.location.href = "bk_viewbeehive.php";';
+    echo 'window.location.href = "bk_viewdelbeehive.php";';
     echo '</script>';
     die();
   }
@@ -18,7 +18,7 @@ if($result){
 
     echo '<script>';
     echo 'alert("Failed");';
-    echo 'window.location.href = "bk_viewbeehive.php";';
+    echo 'window.location.href = "bk_viewdelbeehive.php";';
     echo '</script>';
     die();
   }
