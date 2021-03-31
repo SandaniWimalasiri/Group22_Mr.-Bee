@@ -1,9 +1,6 @@
 <?php require_once('../../config/connect.php'); 
 session_start();
 
-
-
-
 if(isset($_POST['update'])){
     
  
@@ -58,23 +55,19 @@ if(isset($_POST['update'])){
 
 <div class="main">
 
-
     <div class="bhivecontainer">
     <p >My Profile</p>
     <br/><br/>
     
     <img src="  ../../public/img/14.png" >
-    <br/>
-</br>
-</br>
+    <br/></br></br>
 
 
 <?php
 
 $sql1 = "SELECT userName,fullName,userAddress,userEmail,userTele FROM beekeeper WHERE userID='".$_SESSION['userid']."'";
-mysqli_query($connection, $sql1);
 $result1 = mysqli_query($connection,$sql1);
-		while($row=mysqli_fetch_assoc($result1)){  
+while($row=mysqli_fetch_assoc($result1)){  
  
    
         echo '<form  method="post" action="" ><div class="row" >';
@@ -102,8 +95,7 @@ $result1 = mysqli_query($connection,$sql1);
         echo '<div class="col1">';
         echo 'Contact No</div><div class="col2"><input type = "text" name="userTele" required value ="'.$row['userTele'].'" >';
         echo "</div>";
-        echo "</div>";
-       
+        echo "</div>";  
         echo "<br/>";
         echo "<br/>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Edit Profile" name="update" ></div></form>';
@@ -112,7 +104,7 @@ $result1 = mysqli_query($connection,$sql1);
         }?>
 
 
-<form  action="beekeeperindex.php" method="post" >
+        <form  action="beekeeperindex.php" method="post" >
         <div class="c2" style="width: 90px">
         <input type="submit" value="<< Back" name="back" >
         </div>

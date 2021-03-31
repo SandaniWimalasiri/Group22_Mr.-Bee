@@ -1,14 +1,7 @@
 <?php require_once('../../config/connect.php'); 
 session_start();
 
-$beehiveno_error=$hdate_error= $htime_error=$producttype_error= $amount_error="";
-$beehiveno=$hdate= $htime=$producttype=$amount="";
-
     if(isset($_POST['update'])){
-
-
-      
- 
           
     $sql2= "UPDATE harvest SET HarvestRecNo ='".$_POST['HarvestRecNo']."',beehiveno ='".$_POST['beehiveno']."',  hdate ='".$_POST['hdate']."', htime ='".$_POST['htime']."',producttype ='".$_POST['producttype']."',amount ='".$_POST['amount']."',unit ='".$_POST['unit']."' WHERE HarvestRecNo='".$_POST['HarvestRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
@@ -35,16 +28,8 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
     }
           
 
-
-  
-
-
 }
-
-      
-       
-      
-   
+  
 
 ?>
 <html>
@@ -58,15 +43,12 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
     </head>
   <body  >
       
-
         <?php include('bk_navbar.php');
         include('bk_sidenavbar.php');
         
 ?>
 
-
 <div class="main">
-
 
     <div class="bhivecontainer">
 
@@ -77,13 +59,11 @@ $beehiveno=$hdate= $htime=$producttype=$amount="";
 
 <?php
 
-
 if(isset($_GET['HarvestRecNo'])){
     
   $sql1 = "SELECT HarvestRecNo,beehiveno,hdate,htime,producttype,amount,unit FROM harvest WHERE  HarvestRecNo =".$_GET['HarvestRecNo'];
   $result1= mysqli_query($connection,$sql1);
-
-while($row=mysqli_fetch_assoc($result1)){  
+  while($row=mysqli_fetch_assoc($result1)){  
             
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
@@ -112,8 +92,7 @@ while($row=mysqli_fetch_assoc($result1)){
         <option value="'.$row['htime'].'">'.$row['producttype'].'</option>
         <option value="Raw Honey">Raw Honey</option>
         <option value="Bee Colonies">Bee Colonies</option>
-        <option value="Royal Gel">Royal Gel</option>
-        </select> ';
+        <option value="Royal Gel">Royal Gel</option></select> ';
         echo "</div>";
         echo "</div>";
         echo '<div class="row" >';
@@ -122,8 +101,7 @@ while($row=mysqli_fetch_assoc($result1)){
         echo '<select id="unit" name="unit" value="<?= $unit?>" style="width: 55px">
         <option value="'.$row['unit'].'">'.$row['unit'].'</option>
         <option value="Kg">Kg</option>
-        <option value=""></option>
-   </select> ';
+        <option value=""></option></select> ';
         echo "</div>";
         echo "</div>";
         echo"<br/></br>";
@@ -133,13 +111,13 @@ while($row=mysqli_fetch_assoc($result1)){
 ?>
 
 
-<form  action="bk_viewharvest.php" method="post" >
+        <form  action="bk_viewharvest.php" method="post" >
         <div class="c2" style="width: 90px">
         <input type="submit" value="<< Back" name="back" >
         </div>
-</div>
+        </div>
         </form>
-</br>
+      </br>
     </div>
     
 <br />

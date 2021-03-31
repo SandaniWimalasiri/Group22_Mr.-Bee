@@ -7,6 +7,7 @@
     <title>Mr. Bee</title>
         <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_homepage.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/style_buttons.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/style_manager_remove_dm.css">
 
     </head>
     <body>
@@ -15,20 +16,22 @@
         
 
          <!--start content-->
-        <div class="content">   
+        <div class="content4">
+        <br>
+            <div class="viewform">   
                     <div class="dropdown">
                         <button class="dropbtn">Order Details </button>
                         <div class="dropdown-content">
                             <a href="manager_order_ongoing.php">Ongoing Orders</a>
                             
                             <a href="manager_order_complete.php">completed orders</a>
-                            </form>
                             
                         </div>
                     </div>
+            </div>
             <br><br><br> <br> 
                     <center>
-                    <form action="manager_orders.php" method="GET">
+            <form action="manager_orders.php" method="GET">
                 <table class="div_man">
                     <tr>
                         <th>Order ID</th>

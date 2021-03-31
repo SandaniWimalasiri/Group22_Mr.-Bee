@@ -124,33 +124,33 @@ $currentpassword=$newpassword=$repassword="";
         <form method="post" action="bk_updatepassword.php" >
         <p >Change Password</p>
         </br>
-    </br>
+        </br>
         <div class="row">
         <div class="col1">
         <label for="currentpassword">Current Password</label>
         </div>
-    <div class="col2">
+        <div class="col2">
         <input type="password" name="currentpassword"  placeholder="Current Password" value="<?= $currentpassword?>" autofocus>
         <span class="error"><?= $currentpassword_error?></span>
-    </div>
+        </div>
         </div>
         <div class="row">
         <div class="col1">
         <label for="newpassword">New Password</label>
         </div>
-    <div class="col2">
+        <div class="col2">
         <input type="password" name="newpassword"  placeholder="New Password" value="<?= $newpassword?>" autofocus>
         <span class="error"><?= $newpassword_error?></span>
-    </div>
+        </div>
         </div>
         <div class="row">
         <div class="col1">
         <label for="repassword">Re-Enter Password</label>
         </div>
-    <div class="col2">
+        <div class="col2">
         <input type="password" name="repassword"  placeholder="Re-enter Password" value="<?= $repassword?>" autofocus>
         <span class="error"><?= $repassword_error?></span>
-    </div>
+        </div>
         </div>
         <br/>
 
@@ -161,7 +161,7 @@ $currentpassword=$newpassword=$repassword="";
         </form>
 
 
-<form  action="bk_profile.php" method="post" >
+        <form  action="bk_profile.php" method="post" >
         <div class="c2" style="width: 90px">
         <input type="submit" value="<< Back" name="back" >
         </div>

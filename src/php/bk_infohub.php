@@ -28,7 +28,7 @@ session_start();
               $content = test_input($_POST["content"]);
             }
 
-            if($authorname_error =='' and  $articlename_error =='' and  $content_error==''){
+    if($authorname_error =='' and  $articlename_error =='' and  $content_error==''){
       
     
      $date=date("Y/m/d");
@@ -52,10 +52,8 @@ session_start();
       echo '</script>';
       die();
     }
-
-            }
-        
-
+    }
+    
     }
 
     function test_input($data) {
@@ -64,9 +62,6 @@ session_start();
       $data = htmlspecialchars($data);
       return $data;
     }
-    
-
-
 
     
 ?>
@@ -85,10 +80,7 @@ session_start();
         include('bk_navbar.php');
         include('bk_sidenavbar.php');
         
-?>
-
-
-
+        ?>
         
 <div class="main">
     <div class="bhivecontainer">
@@ -96,21 +88,21 @@ session_start();
         <form method="post" action="bk_infohub.php" >
         <p >Add Articles</p>
         </br>
-    </br>
+        </br>
         <div class="row">
         <div class="col1">
         <label for="authorname">Name</label>
         </div>
-    <div class="col2">
+        <div class="col2">
         <input type="text" name="authorname"  placeholder="Author Name" value="<?= $authorname?>" autofocus>
         <span class="error"><?= $authorname_error?></span>
-    </div>
+        </div>
         </div>
         <div class="row">
         <div class="col1">
         <label for="articlename">Article Name</label>
         </div>
-    <div class="col2">
+        <div class="col2">
         <textarea id="articlename" name="articlename" style="height:50px" placeholder="Article Name" value="<?= $articlename?>"></textarea>
         <span class="error"><?= $articlename_error?></span>
         </div>
@@ -119,10 +111,10 @@ session_start();
         <div class="col1">
         <label for="content">Content</label>
         </div>
-    <div class="col2">
+        <div class="col2">
         <textarea id="content" name="content" style="height:200px" placeholder="Content" value="<?= $content?>" ></textarea>
         <span class="error"><?= $content_error?></span>
-    </div>
+        </div>
         </div>
         <br/>
         <div class="row">
@@ -136,16 +128,11 @@ session_start();
         <div class="c2" style="width: 130px">
         <input type="submit" value="View Articles >>" name="enter" >
         </div>
-  </div>
+        </div>
         </form>
 
-
-
-</div>
-
-</div>
-
-      
+   </div>
+</div>      
  
   </body>
 </html>

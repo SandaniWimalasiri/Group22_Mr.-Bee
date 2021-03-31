@@ -1,12 +1,8 @@
 <?php require_once('../../config/connect.php'); 
 session_start();
 
-
-
-
 if(isset($_POST['update'])){
     
-
           
     $sql2= "UPDATE beekeeper SET userName ='".$_POST['userName']."',fullName ='".$_POST['fullName']."',  userAddress ='".$_POST['userAddress']."', userEmail ='".$_POST['userEmail']."',userTele ='".$_POST['userTele']."' WHERE userID='".$_SESSION['userid']."'";
     $result2 = mysqli_query($connection,$sql2);
@@ -35,11 +31,6 @@ if(isset($_POST['update'])){
   }
 
 
-
-
-
-
-
 ?>
 <html>
 
@@ -53,14 +44,15 @@ if(isset($_POST['update'])){
   <body  >
       
 
-        <?php include('bk_navbar.php');
+        <?php 
+
+        include('bk_navbar.php');
         include('bk_sidenavbar.php');
         
-?>
+        ?>
 
 
 <div class="main">
-
 
     <div class="bhivecontainer">
     <p >My Profile</p>
@@ -68,18 +60,15 @@ if(isset($_POST['update'])){
     
     <img src="  ../../public/img/14.png" >
     <br/>
-</br>
-</br>
-
+    </br>
+   </br>
 
 <?php
 
 $sql1 = "SELECT userName,fullName,userAddress,userEmail,userTele FROM beekeeper WHERE userID='".$_SESSION['userid']."'";
-mysqli_query($connection, $sql1);
 $result1 = mysqli_query($connection,$sql1);
 		while($row=mysqli_fetch_assoc($result1)){  
  
-   
         echo '<form  method="post" action="" ><div class="row" >';
         echo '<div class="col1">';
         echo 'User Name </div><div class="col2">';
@@ -117,7 +106,7 @@ $result1 = mysqli_query($connection,$sql1);
         }?>
 
 
-<form  action="bk_harvest.php" method="post" >
+        <form  action="bk_harvest.php" method="post" >
         <div class="c2" style="width: 90px">
         <input type="submit" value="<< Back" name="back" >
         </div>

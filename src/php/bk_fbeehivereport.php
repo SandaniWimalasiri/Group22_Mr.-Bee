@@ -1,27 +1,28 @@
-<?php require_once('../../config/connect.php'); 
-session_start();
+<?php 
+  require_once('../../config/connect.php'); 
+  session_start();
 
-		?>
+?>
 
 <html>
+  <head>	
+    <title>Full Beehive Report</title>
+    <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
+    <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
+  </head>
 
-	<head>	
-		<title>Full Beehive Report</title>
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_style.css">
-      <link rel="stylesheet" type="text/CSS" href="../../public/css/bk_catstyle.css">
-	</head>
-	<body>
-<?php include('bk_navbar.php');
-        include('bk_sidenavbar.php');?>
-<div class="main">
+  <body>
 
+     <?php 
+        include('bk_navbar.php');
+        include('bk_sidenavbar.php');
+     ?>
 
-
-  <div class="bhivecontainer">
-<p>Full Beehive Report</p>
-            <br/><br/><br/>
+     <div class="main">
+       <div class="bhivecontainer">
+          <p>Full Beehive Report</p>
+          <br/><br/><br/>
      
-           
             <center>
             <table >
                 <tr style="background-color:#547454">
@@ -43,15 +44,13 @@ session_start();
                 </tr>
 
 
-			<?php
-if(isset($_SESSION['beehiveno'])){
-        
-        
-$sql = "SELECT BeehiveRecNo,date,sdate,idate,itime,actstatus,wbeehive,temperament,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE beehiveno='".$_SESSION['beehiveno']."'  and userID='".$_SESSION['userid']."' and is_deleted=0 ";
-mysqli_query($connection, $sql);
-$result = mysqli_query($connection,$sql);
+<?php
 
-		while($row=mysqli_fetch_assoc($result)){
+   if(isset($_SESSION['beehiveno'])){
+     $sql = "SELECT BeehiveRecNo,date,sdate,idate,itime,actstatus,wbeehive,temperament,wstatus,cbeehive,noframes,disease,treatment,sqbee,bcolony FROM beehive WHERE beehiveno='".$_SESSION['beehiveno']."'  and userID='".$_SESSION['userid']."' and is_deleted=0 ";
+     $result = mysqli_query($connection,$sql);
+     
+     while($row=mysqli_fetch_assoc($result)){
         echo '<tr >';
         echo '<td>';
         echo $row['BeehiveRecNo'];
@@ -98,18 +97,13 @@ $result = mysqli_query($connection,$sql);
         echo '<td>';
         echo $row['bcolony'];
         echo '</td>';
-        
         echo '</tr>';
 
 		
-                }}
-                
-                
-                
-                
+     }
+  }
                 echo '<form action="bk_mbeehivereport.php"  method="post" >';
-                echo '<div class="row">
-                <div class="c1" style="width:300px"><select name="mon" style="width:250px" ><option value="00">Select Month</option>';
+                echo '<div class="row"><div class="c1" style="width:300px"><select name="mon" style="width:250px" ><option value="00">Select Month</option>';
                 echo '<option value="01">January</option>';
                 echo '<option value="02">February</option>';
                 echo '<option value="03">March</option>';
@@ -127,22 +121,20 @@ $result = mysqli_query($connection,$sql);
 
 ?>
 
-            </table></center>
+            </table>
+            </center>
 
-            </br>
-    </br><br/><br/>
+            </br></br><br/><br/>
+
             <form  action="bk_reports.php" method="post" >
-        <div class="row">
-        <input type="submit" value="<< Back" name="back" >
-        </div>
-        </form>
-</div>
+              <div class="row">
+                <input type="submit" value="<< Back" name="back" >
+              </div>
+            </form>
 
-
-</div>	
-
-
-
-	</body>
+       </div>
+     </div>
+     	
+   </body>
 </html>
 

@@ -1,14 +1,8 @@
 <?php require_once('../../config/connect.php'); 
 session_start();
 
-
-
-
-
 if(isset($_POST['update'])){
-    
- 
-          
+             
     $sql2= "UPDATE feeding SET FeedingRecNo ='".$_POST['FeedingRecNo']."',beehiveno ='".$_POST['beehiveno']."',  fdate ='".$_POST['fdate']."', ftime ='".$_POST['ftime']."',feedingtype ='".$_POST['feedingtype']."',famount ='".$_POST['famount']."',unit ='".$_POST['unit']."' WHERE FeedingRecNo='".$_POST['FeedingRecNo']."'";
     $result2 = mysqli_query($connection,$sql2);
     $sql3 = "SELECT  FeedingRecNo,beehiveno,fdate,ftime,feedingtype,famount,unit FROM feeding WHERE FeedingRecNo ='".$_POST['FeedingRecNo']."'";
@@ -35,9 +29,7 @@ if(isset($_POST['update'])){
     }
 
 }
-
-
-   
+ 
 
 ?>
 <html>
@@ -51,15 +43,12 @@ if(isset($_POST['update'])){
     </head>
   <body  >
       
-
         <?php include('bk_navbar.php');
         include('bk_sidenavbar.php');
         
 ?>
 
-
 <div class="main">
-
 
     <div class="bhivecontainer">
     <p >Update Feeding Records</p>
@@ -106,30 +95,27 @@ if(isset($_GET['FeedingRecNo'])){
         echo '<div class="col1">';
         echo 'Feeding Amount </div><div class="col3"><input type = "number" min="0.000" placeholder="0.000" step="0.001" name="famount" style="width: 169px" value ="'.$row['famount'].'" required>';
         echo '<select id="unit" name="unit"  style="width: 55px" >
-        <option value="'.$row['unit'].'" >'.$row['unit'].'</option>
+             <option value="'.$row['unit'].'" >'.$row['unit'].'</option>
              <option value="Kg">Kg</option>
              <option value="g">g</option>
-             <option value="mg">mg</option>
-        </select> ';
+             <option value="mg">mg</option></select> ';
         echo "</div>";
         echo "</div>";
         echo"<br/>";
         echo '<div class="row"><div class="c1" style="width: 910px"><input type="submit" value="Update Record" name="update" ></div></form>';
 
   }}
-   
-
-        
+         
 
 ?>
 
-<form  action="bk_viewfeeding.php" method="post" >
+        <form  action="bk_viewfeeding.php" method="post" >
         <div class="c2" style="width: 90px">
         <input type="submit" value="<< Back" name="back" >
         </div>
-</div>
+        </div>
         </form>
-</br>
+     </br>
     </div>
     
 <br />

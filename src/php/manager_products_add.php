@@ -51,7 +51,7 @@
 
                    <tr>
                    <th><label>image</label></th>
-                        <td><input type="file" name="img" value="<?php echo $row['img'] ?>" required></td>
+                        <td><input type="file" name="img" required></td>
        <br></br></td>
                    </tr>
                </table>
@@ -73,7 +73,7 @@
            //echo "Done";                                                                                                 
            
            
-           $sql="INSERT INTO products (pname, descr, price, rrp,quantity,img) VALUES('".$_GET['pname']."','".$_GET['descr']."','".$_GET['price']."','".$_GET['rrp']."','".$_GET['quantity']."','".$_GET['img']."')";
+           $sql="INSERT INTO products (pname, descr, price, rrp,quantity) VALUES('".$_GET['pname']."','".$_GET['descr']."','".$_GET['price']."','".$_GET['rrp']."','".$_GET['quantity']."')";
            //$result=mysqli_query($connection,$sql);
            $result=$connection->query($sql);
            //print_r($result);
@@ -86,16 +86,16 @@
        }
 
        //if button with the name submit has been clicked
-       if(isset($_POST['submit'])) {
+       if(isset($_GET['add'])) {
         //declaring variables
         $filename = $_FILES['img']['name'];
         $filetmpname = $_FILES['img']['tmp_name'];
         //folder where images will be uploaded
-        $folder = '../../public/img/';
+        $folder = '../../public/img/products/';
         //function for saving the uploaded images in a specific folder
         move_uploaded_file($filetmpname, $folder.$filename);
         //inserting image details (ie image name) in the database
-        $sql = "INSERT INTO 'products' ('img') VALUES ('$filename')";
+        $sql = "INSERT INTO products (img) VALUES ('$filename')";
         $qry = mysqli_query($conn, $sql);
         if( $qry) {
         echo "</br>image uploaded";
