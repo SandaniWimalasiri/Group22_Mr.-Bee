@@ -5,7 +5,7 @@ body{
 	background-size: cover;
 	background-position: center;
 	font-family: sans-serif;
-	opacity: 0.9;
+	opacity: 0.8;
 
 }
 
@@ -71,7 +71,7 @@ h1{
 
 .loginBox input[type="submit"]:hover{
     cursor: pointer;
-    background: #ff0202;
+    background: #ff0102;
     color: rgb(247, 245, 246);
 }
 
